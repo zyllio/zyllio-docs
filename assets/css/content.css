@@ -87,7 +87,7 @@
 
 .contact-list {
   list-style: none;
-  margin: 16px 0 0;
+  margin: 10px 0 8px;
   padding: 0;
   display: flex;
   flex-wrap: wrap;
@@ -102,6 +102,10 @@
   border-radius: 10px;
   padding: 9px 12px;
   font-weight: 700;
+}
+
+.contact-visual {
+  margin-top: 6px;
 }
 
 .footer {
