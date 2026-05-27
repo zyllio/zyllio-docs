@@ -77,7 +77,8 @@
     }
     var openAttr = isTutorielsPage || isTutorielsChild ? " open" : "";
 
-    html.push('<li class="menu-node"><details class="menu-group"' + openAttr + '><summary>' + renderLink(isSubPage, "tutoriels-68", "Tutoriels", isTutorielsPage) + '</summary><ul class="menu-children">');
+    var tutorielsClass = isTutorielsPage ? ' menu-group-current' : '';
+    html.push('<li class="menu-node"><details class="menu-group' + tutorielsClass + '"' + openAttr + '><summary><span class="menu-group-label">Tutoriels</span></summary><ul class="menu-children">');
     for (var k = 0; k < TUTORIELS_CHILDREN.length; k++) {
       var ch = TUTORIELS_CHILDREN[k];
       html.push('<li>' + renderLink(isSubPage, ch.slug, ch.label, ch.slug === slug) + "</li>");
