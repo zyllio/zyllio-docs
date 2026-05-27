@@ -18,7 +18,13 @@
   }
 
   .bug-visual img {
-    width: 100%;
+    width: auto;
+    max-width: 100%;
     max-height: none;
+  }
+
+  .visual {
+    width: 100%;
+    margin-left: 0;
   }
 }

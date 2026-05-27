@@ -1,0 +1,21 @@
+.callout {
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: rgba(15, 138, 141, 0.08);
+  color: #25485f;
+  padding: 12px 14px;
+  margin-top: 12px;
+}
+
+.callout.info {
+  background: rgba(15, 138, 141, 0.08);
+}
+
+.callout.error {
+  border-color: #d9b0a8;
+  background: rgba(201, 72, 50, 0.08);
+}
+
+.callout.error::before {
+  content: "⚠️ ";
+}

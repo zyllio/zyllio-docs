@@ -19,32 +19,105 @@
         <div class="hero-body">
           <span class="kicker">Documentation</span>
           <h1>Authentication</h1>
-          <p class="lead">Protect access to your app with role-based authentication and secure session handling.</p>
+          <p class="lead">Authentication secures access and personalizes the user experience.</p>
         </div>
       </header>
 
       <section class="section">
-        <h2>Authentication model</h2>
+        <h2>Authentication</h2>
         <ul>
-          <li>Define user roles and authorization boundaries.</li>
-          <li>Secure sign-in and sign-out flows across all entry points.</li>
-          <li>Protect sensitive screens with explicit access rules.</li>
+          <li>Authentication protects user data from unauthorized access. By verifying the user's identity before granting access to their account or sensitive data, the application ensures that only authorized individuals can view or modify this information.</li>
+          <li>With authentication, an application can provide a personalized experience by remembering preferences, purchase histories, account settings, etc. This allows for a more tailored and enjoyable service for the user.</li>
+          <li>Authentication helps manage access levels within the application. By identifying the user, the application can determine which features or data are accessible to them based on their role or permissions.</li>
         </ul>
       </section>
 
       <section class="section">
-        <h2>Implementation steps</h2>
-        <ol>
-          <li>Configure identity source and token lifecycle.</li>
-          <li>Bind user profile state using <a href="variables-54.html">Variables</a>.</li>
-          <li>Add guarded transitions in <a href="screen-sequence-editor-23.html">Screen sequence editor</a>.</li>
-          <li>Test session expiry and unauthorized access in <a href="simulation-6.html">Simulation</a>.</li>
-        </ol>
+        <h2>Defining a Users Table</h2>
+        <p>Users are defined in a table of your choice, which must meet the following prerequisites:</p>
+        <ul>
+          <li>It must contain a column called Name.</li>
+          <li>It must contain a column called Profile.</li>
+          <li>It must contain a column of type Email called Email.</li>
+          <li>It must contain a column of type Password called Password.</li>
+        </ul>
+        <p>Other columns characterizing users, which are not necessary for authentication, can be defined, such as their date of birth, city, or role.</p>
+        <p>The Table Templates section allows you to define a ready-to-use user table. Simply click and drag the Users template into the workspace.</p>
+        <figure class="visual">
+          <img src="https://codaio.imgix.net/docs/yInGcUUiFK/blobs/bl-Ge9NqriFUX/95370ed21e194da69ef6ff72a7a44d1c617b442dc8b95e3d4e4ec4fc8132016b1deffb738d8d114e814ebbffa3353bdace9402fbeb96d4f98fafa6f38689c73c4bb00abd4e0d450d6dbaeb1b41c3d66194c3f92151c60a9a5d4818be2f1d7b0ac64be964?fit=max&fm=webp&lossless=true" alt="Table templates users">
+        </figure>
+        <p>The following Users table is created:</p>
+        <figure class="visual">
+          <img src="https://codaio.imgix.net/docs/yInGcUUiFK/blobs/bl-Ra3xRrnx96/e0d86670b641480ac5711580fb5a874f925161facaff87d6968ae0528c561c5eca083afe96fa6dcc7627a13d1365c04d4216c6dfd424b37b63e1b19aaa9a95b1a7f77297063665e2e911536ac6cce1dfe55816d778b5ac47dc601a8c6614412b0c7ddec6?fit=max&fm=webp&lossless=true" alt="Users table">
+        </figure>
+        <p>This table is a starting point and can be modified according to needs as long as the above prerequisites are met.</p>
+        <p>The users table can also be defined in an external data source such as Google Sheets, TimeTonic, or Airtable.</p>
       </section>
 
       <section class="section">
-        <h2>Security checks</h2>
-        <p>Validate token expiration handling, logout cleanup, and least-privilege access before publishing.</p>
+        <h2>User Management</h2>
+        <p>User management involves editing the data in the users table either:</p>
+        <ul>
+          <li>From Zyllio, in the Database tab, using the Edit button on the table.</li>
+          <li>From Airtable, TimeTonic, or Google Sheets if the table is external.</li>
+        </ul>
+        <figure class="visual">
+          <img src="https://codaio.imgix.net/docs/yInGcUUiFK/blobs/bl-2KmpoowNU9/9a3d41f5a3928c3945ee0b03a5c6aa82e77674a445e3cf1b5375d22ecc5b6df1d32ddf1ccd2895bddc1aca4cef0ac3d31c036d1f262c6d06ccc6237a96bce7ce58c480d841b747efc084975fd4e1d80bfbe6cc1b56d9150f42caacdb9ee5785286b41bfc?fit=max&fm=webp&lossless=true" alt="User management">
+        </figure>
+        <p>Users can be modified from this dialog, including adding and deleting users. Additionally, a users table can be imported via a CSV file.</p>
+      </section>
+
+      <section class="section">
+        <h2>Authenticating a User</h2>
+        <h3>Authentication Screen</h3>
+        <p>Authentication is triggered from a screen where a form is defined with at least two input fields:</p>
+        <ul>
+          <li>Email.</li>
+          <li>Password.</li>
+        </ul>
+        <p>This screen can be created from scratch or using the pre-built screen template called Login.</p>
+        <figure class="visual">
+          <img src="https://codaio.imgix.net/docs/yInGcUUiFK/blobs/bl-DTV-q-cPcY/46f5057e00cbec2084d780bf6e2d311d00bae84bd2cf2073f4c5915fdfbe1d83788c28c3a942d18bd094eb25c80b75730d336f99d0d48bf778c6aa1ca4a281fbd10f3e702b000d00929db1613d0763a469d2fb4bcbb39d21675b4b65cbc1801bcaccca77?fit=max&fm=webp&lossless=true" alt="Authentication screen example">
+        </figure>
+        <h3>Authentication Button</h3>
+        <p>A button is necessary to trigger authentication. This button must define an action that calls the Login action available from the action editor in the Authentication section.</p>
+        <figure class="visual">
+          <img src="https://codaio.imgix.net/docs/yInGcUUiFK/blobs/bl-d2ZAc3uXzq/8957045922a4b463ca514f55c8ce1e0e11da7c2dd0786218d15360ccb78ea46b6a4153c3d458727607eca1f0e584e159399b30ca893467a157dd06068afd71f42d6af241eb005f01d06e27c868a94b91ade7305a89b9f92dd8b90067ff0fce36061dc8c0?fit=max&fm=webp&lossless=true" alt="Authentication button">
+        </figure>
+        <p>This action defines the Login action parameters.</p>
+        <h3>Redirection After Authentication</h3>
+        <p>Two approaches are possible to redirect the user after authentication:</p>
+        <ul>
+          <li>The first approach is to define a transition from the button that triggered the authentication. The transition will occur only if the authentication is successful.</li>
+          <li>The second approach is to add a Go To Screen action, which will be triggered only if the authentication is successful.</li>
+        </ul>
+        <p class="callout info">In general, an action that fails interrupts the chain of actions: the next action is not executed.</p>
+      </section>
+
+      <section class="section">
+        <h2>Authenticated User Variable</h2>
+        <p>Once the user is successfully authenticated, a variable called User (default name) is made available for further use. For example:</p>
+        <ul>
+          <li>Display the name or email of the authenticated user.</li>
+          <li>Associate the user with a new record, such as the user's email in an Orders table or a Favorites table.</li>
+          <li>Use the email for sending an email or Push Notifications.</li>
+          <li>...</li>
+        </ul>
+        <p>This variable is accessible from the Variables section, then the Authentication Screen, and then User.</p>
+        <figure class="visual">
+          <img src="https://codaio.imgix.net/docs/yInGcUUiFK/blobs/bl-k3Q7zUVhXi/9b78ced32c50c2320f9e6cd1e33a628cf456253f4833f975df7d7aa6a6b6a1a50af38bd0c7dc84ce913fca4d2cecd9281a1a887f8869a451e95446e139e3d2c4b1974f14ebb7345a20986f1064bfb9bd252f1b30a2c25c17d17fa7c213d7dc8a46da476f?fit=max&fm=webp&lossless=true" alt="Authenticated user variable selector">
+        </figure>
+      </section>
+
+      <section class="section">
+        <h2>Logging Out a User</h2>
+        <p>The user can log out, and the user profile panel is accessible from the header of the screens.</p>
+        <figure class="visual">
+          <img src="https://codaio.imgix.net/docs/yInGcUUiFK/blobs/bl-EEuyY0llle/27319957ec0c81133faa2703cd47113100ff335c1d568dc99dfeea7b4ca4559e03cc6604c17f4739b078a238ee9e526bbc2a95bb568975157d4c4679f574092ba96cef1be7eacbc970c9b133d6cae3bf165ee84b07757de502310b4ed91e3f2f15980ad3?fit=max&fm=webp&lossless=true" alt="User profile button">
+        </figure>
+        <figure class="visual">
+          <img src="https://codaio.imgix.net/docs/yInGcUUiFK/blobs/bl-W4e9gSdGhE/04d7f8ed58c4132f28978a955d9d07f2bf46152f9851ab412a36bef60f275dd326da31b8072503d0aec475375ef649eca46815df549d286afa1c43e44dd2a3f13ee94bd107b0de4cbe8677fc13928c995f649b1f1603df5fc580d38abb81dda0883b87ea?fit=max&fm=webp&lossless=true" alt="User profile panel">
+        </figure>
       </section>
     </main>
   </div>

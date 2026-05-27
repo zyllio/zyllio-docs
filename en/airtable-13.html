@@ -19,32 +19,104 @@
         <div class="hero-body">
           <span class="kicker">Documentation</span>
           <h1>Airtable</h1>
-          <p class="lead">Integrate Airtable to combine structured records, relationships, and editorial workflows.</p>
+          <p class="lead">Zyllio vous permet de connecter facilement vos bases de données Airtable à une application mobile sans avoir besoin de connaissances en programmation. Grâce à cette intégration, vous pouvez accéder, visualiser et interagir avec vos données Airtable en temps réel, directement depuis votre application.</p>
         </div>
       </header>
 
       <section class="section">
-        <h2>Why Airtable</h2>
-        <ul>
-          <li>Flexible schema with relational views.</li>
-          <li>Friendly collaboration for business teams.</li>
-          <li>Good balance between control and speed.</li>
-        </ul>
-      </section>
-
-      <section class="section">
-        <h2>Integration pattern</h2>
+        <h2>Configuration</h2>
+        <h3>Airtable Configuration</h3>
+        <p>Before you start importing your Airtable tables and views, you need to set up the Airtable integration. Here are the steps to follow:</p>
         <ol>
-          <li>Model your base with stable identifiers.</li>
-          <li>Map key tables to app screens and action forms.</li>
-          <li>Use formulas and variables for filtered views.</li>
-          <li>Validate pagination and write permissions before release.</li>
+          <li>Log in to your Airtable account.</li>
+          <li>Access the integration settings from the Builder Hub section of your account.</li>
         </ol>
+        <figure class="visual">
+          <img src="https://codaio.imgix.net/docs/yInGcUUiFK/blobs/bl-wucPHE6dP7/ce0a96e0c399f5096db2232b8aa11e3023c2dab4ee6a3a8d3769505227ecf0ec817c86701f96d2434afd12ec5de725d05566133a621add8e399682fd530ebe2d4a13bd2af9c7755ddcaefea2a5b3d647a73f5ce2d07c6d973f5e91d630bd9642c8842d76?fit=max&fm=webp&lossless=true" alt="Airtable configuration steps 1 and 2">
+        </figure>
+        <ol start="3">
+          <li>Then select the Personal access tokens option from the left menu.</li>
+          <li>Click on the Create new token button.</li>
+        </ol>
+        <figure class="visual">
+          <img src="https://codaio.imgix.net/docs/yInGcUUiFK/blobs/bl-JbrHBdtDcz/a0f428d26fe4d524621f61a8715cef7f3951b757f460194319dbd3a9f14d1d8c3a54057616d4923eab82e922df9d4f3d37d0ae79e66547c094ab2e0a3071901ee2ce03d220286447609ebc12e289a9dcfe13a7f109d695315e98f7c2a12e7df60a417ec6?fit=max&fm=webp&lossless=true" alt="Airtable configuration steps 3 and 4">
+        </figure>
+        <ol start="5">
+          <li>Enter a name, for example: Zyllio.</li>
+          <li>Then select the following scopes:</li>
+        </ol>
+        <figure class="visual">
+          <img src="https://codaio.imgix.net/docs/yInGcUUiFK/blobs/bl-GWuCrwFjXr/765d254fb1ce6fe6329d6d01d0efe947225cacff270ccdc97fcb1dab8c00917dab393acfea6bbbc90f959f8fb8b61ecc2a43b12e50be658a8971db0a8fbb3ebd62ffc7162845c2cca9ad1ddb139a6f0de4c150e0cbf6a357c83fc6fb45bb19810fe9a149?fit=max&fm=webp&lossless=true" alt="Airtable scopes">
+        </figure>
+        <ol start="7">
+          <li>Validate the creation of the token.</li>
+          <li>Once created, click the Copy button to copy the token.</li>
+        </ol>
+        <figure class="visual">
+          <img src="https://codaio.imgix.net/docs/yInGcUUiFK/blobs/bl-NXpE5T_FPI/b95d293f8af0d2785a25529427f57e76afcbdd642f97b6caf09306e981de8abe90dafcc87cd8f7f703e02a8d56158dfa7e34865cf07d823d3c5de29a1507efab3ab3a29caa40775667e8148b6df3453cd4144f2b221da77064a1b94291338c759b887670?fit=max&fm=webp&lossless=true" alt="Airtable token copy">
+        </figure>
+        <p class="callout error">Once this dialog box is closed, Airtable will no longer display the token. You will need to generate another one to obtain it.</p>
       </section>
 
       <section class="section">
-        <h2>Operational guidance</h2>
-        <p>Define table ownership and data quality rules to avoid inconsistent records in production workflows.</p>
+        <h3>Zyllio Configuration</h3>
+        <ol>
+          <li>Log in to Zyllio.</li>
+          <li>Select the application to integrate with Airtable.</li>
+          <li>Select the Settings tab, then Airtable.</li>
+          <li>Enable the Airtable integration.</li>
+          <li>Paste the token copied from the Airtable portal as follows:</li>
+        </ol>
+        <figure class="visual">
+          <img src="https://codaio.imgix.net/docs/yInGcUUiFK/blobs/bl-tf3mbVT-SQ/6577e19ce0c1da368f35b79ebf3314ab623a73815f9b1e5cf7840b21229fce41cbfa0076a757800a1d824eb190fcc0292971cac7bff12e5591d6fd8ee9b4d3841f5d97a74f76ab5434ea2db9d720006c35517f24d18c8ce44332f99aba7ff2fd98241cb6d?fit=max&fm=webp&lossless=true" alt="Zyllio Airtable configuration">
+        </figure>
+      </section>
+
+      <section class="section">
+        <h3>Importing Airtable Tables and Views</h3>
+        <p>From the Database tab, click on the Airtable option in the Import table section on the left.</p>
+        <figure class="visual">
+          <img src="https://codaio.imgix.net/docs/yInGcUUiFK/blobs/bl-tTkXOUVq-W/6f1aa3c8865a4a75cfa467e9be948405277b9992561a36564d774dc642549b88c76778a07e9f79b0279088102424ed4eab8d42fe2100da14c43fc02bff2466eed3e0d2de82be422b371c358e98cc7da27161c9348ace5f804c6243ba7901507cda8b5691?fit=max&fm=webp&lossless=true" alt="Import Airtable step 1">
+        </figure>
+        <p>Then select the table(s) to import. This operation can be repeated to import additional tables later.</p>
+        <figure class="visual">
+          <img src="https://codaio.imgix.net/docs/yInGcUUiFK/blobs/bl-URSwsMmZbr/193c4f4342ff1899267fdf5e9830ad83527d3a1ce496e14ac5a0432589d4ca0e5ac7182cf85d826dcd61da140c0e115ec7856a1399b57f8d4197cbeff2b9e0002267f898b30546f91545ddb4046b8415800bae6c88e608e6c898735a3e88a514e4253b3b?fit=max&fm=webp&lossless=true" alt="Import Airtable step 2">
+        </figure>
+        <p>Once confirmed, Zyllio imports all the selected tables along with their field types and relationships. For example, five imported tables with relationships.</p>
+        <figure class="visual">
+          <img src="https://codaio.imgix.net/docs/yInGcUUiFK/blobs/bl-7a2Y3v0rKy/a90e4713d89d24924157711d4151e434da21514d06783ba7e308a8dda35ebe26ef2c243b4c2a8440126c5324062e0fc10be6d8be1b1d3d6a5a70f33b62b38ced0da984396b4119914d6094dea7d03a3712f1b968ee6ad9362bea89c29dd20d4c21ca6262?fit=max&fm=webp&lossless=true" alt="Imported Airtable tables and relationships">
+        </figure>
+        <p>Calculated fields such as formulas, lookups, rollups, and IDs are indicated with a lock icon. These fields cannot be modified from Zyllio.</p>
+        <p class="callout info">Adjustments are sometimes necessary to provide Zyllio with more information about the field type. For example, the Image field in the Products table is of type Link since Airtable defines the type as Attachment. To indicate that this attachment is an image, simply change its type from Zyllio. This way, the Image field will be automatically selected by Zyllio in its components.</p>
+      </section>
+
+      <section class="section">
+        <h3>Using Tables in the Mobile Application</h3>
+        <p>Once the tables and views are imported, you can use the data from the screen editor. From the Design tab, create a screen by selecting an Airtable table as illustrated.</p>
+        <figure class="visual">
+          <img src="https://codaio.imgix.net/docs/yInGcUUiFK/blobs/bl-kZXwPJbnIf/e0b97285da1f16d1543445e3ef75cfc9cf5d87a968a383ffe5c0191351609995b572dfb77756a01328d0e76239800b62d5c8d388c8e255a7d335f2c48085a4935b62c40a0a5bfe44efec3c1b33f105bc73a831f0525f08bc20989b3314e036440cdaee62?fit=max&fm=webp&lossless=true" alt="Using Airtable tables in mobile application">
+        </figure>
+      </section>
+
+      <section class="section">
+        <h2>Structure Synchronization</h2>
+        <p>When you make structural changes in your Airtable tables, such as adding a field, these changes will not appear in Zyllio. To synchronize these changes, click the Refresh Structure button. Once the synchronization process is initiated, Zyllio will add and remove fields based on the changes.</p>
+        <p class="callout info">Zyllio does not modify the structure of Airtable tables in your Airtable account. Only the Zyllio definition can be modified from within Zyllio.</p>
+        <figure class="visual">
+          <img src="https://codaio.imgix.net/docs/yInGcUUiFK/blobs/bl-8hPl3uwTl3/6d0cb48e76bac361cafb8e07c99f22cf82a320f175460d742357df37af59feda1c5fef234a3412f537035064be361f079db0b1ed1bbaeefa70c1766b98e8ac5441a91e5fc4419ba3c199a110e91edd3cf1f60d51bc9c729cff7d6e484759535430b8681d?fit=max&fm=webp&lossless=true" alt="Structure synchronization">
+        </figure>
+      </section>
+
+      <section class="section">
+        <h2>Data Synchronization</h2>
+        <p>Zyllio implements a data cache to improve access performance to Airtable based on the usage of Airtable tables. As a result, changes made from Airtable or external automation may not be immediately visible in Zyllio. A delay of up to 1 minute may be necessary. To force a refresh, click the Refresh Data button.</p>
+        <figure class="visual">
+          <img src="https://codaio.imgix.net/docs/yInGcUUiFK/blobs/bl-vDqyUgrNIO/bfd86cea6c4421bf903baa8ae0440984e8b52027fe402708fb713c3e2698835457f2a14fd5227f6ececa159bae235d238b2fdba43a08f41629dbeccc79a8a886d41f1cbd49b581cf3be292847e3f3b582793dfc1688567dddd73d9f2bb9b69088fa0f0e9?fit=max&fm=webp&lossless=true" alt="Data synchronization">
+        </figure>
+      </section>
+
+      <section class="section">
+        <h2>Common errors</h2>
       </section>
     </main>
   </div>
