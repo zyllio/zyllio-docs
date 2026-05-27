@@ -53,6 +53,11 @@
   padding: 0;
 }
 
+docs-sidebar-fr,
+docs-sidebar-en {
+  display: block;
+}
+
 .menu-node + .menu-node {
   margin-top: 6px;
 }
@@ -121,21 +126,30 @@
 }
 
 .menu-group summary::after {
-  content: ">";
-  font-size: 0.72rem;
-  color: #7a8e9c;
-  transform: rotate(0deg);
-  transition: transform 160ms ease;
+  content: "";
+  width: 7px;
+  height: 7px;
+  border-right: 1.8px solid #7a8e9c;
+  border-bottom: 1.8px solid #7a8e9c;
+  transform: rotate(-45deg);
+  transform-origin: center;
+  transition: transform 180ms ease, border-color 180ms ease;
+  margin-left: 8px;
 }
 
 .menu-group[open] summary::after {
-  transform: rotate(90deg);
+  transform: rotate(45deg);
 }
 
 .menu-group summary:hover,
 .menu-group summary:focus-visible {
   background: #edf3f7;
   color: #1d303d;
+}
+
+.menu-group summary:hover::after,
+.menu-group summary:focus-visible::after {
+  border-color: #4f6675;
 }
 
 .menu-children {

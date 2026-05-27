@@ -6,7 +6,6 @@
   box-shadow: none;
   margin: 0;
   padding: clamp(20px, 3vw, 32px) 0;
-  animation: reveal 700ms ease both;
 }
 
 .hero-banner {
