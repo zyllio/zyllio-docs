@@ -11,7 +11,7 @@
 .hero-banner {
   width: 100%;
   display: block;
-  max-height: 220px;
+  max-height: 254px;
   object-fit: cover;
   border: 1px solid var(--line);
   border-radius: var(--radius-md);
