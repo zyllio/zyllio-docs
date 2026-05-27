@@ -1,4 +1,6 @@
 (function () {
+  var SCRIPT_PROMISES = window.__docsSidebarScriptPromises || (window.__docsSidebarScriptPromises = {});
+
   function detectContext() {
     var pathname = (window.location && window.location.pathname) || "";
     var normalized = pathname.replace(/\\/g, "/");
@@ -8,8 +10,44 @@
     return { isFr: isFr, isSub: isSub };
   }
 
-  function render() {
-    var ctx = detectContext();
+  function jsPrefix(ctx) {
+    return ctx.isSub ? "../assets/js/" : "assets/js/";
+  }
+
+  function ensureScript(src) {
+    if (document.querySelector('script[src="' + src + '"]')) {
+      return Promise.resolve();
+    }
+    if (SCRIPT_PROMISES[src]) {
+      return SCRIPT_PROMISES[src];
+    }
+
+    SCRIPT_PROMISES[src] = new Promise(function (resolve, reject) {
+      var s = document.createElement("script");
+      s.src = src;
+      s.async = false;
+      s.onload = resolve;
+      s.onerror = function () { reject(new Error("Failed to load script: " + src)); };
+      document.head.appendChild(s);
+    });
+
+    return SCRIPT_PROMISES[src];
+  }
+
+  function loadDependencies(ctx) {
+    var prefix = jsPrefix(ctx);
+    var scripts = [
+      prefix + (ctx.isFr ? "sidebar-data-fr.js" : "sidebar-data-en.js"),
+      prefix + (ctx.isFr ? "sidebar-fr.js" : "sidebar-en.js"),
+      prefix + "lang-switcher.js"
+    ];
+
+    return scripts.reduce(function (p, src) {
+      return p.then(function () { return ensureScript(src); });
+    }, Promise.resolve());
+  }
+
+  function render(ctx) {
     var logoSrc = ctx.isSub ? "../assets/images/zyllio-logo.png" : "assets/images/zyllio-logo.png";
     var homeHref = ctx.isFr ? (ctx.isSub ? "../index-fr.html" : "index-fr.html") : (ctx.isSub ? "../index.html" : "index.html");
     var aria = ctx.isFr ? "Accueil documentation" : "Documentation home";
@@ -29,7 +67,11 @@
 
   class DocsSidebarShell extends HTMLElement {
     connectedCallback() {
-      this.innerHTML = render();
+      var ctx = detectContext();
+      this.innerHTML = render(ctx);
+      loadDependencies(ctx).catch(function (err) {
+        console.error(err);
+      });
     }
   }
 
