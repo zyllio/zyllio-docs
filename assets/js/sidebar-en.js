@@ -1,35 +1,8 @@
 (function () {
-  var ROOT_ITEMS = [
-    { slug: "", label: "Home" },
-    { slug: "first-application-50", label: "First application" },
-    { slug: "dashboard-7", label: "Dashboard" },
-    { slug: "design-tool-4", label: "Design tool" },
-    { slug: "screen-editor-8", label: "Screen editor" },
-    { slug: "screen-sequence-editor-23", label: "Screen sequence editor" },
-    { slug: "simulation-6", label: "Simulation" },
-    { slug: "publications-5", label: "Publications" },
-    { slug: "plugins-36", label: "Plugins" }
-  ];
-
-  var TUTORIELS_CHILDREN = [
-    { slug: "google-sheets-11", label: "Google Sheets" },
-    { slug: "airtable-13", label: "Airtable" },
-    { slug: "formulas-15", label: "Formulas" },
-    { slug: "variables-54", label: "Variables" },
-    { slug: "chat-67", label: "Chat" },
-    { slug: "twilio-14", label: "Twilio" },
-    { slug: "authentication-61", label: "Authentication" },
-    { slug: "rest-integration-52", label: "REST Integration" },
-    { slug: "stripe-payments-69", label: "Stripe Payments" },
-    { slug: "make-70", label: "Make" },
-    { slug: "zapier-71", label: "Zapier" },
-    { slug: "custom-domain-53", label: "Custom domain" },
-    { slug: "offline-mode-62", label: "Offline Mode" },
-    { slug: "push-notifications-17", label: "Push Notifications" },
-    { slug: "favoris-follower-like-74", label: "Favoris / Follower / Like" },
-    { slug: "xano-75", label: "Xano" },
-    { slug: "translations-76", label: "Translations" }
-  ];
+  var DATA = window.DOCS_SIDEBAR_DATA_EN || { rootItems: [], tutorielsChildren: [], tailItems: [] };
+  var ROOT_ITEMS = Array.isArray(DATA.rootItems) ? DATA.rootItems : [];
+  var TUTORIELS_CHILDREN = Array.isArray(DATA.tutorielsChildren) ? DATA.tutorielsChildren : [];
+  var TAIL_ITEMS = Array.isArray(DATA.tailItems) ? DATA.tailItems : [];
 
   function inSubFolder(pathname) {
     return pathname.indexOf("/en/") !== -1 || pathname.indexOf("\\en\\") !== -1;
@@ -84,6 +57,11 @@
       html.push('<li>' + renderLink(isSubPage, ch.slug, ch.label, ch.slug === slug) + "</li>");
     }
     html.push("</ul></details></li>");
+
+    for (var n = 0; n < TAIL_ITEMS.length; n++) {
+      var tail = TAIL_ITEMS[n];
+      html.push('<li class="menu-node">' + renderLink(isSubPage, tail.slug, tail.label, tail.slug === slug) + "</li>");
+    }
 
     html.push("</ul>");
     return html.join("");
