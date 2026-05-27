@@ -1,0 +1,64 @@
+.page-shell {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 310px 1fr;
+}
+
+.sidebar {
+  background: #fafafa;
+  color: var(--ink);
+  border-right: 1px solid #e0e0e0;
+  padding: 28px 22px;
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  overflow-y: auto;
+}
+
+.main {
+  background: #ffffff;
+  padding: 34px clamp(16px, 2.6vw, 42px) 56px;
+}
+
+.section {
+  background: transparent;
+  border: 0;
+  border-top: 1px solid var(--line);
+  border-radius: 0;
+  box-shadow: none;
+  padding: clamp(20px, 3vw, 32px) 0;
+  margin: 0;
+  animation: reveal 700ms ease both;
+}
+
+.section:first-of-type {
+  border-top: 0;
+  padding-top: 8px;
+}
+
+.section-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 1fr;
+  gap: 22px;
+  align-items: center;
+}
+
+.section-grid.reverse {
+  grid-template-columns: 1fr 1.15fr;
+}
+
+.section-grid.reverse .visual {
+  order: -1;
+}
+
+@keyframes reveal {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

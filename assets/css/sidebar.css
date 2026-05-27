@@ -1,0 +1,235 @@
+.brand-home {
+  display: inline-flex;
+  align-items: center;
+  gap: 0;
+  color: var(--ink);
+  text-decoration: none;
+  margin-bottom: 12px;
+}
+
+.brand-logo {
+  width: auto;
+  height: 34px;
+  object-fit: contain;
+  border-radius: 0;
+  background: transparent;
+  padding: 0;
+  display: block;
+}
+
+.brand {
+  font-size: 0.82rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  opacity: 0.7;
+  margin: 0;
+}
+
+.doc-name {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--ink);
+  margin: 6px 0 14px;
+}
+
+.sidebar h2 {
+  margin: 20px 0 8px;
+  font-size: 0.84rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #516572;
+  opacity: 1;
+}
+
+.menu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.menu-tree {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.menu-node + .menu-node {
+  margin-top: 6px;
+}
+
+.menu-node > a {
+  display: flex;
+  align-items: center;
+  min-height: 34px;
+  padding: 6px 10px;
+  border-radius: 8px;
+  color: #2e4451;
+  text-decoration: none;
+  font-size: 0.94rem;
+  transition: background 160ms ease, color 160ms ease;
+}
+
+.menu-node > a:hover,
+.menu-node > a:focus-visible {
+  background: #edf3f7;
+  color: #1d303d;
+}
+
+.menu-node > a[aria-current="page"] {
+  background: #e6eef5;
+  color: #102534;
+  font-weight: 600;
+}
+
+.menu-group {
+  margin: 0;
+}
+
+.menu-group summary {
+  list-style: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  color: #2e4451;
+  font-size: 0.9rem;
+  font-weight: 600;
+  padding: 6px 10px;
+  border-radius: 8px;
+}
+
+.menu-group summary > a {
+  flex: 1;
+  color: inherit;
+  text-decoration: none;
+  min-width: 0;
+}
+
+.menu-group summary > a:hover,
+.menu-group summary > a:focus-visible {
+  text-decoration: none;
+}
+
+.menu-group summary > a[aria-current="page"] {
+  color: #102534;
+  font-weight: 700;
+}
+
+.menu-group summary::-webkit-details-marker {
+  display: none;
+}
+
+.menu-group summary::after {
+  content: ">";
+  font-size: 0.72rem;
+  color: #7a8e9c;
+  transform: rotate(0deg);
+  transition: transform 160ms ease;
+}
+
+.menu-group[open] summary::after {
+  transform: rotate(90deg);
+}
+
+.menu-group summary:hover,
+.menu-group summary:focus-visible {
+  background: #edf3f7;
+  color: #1d303d;
+}
+
+.menu-children {
+  list-style: none;
+  margin: 4px 0 0;
+  padding: 0 0 0 12px;
+  border-left: 1px solid #e6edf2;
+}
+
+.menu-children li > a,
+.menu-subchildren li > a {
+  display: block;
+  padding: 5px 8px;
+  border-radius: 7px;
+  color: #445c6a;
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: background 160ms ease, color 160ms ease;
+}
+
+.menu-children li > a:hover,
+.menu-children li > a:focus-visible,
+.menu-subchildren li > a:hover,
+.menu-subchildren li > a:focus-visible {
+  background: #f1f6fa;
+  color: #213845;
+}
+
+.menu-children li > a[aria-current="page"],
+.menu-subchildren li > a[aria-current="page"] {
+  background: #e7eff6;
+  color: #0f2635;
+  font-weight: 600;
+}
+
+.menu-subnode + .menu-subnode {
+  margin-top: 2px;
+}
+
+.menu-subgroup {
+  margin: 0;
+}
+
+.menu-subgroup summary {
+  list-style: none;
+  cursor: pointer;
+  color: #496170;
+  font-size: 0.84rem;
+  font-weight: 600;
+  padding: 5px 8px;
+  border-radius: 7px;
+}
+
+.menu-subgroup summary::-webkit-details-marker {
+  display: none;
+}
+
+.menu-subgroup summary::before {
+  content: "+";
+  margin-right: 6px;
+  color: #8aa0ae;
+}
+
+.menu-subgroup[open] summary::before {
+  content: "-";
+}
+
+.menu-subgroup summary:hover,
+.menu-subgroup summary:focus-visible {
+  background: #f2f6f9;
+}
+
+.menu-subchildren {
+  list-style: none;
+  margin: 2px 0 0;
+  padding: 0 0 0 10px;
+}
+
+.menu li + li {
+  margin-top: 8px;
+}
+
+.menu a {
+  display: block;
+  color: #2e4451;
+  text-decoration: none;
+  font-size: 0.94rem;
+  padding: 7px 10px;
+  border-radius: 8px;
+  transition: background 180ms ease, color 180ms ease;
+}
+
+.menu a:hover,
+.menu a:focus-visible {
+  background: #edf3f7;
+  color: #1d303d;
+}
