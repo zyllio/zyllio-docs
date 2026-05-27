@@ -19,13 +19,32 @@
         <div class="hero-body">
           <span class="kicker">Documentation</span>
           <h1>Variables</h1>
-          <p class="lead">Page migree localement.</p>
+          <p class="lead">Pilotez l'état de l'application avec les variables pour synchroniser les écrans et fiabiliser les interactions.</p>
         </div>
       </header>
 
       <section class="section">
-        <h2>Contenu</h2>
-        <p>Contenu en cours de migration detaillee.</p>
+        <h2>Stratégie de variables</h2>
+        <ul>
+          <li>Utiliser des variables locales pour les valeurs temporaires d'un écran.</li>
+          <li>Utiliser des variables partagées pour le contexte de session.</li>
+          <li>Réinitialiser les variables sensibles à la déconnexion ou fin de parcours.</li>
+        </ul>
+      </section>
+
+      <section class="section">
+        <h2>Mise en place pratique</h2>
+        <ol>
+          <li>Définir une nomenclature par scope et usage.</li>
+          <li>Initialiser des valeurs par défaut sur les écrans d'entrée.</li>
+          <li>Mettre à jour l'état via des actions explicites et des formules.</li>
+          <li>Vérifier les transitions d'état dans l'<a href="editeur-de-sequence-decrans-23.html">Editeur de sequence d'ecrans</a>.</li>
+        </ol>
+      </section>
+
+      <section class="section">
+        <h2>Intégrité d'état</h2>
+        <p>Documentez le cycle de vie attendu des variables pour éviter les valeurs obsolètes et les effets de bord.</p>
       </section>
     </main>
   </div>

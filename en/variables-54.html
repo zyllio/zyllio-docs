@@ -19,13 +19,32 @@
         <div class="hero-body">
           <span class="kicker">Documentation</span>
           <h1>Variables</h1>
-          <p class="lead">Page migrated locally.</p>
+          <p class="lead">Manage app state with variables to keep screens synchronized and interactions predictable.</p>
         </div>
       </header>
 
       <section class="section">
-        <h2>Content</h2>
-        <p>Detailed content migration in progress.</p>
+        <h2>Variable strategy</h2>
+        <ul>
+          <li>Use local variables for screen-specific temporary values.</li>
+          <li>Use shared variables for cross-screen session context.</li>
+          <li>Reset sensitive variables on logout or flow completion.</li>
+        </ul>
+      </section>
+
+      <section class="section">
+        <h2>Practical setup</h2>
+        <ol>
+          <li>Define naming conventions by scope and purpose.</li>
+          <li>Initialize defaults on entry screens.</li>
+          <li>Update values through explicit actions and formulas.</li>
+          <li>Verify state transitions in <a href="screen-sequence-editor-23.html">Screen sequence editor</a>.</li>
+        </ol>
+      </section>
+
+      <section class="section">
+        <h2>State integrity</h2>
+        <p>Document expected variable lifecycle to prevent stale values and hard-to-debug side effects.</p>
       </section>
     </main>
   </div>

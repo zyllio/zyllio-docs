@@ -19,13 +19,31 @@
         <div class="hero-body">
           <span class="kicker">Documentation</span>
           <h1>Integration Rest</h1>
-          <p class="lead">Page migree localement.</p>
+          <p class="lead">Connectez votre application à des API externes pour des opérations de lecture/écriture maîtrisées.</p>
         </div>
       </header>
 
       <section class="section">
-        <h2>Contenu</h2>
-        <p>Contenu en cours de migration detaillee.</p>
+        <h2>Mise en place de l'intégration</h2>
+        <ol>
+          <li>Définir le rôle de chaque endpoint et le contrat de payload.</li>
+          <li>Stocker URL de base et jetons dans des variables de configuration sécurisées.</li>
+          <li>Mapper les réponses API vers l'UI dans l'<a href="editeur-decrans-8.html">Editeur d'ecrans</a>.</li>
+        </ol>
+      </section>
+
+      <section class="section">
+        <h2>Pratiques de fiabilité</h2>
+        <ul>
+          <li>Gérer explicitement les timeouts et erreurs HTTP.</li>
+          <li>Afficher des retours utilisateur en chargement et en échec.</li>
+          <li>Valider les comportements alternatifs en <a href="simulation-6.html">Simulation</a>.</li>
+        </ul>
+      </section>
+
+      <section class="section">
+        <h2>Base de sécurité</h2>
+        <p>N'exposez jamais de secrets bruts côté interface. Faites transiter les opérations sensibles par un backend protégé si nécessaire.</p>
       </section>
     </main>
   </div>

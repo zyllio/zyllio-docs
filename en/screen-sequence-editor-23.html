@@ -19,13 +19,36 @@
         <div class="hero-body">
           <span class="kicker">Documentation</span>
           <h1>Screen sequence editor</h1>
-          <p class="lead">Page migrated locally.</p>
+          <p class="lead">Define navigation logic, branching rules, and user progression between screens.</p>
         </div>
       </header>
 
       <section class="section">
-        <h2>Content</h2>
-        <p>Detailed content migration in progress.</p>
+        <h2>What this editor controls</h2>
+        <ul>
+          <li>Entry points and default routing.</li>
+          <li>Conditional transitions based on data or user actions.</li>
+          <li>Error and fallback paths for resilient UX.</li>
+        </ul>
+      </section>
+
+      <section class="section">
+        <h2>Implementation pattern</h2>
+        <ol>
+          <li>Map the happy path first and ensure every step has one clear next action.</li>
+          <li>Add conditional branches only after baseline flow is stable.</li>
+          <li>Validate transitions in <a href="simulation-6.html">Simulation</a>.</li>
+          <li>Track user completion outcomes from <a href="dashboard-7.html">Dashboard</a>.</li>
+        </ol>
+      </section>
+
+      <section class="section">
+        <h2>Navigation checklist</h2>
+        <ul>
+          <li>No dead-end screens in primary journeys.</li>
+          <li>Back navigation is always predictable.</li>
+          <li>Required data is available before each transition.</li>
+        </ul>
       </section>
     </main>
   </div>

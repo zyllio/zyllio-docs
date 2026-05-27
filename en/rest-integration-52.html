@@ -19,13 +19,31 @@
         <div class="hero-body">
           <span class="kicker">Documentation</span>
           <h1>REST integration</h1>
-          <p class="lead">Page migrated locally.</p>
+          <p class="lead">Connect your app to external APIs for read/write operations with controlled flows.</p>
         </div>
       </header>
 
       <section class="section">
-        <h2>Content</h2>
-        <p>Detailed content migration in progress.</p>
+        <h2>Integration setup</h2>
+        <ol>
+          <li>Define endpoint purpose and expected payload contracts.</li>
+          <li>Store base URLs and tokens in secure configuration variables.</li>
+          <li>Map API responses to your UI model in <a href="screen-editor-8.html">Screen editor</a>.</li>
+        </ol>
+      </section>
+
+      <section class="section">
+        <h2>Reliability practices</h2>
+        <ul>
+          <li>Handle timeout and HTTP errors explicitly.</li>
+          <li>Provide user feedback for loading and failure states.</li>
+          <li>Validate fallback behavior in <a href="simulation-6.html">Simulation</a>.</li>
+        </ul>
+      </section>
+
+      <section class="section">
+        <h2>Security baseline</h2>
+        <p>Never expose raw secrets in client views. Route sensitive operations through protected backend endpoints when needed.</p>
       </section>
     </main>
   </div>

@@ -19,13 +19,32 @@
         <div class="hero-body">
           <span class="kicker">Documentation</span>
           <h1>Authentication</h1>
-          <p class="lead">Page migrated locally.</p>
+          <p class="lead">Protect access to your app with role-based authentication and secure session handling.</p>
         </div>
       </header>
 
       <section class="section">
-        <h2>Content</h2>
-        <p>Detailed content migration in progress.</p>
+        <h2>Authentication model</h2>
+        <ul>
+          <li>Define user roles and authorization boundaries.</li>
+          <li>Secure sign-in and sign-out flows across all entry points.</li>
+          <li>Protect sensitive screens with explicit access rules.</li>
+        </ul>
+      </section>
+
+      <section class="section">
+        <h2>Implementation steps</h2>
+        <ol>
+          <li>Configure identity source and token lifecycle.</li>
+          <li>Bind user profile state using <a href="variables-54.html">Variables</a>.</li>
+          <li>Add guarded transitions in <a href="screen-sequence-editor-23.html">Screen sequence editor</a>.</li>
+          <li>Test session expiry and unauthorized access in <a href="simulation-6.html">Simulation</a>.</li>
+        </ol>
+      </section>
+
+      <section class="section">
+        <h2>Security checks</h2>
+        <p>Validate token expiration handling, logout cleanup, and least-privilege access before publishing.</p>
       </section>
     </main>
   </div>
