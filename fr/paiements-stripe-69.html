@@ -15,23 +15,43 @@
 
     <main class="main">
       <header class="section hero" id="welcome">
-        <img class="hero-banner" src="../assets/images/hero-banner.webp" alt="Banniere du studio Zyllio">
+        <img class="hero-banner" src="../assets/images/hero-banner.png" alt="Banniere du studio Zyllio">
         <div class="hero-body">
           <span class="kicker">Documentation</span>
           <h1>Paiements Stripe</h1>
-          <p class="lead">Page migree localement.</p>
+          <p class="lead">Intégrez des parcours de paiement sécurisés avec Stripe pour abonnements, paiements uniques et checkout.</p>
         </div>
       </header>
 
       <section class="section">
-        <h2>Contenu</h2>
-        <p>Contenu en cours de migration detaillee.</p>
+        <h2>Architecture de paiement</h2>
+        <ul>
+          <li>Utiliser des endpoints backend pour créer et confirmer les intentions de paiement.</li>
+          <li>Stocker uniquement des métadonnées non sensibles côté application.</li>
+          <li>Mapper les statuts de paiement vers des états UI explicites.</li>
+        </ul>
+      </section>
+
+      <section class="section">
+        <h2>Checklist d'implémentation</h2>
+        <ol>
+          <li>Configurer les clés Stripe de façon sécurisée, secrets côté serveur uniquement.</li>
+          <li>Créer des actions de paiement déclenchées depuis des flux validés.</li>
+          <li>Gérer succès, en attente, annulation et échec.</li>
+          <li>Valider de bout en bout en <a href="simulation-6.html">Simulation</a> avant <a href="publications-5.html">Publications</a>.</li>
+        </ol>
+      </section>
+
+      <section class="section">
+        <h2>Rappel conformité</h2>
+        <p>Respectez les obligations PCI, les conditions légales et la réglementation locale sur les paiements en production.</p>
       </section>
     </main>
   </div>
 <script src="../assets/js/sidebar-shell.js"></script>
 </body>
 </html>
+
 
 
 

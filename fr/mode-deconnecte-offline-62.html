@@ -15,23 +15,43 @@
 
     <main class="main">
       <header class="section hero" id="welcome">
-        <img class="hero-banner" src="../assets/images/hero-banner.webp" alt="Banniere du studio Zyllio">
+        <img class="hero-banner" src="../assets/images/hero-banner.png" alt="Banniere du studio Zyllio">
         <div class="hero-body">
           <span class="kicker">Documentation</span>
           <h1>Mode déconnecté offline</h1>
-          <p class="lead">Page migree localement.</p>
+          <p class="lead">Maintenez l'app utilisable en connectivité faible ou absente avec un comportement offline robuste.</p>
         </div>
       </header>
 
       <section class="section">
-        <h2>Contenu</h2>
-        <p>Contenu en cours de migration detaillee.</p>
+        <h2>Bases d'architecture offline</h2>
+        <ul>
+          <li>Mettre en cache les données critiques pour les tâches principales.</li>
+          <li>Mettre en file locale les actions utilisateur sans réseau.</li>
+          <li>Synchroniser au retour réseau avec stratégie de résolution de conflit.</li>
+        </ul>
+      </section>
+
+      <section class="section">
+        <h2>Étapes d'implémentation</h2>
+        <ol>
+          <li>Définir les écrans et actions qui doivent fonctionner hors ligne.</li>
+          <li>Ajouter des indicateurs explicites d'état réseau dans l'UI.</li>
+          <li>Concevoir politiques de retry et règles de réconciliation.</li>
+          <li>Valider les bascules online/offline en <a href="simulation-6.html">Simulation</a>.</li>
+        </ol>
+      </section>
+
+      <section class="section">
+        <h2>Confiance utilisateur</h2>
+        <p>Affichez toujours si les données sont synchronisées, en attente ou en échec pour garder la confiance des utilisateurs.</p>
       </section>
     </main>
   </div>
 <script src="../assets/js/sidebar-shell.js"></script>
 </body>
 </html>
+
 
 
 

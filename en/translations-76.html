@@ -15,23 +15,43 @@
 
     <main class="main">
       <header class="section hero" id="welcome">
-        <img class="hero-banner" src="../assets/images/hero-banner.webp" alt="Zyllio studio banner">
+        <img class="hero-banner" src="../assets/images/hero-banner.png" alt="Zyllio studio banner">
         <div class="hero-body">
           <span class="kicker">Documentation</span>
           <h1>Translations</h1>
-          <p class="lead">Page migrated locally.</p>
+          <p class="lead">Build multilingual experiences with a consistent localization strategy across content and UI labels.</p>
         </div>
       </header>
 
       <section class="section">
-        <h2>Content</h2>
-        <p>Detailed content migration in progress.</p>
+        <h2>Localization model</h2>
+        <ul>
+          <li>Centralize keys and avoid hard-coded strings in screens.</li>
+          <li>Define fallback language behavior for missing entries.</li>
+          <li>Keep terminology aligned between product and documentation.</li>
+        </ul>
+      </section>
+
+      <section class="section">
+        <h2>Implementation workflow</h2>
+        <ol>
+          <li>Create translation dictionaries per language and domain.</li>
+          <li>Bind UI labels to keys instead of literal text.</li>
+          <li>Test language switching and layout expansion constraints.</li>
+          <li>Review localized flows in <a href="simulation-6.html">Simulation</a>.</li>
+        </ol>
+      </section>
+
+      <section class="section">
+        <h2>Quality standards</h2>
+        <p>Run regular localization reviews to catch inconsistent labels, truncation issues, and untranslated fallback strings.</p>
       </section>
     </main>
   </div>
 <script src="../assets/js/sidebar-shell.js"></script>
 </body>
 </html>
+
 
 
 

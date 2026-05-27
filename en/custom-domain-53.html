@@ -15,23 +15,44 @@
 
     <main class="main">
       <header class="section hero" id="welcome">
-        <img class="hero-banner" src="../assets/images/hero-banner.webp" alt="Zyllio studio banner">
+        <img class="hero-banner" src="../assets/images/hero-banner.png" alt="Zyllio studio banner">
         <div class="hero-body">
           <span class="kicker">Documentation</span>
           <h1>Custom domain</h1>
-          <p class="lead">Page migrated locally.</p>
+          <p class="lead">Publish your web experience on a branded domain with secure DNS and certificate configuration.</p>
         </div>
       </header>
 
       <section class="section">
-        <h2>Content</h2>
-        <p>Detailed content migration in progress.</p>
+        <h2>Domain setup flow</h2>
+        <ol>
+          <li>Choose a production domain and verify ownership.</li>
+          <li>Create DNS records according to your deployment target.</li>
+          <li>Configure HTTPS certificate and redirection policy.</li>
+          <li>Validate routing after deployment in all supported environments.</li>
+        </ol>
+      </section>
+
+      <section class="section">
+        <h2>Go-live checklist</h2>
+        <ul>
+          <li>HTTPS enforced on all routes.</li>
+          <li>Canonical domain configured and redirects tested.</li>
+          <li>No mixed content warnings in browser console.</li>
+          <li>Domain change reflected in communication templates.</li>
+        </ul>
+      </section>
+
+      <section class="section">
+        <h2>Rollback plan</h2>
+        <p>Prepare a DNS rollback window and fallback hostname to minimize downtime if propagation issues occur.</p>
       </section>
     </main>
   </div>
 <script src="../assets/js/sidebar-shell.js"></script>
 </body>
 </html>
+
 
 
 

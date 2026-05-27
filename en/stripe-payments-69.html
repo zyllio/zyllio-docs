@@ -15,23 +15,43 @@
 
     <main class="main">
       <header class="section hero" id="welcome">
-        <img class="hero-banner" src="../assets/images/hero-banner.webp" alt="Zyllio studio banner">
+        <img class="hero-banner" src="../assets/images/hero-banner.png" alt="Zyllio studio banner">
         <div class="hero-body">
           <span class="kicker">Documentation</span>
           <h1>Stripe payments</h1>
-          <p class="lead">Page migrated locally.</p>
+          <p class="lead">Integrate secure payment flows with Stripe for subscriptions, one-time charges, and checkout actions.</p>
         </div>
       </header>
 
       <section class="section">
-        <h2>Content</h2>
-        <p>Detailed content migration in progress.</p>
+        <h2>Payment architecture</h2>
+        <ul>
+          <li>Use backend endpoints for payment intent creation and confirmation.</li>
+          <li>Store only non-sensitive transaction metadata in app state.</li>
+          <li>Map payment status to user-visible states in your screens.</li>
+        </ul>
+      </section>
+
+      <section class="section">
+        <h2>Implementation checklist</h2>
+        <ol>
+          <li>Configure Stripe keys securely and isolate secrets server-side.</li>
+          <li>Create payment actions triggered from validated user flows.</li>
+          <li>Handle success, pending, cancellation, and failure outcomes.</li>
+          <li>Validate end-to-end in <a href="simulation-6.html">Simulation</a> before <a href="publications-5.html">Publications</a>.</li>
+        </ol>
+      </section>
+
+      <section class="section">
+        <h2>Compliance reminder</h2>
+        <p>Follow PCI responsibilities, legal terms, and regional payment regulations for production deployments.</p>
       </section>
     </main>
   </div>
 <script src="../assets/js/sidebar-shell.js"></script>
 </body>
 </html>
+
 
 
 

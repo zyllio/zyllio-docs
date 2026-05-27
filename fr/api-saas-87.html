@@ -15,23 +15,43 @@
 
     <main class="main">
       <header class="section hero" id="welcome">
-        <img class="hero-banner" src="../assets/images/hero-banner.webp" alt="Banniere du studio Zyllio">
+        <img class="hero-banner" src="../assets/images/hero-banner.png" alt="Banniere du studio Zyllio">
         <div class="hero-body">
           <span class="kicker">Documentation</span>
           <h1>API SaaS</h1>
-          <p class="lead">Page migree localement.</p>
+          <p class="lead">Exposez des services API SaaS robustes pour connecter votre application à des clients externes de manière sécurisée.</p>
         </div>
       </header>
 
       <section class="section">
-        <h2>Contenu</h2>
-        <p>Contenu en cours de migration detaillee.</p>
+        <h2>Principes de conception API</h2>
+        <ul>
+          <li>Définir des contrats d'endpoint stables et versionnés.</li>
+          <li>Documenter schémas de payload, erreurs et quotas.</li>
+          <li>Implémenter une authentification adaptée (token, clé API, SSO).</li>
+        </ul>
+      </section>
+
+      <section class="section">
+        <h2>Checklist de mise en oeuvre</h2>
+        <ol>
+          <li>Structurer les ressources et conventions de nommage.</li>
+          <li>Appliquer rate limiting et politiques de retry.</li>
+          <li>Superviser latence, disponibilité et erreurs métiers.</li>
+          <li>Tester les parcours critiques avec <a href="integration-rest-52.html">Integration Rest</a>.</li>
+        </ol>
+      </section>
+
+      <section class="section">
+        <h2>Exploitation</h2>
+        <p>Publiez un changelog API et annoncez les dépréciations suffisamment tôt pour limiter les ruptures côté clients.</p>
       </section>
     </main>
   </div>
 <script src="../assets/js/sidebar-shell.js"></script>
 </body>
 </html>
+
 
 
 
