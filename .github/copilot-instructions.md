@@ -45,6 +45,15 @@ When migrating a page, reproduce the source page with strict fidelity.
 3. Keep the exact source wording inside the callout (no paraphrase).
 4. Use the shared callout styles from `assets/css/callouts.css` via the global stylesheet import chain.
 5. For warning blocks, preserve the visual danger marker used in the project (`⚠️` via `.callout.error::before`).
+6. For information blocks, preserve the project visual marker (blue info badge from `.callout.info::before`) and blue information styling.
+
+## Tables (mandatory fidelity)
+1. When the source page contains a table, reproduce that table in the migrated page.
+2. Keep the exact table structure: same headers, same row order, same column order, and same wording.
+3. Do not replace source tables with plain paragraphs, bullet lists, or generic summary text.
+4. Keep the table at the same semantic position in the section flow (for example right after "Les paramètres suivants sont requis.").
+5. If the source table text cannot be extracted reliably from available tools, do not invent values.
+6. In that case, keep the source visual/table image in the same position and report the table as "needs manual extraction" in the migration report.
 
 ## Standard migration workflow (one page at a time)
 1. Identify source page URL and target local file.
@@ -52,6 +61,7 @@ When migrating a page, reproduce the source page with strict fidelity.
 	- page title
 	- meta description
 	- exact headings and paragraph text
+	- exact tables (headers + rows + order)
 	- image references and section order
 3. Open the target local file and compare section-by-section.
 4. Update content with exact source wording.
@@ -72,9 +82,10 @@ When migrating a page, reproduce the source page with strict fidelity.
 2. Meta description matches source.
 3. Headings match source.
 4. Body text matches source character-by-character as available.
-5. Images are present and vertically/structurally placed like source.
-6. No placeholders remain.
-7. No editor errors on modified files.
+5. Tables match source structure and wording.
+6. Images are present and vertically/structurally placed like source.
+7. No placeholders remain.
+8. No editor errors on modified files.
 
 ## Reporting format for each migrated page
 1. Source URL

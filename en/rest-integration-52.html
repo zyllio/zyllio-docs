@@ -18,32 +18,143 @@
         <img class="hero-banner" src="../assets/images/hero-banner.png" alt="Zyllio studio banner">
         <div class="hero-body">
           <span class="kicker">Documentation</span>
-          <h1>REST integration</h1>
-          <p class="lead">Connect your app to external APIs for read/write operations with controlled flows.</p>
+          <h1>REST Integration</h1>
+          <p class="lead">This integration allows you to connect an external data source to your Zyllio application.</p>
         </div>
       </header>
 
       <section class="section">
-        <h2>Integration setup</h2>
-        <ol>
-          <li>Define endpoint purpose and expected payload contracts.</li>
-          <li>Store base URLs and tokens in secure configuration variables.</li>
-          <li>Map API responses to your UI model in <a href="screen-editor-8.html">Screen editor</a>.</li>
-        </ol>
+        <p class="callout info">Available from the Enterprise plan.</p>
+        <p>This external system must expose a REST API, which is the current standard for data exchange between systems.</p>
+        <p>This integration enables you to query, create, and update external data.</p>
       </section>
 
       <section class="section">
-        <h2>Reliability practices</h2>
+        <h2>Configurations</h2>
+        <p>It is necessary to provide the configurations for your REST integrations from the Settings tab, then Integrations.</p>
+        <p>Enable the REST integration by clicking on Enable.</p>
+        <figure class="visual">
+          <img src="https://codaio.imgix.net/docs/yInGcUUiFK/blobs/bl-z_UeIQvdAQ/25e7187040f38f3a74346326e8274f1e155cfabf2fd386b9be116bd7d960f39253fb88cf7cf04e007770e4ecb5af9d03c58ab0d0e264714c7ea7484989182884711e40d9e4fe06f5c9e6cd464e93fe6ef83a190ad6088688ae425edfc57d70790cab5373?fit=max&fm=webp&lossless=true" alt="REST integration configuration">
+        </figure>
+        <p>Zyllio allows you to define as many REST configurations as needed. A REST configuration enables you to set the parameters for the REST service (Endpoint URL, Headers, etc.).</p>
         <ul>
-          <li>Handle timeout and HTTP errors explicitly.</li>
-          <li>Provide user feedback for loading and failure states.</li>
-          <li>Validate fallback behavior in <a href="simulation-6.html">Simulation</a>.</li>
+          <li>A first integration with XANO.</li>
+          <li>A second integration with BigQuery.</li>
+          <li>A third integration with Instagram.</li>
         </ul>
       </section>
 
       <section class="section">
-        <h2>Security baseline</h2>
-        <p>Never expose raw secrets in client views. Route sensitive operations through protected backend endpoints when needed.</p>
+        <h2>Defining a REST Configuration</h2>
+        <p>Click on the + button to add a configuration.</p>
+        <p>The following parameters are required.</p>
+        <table class="doc-table">
+          <thead>
+            <tr>
+              <th>Parameter</th>
+              <th>Example value</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Name</td>
+              <td>Retrieve memes</td>
+            </tr>
+            <tr>
+              <td>Endpoint URL</td>
+              <td>https://api.imgflip.com/get_memes</td>
+            </tr>
+            <tr>
+              <td>Headers</td>
+              <td>Authorization: Bearer AZERTYUIOP1234567890</td>
+            </tr>
+          </tbody>
+        </table>
+        <figure class="visual">
+          <img src="https://codaio.imgix.net/docs/yInGcUUiFK/blobs/bl-IDvI55B0o7/27e4040e230339be652fe6e51f5ab0243f7b8120f94d3588eced30c5c1e91dd68625b08b93de0335f028d531299e1490ab3f82d60877b4883b64cfacdcf044fe54ee3c67d73bb55d3e4ece2ff0d663fb03f948a4b454c29e5eced733523eed1fb16960e7?fit=max&fm=webp&lossless=true" alt="Example of a REST configuration">
+        </figure>
+      </section>
+
+      <section class="section">
+        <h2>Triggering a REST Request</h2>
+        <p>Actions are available in the REST section of the action editor. There is one action for each type of request: GET, PATCH, PUT, POST, DELETE.</p>
+
+        <h3>Query Request</h3>
+        <p>The Get Request action allows you to query an external data source.</p>
+        <figure class="visual">
+          <img src="https://codaio.imgix.net/docs/yInGcUUiFK/blobs/bl-h2dWPz71El/13a16c4f3bd389d3f5c2208ed780f5375458c8102ef669256ebd0ecd02b29676bf551cda2c9f18ca01e1c51e443d5bb2b2b43ff4bea0a4ef2bafd52ab736dd0f1a3e3e25fcd7fb7ddb1d5b0fcbc7b4d4849aa9a0ffcd3a93f45e1d41374944a61a6ba4bb?fit=max&fm=webp&lossless=true" alt="Example GET request">
+        </figure>
+        <p>The following parameters are available.</p>
+        <table class="doc-table">
+          <thead>
+            <tr>
+              <th>Parameter</th>
+              <th>Example value</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Variable</td>
+              <td>meme</td>
+            </tr>
+            <tr>
+              <td>REST Configuration</td>
+              <td>Retrieve memes</td>
+            </tr>
+            <tr>
+              <td>Additional path</td>
+              <td>(empty)</td>
+            </tr>
+            <tr>
+              <td>Request parameters</td>
+              <td>(empty)</td>
+            </tr>
+            <tr>
+              <td>Response expression</td>
+              <td>data.memes[0]</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h3>Response Expression</h3>
+        <p>A response expression allows you to select the data you want to extract from the JSON response.</p>
+        <p>The following public REST service: https://api.imgflip.com/get_memes returns this JSON structure.</p>
+        <p>A response expression allows you to select only the data that the mobile application needs.</p>
+
+        <h3>Creation Request</h3>
+        <p>The Post Request action allows the REST service to create a data or data structure.</p>
+
+        <h3>Update Request</h3>
+        <p>The Put Request action allows the REST service to update a data or data structure.</p>
+
+        <h3>Delete Request</h3>
+        <p>The Delete Request action allows the REST service to delete a data or data structure.</p>
+
+        <h3>Partial Update Request</h3>
+        <p>The Patch Request action allows the REST service to update a single property of a data. It is not necessary to provide all the properties of that data.</p>
+      </section>
+
+      <section class="section">
+        <h2>Display a REST Data</h2>
+
+        <h3>Simple Data</h3>
+        <p>The data stored by the REST action can be simple, especially through the use of a response expression. For example: 'Paris', 'True', or 123.</p>
+        <p>In this case, the component on the screen can refer to this data directly.</p>
+        <figure class="visual">
+          <img src="https://codaio.imgix.net/docs/yInGcUUiFK/blobs/bl-gqoGnMa87L/0e84d3b7c85617fe66c4001f0031383e659983c7a7a8495e1e93e3d79e6303e4a0218a1496b1de83e9cf93b4e2da70081cb9b117846c101238e14780ef6169559ceabf3a581d3668c943fbde66a2ac5c2007c7c55dbb4aceb5484eb624782c4b7394657b?fit=max&fm=webp&lossless=true" alt="LabelText displays meme name">
+        </figure>
+
+        <h3>Structured Data</h3>
+        <p>The data stored by the REST action can be structured and can contain properties, for example, a meme with all its properties: id, name, and url.</p>
+        <p>In this case, a formula that uses the JSON Query function allows you to select the properties to display. Below, the LabelText component calls a formula that uses the JSON Query function. This function defines two properties.</p>
+        <figure class="visual">
+          <img src="https://codaio.imgix.net/docs/yInGcUUiFK/blobs/bl-8BXSwvs4B7/0d56f78228b17bf66d774d4c367a7b2ac4248e16e910e8ff48803044e1c2523e1b94ff48ad6b8b5399028f12e3da78212dc6d8f1f8fa8b031387568bac0746634f4b02f373e03080e3243d126f2b6e5991cebb1e48c83a9ebf0a68b0592eab5a063ca5a8?fit=max&fm=webp&lossless=true" alt="JSON Query with structured data">
+        </figure>
+        <p>Here is the screen in operation in the simulator.</p>
+        <figure class="visual">
+          <img src="https://codaio.imgix.net/docs/yInGcUUiFK/blobs/bl--aiLb5Px5b/f53dd2fb1ec5fb32a2ad5976cafb16355e4fb1169b03c60aafbdf3765219ae9d2235b221cf53a3688504a18afd02a33a2d17daf684e36f88867e7a45756930dd4d7d9847fa321c6d37ab06848bf72fc7ff0a6feb99f0197c2c744efc10464c1b79ed6521?fit=max&fm=webp&lossless=true" alt="REST structured data simulator screen">
+        </figure>
+        <p class="callout info">Once the REST request is executed, the JSON Query function can be used as many times as needed without generating additional REST requests.</p>
       </section>
     </main>
   </div>

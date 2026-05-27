@@ -1,0 +1,25 @@
+.doc-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+  margin-bottom: 12px;
+  font-size: 0.95rem;
+}
+
+.doc-table th,
+.doc-table td {
+  border: 1px solid var(--line);
+  padding: 8px 10px;
+  text-align: left;
+  vertical-align: top;
+}
+
+.doc-table thead th {
+  background: #f4f8fb;
+  color: #1e3f55;
+  font-weight: 700;
+}
+
+.doc-table tbody tr:nth-child(even) {
+  background: #fbfdff;
+}
