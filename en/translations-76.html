@@ -14,37 +14,74 @@
     </aside>
 
     <main class="main">
-      <header class="section hero" id="welcome">
-        <img class="hero-banner" src="../assets/images/hero-banner.png" alt="Zyllio studio banner">
-        <div class="hero-body">
-          <span class="kicker">Documentation</span>
-          <h1>Translations</h1>
-          <p class="lead">Build multilingual experiences with a consistent localization strategy across content and UI labels.</p>
-        </div>
-      </header>
+      <section class="section" id="welcome">
+        <h1>Translations</h1>
+        <p>The translation of a mobile application is a key element to reach an international audience and provide a personalized user experience.</p>
+        <p>This documentation guides you step by step to implement a multilingual translation system in your application.</p>
 
-      <section class="section">
-        <h2>Localization model</h2>
+        <h2>Use the "Translations" table for labels</h2>
+        <p>To manage translations, Zyllio offers a predefined table named <strong>Translations</strong>. This table is located in the <strong>Database</strong> tab and already contains examples of translated labels to help you get started.</p>
+
+        <h3>Structure of the "Translations" table</h3>
+        <p>The <strong>Translations</strong> table is organized as follows:</p>
         <ul>
-          <li>Centralize keys and avoid hard-coded strings in screens.</li>
-          <li>Define fallback language behavior for missing entries.</li>
-          <li>Keep terminology aligned between product and documentation.</li>
+          <li><strong>First column</strong>: The name of the label. Each label must be unique and represents the text you want to display in your application.</li>
+          <li><strong>Following columns</strong>: Each column represents a language, according to the ISO standard (for example: <code>fr</code> for French, <code>en</code> for English, <code>es</code> for Spanish, etc.). These columns contain the translations of the corresponding label.</li>
         </ul>
-      </section>
 
-      <section class="section">
-        <h2>Implementation workflow</h2>
-        <ol>
-          <li>Create translation dictionaries per language and domain.</li>
-          <li>Bind UI labels to keys instead of literal text.</li>
-          <li>Test language switching and layout expansion constraints.</li>
-          <li>Review localized flows in <a href="simulation-6.html">Simulation</a>.</li>
-        </ol>
-      </section>
+        <p>Example of <strong>Translations</strong> table</p>
+        <table class="doc-table">
+          <thead>
+            <tr>
+              <th>Nom du libellé</th>
+              <th>fr</th>
+              <th>en</th>
+              <th>es</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>welcome_message</td>
+              <td>Bienvenue</td>
+              <td>Welcome</td>
+              <td>Bienvenido</td>
+            </tr>
+            <tr>
+              <td>button_submit</td>
+              <td>Soumettre</td>
+              <td>Submit</td>
+              <td>Enviar</td>
+            </tr>
+            <tr>
+              <td>error_not_found</td>
+              <td>Non trouvé</td>
+              <td>Not found</td>
+              <td>No encontrado</td>
+            </tr>
+          </tbody>
+        </table>
 
-      <section class="section">
-        <h2>Quality standards</h2>
-        <p>Run regular localization reviews to catch inconsistent labels, truncation issues, and untranslated fallback strings.</p>
+        <p>Fill this table with the labels and their translations for all the languages supported by your application.</p>
+        <figure class="visual">
+          <img src="https://codaio.imgix.net/docs/yInGcUUiFK/blobs/bl-eo9HmVCuLI/81a59d0b7b08c10af3e01f2d83cffd664306d8ade89617b6b278f999598131df15c8508fdbaa430e6573bdd677a01b7dc805116738dacc336c0a766fa888d9569466a74de7d840640b3783b48c59d0fcb893fdb1ace091d6ef4cf73c2cdae60b764ef050?fit=max&fm=webp&lossless=true" alt="Example of Translations table">
+        </figure>
+        <p>Example of Translations table</p>
+
+        <h2>Use the "Translate" formula in components</h2>
+        <p>Once the <strong>Translations</strong> table is completed, you can integrate the translations into your application using the <strong>Translate</strong> formula. This formula is used in display components (such as texts, buttons, etc.) present on your screens.</p>
+
+        <p>Properties of the "Translate" formula</p>
+        <ul>
+          <li><strong>Translations table</strong>: Reference the <strong>Translations</strong> table.</li>
+          <li><strong>Label name</strong>: Specify the label name as defined in the first column of the table.</li>
+        </ul>
+
+        <figure class="visual">
+          <img src="https://codaio.imgix.net/docs/yInGcUUiFK/blobs/bl-ahAjbByIwz/8c8421791c5b1f8dd9fd1cedc0d6daf1e85df7b4a85d3f2cef9436dd97d72c2c5742c95b3a9ca104b332e4a19edb889e30bf4be2c682bf55a8a8b449665ed4473c1e4b913227c5e549bb64361fe87c6dfb4926b64ac41941229a4723f1a27f99661647b2?fit=max&fm=webp&lossless=true" alt="Translate formula usage">
+        </figure>
+        <p>Translate Formula usage</p>
+
+        <p class="callout info">When the application is launched, the user's language is automatically detected. This means that if the user has set their device to French, the labels in French will be displayed by default. If the user's language is not supported, the first language defined in the Translations table will be used.</p>
       </section>
     </main>
   </div>
