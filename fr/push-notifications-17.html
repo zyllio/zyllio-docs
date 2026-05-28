@@ -19,32 +19,61 @@
         <div class="hero-body">
           <span class="kicker">Documentation</span>
           <h1>Push Notifications</h1>
-          <p class="lead">Diffusez des notifications au bon moment pour relancer l'engagement sans saturer les utilisateurs.</p>
+          <p class="lead">Les Push Notifications sont des messages envoyés directement à un appareil mobile, même lorsque l'application n'est pas ouverte ou en cours d'exécution.</p>
         </div>
       </header>
 
       <section class="section">
-        <h2>Stratégie de notification</h2>
+        <p class="callout info">Disponible depuis le plan Enterprise.</p>
+        <p>Elles sont un outil essentiel pour garder vos utilisateurs informés en temps réel, leur rappeler des événements importants, ou les inciter à revenir dans l'application.</p>
+        <p>Cette fonctionnalité est disponible aussi bien sur iOS que sur Android, offrant une communication directe avec vos utilisateurs sur les deux plateformes principales.</p>
+        <p>Suivez ces étapes pour activer et configurer les push notifications pour votre projet, que ce soit sur iOS ou Android.</p>
+        <p class="callout info">Les push notifications sont bien prises en charge sur Android, mais leur fiabilité peut fluctuer en fonction du fabricant et de la version du système d'exploitation.</p>
+
+        <h2>Activation des Push Notifications</h2>
+        <p>Pour activer les push notifications dans votre application, allez dans la section Settings (Paramètres) puis dans la section Push Notifications et enfin cliquez sur le bouton Enable (Activer).</p>
+      </section>
+
+      <section class="section">
+        <h2>Activation des Push Notifications dans l'app mobile</h2>
+        <p>Les push notifications nécessitent également d'être activées dans l'application mobile pour chaque utilisateur. Pour cela, vous devrez inclure un écran dédié de votre choix dans l'application, qui demandera aux utilisateurs l'autorisation de recevoir des notifications.</p>
+        <figure class="visual">
+          <img src="https://codaio.imgix.net/docs/6njJ_WqH8k/blobs/bl-gwwmInFScs/6f63836670d68b56029359380e221315ea9f06e2203c7240bf2e7d2d99dd414027161494f2776aab8847f28a7d2b763096d88d67e3c8c21c209f814bbaf8b9cb2851aa0014d77b4078c482ffbe23c46adaea5b55a9a3e97da423c7a5a9ca31c77fb4ba43?fit=max&fm=webp&lossless=true" alt="Exemple d'ecran consentement">
+        </figure>
+        <p>Créez un écran dédié dans votre application qui explique aux utilisateurs pourquoi ils doivent autoriser les notifications.</p>
+        <ol>
+          <li>Ajoutez un bouton pour permettre aux utilisateurs de s'abonner aux notifications.</li>
+          <li>Utilisez l'action Subscribe, elle permet à l'utilisateur de s'inscrire pour recevoir des notifications. Cette action demandera automatiquement la permission à l'utilisateur.</li>
+        </ol>
+        <p>L'action Subscribe possède deux propriétés optionnelles : User et Channel. Ces propriétés vous permettent de configurer la façon dont les notifications sont reçues, en ciblant un utilisateur spécifique ou un groupe d'utilisateurs.</p>
+        <figure class="visual">
+          <img src="https://codaio.imgix.net/docs/6njJ_WqH8k/blobs/bl-ctWfbvy_Ys/5394b982df74411be471fb9c076f7707c1f69e1f7cb1ac2573547ab1ac2e275f928e8774a011e0cdeccd196858f959df43c4332c1fbf8e52afa0515e78a80f1ff8fcd723fd18b63657f805bf08dc31d9382cb2374d458cce4ece5b3108ad7641c5e0b267?fit=max&fm=webp&lossless=true" alt="Action Subscribe proprietes user channel">
+        </figure>
+        <p>Détails des propriétés :</p>
         <ul>
-          <li>Segmenter les audiences par contexte, rôle et pertinence d'action.</li>
-          <li>Définir des niveaux de priorité: transactionnel, rappel, informatif.</li>
-          <li>Limiter la fréquence pour éviter la fatigue de notification.</li>
+          <li>User : Si cette propriété est définie, cela signifie que l'utilisateur actuel recevra les notifications personnalisées qui lui sont destinées.</li>
+          <li>Channel : Si vous souhaitez envoyer des notifications à un groupe d'utilisateurs, vous pouvez définir cette propriété avec un nom de canal (par exemple : abonnés premium, visiteurs, utilisateurs internes, ...). Tous les utilisateurs abonnés à ce canal recevront les notifications.</li>
+          <li>Paramètres vides : Si les deux propriétés sont laissées vides, l'utilisateur sera abonné pour recevoir toutes les notifications générales.</li>
         </ul>
       </section>
 
       <section class="section">
-        <h2>Parcours d'implémentation</h2>
+        <h2>Envoyer des notifications aux utilisateurs</h2>
+        <p>Une fois que vos utilisateurs sont abonnés, vous pouvez leur envoyer des notifications en fonction de leur abonnement à un canal ou individuellement.</p>
+        <p class="callout info">L'utilisateur devra avoir installé l'application pour pouvoir recevoir les push notifications.</p>
+        <p>Voici les actions que vous pouvez utiliser pour envoyer des notifications :</p>
         <ol>
-          <li>Capturer token appareil et consentement pendant l'onboarding.</li>
-          <li>Déclencher les pushes depuis des règles métier backend.</li>
-          <li>Configurer des deep-links vers les écrans cibles.</li>
-          <li>Suivre taux d'ouverture et conversion dans le <a href="tableau-de-bord-7.html">Tableau de bord</a>.</li>
+          <li><strong>Send to all (Envoyer à tous)</strong> : Utilisez cette action pour envoyer une notification à tous les utilisateurs qui ont activé les push notifications.</li>
+          <li><strong>Send to channel (Envoyer à un canal)</strong> : Avec cette action, vous pouvez envoyer des notifications uniquement aux utilisateurs abonnés à un certain canal. Cela permet de segmenter les notifications selon des groupes d'utilisateurs spécifiques.</li>
+          <li><strong>Send to user (Envoyer à un utilisateur)</strong> : Utilisez cette action pour envoyer une notification à un utilisateur spécifique qui a activé les notifications.</li>
         </ol>
-      </section>
 
-      <section class="section">
-        <h2>Contrôles qualité</h2>
-        <p>Tester le comportement premier plan/arrière-plan, la gestion du opt-out et la planification horaire avant mise en ligne.</p>
+        <h2>Exemple d'utilisation des notifications</h2>
+        <ul>
+          <li>Si vous souhaitez informer tous vos utilisateurs d'une mise à jour, utilisez <strong>Send to All</strong>.</li>
+          <li>Pour envoyer une notification uniquement à vos utilisateurs premium, définissez un canal nommé "premium" et utilisez <strong>Send to Channel</strong> avec ce canal.</li>
+          <li>Pour notifier un utilisateur particulier à propos d'une action dans l'application, utilisez <strong>Send to User</strong> et précisez par exemple son email.</li>
+        </ul>
       </section>
     </main>
   </div>
