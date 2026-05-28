@@ -28,7 +28,6 @@
     "favoris-follower-like-73",
     "transferer-une-application-82",
     "xano-83",
-    "baserow-84",
     "traductions-85",
     "api-saas-87",
     "monetiser-vos-apps-saas-89",

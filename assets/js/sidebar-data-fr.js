@@ -14,11 +14,13 @@
     tutorielsChildren: [
       { slug: "google-sheets-11", label: "📗 Google Sheets" },
       { slug: "airtable-13", label: "🗂️ Airtable" },
+      { slug: "timetonic-88", label: "🕒 Timetonic" },
       { slug: "formules-15", label: "🧮 Formules" },
       { slug: "variables-54", label: "🔣 Variables" },
       { slug: "chat-67", label: "💬 Chat" },
       { slug: "twilio-14", label: "☎️ Twilio" },
       { slug: "authentification-61", label: "🔐 Authentification" },
+      { slug: "sso-90", label: "🛡️ SSO" },
       { slug: "integration-rest-52", label: "🔗 Integration Rest" },
       { slug: "paiements-stripe-69", label: "💳 Paiements Stripe" },
       { slug: "make-70", label: "⚙️ Make" },
@@ -27,6 +29,7 @@
       { slug: "mode-deconnecte-offline-62", label: "📴 Mode déconnecté offline" },
       { slug: "push-notifications-17", label: "🔔 Push Notifications" },
       { slug: "favoris-follower-like-73", label: "❤️ Favoris / Follower / Like" },
+      { slug: "transferer-une-application-82", label: "🔁 Transférer une application" },
       { slug: "xano-83", label: "🧱 Xano" },
       { slug: "traductions-85", label: "🌍 Traductions" }
     ],
