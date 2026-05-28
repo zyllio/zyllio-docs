@@ -55,6 +55,37 @@ When migrating a page, reproduce the source page with strict fidelity.
 5. If the source table text cannot be extracted reliably from available tools, do not invent values.
 6. In that case, keep the source visual/table image in the same position and report the table as "needs manual extraction" in the migration report.
 
+### How to process tables (required workflow)
+1. Locate each source table in reading order and note the exact section where it appears.
+2. Extract all table headers first, then all rows in the same order.
+3. Build the HTML table with semantic tags (`table`, `thead`, `tbody`, `th`, `td`) and keep wording exactly as source.
+4. Insert the table exactly where it appears in source flow (usually after the lead sentence introducing parameters).
+5. Keep the corresponding source image/screenshot if it exists; the table does not replace unrelated visuals.
+6. Validate parity after insertion: header count, row count, column order, and wording must match source.
+
+### Table HTML template
+```html
+<table class="doc-table">
+	<thead>
+		<tr>
+			<th>Header 1</th>
+			<th>Header 2</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>Row 1 Col 1</td>
+			<td>Row 1 Col 2</td>
+		</tr>
+	</tbody>
+</table>
+```
+
+### Extraction fallback rule
+1. If OCR/web extraction is ambiguous for one or more cells, do not guess.
+2. Keep the source table image in place.
+3. Mark the page report with: `Table needs manual extraction` and specify the section title.
+
 ## Standard migration workflow (one page at a time)
 1. Identify source page URL and target local file.
 2. Extract source page data:
