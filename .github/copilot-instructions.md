@@ -4,6 +4,10 @@
 This repository contains a local documentation mirror.
 When migrating a page, reproduce the source page with strict fidelity.
 
+## Source documentation URLs
+1. French source: `https://docs.zyllio.com/`
+2. English source: `https://docs-en.zyllio.com/`
+
 ## Non-negotiable rules
 1. Text must be exactly the same as the source page.
 2. Images must be exactly the same as the source page (same semantic position and same section placement).
