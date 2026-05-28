@@ -14,29 +14,63 @@
     </aside>
 
     <main class="main">
-      <header class="section hero" id="welcome">
-        <img class="hero-banner" src="../assets/images/hero-banner.png" alt="Banniere du studio Zyllio">
-        <div class="hero-body">
-          <span class="kicker">Documentation</span>
-          <h1>Faq</h1>
-          <p class="lead">Réponses rapides aux questions fréquentes pour débloquer configuration, publication et exploitation.</p>
-        </div>
-      </header>
+      <section class="section" id="welcome">
+        <h1>FAQ</h1>
 
-      <section class="section">
-        <h2>Questions fréquentes</h2>
-        <p><strong>Comment démarrer rapidement ?</strong><br>Commencez par <a href="premiere-application-50.html">Première application</a>, puis validez votre parcours en <a href="simulation-6.html">Simulation</a>.</p>
-        <p><strong>Pourquoi mon écran ne se met pas à jour ?</strong><br>Vérifiez les liaisons dans l'<a href="editeur-decrans-8.html">Editeur d'ecrans</a> et les variables d'état dans <a href="variables-54.html">Variables</a>.</p>
-        <p><strong>Comment corriger des erreurs API ?</strong><br>Contrôlez endpoint, authentification et format de payload depuis <a href="integration-rest-52.html">Integration Rest</a>.</p>
-      </section>
+        <h2>Quels sont les formats de QR code supportes</h2>
+        <figure class="visual">
+          <img src="https://codaio.imgix.net/docs/6njJ_WqH8k/blobs/bl-q3EEjiinIB/f86fc3d9d3f26b4c9e997c213d3896906efcf452eca3dfd60a2f549a285197afe8f00b782df661ebe8dfe40027a5dd24a989ea33bde6b5923c8f955a84ef639494efd8bc4f7f9c19904ecb00a14bf0a3b4a3f906a71c94ebb8460a0b617b36744b3385c1?fit=max&fm=webp&lossless=true" alt="Formats QR code supportes 1">
+        </figure>
+        <figure class="visual">
+          <img src="https://codaio.imgix.net/docs/6njJ_WqH8k/blobs/bl-lRgpFHsDIa/8b703e94b1c1025623dd95ad9146fadc50f773a2598b7856514232b2d4eb924ffbc25e5546b53e1a6d943ad58dbad0db470cd7f2b6f4b409786bbd7cda37f22d860862c7f33ddd2d68d4d4cb2cbeca27b6bb9d2142920ceb6970e0a62508845695fc6f70?fit=max&fm=webp&lossless=true" alt="Formats QR code supportes 2">
+        </figure>
+        <figure class="visual">
+          <img src="https://codaio.imgix.net/docs/6njJ_WqH8k/blobs/bl-terVRcb5ci/9ac5f684d5a3c85f7a2e44913dfcb4d03d89fc2567af5a19d24b87d3138cfd8b246624c367134cb4cc945b3fd1bab149381414339e42739986325f95ba033522f0863a500e8db000f1737d799e880d23dbc069247863b7690549141551bdd28b09bf98f5?fit=max&fm=webp&lossless=true" alt="Formats QR code supportes 3">
+        </figure>
 
-      <section class="section">
-        <h2>Support et escalade</h2>
-        <ul>
-          <li>Documenter le problème avec étapes de reproduction.</li>
-          <li>Joindre captures d'écran et messages d'erreur exacts.</li>
-          <li>Préciser environnement, version et impact utilisateur.</li>
-        </ul>
+        <h2>Quel est le format de date supporte par Zyllio</h2>
+        <p>Zyllio supporte nativement le format ISO : YYYY-MM-DD HH:mm</p>
+
+        <h2>Quel format de date faut-il definir sur ma colonne date Timetonic</h2>
+        <p>Le format de date defini sur la colonne Timetonic doit etre YYYY-MM-DD</p>
+        <figure class="visual">
+          <img src="https://codaio.imgix.net/docs/6njJ_WqH8k/blobs/bl-XHITLQHf0o/e9de7aad22ab92c87876258e35590fd084cb5c426c12054032ed1d9e3ffa189b6a895f249aefbfc90c4f360d520e43f7165692d8ed27f0d7acfe12172e5f45125d7b04f0d4bcb6bdbd2cb0eff7800e91926ea60ea818e97a824739c546d2600b0e058044?fit=max&fm=webp&lossless=true" alt="Format date Timetonic">
+        </figure>
+
+        <h2>Pourquoi mon composant Navigation n'apparait plus en mode Tablette/Desktop</h2>
+        <p>Le composant Navigation necessite la presence d'un composant Header dans lequel il s'inscrit</p>
+
+        <h2>Erreurs Airtable communes</h2>
+        <table class="doc-table">
+          <thead>
+            <tr>
+              <th>Message</th>
+              <th>Commentaire</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Insuficient permission to create new select option</td>
+              <td>Airtable indique qu'une colonne de type Options recoit une valeur non permise. Cela n'est pas lie a votre Personal Token.<br>Veuillez verifier les champs Options de votre action Zyllio ou bien vos colonnes Airtable.</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h2>Erreurs Timetonic communes</h2>
+        <table class="doc-table">
+          <thead>
+            <tr>
+              <th>Message</th>
+              <th>Commentaire</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Vos donnees ne peuvent pas etre modifiees pour des raisons techniques</td>
+              <td>Verifiez que vous n'avez pas de colonne Attachement unique. Les attachements doivent etre multiples.</td>
+            </tr>
+          </tbody>
+        </table>
       </section>
     </main>
   </div>
