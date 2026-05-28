@@ -19,32 +19,144 @@
         <div class="hero-body">
           <span class="kicker">Documentation</span>
           <h1>Favoris follower like</h1>
-          <p class="lead">Add social engagement mechanics to improve retention and community interactions.</p>
+          <p class="lead">The Favorites / Follower / Like features allow users to save or like specific content.</p>
         </div>
       </header>
 
       <section class="section">
-        <h2>Feature model</h2>
+        <p>They play a key role in enhancing the user experience by enabling personalized interaction and facilitating quick access to important items.</p>
+        <p>The Favorites, Followers, and Like features in Zyllio have similarities. This document uses Favorites as the main example, but the principles described below are also applicable to the other features.</p>
+
+        <h2>Database configuration</h2>
+        <p>To store the Favorites functionality, you need to use a predefined table called Favorites.</p>
+        <p>From the Database tab, move a Favorites table into the workspace.</p>
+        <figure class="visual">
+          <img src="https://codaio.imgix.net/docs/yInGcUUiFK/blobs/bl-822mSJSUHl/b4d1ff3d2f600030c3692c81fe0314860059040356a8a077c47008a032e53942c4be53ece22496bd6dfdec7562892f5077b85ef665bbceb0ceebbc392bf7fef5237fd05cb2ef92ac0ab6c60ec956758e1a2fde2be27ddf0e2c720bc34361a9f808e46e82?fit=max&fm=webp&lossless=true" alt="Favorites table in Database">
+        </figure>
+        <p>The table must contain at least the following columns:</p>
         <ul>
-          <li>Favorites for saved items and quick access.</li>
-          <li>Followers to subscribe to user-generated content.</li>
-          <li>Likes as lightweight feedback and ranking signal.</li>
+          <li>User: This column stores the email address of the user adding a favorite. By default, it is often linked to User/Email.</li>
+          <li>Favorite Item: This column represents the object or item that is marked as a favorite. For example: Products/Id for a product. This column must reference an item uniquely.</li>
         </ul>
+        <p>Example structure of the Favorites table:</p>
+        <table class="doc-table">
+          <thead>
+            <tr>
+              <th>User</th>
+              <th>Favorite Item</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>user1@email.com</td>
+              <td>Product 45887</td>
+            </tr>
+            <tr>
+              <td>user2@email.com</td>
+              <td>Product 11341</td>
+            </tr>
+          </tbody>
+        </table>
       </section>
 
       <section class="section">
-        <h2>Implementation checklist</h2>
-        <ol>
-          <li>Define relationship tables with user, target object, and timestamp.</li>
-          <li>Prevent duplicate actions with unique constraints.</li>
-          <li>Expose counters and personalized state in list/detail screens.</li>
-          <li>Validate performance for high-volume feeds in <a href="simulation-6.html">Simulation</a>.</li>
-        </ol>
+        <h2>Set up authentication</h2>
+        <p>Authentication allows each user to be identified in order to store their Favorites in a distinct and organized data space (for example, via their email). Favorites must be associated with a particular user to ensure they are accessible only to them.</p>
+
+        <h3>Create a users table</h3>
+        <p>In the Database tab, drag a Users table as follows:</p>
+        <figure class="visual">
+          <img src="https://codaio.imgix.net/docs/yInGcUUiFK/blobs/bl-SacGpyf68d/09ec2328a14834cf45fabc3a539afcdc996f6cff4508e81bce6d407d43a41de86ce8163006e7fa65f436c85f67f3fbf7f58d8c2f8379f508cb29f5ed9338d699819cf0c059e1c725d4382e8c711484f1733a7f87ff6687ebadb5c01b84e1ba982241bcfd?fit=max&fm=webp&lossless=true" alt="Users table">
+        </figure>
+        <p class="callout info">Note that this Users table provides 2 example users useful during the design phase of your application.</p>
+        <figure class="visual">
+          <img src="https://codaio.imgix.net/docs/yInGcUUiFK/blobs/bl-6uqW1lAC5x/9a6da4d25544e4e741ad620055d057e934643317109a730c80c2a7e4e973b5980c4433571179988cbb945bfb4ca183bf3ac66b1193eb494e2b17db2fbfd470747ad6c5b5b785748550eba71082c21328134d105f46db68d98d69176fd47ab2f9b0988d2b?fit=max&fm=webp&lossless=true" alt="Sample users">
+        </figure>
+
+        <h3>Create an authentication screen</h3>
+        <p>Select the Login screen template and drag it into the workspace as follows:</p>
+        <figure class="visual">
+          <img src="https://codaio.imgix.net/docs/yInGcUUiFK/blobs/bl-uRD0E24Jed/66a1c8dfa34326ebf166fbae6d395c07aa38d512b229c6285c6147904fe9ded886b805c8a4483764848d6ecfa8e342d4b8e72b5935db229e8aedb1be90f06b263601f33304e2d294f7a3558263f29bfce1c7adb5ec4f465b90bf0831431f4b6c092311eb?fit=max&fm=webp&lossless=true" alt="Login screen">
+        </figure>
       </section>
 
       <section class="section">
-        <h2>Moderation and trust</h2>
-        <p>Include abuse protection, reporting actions, and transparent privacy settings for social features.</p>
+        <h2>Add an items component</h2>
+        <p>Items are information to be favorited. Here we use a catalog of fruits and vegetables.</p>
+        <p>From the Database tab, drag a Products table as follows:</p>
+        <figure class="visual">
+          <img src="https://codaio.imgix.net/docs/yInGcUUiFK/blobs/bl-ey7ub-L6n2/e34f6295dbf36de438b2d632512c436d19b05e1d32e0cb4a8ebba6cb5c21e7fd442e7f4ac25d4b8b3cd8656ffca17ab5f2cbfb114dbe360ba33cbdae50c588892d483781ba9d9967fe4f01a7845adddecd9c4d3ab5c40a8c8f7f8b5bff5b814e180a4e6c?fit=max&fm=webp&lossless=true" alt="Products table">
+        </figure>
+        <p class="callout info">Note that this Products table provides 7 example products useful during the design phase of your application.</p>
+
+        <h3>Display items to favorite</h3>
+        <p>Use the Grid component, for example, to display the products on a new screen and link it to the authentication screen.</p>
+        <figure class="visual">
+          <img src="https://codaio.imgix.net/docs/yInGcUUiFK/blobs/bl-F4c6lu9iAu/0030b1c59c83fbb9ee301b069f5a9a770c1615ca197989f01acc930c9c0f15208a675b9abe9d112540731f128097562222a7829a8eb6372c0ff7f18b7cd3571749347d9bff31d2ae970de1c9f6d631cb232a4b7fd74f0c3f1280d3868f2306ed8b4b570e?fit=max&fm=webp&lossless=true" alt="Grid products">
+        </figure>
+        <p>Add a detail screen as follows.</p>
+        <figure class="visual">
+          <img src="https://codaio.imgix.net/docs/yInGcUUiFK/blobs/bl-5jKcfVrsv6/77b5ae17b4f8fdb9e2220633daef4c56f0c98bbea28f24806bae07f5d5bed98a8fa1fa9c37300ea56bced7761cf1557a1783a284bc599742b01791b2eac985e565120cccb2f671793df3109691b59ae7dab16600c102689703b11afee84d9e10dcc165c1?fit=max&fm=webp&lossless=true" alt="Detail screen">
+        </figure>
+
+        <h3>Add the favorite component</h3>
+        <p>Select the Favorite component, then the Favorites table, and drag the component into the detail screen as follows:</p>
+        <figure class="visual">
+          <img src="https://codaio.imgix.net/docs/yInGcUUiFK/blobs/bl-B2uZ2LBJ93/8f58f819069c1a636f13e0e5803c8def93b3665d9102ba2faf855a33dc78c4beaf13fabd5b528ab2d4af8d438805fc9e4ce437c50524c2b7725789fe36ad1410206fa7e9a3efb68451a3810cdd9c23d756556cd050f6dbb5520cd4675fde91790a0e0be4?fit=max&fm=webp&lossless=true" alt="Favorite component">
+        </figure>
+
+        <h3>Configuration of the favorites component</h3>
+        <p>The component requires configuration to specify the user who owns the Favorite as well as the item to be favorited.</p>
+        <figure class="visual">
+          <img src="https://codaio.imgix.net/docs/yInGcUUiFK/blobs/bl-IFLwKtVbcB/723354b97104be14fa6c6c393da4b8391ea6e2b7bc71aae5743c480d4ccf721eb6687d462b6a9f35ba52e5d305ff8c81ca9d40c7edf932709a5070746ab4ff74c56d5ac474fc51810274fcc1b99385b0045b5eeba0e4645e85abdfa9091fe0b69766171a?fit=max&fm=webp&lossless=true" alt="Favorite component configuration">
+        </figure>
+        <h4>Favorites Component</h4>
+        <table class="doc-table">
+          <thead>
+            <tr>
+              <th>Parameter</th>
+              <th>Description</th>
+              <th>Example</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>User</td>
+              <td>User who owns the favorite</td>
+              <td>Often the authenticated user<br>User/Email</td>
+            </tr>
+            <tr>
+              <td>Item</td>
+              <td>Item to mark as favorite</td>
+              <td>An item selected by the user<br>Products/Name</td>
+            </tr>
+          </tbody>
+        </table>
+        <figure class="visual">
+          <img src="https://codaio.imgix.net/docs/yInGcUUiFK/blobs/bl-pZ2V0dfyDU/c9b5ada6480720f7fc484a23e59c6fb9895e6c8120cc57a5bf89be685cb4706191b92ab7576106bb3668eb37d7a17b6180ee0cc4dd4b92f10f781bdff1ddb6ebf1d0091fb05dd3070587ed304e3ea4a626437420d472604d9c38442265d2dea879599a1a?fit=max&fm=webp&lossless=true" alt="Component properties">
+        </figure>
+
+        <h2>Test favoriting</h2>
+        <p>Run the simulation and test by selecting one of the users.</p>
+        <figure class="visual">
+          <img src="https://codaio.imgix.net/docs/yInGcUUiFK/blobs/bl-F-cNkUhJ8o/35b74f9f260d06e876ba0c9ce4996223b485c8225bf0fda20b7429f8511f7bde3c60c86067adc3b33e4e6ab26197038b1bce9dd5b86c582e74671d6f1eb207b3b0bbcd40f8d58e7b88e82e3882ed9c745c61fce183db1b41b021dfdda92ba1e31d04d90b?fit=max&fm=webp&lossless=true" alt="Test favoriting simulation">
+        </figure>
+        <p>Finally, click on favorite.</p>
+        <p class="callout info">Note that the component automatically adds and removes Favorites.</p>
+        <figure class="visual">
+          <img src="https://codaio.imgix.net/docs/yInGcUUiFK/blobs/bl-aCAdW0wYLr/cc8fb4d69348f9acccb4614b195a5f1646f9afa5a87832bd7a5c08b885e321e0161bcef1efdc388b5593802349e33b6f7e710c11fd45d41c94ea62f96262cd18a6471f836ecf6cda2691ae01132505ad14262a6964c16e85784cb03f58b81d792a7f6c08?fit=max&fm=webp&lossless=true" alt="Automatic add remove favorites">
+        </figure>
+
+        <h2>Adding to favorites without authentication</h2>
+        <p>It is possible to add items to Favorites without authenticating the user. To do this, in the settings of the Favorites component, use the terminal identifier via the formula Terminal / Identifier.</p>
+        <figure class="visual">
+          <img src="https://codaio.imgix.net/docs/yInGcUUiFK/blobs/bl-OLUr75VsPO/8296828343fb77371c3f99b02b6d654b265ff83635228d8dd5ba323aa27267cd4ac2dce1329491ca15283b94ae9905e631b3ff25c5bb1658d6aa836f929d30eeff13b11871858c137c97d43bfb64ae8b6fd182f51b1dcac6bb971cf9836a232b8c106d05?fit=max&fm=webp&lossless=true" alt="Terminal identifier favorites">
+        </figure>
+        <p>You get:</p>
+        <figure class="visual">
+          <img src="https://codaio.imgix.net/docs/yInGcUUiFK/blobs/bl-I6oD9AQK3w/f07bdf18ae80150bf63234ea92dd1e697ef9b27c9e72747ad6aabda02c8588f420b9b9ae629a0952d1923ce3692663a4052950bcb9b95315584b9c3cf88ad75edda45c776db50dec8170635e54fe64799ef0a84c5a507d59711c8e4cad71cdb0ccda1f36?fit=max&fm=webp&lossless=true" alt="Result favorites without auth">
+        </figure>
+        <p class="callout info">Not authenticating the user means that Favorites will only be displayed on the terminal where they were selected.</p>
       </section>
     </main>
   </div>
