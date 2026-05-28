@@ -32,6 +32,8 @@
     ],
     tailItems: [
       { slug: "api-saas-87", label: "🧩 API SAAS" },
+      { slug: "monetiser-vos-apps-saas-89", label: "💰 Monétiser vos apps (SAAS)" },
+      { slug: "parametres-dapplication-91", label: "⚙️ Paramètres d'application" },
       { slug: "faq-86", label: "❓ FAQ" },
       { slug: "generation-de-composants-ia-92", label: "🤖 Generation de composants IA" }
     ]
