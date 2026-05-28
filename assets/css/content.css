@@ -118,3 +118,15 @@
   font-size: 0.82rem;
   margin-top: 28px;
 }
+
+.prompt-block {
+  margin: 10px 0;
+  padding: 10px 14px;
+  border-left: 4px solid #0f8a8d;
+  background: #f6fbfb;
+  border-radius: 0 8px 8px 0;
+}
+
+.prompt-block p {
+  margin: 0;
+}

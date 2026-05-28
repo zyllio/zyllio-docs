@@ -51,6 +51,13 @@ When migrating a page, reproduce the source page with strict fidelity.
 5. For warning blocks, preserve the visual danger marker used in the project (`⚠️` via `.callout.error::before`).
 6. For information blocks, preserve the project visual marker (blue info badge from `.callout.info::before`) and blue information styling.
 
+## Prompt example blocks (new section type)
+1. When the source page shows a list of standalone example prompts as visually separated quote-like blocks, do not keep them as plain paragraphs.
+2. Render each prompt with the dedicated class: `<blockquote class="prompt-block"><p>...</p></blockquote>`.
+3. Keep exact source wording, punctuation, and line breaks semantics inside each prompt block (no paraphrase).
+4. Preserve a visible left border for this block type through shared CSS in `assets/css/content.css`.
+5. Use this section type only when the source explicitly presents this quote-like visual grouping.
+
 ## Tables (mandatory fidelity)
 1. When the source page contains a table, reproduce that table in the migrated page.
 2. Keep the exact table structure: same headers, same row order, same column order, and same wording.

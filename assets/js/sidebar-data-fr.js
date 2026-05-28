@@ -31,6 +31,7 @@
       { slug: "traductions-85", label: "🌍 Traductions" }
     ],
     tailItems: [
+      { slug: "api-saas-87", label: "🧩 API SAAS" },
       { slug: "faq-86", label: "❓ FAQ" },
       { slug: "generation-de-composants-ia-92", label: "🤖 Generation de composants IA" }
     ]

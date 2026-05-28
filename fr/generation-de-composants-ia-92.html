@@ -14,37 +14,86 @@
     </aside>
 
     <main class="main">
-      <header class="section hero" id="welcome">
-        <img class="hero-banner" src="../assets/images/hero-banner.png" alt="Banniere du studio Zyllio">
-        <div class="hero-body">
-          <span class="kicker">Documentation</span>
-          <h1>Génération de composants IA</h1>
-          <p class="lead">Accélérez la conception avec des composants générés par IA tout en gardant contrôle et qualité de production.</p>
-        </div>
-      </header>
+      <section class="section" id="welcome">
+        <h1>Génération de composants IA</h1>
 
-      <section class="section">
-        <h2>Cas d'usage prioritaires</h2>
-        <ul>
-          <li>Générer des structures d'écran standards en quelques secondes.</li>
-          <li>Prototyper rapidement différentes variantes UI.</li>
-          <li>Créer une base réutilisable avant personnalisation métier.</li>
-        </ul>
-      </section>
+        <h2>Exemples</h2>
 
-      <section class="section">
-        <h2>Processus recommandé</h2>
-        <ol>
-          <li>Définir un prompt clair incluant objectif, données et contexte.</li>
-          <li>Générer, puis auditer la sortie dans l'<a href="editeur-decrans-8.html">Editeur d'ecrans</a>.</li>
-          <li>Raccorder logique et variables avant mise en simulation.</li>
-          <li>Documenter les composants validés pour les futures itérations.</li>
-        </ol>
-      </section>
+        <blockquote class="prompt-block">
+          <p>Crée un composant Cartes qui affiche un catalogue de produits sous forme de grille depuis une table. Considère les colonnes images, nom, description, prix (numérique sans devise). Chaque carte affiche en vertical, l'image en haut puis titre, puis description, puis un bouton Ajouter au panier et un bouton Favoris</p>
+        </blockquote>
 
-      <section class="section">
-        <h2>Contrôle qualité</h2>
-        <p>Vérifiez accessibilité, cohérence visuelle et performance avant publication pour éviter les défauts liés à l'auto-génération.</p>
+        <blockquote class="prompt-block">
+          <p>Crée un composant Accordéon qui liste une table avec les propriétés titre (nom de l'accordéon), et dans le contenu dans l'état "ouvert" : sous titre, contenu et image. L'ouverture doit être animée</p>
+        </blockquote>
+
+        <blockquote class="prompt-block">
+          <p>Crée une liste moderne responsive pour chaque item<br>- à gauche: l'image (colonne Image)<br>- à droite en responsive le titre, sous titre en dessous, catégorie (sous forme de pill) dans le coin. possibilité de sélectionner. Affiche une flèche chevron à droite de chaque ligne (à droite de la catégorie). Met aussi une couleur de survol. Et une action de click</p>
+        </blockquote>
+
+        <blockquote class="prompt-block">
+          <p>crée un bouton en forme de losange 2 couleurs</p>
+        </blockquote>
+
+        <blockquote class="prompt-block">
+          <p>crée un composant horloge à aiguille avec possibilité de cacher les nombres</p>
+        </blockquote>
+
+        <blockquote class="prompt-block">
+          <p>Crée un composant "Tabs" statique avec 2 onglets (titre , une icone en utilisant UTF (pas image), contenu)</p>
+        </blockquote>
+
+        <blockquote class="prompt-block">
+          <p>Crée un composant "Onglets dynamiques" moderne dynamique depuis une table avec les colonnes : titre, image avec coin arrondis, contenu</p>
+        </blockquote>
+
+        <blockquote class="prompt-block">
+          <p>Crée un composant Liste verticale avec Titre et sous titre</p>
+        </blockquote>
+
+        <blockquote class="prompt-block">
+          <p>Crée un composant "Swipe card" animé de hauteur 300px environ où l'utilisateur peut retirer des cartes en geste swipe avec la souris depuis une table avec Nom (colonne), Image (colonne) en haut, Description (colonne). Ne met pas de boutons "Précédent" et "Suivant"</p>
+        </blockquote>
+
+        <blockquote class="prompt-block">
+          <p>Crée un composant timeline vertical depuis une table avec les colonnes date et heure, nom évènement , nom speaker, speaker photo. Les dates sont au format YYYY-MM-DD et l'heure au format HH:MM</p>
+        </blockquote>
+
+        <blockquote class="prompt-block">
+          <p>Crée un composant du type jeu Puissance 4</p>
+        </blockquote>
+
+        <blockquote class="prompt-block">
+          <p>Crée un champ de saisie moderne pour nombres avec boutons ronds tout le temps affichés -1 -0.5 +0.5 +1 et champ de saisi au centre</p>
+        </blockquote>
+
+        <blockquote class="prompt-block">
+          <p>Génère un composant UX "product card" sous forme de grille responsive depuis une table pour un e-commerce avec : image produit, titre, description, prix sans devise, un seul bouton "Ajouter". Style moderne, spacing propre, design responsive.</p>
+        </blockquote>
+
+        <blockquote class="prompt-block">
+          <p>Crée un composant widget analytics à partir d'une table</p>
+        </blockquote>
+
+        <blockquote class="prompt-block">
+          <p>crée un composant Kanban moderne et animé à partir d'une table avec colonne (titre, sous titre, statut (a faire, fait, ...). il faut responsive. L'utilisateur doit pouvoir drag dropper les cartes et donc mettre à jour le statut. L'action doit être déclenchée après le drag n drop</p>
+        </blockquote>
+
+        <blockquote class="prompt-block">
+          <p>Crée un composant Audio en utilisant le lecteur HTML5 avec un paramètre Fichier audio (de type fichier) qui est l'URL du son à jouer. Ajoute des boutons +10 secondes et -10 secondes. N'ajoute pas de bouton upload</p>
+        </blockquote>
+
+        <blockquote class="prompt-block">
+          <p>Crée un composant widget moderne analytics à partir d'une table : colonne "metric" et colonne "nom"</p>
+        </blockquote>
+
+        <blockquote class="prompt-block">
+          <p>Crée un composant Bouton qui peut prendre une forme geometric . Utilise des propriétés : forme (carrée, losange, rond, ...), texte et action</p>
+        </blockquote>
+
+        <blockquote class="prompt-block">
+          <p>créer un composant qui prend une propriété Image de type Image. L'image doit être affichée dans ce composant. Si on click sur le composant on doit pouvoir dessigner avec la souris (comme un gros feutre. Prevois un bouton pour valider, cela doit modifier l'image</p>
+        </blockquote>
       </section>
     </main>
   </div>
