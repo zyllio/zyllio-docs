@@ -24,7 +24,7 @@
       { slug: "make-70", label: "⚙️ Make" },
       { slug: "zapier-71", label: "⚡ Zapier" },
       { slug: "domaine-personnalise-53", label: "🌐 Domaine Personnalise" },
-      { slug: "mode-deconnecte-offline-62", label: "📴 Mode deconnecte offline" },
+      { slug: "mode-deconnecte-offline-62", label: "📴 Mode déconnecté offline" },
       { slug: "push-notifications-17", label: "🔔 Push Notifications" },
       { slug: "favoris-follower-like-73", label: "❤️ Favoris / Follower / Like" },
       { slug: "xano-83", label: "🧱 Xano" },

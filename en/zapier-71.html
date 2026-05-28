@@ -19,32 +19,94 @@
         <div class="hero-body">
           <span class="kicker">Documentation</span>
           <h1>Zapier</h1>
-          <p class="lead">Connect Zyllio workflows to external tools quickly with low-code Zapier automations.</p>
+          <p class="lead">Zapier is an online automation tool that connects your applications and services to automate repetitive tasks without the need for coding.</p>
         </div>
       </header>
 
       <section class="section">
-        <h2>When to choose Zapier</h2>
+        <p class="callout info">Available from the Enterprise plan.</p>
+        <p>It works by linking two or more applications to create automations, called Zaps, which trigger an action in one application when something happens in another.</p>
+        <p>Zyllio offers a native integration with Zapier that allows:</p>
         <ul>
-          <li>Fast delivery for standard app-to-tool workflows.</li>
-          <li>Business team autonomy for simple automation updates.</li>
-          <li>Clear monitoring and retry visibility for operations.</li>
+          <li>Triggering Zaps from Zyllio (via Webhook),</li>
+          <li>Updating Zyllio data from Zapier Zaps.</li>
         </ul>
       </section>
 
       <section class="section">
-        <h2>Zap design pattern</h2>
-        <ol>
-          <li>Use one clear trigger mapped to one business outcome.</li>
-          <li>Add filters to prevent noisy or duplicate automation.</li>
-          <li>Route failures to alert channels for rapid triage.</li>
-          <li>Validate business impact from <a href="dashboard-7.html">Dashboard</a>.</li>
-        </ol>
+        <h2>Prerequisites</h2>
+        <p>A valid Zapier account is required to connect the Zapier and Zyllio solutions.</p>
+        <p>Additionally, a subscription to the Zyllio Enterprise plan is needed to activate this feature.</p>
       </section>
 
       <section class="section">
-        <h2>Operational guidance</h2>
-        <p>Version critical Zaps and document owner + fallback flow for every production automation.</p>
+        <h2>Configuration</h2>
+        <p>The Zapier integration can be activated from the Settings tab / Integration / Zapier by enabling the Enable button as shown in this image.</p>
+        <figure class="visual">
+          <img src="https://codaio.imgix.net/docs/yInGcUUiFK/blobs/bl-BSS5GniQRu/8a2076dddb5ab71c4da76ed88a93b732dcd25cb98010c1060b94534708da5f7f55ce94a6c41fda418bf2621562189647f0c88a372a174599a33be23b7519f9fbb817f58a580c21fac20babf055101a4720d580fff7359ec00c6747086efc71c65ab7a2f1?fit=max&fm=webp&lossless=true" alt="Enable Zapier integration">
+        </figure>
+      </section>
+
+      <section class="section">
+        <h2>Zapier Webhook</h2>
+
+        <h3>Creating the Zapier Scenario</h3>
+        <p>Once connected to Zapier, click on New Zap to create a Zap.</p>
+        <figure class="visual">
+          <img src="https://codaio.imgix.net/docs/yInGcUUiFK/blobs/bl-A40SQ2yH-W/04ff363c2ebe9fb1962f64359203c7e3da0e6cdfa1bfc5a43e6f0fdcde15842f6256c3594cc86a6d9bef56c192c21250fd94e7085db773d0e535a935d98581c38240dc566f7c1a8747b4ec619565a57437f5e52d239d858f2a8055430bddb033d5238e94?fit=max&fm=webp&lossless=true" alt="Create Zapier scenario">
+        </figure>
+        <p>Then, select Webhooks by Zapier.</p>
+        <figure class="visual">
+          <img src="https://codaio.imgix.net/docs/yInGcUUiFK/blobs/bl--KxdiztffZ/e73707e36e2210b63aed31837df85e21343eff98adb235d7b2808aced5d10562d770e58c505ed5b9561e585e7bed42a2a2d846339322c51340e6b66a8d66984648a578390617f2ccb428262ec8d88199bfc7bb854d51ab135af43922bec3921c1d85881a?fit=max&fm=webp&lossless=true" alt="Webhooks by Zapier">
+        </figure>
+        <p>Select the Event: Catch Hook and click on Continue.</p>
+        <figure class="visual">
+          <img src="https://codaio.imgix.net/docs/yInGcUUiFK/blobs/bl-AhjeXJDuSd/0280ace90caeb77b244624fb443d63544cfd640269bc6fd5bc9b8dd69da12a2513526d2f136074f7ef02abe61283c5a406482cba16672ee92df57609b1be07019829f39e2a4524fc06d086d09dbd0fd0bdda61c60933b91377f33929c2ccd6034540219a?fit=max&fm=webp&lossless=true" alt="Catch Hook event in Zapier">
+        </figure>
+        <p>Click Continue again.</p>
+        <figure class="visual">
+          <img src="https://codaio.imgix.net/docs/yInGcUUiFK/blobs/bl-M9A4EC_vPf/980a909d8afefc20f9ca44a94287365609d805e8d7a592c19cce874da3ce4af519f8b57de5de4c4279a73036cc780839b20a3d2e3ef3a1662f3de667d8191be78c080552b47c69df023984dd02134be0b9037955b109ec0ecf958227641be2b86b1057d7?fit=max&fm=webp&lossless=true" alt="Continue webhook step in Zapier">
+        </figure>
+        <p>The Webhook step is now created. This screen allows you to copy the URL of your Webhook by clicking the Copy button.</p>
+        <figure class="visual">
+          <img src="https://codaio.imgix.net/docs/yInGcUUiFK/blobs/bl-VQJmUqSpww/a58c9dee967493f68bbefd9ea9ab8b9596a711c440f0aebc141ebf07987c136841a9e11c16dab5bcae912c13e39ff551db7413dad1b4283b119a1a4012170e092e9b24ef283f401793db8abb79343e6bdda5fdc8eba1cf686261cbd883292934d1f49b17?fit=max&fm=webp&lossless=true" alt="Copy webhook URL in Zapier">
+        </figure>
+
+        <h3>Creating the Screen</h3>
+        <p>This screen prompts the user for their name to send it to Zapier via the Webhook.</p>
+        <p>The screen includes:</p>
+        <ul>
+          <li>A Text input field whose variable is called Your name.</li>
+          <li>A button that triggers the Zapier Webhook via an action.</li>
+          <li>A LabelText component that displays the response from the Webhook stored in the variable Result.</li>
+        </ul>
+        <figure class="visual">
+          <img src="https://codaio.imgix.net/docs/yInGcUUiFK/blobs/bl-_edQYvXLkr/a8ae0d0c1647f22175dea1dfe917531b2f8ea9676eebf7eb8ec403ffa4e45733c7e6605ff0984f22150cd60ff74c768d8156c0d271d74cea700abc038066d4ac18ebf22329d8aabb08c1d84141ef0f82f6c6c6c3cfc4d12a8001a406d67435c9ad175de2?fit=max&fm=webp&lossless=true" alt="Screen with Zapier webhook">
+        </figure>
+
+        <h3>Creating the Action</h3>
+        <p>Select the button, then click on its Action property. Drag and drop the Zapier Webhook action and configure the action as follows:</p>
+        <ul>
+          <li>Set the Variable property to Result.</li>
+          <li>Set the Webhook URL property to the URL of your Webhook copied from your Zap.</li>
+          <li>The Request data contains a data item called name that refers to the variable Your name.</li>
+        </ul>
+        <p>Thus, the Zapier Webhook will receive the parameter of the user's name entered in the Zyllio screen.</p>
+        <figure class="visual">
+          <img src="https://codaio.imgix.net/docs/yInGcUUiFK/blobs/bl-upRBC1p0PT/62d9d6cc986f0d5835b8804b9b8f4047775a28f7286d8c130374fefaa4e115043375d393ab14760408d79de1bffde1d51e265c013eaa659f0935506e6208e6bbd46a033d850744a627a1370f8eae5ef3d7557cccfddbf3aa0122d2629e1c0115e3508db9?fit=max&fm=webp&lossless=true" alt="Configure Zapier webhook action">
+        </figure>
+        <p>Then click on the Zapier! button to trigger your Webhook.</p>
+
+        <h3>Testing the Webhook</h3>
+        <p>Return to the Zap, click on the Test tab, and then click on the Test trigger button.</p>
+        <figure class="visual">
+          <img src="https://codaio.imgix.net/docs/yInGcUUiFK/blobs/bl-VQJmUqSpww/a58c9dee967493f68bbefd9ea9ab8b9596a711c440f0aebc141ebf07987c136841a9e11c16dab5bcae912c13e39ff551db7413dad1b4283b119a1a4012170e092e9b24ef283f401793db8abb79343e6bdda5fdc8eba1cf686261cbd883292934d1f49b17?fit=max&fm=webp&lossless=true" alt="Test trigger in Zapier">
+        </figure>
+        <p>Then select Continue with selected record, which should display the parameters sent by the Zyllio screen: Name: Paul.</p>
+        <figure class="visual">
+          <img src="https://codaio.imgix.net/docs/yInGcUUiFK/blobs/bl-65O3GIDeL2/f74af4d9bdbeb4f271283b1e7b306c297d7da5bcd796a73ea6c002d415a9ab05a79082e5d58069f7cb631eb14fc3c83b4e4d4caa572399a9b8ce1ed19e323db1847c0b91fdd329a8d2b2283ba4ac6c2be1e748d9c50f7424e0054a445b540abc35689e3a?fit=max&fm=webp&lossless=true" alt="Continue with selected record name Paul">
+        </figure>
+        <p>The Zap is now connected to Zyllio, and additional steps can be added (Mail, Notion, Slack, etc.).</p>
       </section>
     </main>
   </div>

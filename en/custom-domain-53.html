@@ -19,33 +19,68 @@
         <div class="hero-body">
           <span class="kicker">Documentation</span>
           <h1>Custom domain</h1>
-          <p class="lead">Publish your web experience on a branded domain with secure DNS and certificate configuration.</p>
+          <p class="lead">You have the option to set a custom domain so that your users can access your Zyllio application via a personalized URL, such as www.my-app.com.</p>
         </div>
       </header>
 
       <section class="section">
-        <h2>Domain setup flow</h2>
-        <ol>
-          <li>Choose a production domain and verify ownership.</li>
-          <li>Create DNS records according to your deployment target.</li>
-          <li>Configure HTTPS certificate and redirection policy.</li>
-          <li>Validate routing after deployment in all supported environments.</li>
-        </ol>
+        <p class="callout info">Available from the Professional plan.</p>
+        <p>This guide explains how to configure your own custom domain for your Zyllio mobile application.</p>
+
+        <h2>Activating the Custom Domain</h2>
+        <p>From the Zyllio interface, go to Settings, then access the Custom Domain section.</p>
+        <p>Enable the option by toggling the Enable button.</p>
+
+        <h2>Entering Your Custom Domain</h2>
+        <p>In the Domain field, enter the domain you wish to associate with your application.</p>
+        <p>For example: www.my-app.com.</p>
+        <p>Make sure you have purchased the domain and have control over it through a domain provider (e.g., OVH, GoDaddy, etc.).</p>
       </section>
 
       <section class="section">
-        <h2>Go-live checklist</h2>
-        <ul>
-          <li>HTTPS enforced on all routes.</li>
-          <li>Canonical domain configured and redirects tested.</li>
-          <li>No mixed content warnings in browser console.</li>
-          <li>Domain change reflected in communication templates.</li>
-        </ul>
-      </section>
+        <h2>Requesting DNS Configuration</h2>
+        <p>Once you have entered your domain, click on the Request DNS configuration button.</p>
+        <p>After your request is submitted, the Zyllio team will process your request within 24 hours.</p>
+        <p>You will receive an email containing the DNS settings to enter in the admin interface of your domain provider. These settings may include CNAME or A records, depending on the specific configuration.</p>
 
-      <section class="section">
-        <h2>Rollback plan</h2>
-        <p>Prepare a DNS rollback window and fallback hostname to minimize downtime if propagation issues occur.</p>
+        <h2>Configuring Your DNS</h2>
+        <p>Log in to the admin interface of your domain provider.</p>
+        <p>Add the DNS settings provided by Zyllio in the section dedicated to DNS records.</p>
+        <table class="doc-table">
+          <thead>
+            <tr>
+              <th>Type</th>
+              <th>Name</th>
+              <th>Value</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>A</td>
+              <td></td>
+              <td>216.239.38.21</td>
+            </tr>
+            <tr>
+              <td>AAAA</td>
+              <td></td>
+              <td>2001:4860:4802:38::15</td>
+            </tr>
+            <tr>
+              <td>CNAME</td>
+              <td>www</td>
+              <td>ghs.googlehosted.com.</td>
+            </tr>
+            <tr>
+              <td>CNAME</td>
+              <td>&lt;provided par email&gt;</td>
+              <td>&lt;provided par email&gt;</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h2>DNS Propagation and Domain Access</h2>
+        <p>Once the DNS records are configured, propagation may take up to 24-48 hours.</p>
+        <p>After propagation is complete, your users will be able to access your application via your custom domain, for example: www.my-app.com.</p>
       </section>
     </main>
   </div>

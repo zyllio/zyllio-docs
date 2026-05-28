@@ -18,34 +18,69 @@
         <img class="hero-banner" src="../assets/images/hero-banner.png" alt="Banniere du studio Zyllio">
         <div class="hero-body">
           <span class="kicker">Documentation</span>
-          <h1>Domaine Personnalise</h1>
-          <p class="lead">Publiez votre expérience web sur un domaine de marque avec une configuration DNS et certificat sécurisée.</p>
+          <h1>Domaine personnalise</h1>
+          <p class="lead">Vous avez la possibilite de definir un domaine personnalise pour que vos utilisateurs puissent acceder a votre application Zyllio via une URL personnalise, comme par exemple : www.mon-app.com.</p>
         </div>
       </header>
 
       <section class="section">
-        <h2>Parcours de configuration</h2>
-        <ol>
-          <li>Choisir un domaine de production et vérifier sa propriété.</li>
-          <li>Créer les enregistrements DNS selon la cible de déploiement.</li>
-          <li>Configurer le certificat HTTPS et la politique de redirection.</li>
-          <li>Valider le routage après déploiement sur tous les environnements supportés.</li>
-        </ol>
+        <p class="callout info">Disponible depuis le plan Professional.</p>
+        <p>Ce guide vous explique comment configurer votre propre domaine personnalise pour votre application Zyllio.</p>
+
+        <h2>Activer le domaine personnalise</h2>
+        <p>Depuis l'interface Zyllio, puis Settings, accedez a la section Custom Domain (Domaine personnalise).</p>
+        <p>Activez l'option en basculant le bouton Enable.</p>
+
+        <h2>Renseigner votre domaine personnalise</h2>
+        <p>Dans le champ Domaine, saisissez le domaine que vous souhaitez associer a votre application.</p>
+        <p>Par exemple : www.mon-app.com.</p>
+        <p>Assurez-vous d'avoir achete le domaine et d'en avoir le controle via un fournisseur de domaine (ex: OVH, GoDaddy, etc.).</p>
       </section>
 
       <section class="section">
-        <h2>Checklist de mise en ligne</h2>
-        <ul>
-          <li>HTTPS forcé sur toutes les routes.</li>
-          <li>Domaine canonique configuré et redirections testées.</li>
-          <li>Aucun avertissement de contenu mixte dans la console navigateur.</li>
-          <li>Changement de domaine répercuté dans les communications.</li>
-        </ul>
-      </section>
+        <h2>Demander la configuration DNS</h2>
+        <p>Une fois que vous avez renseigne votre domaine, cliquez sur le bouton Request DNS configuration.</p>
+        <p>Une fois votre demande soumise, l'equipe Zyllio traitera votre demande dans un delai de 24 heures.</p>
+        <p>Vous recevrez un e-mail contenant les parametres DNS a saisir dans l'interface d'administration de votre fournisseur de domaine. Ces parametres peuvent inclure des enregistrements de type CNAME ou A, selon la configuration specifique.</p>
 
-      <section class="section">
-        <h2>Plan de retour arrière</h2>
-        <p>Prévoyez une fenêtre de rollback DNS et un hostname de secours pour limiter l'impact en cas de propagation incomplète.</p>
+        <h2>Configurer votre DNS</h2>
+        <p>Connectez-vous a l'interface d'administration de votre fournisseur de domaine.</p>
+        <p>Ajoutez les parametres DNS fournis par Zyllio dans la section dediee aux enregistrements DNS.</p>
+        <table class="doc-table">
+          <thead>
+            <tr>
+              <th>Type</th>
+              <th>Name</th>
+              <th>Value</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>A</td>
+              <td></td>
+              <td>216.239.38.21</td>
+            </tr>
+            <tr>
+              <td>AAAA</td>
+              <td></td>
+              <td>2001:4860:4802:38::15</td>
+            </tr>
+            <tr>
+              <td>CNAME</td>
+              <td>www</td>
+              <td>ghs.googlehosted.com.</td>
+            </tr>
+            <tr>
+              <td>CNAME</td>
+              <td>&lt;fourni par email&gt;</td>
+              <td>&lt;fourni par email&gt;</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h2>Propagation DNS et acces au domaine</h2>
+        <p>Une fois les enregistrements DNS configures, la propagation peut prendre jusqu'a 24-48 heures.</p>
+        <p>Une fois la propagation terminee, vos utilisateurs pourront acceder a votre application via votre domaine personnalise, par exemple : www.mon-app.com.</p>
       </section>
     </main>
   </div>

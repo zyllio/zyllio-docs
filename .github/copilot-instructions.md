@@ -90,6 +90,15 @@ When migrating a page, reproduce the source page with strict fidelity.
 2. Keep the source table image in place.
 3. Mark the page report with: `Table needs manual extraction` and specify the section title.
 
+### Segmented PNG capture workflow (required for visual audit)
+1. Before migrating a page, capture the source page in vertical PNG segments from top to bottom.
+2. Use a consistent overlap between consecutive segments (recommended 15% to 25%) to avoid missing content between cuts.
+3. Name captures in reading order, for example: `segment-01.png`, `segment-02.png`, `segment-03.png`.
+4. Include full width of the source content column in each capture.
+5. Review all segments in order and list every table, callout, heading block, and image position before editing the local page.
+6. If a table is visible in segments but text cannot be extracted reliably, apply the fallback rule and report the section as `Table needs manual extraction`.
+7. Repeat the same segmented capture process independently for FR source pages and EN source pages.
+
 ## Standard migration workflow (one page at a time)
 1. Identify source page URL and target local file.
 2. Extract source page data:

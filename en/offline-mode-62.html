@@ -19,32 +19,46 @@
         <div class="hero-body">
           <span class="kicker">Documentation</span>
           <h1>Offline Mode</h1>
-          <p class="lead">Keep your app usable in low or no connectivity environments with resilient offline behavior.</p>
+          <p class="lead">The Offline mode of your mobile application allows users to use the app without an internet connection.</p>
         </div>
       </header>
 
       <section class="section">
-        <h2>Offline architecture basics</h2>
-        <ul>
-          <li>Cache critical reference data required for core user tasks.</li>
-          <li>Queue user actions locally when network is unavailable.</li>
-          <li>Sync pending operations on reconnection with conflict strategy.</li>
-        </ul>
+        <p class="callout info">Available from the Enterprise plan.</p>
+        <p>This mode is particularly useful for users in areas with unstable or nonexistent connectivity. Here are the detailed steps to activate and use Offline mode.</p>
+
+        <h2>Activating Offline Mode</h2>
+        <p>From Zyllio Studio, open your mobile application and navigate to the Settings section.</p>
+        <p>You will find an option titled Offline; toggle the Enable button to allow the application to function without an internet connection.</p>
+        <figure class="visual">
+          <img src="https://codaio.imgix.net/docs/yInGcUUiFK/blobs/bl-DImZlP8Pxf/3b24e8b17ea71678901f8059bf418cd673811d1c4ae4977bbba7f42849a834bdd17ab204d26a95daf52e7db2e7f5b4f3af5ec4279b36804a927b4fc53d09cd3417be3942277151ef8e4d9042dddd282a88962872e9179959b8da17d30e4cb239a2b1369f?fit=max&fm=webp&lossless=true" alt="Enable offline mode">
+        </figure>
+        <p class="callout info">Simply activating Offline mode is not enough to start using the application offline. An initial synchronization is required to download the necessary data for offline use.</p>
       </section>
 
       <section class="section">
-        <h2>Implementation steps</h2>
-        <ol>
-          <li>Define which screens and actions must work offline.</li>
-          <li>Add explicit connectivity state indicators in UI.</li>
-          <li>Design retry policies and reconciliation rules.</li>
-          <li>Validate transitions online/offline in <a href="simulation-6.html">Simulation</a>.</li>
-        </ol>
+        <h2>Data Synchronization</h2>
+        <p>Once Offline mode is activated, it is essential to synchronize the data to use the application properly offline. This synchronization downloads the necessary data so that it is available without a connection.</p>
+        <p>A synchronization button is needed, and this button can be placed on the screen that you find most convenient for the user, such as the home screen or a specific data management screen.</p>
+        <figure class="visual">
+          <img src="https://codaio.imgix.net/docs/yInGcUUiFK/blobs/bl-qkG6lpaau_/5cf636480212b48912d56767953db169137c27444bf11ef514027bb1ef94f7e8c866b59e6c90675b979b5920d9e0c1fdb812ed4dcd415753de323c1b8c9dac430aaa5d9f926bc3d198966285efc5edd9f28a04217535f3235a017f4bc532746299591082?fit=max&fm=webp&lossless=true" alt="Configuration screen with synchronization">
+        </figure>
+        <p>The synchronization button uses the Offline sync action, which does not require any special configuration.</p>
+        <figure class="visual">
+          <img src="https://codaio.imgix.net/docs/yInGcUUiFK/blobs/bl-wtQ4IzlqDN/d396fab585edfb46fb75b7be1a932094b074d9167629ab554b97ca1cc8cf225ceccc500a8969484bde72c7fb69bc1bbfd55459257de9346eec64eaf2d17e2ebbfd7dfe366e887a50a0cf880c09b7f24a72a5aea7be59ffda9208df4bf0d1e8cb080df5c2?fit=max&fm=webp&lossless=true" alt="Offline sync action">
+        </figure>
       </section>
 
       <section class="section">
-        <h2>User trust guidelines</h2>
-        <p>Always show whether data is synced, pending, or failed so users can act with confidence.</p>
+        <h2>Using Offline Mode</h2>
+        <p>Click the Synchronize (or Sync) button to initiate the data synchronization. Once this operation is complete, all the necessary information for using the application will be stored locally on your device.</p>
+        <p>After synchronization, you will see a confirmation message indicating that the synchronization was successful. You can now use the application without an internet connection.</p>
+        <p class="callout info">When the application is connected to the network, Offline mode remains operational. However, it prioritizes online information when available and updates its offline cache accordingly.</p>
+
+        <h2>Limitations</h2>
+        <p>Currently, automatic updates of the application in Offline mode are not supported.</p>
+        <p>If you have an urgent need for specific updates or a feature related to updates in Offline mode, we encourage you to submit your request directly to the Product Manager via the dedicated product Slack forum.</p>
+        <p><a href="https://join.slack.com/t/zyllio-studio/shared_invite/zt-1etbsnzqp-S5UecnkGZVzn0YmYO9yFJw">Visit forum</a></p>
       </section>
     </main>
   </div>
