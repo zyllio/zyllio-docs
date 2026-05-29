@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -15,36 +15,42 @@
 
     <main class="main">
       <header class="section hero" id="welcome">
-        <img class="hero-banner" src="../assets/images/hero-banner.png" alt="Zyllio studio banner">
         <div class="hero-body">
           <span class="kicker">Documentation</span>
           <h1>Simulation</h1>
-          <p class="lead">Test your app behavior end-to-end before publishing to users.</p>
+          <p class="lead">The simulator allows you to test mobile applications in a simulated environment, providing the ability to visualize and interact with applications on different mobile phone models. It supports both Android and iOS platforms.</p>
+          <p>This mobile application simulator is an efficient tool for testing your application's features on various devices and operating systems. It also simplifies the testing process by offering quick authentication through automatic login. Use it to check the performance and user experience of your applications under conditions close to real-life scenarios.</p>
         </div>
       </header>
 
       <section class="section">
-        <h2>Why simulation matters</h2>
+        <h2>Device Model Selection</h2>
+        <p>The simulator offers a wide range of device models from which you can choose to test your application. You can select popular Android and iOS phones, such as Samsung Galaxy and iPhones.</p>
+        <p>To change the device model, use the dropdown menu on the left side of the interface. This adjusts the application's display according to the chosen device's specifications, including screen resolution and operating system specifics.</p>
+      </section>
+
+      <section class="section">
+        <h2>Automatic Authentication</h2>
+        <p>The simulator features an automatic authentication function, allowing you to log into the application without manually entering an email and password.</p>
+        <p>To use this feature, you need to select a user to authenticate from the dedicated menu. This option simulates quick login to an application without having to enter login credentials each time.</p>
+
+        <p class="callout info">For automatic authentication to work correctly, the authentication table must contain three required columns:</p>
         <ul>
-          <li>Catch UX issues before release.</li>
-          <li>Validate data loading, empty states, and errors.</li>
-          <li>Confirm navigation and business actions on realistic flows.</li>
+          <li>Email: The user's email</li>
+          <li>Name: The user's name</li>
+          <li>Password: The user's password</li>
         </ul>
+        <p>If these columns are not present, the automatic authentication feature cannot be used. Therefore, it is essential to check the table structure before enabling this option.</p>
       </section>
 
       <section class="section">
-        <h2>Test pass template</h2>
-        <ol>
-          <li>Run the full primary journey from landing to final action.</li>
-          <li>Test alternate branches defined in <a href="screen-sequence-editor-23.html">Screen sequence editor</a>.</li>
-          <li>Check data writes and reads with your target connector.</li>
-          <li>Capture defects and fix them before <a href="publications-5.html">Publications</a>.</li>
-        </ol>
-      </section>
+        <h2>How to Use the Simulator</h2>
 
-      <section class="section">
-        <h2>Release gate</h2>
-        <p>Publish only after all critical scenarios pass in simulation at least once on your target device format.</p>
+        <h3>Device Selection</h3>
+        <p>Access the dropdown menu at the top left to choose a phone model. Once selected, the simulator will automatically adjust the display to match the appearance of that device.</p>
+
+        <h3>Automatic Authentication</h3>
+        <p>To enable automatic authentication, select the corresponding option in the "Act as" menu and choose a predefined user. This will simulate the experience of a user logging into the application directly without manually entering their credentials.</p>
       </section>
     </main>
   </div>

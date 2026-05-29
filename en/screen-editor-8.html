@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -15,39 +15,132 @@
 
     <main class="main">
       <header class="section hero" id="welcome">
-        <img class="hero-banner" src="../assets/images/hero-banner.png" alt="Zyllio studio banner">
         <div class="hero-body">
           <span class="kicker">Documentation</span>
           <h1>Screen editor</h1>
-          <p class="lead">Build each app screen with reusable components, clear hierarchy, and data bindings.</p>
+          <p class="lead">The screen editor provides a user-friendly interface that allows users to create and customize screens for their mobile applications. This section briefly introduces the tool's objectives and highlights its main features.</p>
         </div>
+        <figure class="visual">
+          <img src="https://codaio.imgix.net/docs/yInGcUUiFK/blobs/bl-yEt1KrHU8R/3547748a6bcc2e4f6cbdb7cd971c92f7c4a68a1c52ed89c79238e62651d040389a64e9b7cbcf43248140e3f48ce5dd5ace1172f3cd2faa33ed9860982e3039066d08d7bed40c35f1c06eccebc244bba8adeeb3c685c5741a14a5bab5a983062c5438fd4e?fit=max&fm=webp&lossless=true" alt="image.png">
+        </figure>
       </header>
 
       <section class="section">
-        <h2>Build your UI efficiently</h2>
+        <h2>Screen Creation</h2>
+        <p>Screen creation is available from the 'Screen' toolbar, which displays predefined templates to speed up the creation process.</p>
+        <table class="doc-table">
+          <thead>
+            <tr>
+              <th>Template</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>Blank</td><td>Create a blank screen</td></tr>
+            <tr><td>Header</td><td>Create a screen with a title bar</td></tr>
+            <tr><td>Info</td><td>Create an informative screen with some text, an image, and a button</td></tr>
+            <tr><td>Welcome</td><td>Create a welcome screen with some text, an image, and a button</td></tr>
+            <tr><td>Contact</td><td>Create a contact screen with contact buttons: Twitter, Website, Phone, Email, and YouTube Channel</td></tr>
+            <tr><td>Booking</td><td>Create a screen that contains a registration form</td></tr>
+            <tr><td>Login</td><td>Create a preconfigured authentication screen with Email and Password fields and an authentication button</td></tr>
+            <tr><td>Sign up</td><td>Create a user signup screen with Name, email, password, profile image fields and a signup button</td></tr>
+            <tr><td>List</td><td>Create a screen that displays the content of a table as a grid list</td></tr>
+            <tr><td>Details</td><td>Create a screen that displays the details of a selection, each field of the selection being displayed according to its type. A Text component for the text type, a Phone component for the phonenumber type, a Map Marker component for the location type ...</td></tr>
+            <tr><td>Update</td><td>Create a form-type screen that allows modifying each field of the selection. A FormText component for the text type, a Switch component for the boolean type, a Choose option component for the options type ...</td></tr>
+            <tr><td>Create</td><td>Create a form-type screen that allows creating a record in a table according to the type of each column. A FormText component for the text type, a Switch component for the boolean type, a Choose option component for the options type ...</td></tr>
+            <tr><td>List/Details</td><td>Create 2 screens at once that display the content of a table and the details of the selection</td></tr>
+            <tr><td>List/Update</td><td>Create 4 screens at once that display the content of a table, the details of the selection, an update form, and a creation form</td></tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section class="section">
+        <h2>Modification of the screens</h2>
+        <h3>Workspace Management</h3>
+        <p>Spatial Organization of Screens</p>
         <ul>
-          <li>Use reusable blocks to keep a consistent visual system.</li>
-          <li>Name components based on intent, not position.</li>
-          <li>Bind fields to data sources as early as possible.</li>
+          <li>Align the screens precisely to ensure an efficient layout.</li>
+          <li>Use arrangement tools to optimize space and improve readability.</li>
         </ul>
-      </section>
-
-      <section class="section">
-        <h2>Workflow</h2>
-        <ol>
-          <li>Create the screen skeleton and key sections.</li>
-          <li>Add interaction states and visibility conditions.</li>
-          <li>Connect formulas from <a href="formulas-15.html">Formulas</a> and app state from <a href="variables-54.html">Variables</a>.</li>
-          <li>Preview navigation in <a href="screen-sequence-editor-23.html">Screen sequence editor</a>.</li>
-        </ol>
-      </section>
-
-      <section class="section">
-        <h2>Common pitfalls</h2>
+        <p>Manipulation Tools</p>
         <ul>
-          <li>Overloading one screen with too many actions.</li>
-          <li>Using inconsistent labels across similar components.</li>
-          <li>Leaving edge cases untested before simulation.</li>
+          <li>Move and resize screens with intuitive tools.</li>
+        </ul>
+
+        <h3>Drag and Drop of Visual Components</h3>
+        <p>Adding Components to Screens</p>
+        <ul>
+          <li>Drag and drop visual components from the library onto the screens.</li>
+          <li>Choose from a variety of elements such as buttons, text fields, images, lists, etc.</li>
+        </ul>
+        <p>Component Configuration</p>
+        <ul>
+          <li>Customize the properties of each component according to your needs.</li>
+          <li>Adjust settings such as color, size, and interactive behavior.</li>
+        </ul>
+
+        <h3>Selection, Copy, and Paste</h3>
+        <p>Selecting Screens and Components</p>
+        <ul>
+          <li>Learn different methods for efficiently selecting screens and components.</li>
+          <li>Use shortcuts to speed up the selection process: CTRL+A to select all screens.</li>
+        </ul>
+        <p>Copy-Paste</p>
+        <ul>
+          <li>Quickly duplicate screens and components to save time.</li>
+          <li>Copy elements from one screen to another.</li>
+        </ul>
+
+        <figure class="visual">
+          <img src="https://codaio.imgix.net/docs/yInGcUUiFK/blobs/bl-kRmAE8HXne/9e12ad26a13d7c268b876449c4ce9851f65788cd8b61680d2f7a1c021fbcbaf721197ac4ab7a7934f724f0b7c8afe55dbaef9f9a8981bd06bc368d272437f8700980e3e90de38fec0d239583aaf4f1ac7ffeb220cd2df63e100bbe9993d949d6592d1575?fit=max&fm=webp&lossless=true" alt="image.png">
+        </figure>
+      </section>
+
+      <section class="section">
+        <h2>Defining the Application Theme</h2>
+        <p>Customization of appearance</p>
+        <ul>
+          <li>Select colors and other graphic elements to define the theme.</li>
+          <li>Real-time preview of changes for instant visualization.</li>
+        </ul>
+        <figure class="visual">
+          <img src="https://codaio.imgix.net/docs/yInGcUUiFK/blobs/bl-i8SKFhiLzO/b160bc59186dc2501de51fb636d37619f681cc46cfe63d46db59f2da302e69d2ff8d5722a1abfde88f08b0b8d737e5c1369ef65e0738295c88b18832a5d124cb12e2c172402193c04c7f25019c38ecd4ee95d82592e4c74fbfe776f29c36d21c63604133?fit=max&fm=webp&lossless=true" alt="image.png">
+        </figure>
+        <h3>Colors</h3>
+        <table class="doc-table">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>Primary Color</td><td>Primary color used for the background of the title bar (header)</td></tr>
+            <tr><td>Primary Text Color</td><td>Primary color used for the text in the title bar (header)</td></tr>
+            <tr><td>Secondary Color</td><td>Secondary color used for the background of list item selections and buttons</td></tr>
+            <tr><td>Secondary Text Color</td><td>Secondary color used for the text of list item selections and buttons</td></tr>
+            <tr><td>Tertiary Color</td><td>Tertiary color used for the background of input fields, often semi-transparent</td></tr>
+            <tr><td>Terciary Text Color</td><td>Tertiary color used for the text in input fields</td></tr>
+            <tr><td>Background Color</td><td>Default color used for the background of screens</td></tr>
+            <tr><td>Text Color</td><td>Default color used for the text of components</td></tr>
+          </tbody>
+        </table>
+        <h3>Properties</h3>
+        <table class="doc-table">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>Right to left</td><td>Toggle text display from right to left, useful for certain languages (e.g., Arabic)</td></tr>
+          </tbody>
+        </table>
+        <h3>Theme Application</h3>
+        <ul>
+          <li>Easily apply the defined theme across the entire application.</li>
+          <li>Ability to change the theme at any time based on preferences.</li>
         </ul>
       </section>
     </main>

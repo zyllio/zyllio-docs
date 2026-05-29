@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -15,39 +15,76 @@
 
     <main class="main">
       <header class="section hero" id="welcome">
-        <img class="hero-banner" src="../assets/images/hero-banner.png" alt="Zyllio studio banner">
         <div class="hero-body">
           <span class="kicker">Documentation</span>
           <h1>Screen sequence editor</h1>
-          <p class="lead">Define navigation logic, branching rules, and user progression between screens.</p>
+          <p class="lead">This editor allows you to link the screens of your mobile application based on user interactions, such as button clicks and other graphical components like lists. You will also learn how to set the startup screen of your application.</p>
         </div>
       </header>
 
       <section class="section">
-        <h2>What this editor controls</h2>
-        <ul>
-          <li>Entry points and default routing.</li>
-          <li>Conditional transitions based on data or user actions.</li>
-          <li>Error and fallback paths for resilient UX.</li>
-        </ul>
+        <h2>Linking screens</h2>
+        <p>To create smooth navigation in your application, follow these steps:</p>
+
+        <h3>Add an interactive component</h3>
+        <p>Add a graphical component (for example, an Enter button) to your screen as shown below.</p>
+        <figure class="visual">
+          <img src="https://codaio.imgix.net/docs/yInGcUUiFK/blobs/bl-_ACrVgniYo/3990a6c290171986ef9aac00714e996e02bf150b62a3b413dfe9062044602e939eedd6d2e7d8d2ca65a9c66fd342b2b7e9bfb62f28b77f9ee93c483ec24eb4d9094590b99ad0fc14fd086695d0663b5d080e41cad7d8a018949171a648afa96a7c395d08?fit=max&fm=webp&lossless=true" alt="image.png">
+        </figure>
+
+        <h3>Set a screen transition</h3>
+        <ol>
+          <li>In the Flow tab</li>
+          <li>Select the button component</li>
+          <li>Drag the right handle to the destination screen</li>
+        </ol>
+        <figure class="visual">
+          <video controls preload="metadata" src="https://codahosted.io/docs/yInGcUUiFK/blobs/bl-o94eJTEa7B/a088145e8d28bb57dd4f5e84af7d06ab20d1a4eadda5017117bccfa8e229c5f2f9a6bc0ad1546233f66c3cf215ddd815d711217223f8c42574ac42e39097b6414002d1ab3ce715c8163b18f5219dadb2dae14eb9af1e51c9c76cf6fa8465d150fd182747" style="width: 100%; height: auto; display: block;"></video>
+        </figure>
+        <p><a href="https://codahosted.io/docs/yInGcUUiFK/blobs/bl-o94eJTEa7B/a088145e8d28bb57dd4f5e84af7d06ab20d1a4eadda5017117bccfa8e229c5f2f9a6bc0ad1546233f66c3cf215ddd815d711217223f8c42574ac42e39097b6414002d1ab3ce715c8163b18f5219dadb2dae14eb9af1e51c9c76cf6fa8465d150fd182747">Download the video file</a></p>
+
+        <h3>Undo a screen transition</h3>
+        <ol>
+          <li>In the Flow tab</li>
+          <li>Select the button component</li>
+          <li>Select the link</li>
+          <li>Drag the end of the link outside the screen</li>
+        </ol>
+        <figure class="visual">
+          <video controls preload="metadata" src="https://codahosted.io/docs/yInGcUUiFK/blobs/bl-JZwJ9XX64h/00d5edaaee1cf2c36c528e9e68d9ec89f066040d39a21a5339f7d2c540a22a9376416b4d7ecb90bdc7ce4eff4c4fc6c1d733110e860370c150efefe599cb5778d2d4cf2da827e5eb1294587e722300701f01badeedde9b78139afde0d422f5dd3debb3bb" style="width: 100%; height: auto; display: block;"></video>
+        </figure>
+        <p><a href="https://codahosted.io/docs/yInGcUUiFK/blobs/bl-JZwJ9XX64h/00d5edaaee1cf2c36c528e9e68d9ec89f066040d39a21a5339f7d2c540a22a9376416b4d7ecb90bdc7ce4eff4c4fc6c1d733110e860370c150efefe599cb5778d2d4cf2da827e5eb1294587e722300701f01badeedde9b78139afde0d422f5dd3debb3bb">Download the video file</a></p>
       </section>
 
       <section class="section">
-        <h2>Implementation pattern</h2>
+        <h2>Set the startup screen</h2>
+        <p>To set the screen that appears when the application is launched:</p>
         <ol>
-          <li>Map the happy path first and ensure every step has one clear next action.</li>
-          <li>Add conditional branches only after baseline flow is stable.</li>
-          <li>Validate transitions in <a href="simulation-6.html">Simulation</a>.</li>
-          <li>Track user completion outcomes from <a href="dashboard-7.html">Dashboard</a>.</li>
+          <li>Go back to the screen sequence editor.</li>
+          <li>Locate the screen you want to set as the startup screen.</li>
+          <li>Click the home icon to the left of that screen.</li>
+        </ol>
+        <figure class="visual">
+          <img src="https://codaio.imgix.net/docs/yInGcUUiFK/blobs/bl-afXV0d0DoE/2edb35ef9c592a8edc63fe105e0e4cd653344da8b80b791f10d5f8f90afa65a5feb3582883677d6eb8e35b2446f5cffe186ee0628a87b00d2c200f3e789a03e18749faf91b582ef0c892d4338d525bb44cc99b8d77527840eaaee5990e57374fad7d861f?fit=max&fm=webp&lossless=true" alt="image.png">
+        </figure>
+      </section>
+
+      <section class="section">
+        <h2>Test your navigation</h2>
+        <p>It is important to test your application's navigation to ensure everything works as expected.</p>
+        <ol>
+          <li>Use the simulator mode from the Simulation tab.</li>
+          <li>Interact with the screens you have configured.</li>
+          <li>Check if the navigation meets your expectations.</li>
         </ol>
       </section>
 
       <section class="section">
-        <h2>Navigation checklist</h2>
+        <h2>Tips and tricks</h2>
         <ul>
-          <li>No dead-end screens in primary journeys.</li>
-          <li>Back navigation is always predictable.</li>
-          <li>Required data is available before each transition.</li>
+          <li>Ensure that the transitions between screens are logical and intuitive for the user.</li>
+          <li>Use clear screen names to simplify navigation configuration.</li>
+          <li>Regularly test changes to avoid navigation errors.</li>
         </ul>
       </section>
     </main>

@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
@@ -15,39 +15,76 @@
 
     <main class="main">
       <header class="section hero" id="welcome">
-        <img class="hero-banner" src="../assets/images/hero-banner.png" alt="Banniere du studio Zyllio">
         <div class="hero-body">
           <span class="kicker">Documentation</span>
           <h1>Editeur de séquence d'écrans</h1>
-          <p class="lead">Définissez la logique de navigation, les embranchements et la progression utilisateur entre les écrans.</p>
+          <p class="lead">Cet éditeur permet de relier les écrans de votre application mobile en fonction des interactions de l'utilisateur, telles que les clics sur les boutons et autres composants graphiques  comme les listes. Vous apprendrez également à définir l'écran de démarrage de votre application.</p>
         </div>
       </header>
 
       <section class="section">
-        <h2>Ce que cet éditeur pilote</h2>
-        <ul>
-          <li>Points d'entrée et routage par défaut.</li>
-          <li>Transitions conditionnelles selon les données ou actions.</li>
-          <li>Parcours d'erreur et alternatives pour une UX robuste.</li>
-        </ul>
+        <h2>Relier les écrans</h2>
+        <p>Pour créer une navigation fluide dans votre application, suivez ces étapes :</p>
+
+        <h3>Ajouter un composant interactif</h3>
+        <p>Ajoutez un composant graphique (par exemple, un bouton Enter) à votre écran comme ci-dessous</p>
+        <figure class="visual">
+          <img src="https://codaio.imgix.net/docs/6njJ_WqH8k/blobs/bl-_ACrVgniYo/3990a6c290171986ef9aac00714e996e02bf150b62a3b413dfe9062044602e939eedd6d2e7d8d2ca65a9c66fd342b2b7e9bfb62f28b77f9ee93c483ec24eb4d9094590b99ad0fc14fd086695d0663b5d080e41cad7d8a018949171a648afa96a7c395d08?fit=max&fm=webp&lossless=true" alt="image.png">
+        </figure>
+
+        <h3>Définir une transition d’écran</h3>
+        <ol>
+          <li>Dans l’onglet Flow</li>
+          <li>Sélectionnez le composant bouton</li>
+          <li>Glissez la poignée de droite vers l'écran de destination</li>
+        </ol>
+        <figure class="visual">
+          <video controls preload="metadata" src="https://codahosted.io/docs/6njJ_WqH8k/blobs/bl-o94eJTEa7B/a088145e8d28bb57dd4f5e84af7d06ab20d1a4eadda5017117bccfa8e229c5f2f9a6bc0ad1546233f66c3cf215ddd815d711217223f8c42574ac42e39097b6414002d1ab3ce715c8163b18f5219dadb2dae14eb9af1e51c9c76cf6fa8465d150fd182747" style="width: 100%; height: auto; display: block;"></video>
+        </figure>
+        <p><a href="https://codahosted.io/docs/6njJ_WqH8k/blobs/bl-o94eJTEa7B/a088145e8d28bb57dd4f5e84af7d06ab20d1a4eadda5017117bccfa8e229c5f2f9a6bc0ad1546233f66c3cf215ddd815d711217223f8c42574ac42e39097b6414002d1ab3ce715c8163b18f5219dadb2dae14eb9af1e51c9c76cf6fa8465d150fd182747">Download the video file</a></p>
+
+        <h3>Défaire une transition d’écran</h3>
+        <ol>
+          <li>Dans l’onglet Flow</li>
+          <li>Sélectionnez le composant bouton</li>
+          <li>Sélectionnez le lien</li>
+          <li>Glissez l’extrémité du lien en dehors de l’écran</li>
+        </ol>
+        <figure class="visual">
+          <video controls preload="metadata" src="https://codahosted.io/docs/6njJ_WqH8k/blobs/bl-JZwJ9XX64h/00d5edaaee1cf2c36c528e9e68d9ec89f066040d39a21a5339f7d2c540a22a9376416b4d7ecb90bdc7ce4eff4c4fc6c1d733110e860370c150efefe599cb5778d2d4cf2da827e5eb1294587e722300701f01badeedde9b78139afde0d422f5dd3debb3bb" style="width: 100%; height: auto; display: block;"></video>
+        </figure>
+        <p><a href="https://codahosted.io/docs/6njJ_WqH8k/blobs/bl-JZwJ9XX64h/00d5edaaee1cf2c36c528e9e68d9ec89f066040d39a21a5339f7d2c540a22a9376416b4d7ecb90bdc7ce4eff4c4fc6c1d733110e860370c150efefe599cb5778d2d4cf2da827e5eb1294587e722300701f01badeedde9b78139afde0d422f5dd3debb3bb">Download the video file</a></p>
       </section>
 
       <section class="section">
-        <h2>Pattern d'implémentation</h2>
+        <h2>Définir l'écran de démarrage</h2>
+        <p>Pour définir l'écran qui s'affiche au lancement de l'application :</p>
         <ol>
-          <li>Tracer d'abord le parcours principal avec une action suivante claire.</li>
-          <li>Ajouter les branches conditionnelles après stabilisation du flux de base.</li>
-          <li>Valider les transitions dans la <a href="simulation-6.html">Simulation</a>.</li>
-          <li>Suivre les résultats d'usage depuis le <a href="tableau-de-bord-7.html">Tableau de bord</a>.</li>
+          <li>Retournez à l'éditeur de séquence d'écrans.</li>
+          <li>Localisez l'écran que vous souhaitez définir comme écran de démarrage.</li>
+          <li>Cliquez sur l'icône de la maison (Home) à gauche de cet écran.</li>
+        </ol>
+        <figure class="visual">
+          <img src="https://codaio.imgix.net/docs/6njJ_WqH8k/blobs/bl-afXV0d0DoE/2edb35ef9c592a8edc63fe105e0e4cd653344da8b80b791f10d5f8f90afa65a5feb3582883677d6eb8e35b2446f5cffe186ee0628a87b00d2c200f3e789a03e18749faf91b582ef0c892d4338d525bb44cc99b8d77527840eaaee5990e57374fad7d861f?fit=max&fm=webp&lossless=true" alt="image.png">
+        </figure>
+      </section>
+
+      <section class="section">
+        <h2>Tester votre navigation</h2>
+        <p>Il est important de tester la navigation de votre application pour s'assurer que tout fonctionne comme prévu.</p>
+        <ol>
+          <li>Utilisez le mode simulateur depuis l’onglet Simulation.</li>
+          <li>Interagissez avec les écrans que vous avez configurés.</li>
+          <li>Vérifiez si la navigation correspond à vos attentes.</li>
         </ol>
       </section>
 
       <section class="section">
-        <h2>Checklist navigation</h2>
+        <h2>Conseils et astuces</h2>
         <ul>
-          <li>Aucun écran sans issue dans les parcours principaux.</li>
-          <li>Retour arrière toujours prévisible.</li>
-          <li>Données requises disponibles avant chaque transition.</li>
+          <li>Assurez vous que les transitions entre les écrans sont logiques et intuitives pour l'utilisateur.</li>
+          <li>Utilisez des noms d'écrans clairs pour faciliter la configuration de la navigation.</li>
+          <li>Testez régulièrement les modifications pour éviter les erreurs de navigation.</li>
         </ul>
       </section>
     </main>

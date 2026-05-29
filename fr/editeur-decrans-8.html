@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
@@ -15,39 +15,132 @@
 
     <main class="main">
       <header class="section hero" id="welcome">
-        <img class="hero-banner" src="../assets/images/hero-banner.png" alt="Banniere du studio Zyllio">
         <div class="hero-body">
           <span class="kicker">Documentation</span>
           <h1>Editeur d'écrans</h1>
-          <p class="lead">Construisez chaque écran avec des composants réutilisables, une hiérarchie claire et des liaisons de données.</p>
+          <p class="lead">L'éditeur d'écran offre une interface conviviale permettant aux utilisateurs de créer et de personnaliser des écrans pour leurs applications mobiles. Cette section présente brièvement les objectifs de l'outil et met en avant ses fonctionnalités principales.</p>
         </div>
+        <figure class="visual">
+          <img src="https://codaio.imgix.net/docs/6njJ_WqH8k/blobs/bl-yEt1KrHU8R/3547748a6bcc2e4f6cbdb7cd971c92f7c4a68a1c52ed89c79238e62651d040389a64e9b7cbcf43248140e3f48ce5dd5ace1172f3cd2faa33ed9860982e3039066d08d7bed40c35f1c06eccebc244bba8adeeb3c685c5741a14a5bab5a983062c5438fd4e?fit=max&fm=webp&lossless=true" alt="image.png">
+        </figure>
       </header>
 
       <section class="section">
-        <h2>Construire l'UI efficacement</h2>
+        <h2>Création d'écrans</h2>
+        <p>La création d’écran est disponible depuis la barre d’outil ‘Screen’ qui affiche les modèles prédéfinis pour accélérer le processus de création.</p>
+        <table class="doc-table">
+          <thead>
+            <tr>
+              <th>Modèle</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>Blank</td><td>Crée un écran vide</td></tr>
+            <tr><td>Header</td><td>Crée un écran avec une barre de titre</td></tr>
+            <tr><td>Info</td><td>Crée un écran informatif avec quelques textes, une image et un bouton</td></tr>
+            <tr><td>Welcome</td><td>Crée un écran de bienvenue avec quelques textes, une image et un bouton</td></tr>
+            <tr><td>Contact</td><td>Crée un écran de contact avec boutons: Twitter, Website, Phone, Email, et YouTube Channel</td></tr>
+            <tr><td>Booking</td><td>Crée un écran qui contient un formulaire d'inscription</td></tr>
+            <tr><td>Login</td><td>Crée un écran d'authentification préconfiguré avec les champs Email et Password et un bouton d'authentification</td></tr>
+            <tr><td>Sign up</td><td>Crée un écran d’inscription utilisateur avec les champs Nom, email, mot de passe, image de profil et bouton d’inscription</td></tr>
+            <tr><td>List</td><td>Crée un écran qui affiche le contenu d’une table sous forme de liste grille</td></tr>
+            <tr><td>Details</td><td>Crée un écran qui affiche le détails d’une sélection, chaque champ de la sélection est affiché selon son type. Un composant Text pour le type text, un composant Phone pour le type phonenumber, un composant Map Marker pour le type location ...</td></tr>
+            <tr><td>Update</td><td>Crée un écran de type fomulaire qui permet de modifier chaque champ de la sélection. Un composant FormText pour le type text, un composant Switch pour le type boolean, un composant Choose option pour le type options ...</td></tr>
+            <tr><td>Create</td><td>Crée un écran de type formulaire qui permet de créer un enregistrement dans une table en fonction du type de chaque colonne. Un composant FormText pour le type text, un composant Switch pour le type boolean, un composant Choose option pour le type options ...</td></tr>
+            <tr><td>List/Details</td><td>Crée 2 écrans à la fois qui affichent le contenu d’une table et le détail de la sélection</td></tr>
+            <tr><td>Liste/Update</td><td>Crée 4 écrans à la fois qui affichent le contenu d’une table, le détail de la sélection, un formulaire de mise à jour et un formulaire de création</td></tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section class="section">
+        <h2>Modification des écrans</h2>
+        <h3>Gestion de la zone de travail</h3>
+        <p>Organisation spatiale des écrans</p>
         <ul>
-          <li>Utiliser des blocs réutilisables pour garder une cohérence visuelle.</li>
-          <li>Nommer les composants selon leur intention fonctionnelle.</li>
-          <li>Lier les champs aux données dès les premières versions.</li>
+          <li>Alignez les écrans de manière précise pour garantir une disposition efficace.</li>
+          <li>Utilisez des outils d'agencement pour optimiser l'espace et améliorer la lisibilité.</li>
         </ul>
-      </section>
-
-      <section class="section">
-        <h2>Workflow recommandé</h2>
-        <ol>
-          <li>Créer la structure de l'écran puis ses zones principales.</li>
-          <li>Ajouter les états d'interaction et conditions d'affichage.</li>
-          <li>Connecter les calculs via <a href="formules-15.html">Formules</a> et l'état applicatif via <a href="variables-54.html">Variables</a>.</li>
-          <li>Prévisualiser les transitions dans l'<a href="editeur-de-sequence-decrans-23.html">Editeur de sequence d'ecrans</a>.</li>
-        </ol>
-      </section>
-
-      <section class="section">
-        <h2>Pièges fréquents</h2>
+        <p>Outils de manipulation</p>
         <ul>
-          <li>Surcharger un écran avec trop d'actions.</li>
-          <li>Utiliser des libellés incohérents entre composants similaires.</li>
-          <li>Négliger les cas limites avant la simulation.</li>
+          <li>Déplacez et redimensionnez les écrans avec des outils intuitifs.</li>
+        </ul>
+
+        <h3>Drag and drop des composants visuels</h3>
+        <p>Ajout de composants dans les écrans</p>
+        <ul>
+          <li>Faites glisser et déposez des composants visuels à partir de la bibliothèque sur les écrans.</li>
+          <li>Choisissez parmi une variété d'éléments tels que boutons, champs de texte, images, listes, ...</li>
+        </ul>
+        <p>Configuration des composants</p>
+        <ul>
+          <li>Personnalisez les propriétés de chaque composant en fonction de vos besoins.</li>
+          <li>Ajustez les paramètres tels que la couleur, la taille et le comportement interactif.</li>
+        </ul>
+
+        <h3>Sélection, copie, et collage</h3>
+        <p>Sélection d'écrans et de composants</p>
+        <ul>
+          <li>Apprenez différentes méthodes pour sélectionner efficacement les écrans et composants.</li>
+          <li>Utilisez des raccourcis pour accélérer le processus de sélection : CTRL+A pour sélectionner tous les écrans.</li>
+        </ul>
+        <p>Copier-coller</p>
+        <ul>
+          <li>Dupliquez rapidement des écrans et des composants pour gagner du temps.</li>
+          <li>Copiez des éléments d'un écran à un autre.</li>
+        </ul>
+
+        <figure class="visual">
+          <img src="https://codaio.imgix.net/docs/6njJ_WqH8k/blobs/bl-kRmAE8HXne/9e12ad26a13d7c268b876449c4ce9851f65788cd8b61680d2f7a1c021fbcbaf721197ac4ab7a7934f724f0b7c8afe55dbaef9f9a8981bd06bc368d272437f8700980e3e90de38fec0d239583aaf4f1ac7ffeb220cd2df63e100bbe9993d949d6592d1575?fit=max&fm=webp&lossless=true" alt="image.png">
+        </figure>
+      </section>
+
+      <section class="section">
+        <h2>Définition du thème de l'application</h2>
+        <p>Personnalisation de l'apparence</p>
+        <ul>
+          <li>Choisissez des couleurs et d'autres éléments graphiques pour définir le thème.</li>
+          <li>Aperçu en temps réel des changements pour une visualisation instantanée.</li>
+        </ul>
+        <figure class="visual">
+          <img src="https://codaio.imgix.net/docs/6njJ_WqH8k/blobs/bl-i8SKFhiLzO/b160bc59186dc2501de51fb636d37619f681cc46cfe63d46db59f2da302e69d2ff8d5722a1abfde88f08b0b8d737e5c1369ef65e0738295c88b18832a5d124cb12e2c172402193c04c7f25019c38ecd4ee95d82592e4c74fbfe776f29c36d21c63604133?fit=max&fm=webp&lossless=true" alt="image.png">
+        </figure>
+        <h3>Couleurs</h3>
+        <table class="doc-table">
+          <thead>
+            <tr>
+              <th>Nom</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>Primary Color</td><td>Couleur principale utilisée pour le fond de la barre de titre (header)</td></tr>
+            <tr><td>Primary Text Color</td><td>Couleur principale utilisée pour le texte de la barre de titre (header)</td></tr>
+            <tr><td>Secondary Color</td><td>Couleur secondaire utilisée pour le fond des sélections d’item de listes et boutons</td></tr>
+            <tr><td>Secondary Text Color</td><td>Couleur secondaire utilisée pour le texte des sélections d’item de listes et boutons</td></tr>
+            <tr><td>Tertiary Color</td><td>Couleur ternaire utilisée pour le fond des zones de saisies. Elle est souvent semi-transparente</td></tr>
+            <tr><td>Terciary Text Color</td><td>Couleur ternaire utilisée pour le texte des zones de saisies.</td></tr>
+            <tr><td>Background Color</td><td>Couleur par défaut utilisée pour le fond des écrans</td></tr>
+            <tr><td>Text Color</td><td>Couleur par défaut utilisée pour les textes des composants</td></tr>
+          </tbody>
+        </table>
+        <h3>Propriétés</h3>
+        <table class="doc-table">
+          <thead>
+            <tr>
+              <th>Nom</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>Right to left</td><td>Bascule l’affichage des textes de droite vers la gauche, utile pour certaines langues (Arabe par exemple)</td></tr>
+          </tbody>
+        </table>
+        <h3>Application du thème</h3>
+        <ul>
+          <li>Appliquez facilement le thème défini à l'ensemble de l'application.</li>
+          <li>Possibilité de changer de thème à tout moment en fonction des préférences.</li>
         </ul>
       </section>
     </main>

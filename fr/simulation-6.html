@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
@@ -15,36 +15,42 @@
 
     <main class="main">
       <header class="section hero" id="welcome">
-        <img class="hero-banner" src="../assets/images/hero-banner.png" alt="Banniere du studio Zyllio">
         <div class="hero-body">
           <span class="kicker">Documentation</span>
           <h1>Simulation</h1>
-          <p class="lead">Testez le comportement de votre application de bout en bout avant publication.</p>
+          <p class="lead">Le simulateur permet de tester des applications mobiles dans un environnement simulé, offrant ainsi la possibilité de visualiser et d'interagir avec des applications sur différents modèles de téléphones mobiles. Il prend en charge à la fois les plateformes Android et iOS</p>
+          <p>Ce simulateur d'applications mobiles est un outil efficace pour tester les fonctionnalités de votre application sur différents appareils et systèmes d'exploitation. Il permet également de simplifier le processus de test en proposant une authentification rapide via la connexion automatique. Utilisez-le pour vérifier la performance et l'expérience utilisateur de vos applications dans des conditions proches de la réalité</p>
         </div>
       </header>
 
       <section class="section">
-        <h2>Pourquoi la simulation est essentielle</h2>
+        <h2>Choix du modèle d'appareil :</h2>
+        <p>Le simulateur offre un large éventail de modèles d'appareils parmi lesquels vous pouvez choisir pour tester votre application. Vous pouvez sélectionner des téléphones Android et iOS populaires comme des Samsung Galaxy, iPhones</p>
+        <p>Pour changer de modèle d'appareil, utilisez le menu déroulant sur la gauche de l'interface. Cela permet d’adapter l’affichage de l’application selon les spécifications de l'appareil choisi, y compris la résolution d’écran et les particularités du système d’exploitation</p>
+      </section>
+
+      <section class="section">
+        <h2>Authentification automatique</h2>
+        <p>Le simulateur dispose d'une fonctionnalité d'authentification automatique, permettant de se connecter à l'application sans avoir à saisir manuellement l'email et le mot de passe.</p>
+        <p>Pour utiliser cette fonctionnalité, vous devez sélectionner un utilisateur à authentifier à partir du menu dédié. Cette option permet de simuler la connexion rapide à une application sans entrer d’informations de connexion à chaque fois</p>
+
+        <p class="callout info">Pour que l'authentification automatique fonctionne correctement, la  table d'authentification contenant trois colonnes obligatoires :</p>
         <ul>
-          <li>Détecter les problèmes UX avant mise en ligne.</li>
-          <li>Valider chargement de données, états vides et erreurs.</li>
-          <li>Confirmer navigation et actions métier sur des parcours réalistes.</li>
+          <li>Email : l'email de l'utilisateur</li>
+          <li>Name : le nom de l'utilisateur</li>
+          <li>Password : le mot de passe de l'utilisateur</li>
         </ul>
+        <p>Si ces colonnes ne sont pas présentes, la fonctionnalité d'authentification automatique ne pourra pas être utilisée. Il est donc essentiel de vérifier la structure de la table avant d’activer cette option</p>
       </section>
 
       <section class="section">
-        <h2>Trame de tests recommandée</h2>
-        <ol>
-          <li>Exécuter le parcours principal du début à l'action finale.</li>
-          <li>Tester les branches alternatives définies dans l'<a href="editeur-de-sequence-decrans-23.html">Editeur de sequence d'ecrans</a>.</li>
-          <li>Vérifier lectures et écritures sur votre connecteur cible.</li>
-          <li>Corriger les défauts avant <a href="publications-5.html">Publications</a>.</li>
-        </ol>
-      </section>
+        <h2>Comment utiliser le simulateur</h2>
 
-      <section class="section">
-        <h2>Critère de publication</h2>
-        <p>Publiez uniquement après validation de tous les scénarios critiques au moins une fois sur le format d'appareil cible.</p>
+        <h3>Sélection de l'appareil</h3>
+        <p>Accédez au menu déroulant en haut à gauche pour choisir un modèle de téléphone. Une fois sélectionné, le simulateur ajustera automatiquement l'affichage pour correspondre à l'apparence de cet appareil</p>
+
+        <h3>Authentification automatique</h3>
+        <p>Pour activer l'authentification automatique, sélectionnez l'option correspondante dans le menu "Act as" (Agir en tant que) et choisissez un utilisateur prédéfini. Cela simulera l’expérience d’un utilisateur se connectant directement à l'application sans saisir ses informations manuellement</p>
       </section>
     </main>
   </div>
