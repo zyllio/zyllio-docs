@@ -14,37 +14,117 @@
     </aside>
 
     <main class="main">
-      <header class="section hero" id="welcome">
-        <img class="hero-banner" src="../assets/images/hero-banner.png" alt="Zyllio studio banner">
-        <div class="hero-body">
-          <span class="kicker">Documentation</span>
-          <h1>Formulas</h1>
-          <p class="lead">Use formulas to compute values, validate inputs, and drive conditional behavior in your app.</p>
-        </div>
-      </header>
+      <section class="section" id="welcome">
+        <h1>Formulas</h1>
+        <p>The formula editor is a powerful tool within our No-Code platform that allows you to create custom formulas. These formulas can integrate text, functions, and enable the display of dynamic data such as variables, calculations, table data, images, and more.</p>
 
-      <section class="section">
-        <h2>Formula use cases</h2>
+        <h2>Accessing the Editor</h2>
+        <p>Certain component and action properties support formulas, typically when the property expects text. For example, the Text property of the Label Text component.</p>
+        <p>Click on the menu to the right of the property to view all available options. Here, the Text property can be populated from:</p>
         <ul>
-          <li>Derive display values from multiple fields.</li>
-          <li>Build conditional labels and visual states.</li>
-          <li>Validate user input before actions run.</li>
+          <li>A fixed text (without a variable)</li>
+          <li>A formula</li>
+          <li>A variable</li>
         </ul>
-      </section>
+        <figure class="visual">
+          <img src="https://codaio.imgix.net/docs/6njJ_WqH8k/blobs/bl-utF12TsKZO/b5aa426a22eb9c5e2409d720e373c7c5bce25002ab653a1248492d37f05522be6e80333f9b61e320749e876748735312192aa5e6f217d3186570b0362621b7703ce55c003a87f22e951384a0d824fb464bde410e2386df521f3c6dacc630ba9624c8f847?fit=max&fm=webp&lossless=true" alt="Properties with formula, variable, or fixed text">
+        </figure>
+        <p>Select Formula to access the formula editor.</p>
 
-      <section class="section">
-        <h2>Implementation pattern</h2>
-        <ol>
-          <li>Keep formulas short and focused on one responsibility.</li>
-          <li>Name computed fields explicitly for maintainability.</li>
-          <li>Combine with <a href="variables-54.html">Variables</a> for state-dependent behavior.</li>
-          <li>Validate outputs with real data in <a href="simulation-6.html">Simulation</a>.</li>
-        </ol>
-      </section>
+        <h2>Formula Editor</h2>
+        <p>The formula editor allows you to combine text with contextual data. To do this, simply enter the text and drag and drop the required functions.</p>
+        <p>For example: "You have ordered [Count rows] products." Here, [Count rows] represents a dynamic data point (the result of a function) that calculates the number of rows from a table.</p>
+        <figure class="visual">
+          <img src="https://codaio.imgix.net/docs/6njJ_WqH8k/blobs/bl-mfmanTWmww/fc545db729dcb4db427da5990688caca03c2b5865b23f1d1bae72892903de0add34888ad65d1a6f064bb1a6d6f44662b9d840478278f7a326f97ad39a6add2f4f52cb470d81ea9169267ff2612a7a74e2bc74f18467dfe6956ca692c509ba16bf5c5ac76?fit=max&fm=webp&lossless=true" alt="Formula editor with text and functions">
+        </figure>
 
-      <section class="section">
-        <h2>Quality tips</h2>
-        <p>Avoid deeply nested expressions. Split complex logic into reusable intermediate fields when possible.</p>
+        <h2>Fonctions</h2>
+        <table class="doc-table">
+          <thead>
+            <tr>
+              <th>Categorie</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Condition</td>
+              <td>Allows displaying text if a condition is true<br>IF THEN<br>IF THEN_ELSE</td>
+            </tr>
+            <tr>
+              <td>Number</td>
+              <td>Displays, generates, and calculates a number<br>AMOUNT<br>CALCULATE<br>RANDOM</td>
+            </tr>
+            <tr>
+              <td>Date</td>
+              <td>Allows displaying a simple date, calculating a duration between two dates, and performing date calculations<br>Current date &amp; time<br>Duration from today<br>Add<br>Substract</td>
+            </tr>
+            <tr>
+              <td>Text</td>
+              <td>Allows transforming a text, searching for, and replacing a pattern in a text<br>Text<br>Lowercase<br>Uppercase<br>Capitalize<br>Concatenate<br>Substring<br>Replace<br>Split</td>
+            </tr>
+            <tr>
+              <td>Data</td>
+              <td>Displays the result of an aggregation on tables<br>Count rows<br>Maximum in rows<br>Minimum in rows<br>Average in rows<br>Sum in rows</td>
+            </tr>
+            <tr>
+              <td>Image</td>
+              <td>Displays an image. The path must be complete (absolute)<br>Image</td>
+            </tr>
+            <tr>
+              <td>Geolocation</td>
+              <td>Displays the distance between the GPS position or between two positions<br>Distance from position<br>Distance</td>
+            </tr>
+            <tr>
+              <td>Payment</td>
+              <td>Displays a cart and details<br>Print Cart<br>Cart amount</td>
+            </tr>
+            <tr>
+              <td>JSON</td>
+              <td>Allows searching for information in a JSON message<br>JSON Query</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h2>Formats</h2>
+        <table class="doc-table">
+          <thead>
+            <tr>
+              <th>Format</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Text</td>
+              <td>Formats the data as text<br>Please scan your barcode</td>
+            </tr>
+            <tr>
+              <td>Whole number</td>
+              <td>Formats the data as an integer. Decimal numbers are truncated (ignored).<br>2.2 =&gt; 2<br>077 =&gt; 77<br>123.45 =&gt; 123</td>
+            </tr>
+            <tr>
+              <td>Number</td>
+              <td>Formats the data as a decimal number. The format supports a specific number of decimals and a unit.<br>If the specified symbol is a dollar ($), the dollar symbol appears before the number.<br>1.2 =&gt; 1.20 €<br>12.23567 =&gt; 12 km<br>34.3654 =&gt; 4452.3 °<br>12.32 =&gt; $12.32</td>
+            </tr>
+            <tr>
+              <td>Currency</td>
+              <td>Formats the data as an amount with currency. The number is displayed with 2 decimal places.<br>0.2 =&gt; 0.20€<br>5.0 =&gt; $5.00</td>
+            </tr>
+            <tr>
+              <td>Distance</td>
+              <td>Formats the data as a distance<br>The most appropriate unit is used automatically.<br>5.2 =&gt; 5.2 m<br>85200 =&gt; 85.2 km</td>
+            </tr>
+            <tr>
+              <td>Duration</td>
+              <td>Formats the data as a duration<br>The most appropriate unit is used automatically or can be manually selected.<br>5.2 =&gt; 5.2 s<br>600 =&gt; 5 m</td>
+            </tr>
+            <tr>
+              <td>Rich text</td>
+              <td>Displays HTML code<br>&lt;i&gt;Italic&lt;/i&gt; =&gt; i</td>
+            </tr>
+          </tbody>
+        </table>
       </section>
     </main>
   </div>

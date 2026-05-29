@@ -14,37 +14,104 @@
     </aside>
 
     <main class="main">
-      <header class="section hero" id="welcome">
-        <img class="hero-banner" src="../assets/images/hero-banner.png" alt="Zyllio studio banner">
-        <div class="hero-body">
-          <span class="kicker">Documentation</span>
-          <h1>Variables</h1>
-          <p class="lead">Manage app state with variables to keep screens synchronized and interactions predictable.</p>
-        </div>
-      </header>
+      <section class="section" id="welcome">
+        <h1>Variables</h1>
+        <p>In the context of a no-code tool, a variable is a fundamental element used to store and manipulate data. Variables can be thought of as containers in which you can store information such as numbers, text, or more complex data. Their main advantage is that they can change value during the execution of your application.</p>
 
-      <section class="section">
-        <h2>Variable strategy</h2>
+        <h2>Creation of variables</h2>
+        <p>There are 2 types of variables:</p>
         <ul>
-          <li>Use local variables for screen-specific temporary values.</li>
-          <li>Use shared variables for cross-screen session context.</li>
-          <li>Reset sensitive variables on logout or flow completion.</li>
+          <li>Simple variables based on user input or action results</li>
+          <li>Selection variables based on lists</li>
         </ul>
-      </section>
 
-      <section class="section">
-        <h2>Practical setup</h2>
-        <ol>
-          <li>Define naming conventions by scope and purpose.</li>
-          <li>Initialize defaults on entry screens.</li>
-          <li>Update values through explicit actions and formulas.</li>
-          <li>Verify state transitions in <a href="screen-sequence-editor-23.html">Screen sequence editor</a>.</li>
-        </ol>
-      </section>
+        <h3>Input Components</h3>
+        <p>You can create simple variables using input components, such as a text input field. For example, a user can enter their name in an input field, and that entry is then stored in a variable.</p>
+        <p>All the following components store input in simple variables</p>
+        <figure class="visual">
+          <img src="https://codaio.imgix.net/docs/6njJ_WqH8k/blobs/bl-fRwroRzXCe/3e32ad1c541aedd0607e52f0140f2b2228d11ffec978607dbe2454f5ee055ff27e91dd5a44d49c07bf8ec81a5561b279d663cdb636d58558ab55a6042d959b52d496c511f9bec9851743f22de64c0ef73a7c3db1c8cd2e1e835d46f8a3b62462ec3f2a8a?fit=max&fm=webp&lossless=true" alt="Input components creating variables">
+        </figure>
 
-      <section class="section">
-        <h2>State integrity</h2>
-        <p>Document expected variable lifecycle to prevent stale values and hard-to-debug side effects.</p>
+        <h3>Actions</h3>
+        <p>Actions can be used to store the result of a process in a simple variable.</p>
+        <table class="doc-table">
+          <thead>
+            <tr>
+              <th>Action</th>
+              <th>Commentary</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Get Current Position</td>
+              <td>Retrieves the GPS position of the device and stores it in a simple variable.</td>
+            </tr>
+            <tr>
+              <td>Increment</td>
+              <td>Increments a simple variable and stores it again.</td>
+            </tr>
+            <tr>
+              <td>Scan QR Code</td>
+              <td>The scanned code is stored in a simple variable.</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h3>Selection Components</h3>
+        <p>List-type components such as grids (Grid), lists (List), or carousels (Carousel) can be used to define selection variables. When a user selects an item from these components, the selected item is assigned to such a variable.</p>
+        <figure class="visual">
+          <img src="https://codaio.imgix.net/docs/6njJ_WqH8k/blobs/bl--caYb7VcPQ/11737cb36fc31d7d7bd42331b51ca3bc6809f772b2e926c816cb649ec5d64c1d46c017fce93f90fd7d8205031032d49ca5d48a3d70257d7fa4d3efd964fbef069b86447b0cf72072fdfea89b7c0704f512ad087c21fdccb351344c0e43978390648e0fca?fit=max&fm=webp&lossless=true" alt="Selection components with variables">
+        </figure>
+
+        <h2>Using Variables</h2>
+        <p>Variables can be used on any screen. A variable created in one screen can be read on any other screen, not necessarily the same screen.</p>
+
+        <h3>Reading and Displaying</h3>
+        <p>All visual components, formulas, and actions in your application can read and display the values stored in variables. This provides great flexibility in presenting and processing data.</p>
+        <p>Additionally, variables can be combined using formulas to build texts that contain both fixed words and variable data.</p>
+        <p>Variables can be formatted according to their type to customize their display.</p>
+        <table class="doc-table">
+          <thead>
+            <tr>
+              <th>Type</th>
+              <th>Format</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Nombres</td>
+              <td>Number of decimals<br>Integer</td>
+            </tr>
+            <tr>
+              <td>Montants</td>
+              <td>Currencies</td>
+            </tr>
+            <tr>
+              <td>Dates</td>
+              <td>Date/Time/Date and Time<br>Short or long format</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h3>Manipulation by Actions</h3>
+        <p>Most actions allow variables to be specified in their properties for execution.</p>
+        <p>For example, the Navigate action defines a property called URL; this property can have a fixed value (for example <a href="https://zyllio.com">https://zyllio.com</a>) or take a previously stored variable (for example web site).</p>
+        <p>Some actions produce a value and store it in a new variable or an existing variable.</p>
+
+        <h2>Best Naming Practices</h2>
+        <p>It is recommended to name variables with a meaningful name based on their use:</p>
+        <ul>
+          <li>Use "Selected Product" on a product list</li>
+          <li>Use "Scanned Code" on a Scan QR Code action</li>
+        </ul>
+        <p>An application that contains dozens of variables can be extremely difficult to maintain over the long term.</p>
+        <p>If the application contains dozens of screens using the same data sources, it is recommended to extend names with more context. For example "All products" and "Favorite products".</p>
+        <p>Avoid the following names:</p>
+        <ul>
+          <li>acronyms</li>
+          <li>numbered variables such as "variable 1", "variable 2"</li>
+          <li>shortened names</li>
+        </ul>
       </section>
     </main>
   </div>

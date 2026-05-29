@@ -14,37 +14,115 @@
     </aside>
 
     <main class="main">
-      <header class="section hero" id="welcome">
-        <img class="hero-banner" src="../assets/images/hero-banner.png" alt="Banniere du studio Zyllio">
-        <div class="hero-body">
-          <span class="kicker">Documentation</span>
-          <h1>Formules</h1>
-          <p class="lead">Utilisez les formules pour calculer des valeurs, valider des saisies et piloter des comportements conditionnels.</p>
-        </div>
-      </header>
+      <section class="section" id="welcome">
+        <h1>Formules</h1>
+        <p>L'éditeur de formule est un outil puissant au sein de notre plateforme No-Code qui permet de créer des formules personnalisées. Ces formules peuvent intégrer du texte, des fonctions, et permettent d'afficher des données dynamiques comme des variables, des calculs, des données de tables, des images, et plus encore.</p>
 
-      <section class="section">
-        <h2>Cas d'usage des formules</h2>
+        <h2>Accès à l'éditeur</h2>
+        <p>Certaines propriétés de composants et d'actions supportent les formules souvent lorsque la propriété attend du texte. Par exemple : la propriété Text du composant Label Text. Cliquez sur le menu à droite de la propriété pour afficher toutes les possibilités. Ici la propriété Text peut être alimentée à partir de :</p>
         <ul>
-          <li>Calculer des valeurs d'affichage à partir de plusieurs champs.</li>
-          <li>Créer des libellés et états visuels conditionnels.</li>
-          <li>Valider les saisies avant exécution d'actions.</li>
+          <li>D'un texte fixe (sans variable)</li>
+          <li>D'une formule</li>
+          <li>D'une variable</li>
         </ul>
-      </section>
+        <figure class="visual">
+          <img src="https://codaio.imgix.net/docs/6njJ_WqH8k/blobs/bl-utF12TsKZO/b5aa426a22eb9c5e2409d720e373c7c5bce25002ab653a1248492d37f05522be6e80333f9b61e320749e876748735312192aa5e6f217d3186570b0362621b7703ce55c003a87f22e951384a0d824fb464bde410e2386df521f3c6dacc630ba9624c8f847?fit=max&fm=webp&lossless=true" alt="Propriétés avec formule, variable, ou texte fixe">
+        </figure>
+        <p>Sélectionnez Formula pour accéder à l'éditeur de formule.</p>
 
-      <section class="section">
-        <h2>Pattern d'implémentation</h2>
-        <ol>
-          <li>Garder des formules courtes avec une seule responsabilité.</li>
-          <li>Nommer explicitement les champs calculés pour la maintenance.</li>
-          <li>Combiner avec <a href="variables-54.html">Variables</a> pour les comportements dépendants de l'état.</li>
-          <li>Valider les résultats sur données réelles en <a href="simulation-6.html">Simulation</a>.</li>
-        </ol>
-      </section>
+        <h2>Éditeur de formules</h2>
+        <p>L'éditeur de formule permet de combiner des textes avec des données contextuelles. Pour cela, il suffit de saisir le texte et de glisser/déposer les fonctions requises. Par exemple: "Vous avez commandé [Count rows] produits". Ici [Count rows] représente une donnée dynamique (résultat d'une fonction) qui permet de calculer un nombre de lignes depuis une table.</p>
+        <figure class="visual">
+          <img src="https://codaio.imgix.net/docs/6njJ_WqH8k/blobs/bl-mfmanTWmww/fc545db729dcb4db427da5990688caca03c2b5865b23f1d1bae72892903de0add34888ad65d1a6f064bb1a6d6f44662b9d840478278f7a326f97ad39a6add2f4f52cb470d81ea9169267ff2612a7a74e2bc74f18467dfe6956ca692c509ba16bf5c5ac76?fit=max&fm=webp&lossless=true" alt="Éditeur de formules avec texte et fonctions">
+        </figure>
 
-      <section class="section">
-        <h2>Conseils qualité</h2>
-        <p>Évitez les expressions trop imbriquées. Découpez la logique complexe en champs intermédiaires réutilisables.</p>
+        <h2>Fonctions</h2>
+        <table class="doc-table">
+          <thead>
+            <tr>
+              <th>Categorie</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Condition</td>
+              <td>Permet d’afficher un texte si une condition est vraie<br>IF THEN<br>IF THEN_ELSE</td>
+            </tr>
+            <tr>
+              <td>Number</td>
+              <td>Affiche, génère et calcule un nombre<br>AMOUNT<br>CALCULATE<br>RANDOM</td>
+            </tr>
+            <tr>
+              <td>Date</td>
+              <td>Permet d’afficher une simple date, de calculer une durée entre 2 dates et faire des calculs de dates<br>Current date &amp; time<br>Duration from today<br>Add<br>Substract</td>
+            </tr>
+            <tr>
+              <td>Text</td>
+              <td>Permet de transformer un texte, de rechercher et remplacer un motif dans un texte<br>Text<br>Lowercase<br>Uppercase<br>Capitalize<br>Concatenate<br>Substring<br>Replace<br>Split</td>
+            </tr>
+            <tr>
+              <td>Data</td>
+              <td>Affiche le résultat d’une agrégation sur des tables<br>Count rows<br>Maximum in rows<br>Minimum in rows<br>Average in rows<br>Sum in rows</td>
+            </tr>
+            <tr>
+              <td>Image</td>
+              <td>Affiche une image. Le chemin doit être complet (absolu)<br>Image</td>
+            </tr>
+            <tr>
+              <td>Geolocation</td>
+              <td>Affiche la distance entre la position GPS ou entre 2 positions<br>Distance from position<br>Distance</td>
+            </tr>
+            <tr>
+              <td>Payment</td>
+              <td>Affiche un panier et des détails<br>Print Cart<br>Cart amount</td>
+            </tr>
+            <tr>
+              <td>JSON</td>
+              <td>Permet de rechercher une information dans un message JSON<br>JSON Query</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h2>Formats</h2>
+        <table class="doc-table">
+          <thead>
+            <tr>
+              <th>Format</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Text</td>
+              <td>Formatte la donnée sous forme de texte<br>Please scan your barcode</td>
+            </tr>
+            <tr>
+              <td>Whole number</td>
+              <td>Formatte la donnée sous forme de nombre entier. Les chiffres décimaux sont tronqués (ignorés)<br>2.2 =&gt; 2<br>077 =&gt; 77<br>123.45 =&gt; 123</td>
+            </tr>
+            <tr>
+              <td>Number</td>
+              <td>Formatte la donnée sous forme de nombre décimal. Le format supporte un nombre de décimal et une unité<br>Si le symbole spécifié est dollar ($), le symbole dollar apparait avant le nombre<br>1.2 =&gt; 1.20 €<br>12.23567 =&gt; 12 km<br>34.3654 =&gt; 4452.3 °<br>12.32 =&gt; $12.32</td>
+            </tr>
+            <tr>
+              <td>Currency</td>
+              <td>Formatte la donnée sous forme de montant avec devise. Le nombre est affiché avec 2 chiffres après la virgule<br>0.2 =&gt; 0.20€<br>5.0 =&gt; $5.00</td>
+            </tr>
+            <tr>
+              <td>Distance</td>
+              <td>Formatte la donnée sous forme de distance<br>L’unité la plus approprié est utilisée automatiquement<br>5.2 =&gt; 5.2 m<br>85200 =&gt; 85.2 km</td>
+            </tr>
+            <tr>
+              <td>Duration</td>
+              <td>Formatte la donnée sous forme de durée<br>L’unité la plus approprié est utilisée automatiquement ou peut être sélectionnée manuellement<br>5.2 =&gt; 5.2 s<br>600 =&gt; 5 m</td>
+            </tr>
+            <tr>
+              <td>Rich text</td>
+              <td>Affiche du code HTML<br>&lt;i&gt;Italic&lt;/i&gt; =&gt; i</td>
+            </tr>
+          </tbody>
+        </table>
       </section>
     </main>
   </div>

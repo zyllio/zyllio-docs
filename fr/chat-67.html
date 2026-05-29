@@ -19,32 +19,73 @@
         <div class="hero-body">
           <span class="kicker">Documentation</span>
           <h1>Chat</h1>
-          <p class="lead">Ajoutez des conversations intégrées pour renforcer support, collaboration et engagement utilisateur.</p>
+          <p>Ce guide explique comment mettre en place et configurer un composant Chat qui permet l'échange de messages entre 2 utilisateurs authentifiés.</p>
         </div>
       </header>
 
       <section class="section">
-        <h2>Concevoir l'expérience Chat</h2>
-        <ul>
-          <li>Définir le contexte de conversation par utilisateur ou objet métier.</li>
-          <li>Afficher clairement statut de lecture et chronologie des messages.</li>
-          <li>Prévoir des règles de modération et d'escalade.</li>
-        </ul>
-      </section>
+        <figure class="visual">
+          <img src="https://codaio.imgix.net/docs/6njJ_WqH8k/blobs/bl-h2wteGVviL/4ca072163245dedf99c19d3872da3041c189fce8ec82bf44cc275faf29b524926881bf5a7e781b8d9a39a9987f8c93f98e2d05d14196e4000093dbb90fad3414014b70001fefaccbe50396aa02d8ec730ae96239c274df197b53b923fbc1ad5cc0752f50?fit=max&fm=webp&lossless=true" alt="image.png">
+        </figure>
 
-      <section class="section">
-        <h2>Étapes d'implémentation</h2>
-        <ol>
-          <li>Modéliser les entités de messages et métadonnées des participants.</li>
-          <li>Lier listes et détails de conversation dans l'<a href="editeur-decrans-8.html">Editeur d'ecrans</a>.</li>
-          <li>Utiliser <a href="variables-54.html">Variables</a> pour thread actif et brouillons.</li>
-          <li>Valider le temps réel et le mode dégradé en <a href="simulation-6.html">Simulation</a>.</li>
-        </ol>
-      </section>
+        <h2>Mise en place de l'authentification</h2>
+        <p>Avant de commencer, il est essentiel de mettre en place une authentification pour garantir que seuls les utilisateurs autorisés peuvent échanger avec les autres utilisateurs.</p>
 
-      <section class="section">
-        <h2>Note opérationnelle</h2>
-        <p>Suivez les KPI de temps de réponse et les échecs de livraison pour maintenir la qualité du chat en production.</p>
+        <h3>Création de la table utilisateurs</h3>
+        <p>Depuis l'onglet Database, glissez une table Users dans l'espace de travail. Zyllio va automatiquement créer les colonnes requises et également 2 utilisateurs d'exemple. Ces utilisateurs sont utiles pour tests et peuvent être modifiés voire supprimés par la suite.</p>
+        <figure class="visual">
+          <img src="https://codaio.imgix.net/docs/6njJ_WqH8k/blobs/bl-bSPNaK6lGq/f970806a99fc8d0810e4024f5daabf1995a649889e86ee90c2e0549c1f1a1aac8f6be1ffb55ec571ee85dfccdee27aa74a265ee04310cc14174168184b031b35eedf979ab236854e0064b21d32370150f87350f816c53885aedb6a31ff361d7f1cd167d3?fit=crop&w=800&h=391&crop=focalpoint&fm=webp&lossless=true&fp-x=0.5&fp-y=0.3546938775510204" alt="image.png">
+        </figure>
+        <p class="callout info">Vous pouvez conserver des tables qui définissent des colonnes en Anglais. En revanche les écrans pourront s'afficher dans votre langue en utilisant la propriété Label disponible dans tous les composants.</p>
+
+        <h3>Création de l'écran d'authentification</h3>
+        <p>Depuis l'onglet Designer, glissez un écran Login dans l'espace de travail en sélectionnant la table Users. Vous obtenez cet écran prêt à l'emploi :</p>
+        <figure class="visual">
+          <img src="https://codaio.imgix.net/docs/6njJ_WqH8k/blobs/bl-WteNyskOgf/68335d6d0fdd877ded088feedb4b109400e51c9fa97655ce98a4f484257a4473dc788c710f30c03480eba6574d62d6ab41f4bc2ba61b5f98ae9c986c785e0e68452f21e7dff9127d7e296f768a43f2afa5c52901e5b0483da0d9dfbcbae8300cfc946d1d?fit=max&fm=webp&lossless=true" alt="image.png">
+        </figure>
+        <p>Puis un deuxième écran Header que l'on nommera Friends :</p>
+        <figure class="visual">
+          <img src="https://codaio.imgix.net/docs/6njJ_WqH8k/blobs/bl-feKndokSP-/c2f4f497b81b70f9529b0537580e0858bbac6c9e3f00f9e27fb84e780796d70f170e0720a2a67d963fcd00be878e2067797a32d7b1c5e36fba5275dacfa308b00287bd46afea2722a75025754260c9cac3ae5800babd630a8cbda4197bccbc24ab03c86d?fit=max&fm=webp&lossless=true" alt="image.png">
+        </figure>
+
+        <h2>Affichage de la liste des amis</h2>
+        <p>Reliez le bouton Enter, qui authentifie, avec l'écran Friends. Ainsi, si l'authentification réussit l'application mobile affichera l'écran relié (ici Friends) :</p>
+        <figure class="visual">
+          <img src="https://codaio.imgix.net/docs/6njJ_WqH8k/blobs/bl-IgDSBbGFrh/72185fcf25e9e8bb13ce29f410cbe15cf1079f31cbfa7c4911076e3d7fdbfdd05fdfa2e256f46cd05206915f431180a8a0bc0dd6aebd625cf8621b19dbbbbe21a3b205324bfc318025bad41b50f9f6c97c6716829ce85183c9f80dd7934812d0191f9024?fit=max&fm=webp&lossless=true" alt="image.png">
+        </figure>
+        <p>Ajouter dans l'écran Friends un composant List (ou tout autre composant de liste comme Grid ou Carousel) en utilisant la table Users :</p>
+        <figure class="visual">
+          <img src="https://codaio.imgix.net/docs/6njJ_WqH8k/blobs/bl-Z0LmElpS-v/f0101267c949d6b16e8341abfce974397ec6956db80ea5a4faa8c66e4eaa9e838d8d6df9542683efd7b225c1da1945ac27196b906cd6fb6e27ee6fbf8ac52bee79bc68604a70cfa771bf5e8c3a7ddc5ce7a8d43d59583128f4aa4b65ee38902a062e2e0b?fit=max&fm=webp&lossless=true" alt="image.png">
+        </figure>
+        <p>Définissez un filtre sur ce composant List pour exclure l'utilisateur authentifié selon ce critère: <strong>Email is not equal to User/Email</strong>. Email représente la colonne Email de la table Users et User/Email est l'email de l'utilisateur authentifié (User) :</p>
+        <figure class="visual">
+          <img src="https://codaio.imgix.net/docs/6njJ_WqH8k/blobs/bl-xUDeaiCdWJ/d58def45c71c0ce3c5053111b402a11380bf6f98f89170ddd5ae803671ca54efbb6e062e0e98ae6ad1a8827f4c9f0c9d473b6ad6ccb798085f19e0a45031770807e47ab4d9489457284b3371cf96d83eb49b2a5e53df6b0a1d7596b971ac709de614b2ff?fit=max&fm=webp&lossless=true" alt="image.png">
+        </figure>
+
+        <h2>Création de l'écran My Messages</h2>
+
+        <h3>Création de la table Chat messages</h3>
+        <p>Il est nécessaire de créer une table pour stocker les messages écrits par les utilisateurs. Pour cela, depuis l'onglet Database, glissez la table Chat messages dans l'espace de travail :</p>
+        <figure class="visual">
+          <img src="https://codaio.imgix.net/docs/6njJ_WqH8k/blobs/bl-3bNLdQPUO9/2755cd913c9e4300c4143575761a540299d7a7f0271a33319cffa1e5b197d204c57bbabf5a3f5ad9a312997402ae79bb04c6343c544edfa33e0593029781999c72f4dd0c6d96a66842e484ee4c23ef89b22c5bc4f539428bfb3e89b114bfcd562b292eda?fit=max&fm=webp&lossless=true" alt="image.png">
+        </figure>
+
+        <h3>Création du composant Chat</h3>
+        <p>Créez un écran nommé My messages et glissez un composant Chat depuis la liste des composants section Lists en sélectionnant la table Chat messages. Puis reliez les 2 écrans comme ci-dessous :</p>
+        <figure class="visual">
+          <img src="https://codaio.imgix.net/docs/6njJ_WqH8k/blobs/bl-RbIvnbBFzo/639390256f00e19ab48abe1671c4fb37839831c73ad79b26b3fba24e2f2d35b1b46f87d74bc03c8e358a16e304d401882a385049ad19d4e57becf316b9dad62f6e2791992b538faa4e1ee04fd8c5c2308edcbfe1cbe74c41976084155e1ff7fb2a8f150d?fit=max&fm=webp&lossless=true" alt="image.png">
+        </figure>
+        <p>Le composant Chat n'affiche pas de message étant donné que la table est vide.</p>
+
+        <h3>Filtrer les messages</h3>
+        <p>Par défaut, le composant Chat affiche tous les messages envoyés et reçus par l'utilisateur authentifié. Ici le composant Chat doit afficher uniquement les messages échangés avec l'utilisateur sélectionné dans l'écran Friends. Pour cela, définissez la propriété Filtrer par email destinataire à la valeur Friends/Email qui est l'ami sélectionné dans l'écran Friends.</p>
+
+        <h2>Ecrire des messages</h2>
+        <p>Optionnellement, pour permettre l'écriture de message il faut utiliser le composant Message dans la section Form fields en sélectionnant encore la table Chat messages. Dans le cadre de ce tutoriel, l'utilisateur authentifié envoie un message à l'ami sélectionné dans l'écran Friends. Il faut donc renseigner la propriété Recipient email :</p>
+        <figure class="visual">
+          <img src="https://codaio.imgix.net/docs/6njJ_WqH8k/blobs/bl-aqK03clZ8e/1434a1001ec14d1e4172425e9db9a498e59a79f276e51d9dc92e3888e7040dc53a2991f0cb0a6898b89fcabad50d431d70d8e721874c0a34558d95260485b2cd9d5433ea0300a79ced4a2cd474bee7760b1d05c80f196780bf9ff57b5cab829e04703dcb?fit=max&fm=webp&lossless=true" alt="image.png">
+        </figure>
+
       </section>
     </main>
   </div>

@@ -14,37 +14,57 @@
     </aside>
 
     <main class="main">
-      <header class="section hero" id="welcome">
-        <img class="hero-banner" src="../assets/images/hero-banner.png" alt="Banniere du studio Zyllio">
-        <div class="hero-body">
-          <span class="kicker">Documentation</span>
-          <h1>Google Sheets</h1>
-          <p class="lead">Utilisez Google Sheets comme backend léger pour des prototypes et des applications opérationnelles.</p>
-        </div>
-      </header>
+      <section class="section" id="welcome">
+        <h1>Google Sheets</h1>
+        <p>Zyllio permet de connecter et d'exploiter des données à partir de Google Sheets. Grâce à cette fonctionnalité, vous pouvez récupérer et utiliser des feuilles de calcul directement dans votre application.</p>
 
-      <section class="section">
-        <h2>Cas d'usage adaptés</h2>
-        <ul>
-          <li>Proof of concept rapide avec données tabulaires éditables.</li>
-          <li>Flux collaboratifs pour petites équipes.</li>
-          <li>Tableaux de bord opérationnels mis à jour fréquemment.</li>
-        </ul>
-      </section>
+        <h2>Connexion à Google Sheets</h2>
+        <p>Ouvrez le Studio Zyllio, rendez-vous dans l'onglet Settings dans le menu de gauche, sélectionnez l'option Google Sheets et activez le bouton Enable. Cliquez ensuite sur le bouton Connect. Cela ouvrira une fenêtre vous permettant de sélectionner votre compte Google.</p>
+        <p>Choisissez le compte Google que vous souhaitez utiliser pour accéder à vos Google Sheets. Une fois connecté, vous verrez un message de statut indiquant que la connexion est réussie : Connected.</p>
 
-      <section class="section">
-        <h2>Parcours de connexion</h2>
-        <ol>
-          <li>Préparer les onglets, en-têtes et noms de colonnes stables.</li>
-          <li>Connecter la source et mapper les lignes vers les composants UI.</li>
-          <li>Gérer les lignes vides ou invalides dans la logique d'écran.</li>
-          <li>Valider lectures et écritures en <a href="simulation-6.html">Simulation</a>.</li>
-        </ol>
-      </section>
+        <h2>Accès à Google Sheets</h2>
+        <p>Depuis l'onglet Database, cliquez sur le bouton Import pour afficher les sources de données externes, puis sélectionnez Sheets.</p>
+        <figure class="visual">
+          <img src="https://codaio.imgix.net/docs/6njJ_WqH8k/blobs/bl-4RYWgSFIyz/57ae973ebb35e7f64c4a236f2962017f27d4fc133721a86ec0db5ba6c3760ba4a182bd72561683e1ccdbc9f5c75e576669e70cf1466360f8a3333e97213b300bc00e06c7ca618bb78a80f66944523985903748b80700c69ddcf650bacff5dfee1450b1df?fit=max&fm=webp&lossless=true" alt="Menu importation de sources externes">
+        </figure>
+        <p>La fenêtre suivante permet de sélectionner le document Google Sheets puis la ou les feuilles que vous souhaitez importer.</p>
+        <figure class="visual">
+          <img src="https://codaio.imgix.net/docs/6njJ_WqH8k/blobs/bl-txnZ8FpkDe/baca528346a6042f556ae50dc8fe00974ee4aab909f2cb38480638ef4db106598163338e542eb5e0283d2450cb3752711f2be4069779f83afaf4a6888a397123d3a8492530fe9721691170c8814c0d8194398a0f7051d9606ad0947cd2e9ecd32fc83376?fit=max&fm=webp&lossless=true" alt="Sélection du document et des feuilles">
+        </figure>
+        <p>Une fois importée, vous obtenez une nouvelle table.</p>
+        <figure class="visual">
+          <img src="https://codaio.imgix.net/docs/6njJ_WqH8k/blobs/bl-IIxAL8RYuq/92178076de1bf1f9f57249816b01d2abecb62e2e6e6fdfaac3d2bdd0c01ecf744ef80cdda32f70edeed5bb77112a9603942fa8729e25889197c654ef99b290bd8791d25b4da1ba55160e0a4277e4737f5f6c268dac7a6db209fd85cb0548415c78af62af?fit=max&fm=webp&lossless=true" alt="Nouvelle table Summary représentant la Google Sheet importée">
+        </figure>
 
-      <section class="section">
-        <h2>Conseils de performance</h2>
-        <p>Évitez les requêtes massives sans filtre et privilégiez des plages explicites ou une pré-agrégation côté serveur.</p>
+        <h2>Points clés</h2>
+        <p>Les Google Sheets ne contiennent pas de mécanismes pour identifier les lignes de manière unique. Pour pouvoir effectuer des opérations de modifications, il est nécessaire que la première colonne définisse un identifiant unique. Si cela n'est pas le cas, un avertissement s'affichera.</p>
+        <p class="callout error">La première colonne doit définir de manière unique chaque ligne. L'information peut être un numéro unique souvent employé ou bien n'importe quel texte tant que l'unicité est respectée.</p>
+        <p>Exemple :</p>
+        <figure class="visual">
+          <img src="https://codaio.imgix.net/docs/6njJ_WqH8k/blobs/bl-aW2sPkqwnw/9cecbe790003924400fb2897d99e5c7396e5df5e385862f221180716038de2b55d11d4f53b47902f78c98402192e2232165708ba55c2a132d7988789068a49289f50c8d6c5f62230cd00c9eedcd5e0b9847cb680b2e0cea4bf65c57dbdf7df7a421dccfc?fit=max&fm=webp&lossless=true" alt="La première colonne est unique">
+        </figure>
+
+        <h2>Formats</h2>
+        <p class="callout info">Le format des date doit être YYYY-MM-DD</p>
+        <p class="callout info">Le format des nombres décimaux doit être le format Text au niveau de la colonne Sheet et utiliser le point décimal</p>
+        <p class="callout info">Les colonnes Google Sheets avec formules ne doivent pas être utilisée. Elle ne posent aucun problème à la lecture mais risquent d'être écrasées lors des mises à jour (Update-Row)</p>
+
+        <h2>Limitations</h2>
+        <p class="callout info">Zyllio limite l'étendue des Google Sheets à 52 colonnes (de A-Z et AA-AZ)</p>
+
+        <h2>Synchronisation de structure</h2>
+        <p>Lorsque vous effectuez des changements de structure dans vos Google Sheets, par exemple un ajout de colonnes, ces changements n'apparaissent dans Zyllio. Pour synchroniser ces changements, cliquer sur le bouton Refresh Structure. Une fois le processus de synchronisation lancé, Zyllio va ajouter et supprimer les champs en fonction des changements.</p>
+        <p class="callout info">Zyllio ne modifie pas la structure des colonnes dans votre Google Sheets</p>
+        <figure class="visual">
+          <img src="https://codaio.imgix.net/docs/6njJ_WqH8k/blobs/bl-RpgYNKZl3s/6a3537d46e1afdb0549e1d369af1ba22f6b1ab516757738a2c085fbc32193aedf160a806de0e70d9cb729e40dac5aa68863bf236718403fa53e16def09ae55bbed4dd1ee24296b1e84597839e2ab10df8b8ec11d30e714e4aeb085e5e21365ef43f523c2?fit=max&fm=webp&lossless=true" alt="Bouton Refresh Structure">
+        </figure>
+
+        <h2>Synchronisation de données</h2>
+        <p>Zyllio met en place un cache de données pour améliorer les performances d'accès aux Google Sheets. Ainsi, des modifications depuis Google Sheets ou une automatisation externe risque de ne pas être visible immédiatement depuis Zyllio. Un délai de 1 mn maximum peut être nécessaire.</p>
+        <p>Pour forcer le rafraichissement, cliquez sur le bouton Refresh Data.</p>
+        <figure class="visual">
+          <img src="https://codaio.imgix.net/docs/6njJ_WqH8k/blobs/bl-0vKCV9LUse/2a156181bbb3134e11fbe1bc7215586605fbfda21fd97dfab0ef66a0afd8d71b34158283b41ee1c098cc0051d31ecfe71e10927aceb2d799d37ae2e1cdf7be792d1623cb3261f3648850755c9636f69af34292be6dd8b1555e26e0f272fbb164b47f0b95?fit=max&fm=webp&lossless=true" alt="Bouton Refresh Data">
+        </figure>
       </section>
     </main>
   </div>
