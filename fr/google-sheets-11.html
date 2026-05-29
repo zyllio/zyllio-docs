@@ -16,51 +16,51 @@
     <main class="main">
       <section class="section" id="welcome">
         <h1>Google Sheets</h1>
-        <p>Zyllio permet de connecter et d'exploiter des donn�es � partir de Google Sheets. Gr�ce � cette fonctionnalit�, vous pouvez r�cup�rer et utiliser des feuilles de calcul directement dans votre application.</p>
+        <p>Zyllio permet de connecter et d'exploiter des données à partir de Google Sheets. Grâce à cette fonctionnalité, vous pouvez récupérer et utiliser des feuilles de calcul directement dans votre application.</p>
 
-        <h2>Connexion � Google Sheets</h2>
-        <p>Ouvrez le Studio Zyllio, rendez-vous dans l'onglet Settings dans le menu de gauche, s�lectionnez l'option Google Sheets et activez le bouton Enable. Cliquez ensuite sur le bouton Connect. Cela ouvrira une fen�tre vous permettant de s�lectionner votre compte Google.</p>
-        <p>Choisissez le compte Google que vous souhaitez utiliser pour acc�der � vos Google Sheets. Une fois connect�, vous verrez un message de statut indiquant que la connexion est r�ussie : Connected.</p>
+        <h2>Connexion à Google Sheets</h2>
+        <p>Ouvrez le Studio Zyllio, rendez-vous dans l'onglet Settings dans le menu de gauche, sélectionnez l'option Google Sheets et activez le bouton Enable. Cliquez ensuite sur le bouton Connect. Cela ouvrira une fenêtre vous permettant de sélectionner votre compte Google.</p>
+        <p>Choisissez le compte Google que vous souhaitez utiliser pour accéder à vos Google Sheets. Une fois connecté, vous verrez un message de statut indiquant que la connexion est réussie : Connected.</p>
 
-        <h2>Acc�s � Google Sheets</h2>
-        <p>Depuis l'onglet Database, cliquez sur le bouton Import pour afficher les sources de donn�es externes, puis s�lectionnez Sheets.</p>
+        <h2>Accès à Google Sheets</h2>
+        <p>Depuis l'onglet Database, cliquez sur le bouton Import pour afficher les sources de données externes, puis sélectionnez Sheets.</p>
         <figure class="visual">
           <img src="../assets/images/google-sheets-11-296c2460335a62d334fbeef01f5adaab6d81499f.webp" alt="Menu importation de sources externes">
         </figure>
-        <p>La fen�tre suivante permet de s�lectionner le document Google Sheets puis la ou les feuilles que vous souhaitez importer.</p>
+        <p>La fenêtre suivante permet de sélectionner le document Google Sheets puis la ou les feuilles que vous souhaitez importer.</p>
         <figure class="visual">
-          <img src="../assets/images/google-sheets-11-b7711f2801b548533476c0d42a66f78620e114e6.webp" alt="S�lection du document et des feuilles">
+          <img src="../assets/images/google-sheets-11-b7711f2801b548533476c0d42a66f78620e114e6.webp" alt="Sélection du document et des feuilles">
         </figure>
-        <p>Une fois import�e, vous obtenez une nouvelle table.</p>
+        <p>Une fois importée, vous obtenez une nouvelle table.</p>
         <figure class="visual">
-          <img src="../assets/images/google-sheets-11-623040f43ae3775e6fba8bf9c813fa88ecf291ac.webp" alt="Nouvelle table Summary repr�sentant la Google Sheet import�e">
+          <img src="../assets/images/google-sheets-11-623040f43ae3775e6fba8bf9c813fa88ecf291ac.webp" alt="Nouvelle table Summary représentant la Google Sheet importée">
         </figure>
 
-        <h2>Points cl�s</h2>
-        <p>Les Google Sheets ne contiennent pas de m�canismes pour identifier les lignes de mani�re unique. Pour pouvoir effectuer des op�rations de modifications, il est n�cessaire que la premi�re colonne d�finisse un identifiant unique. Si cela n'est pas le cas, un avertissement s'affichera.</p>
-        <p class="callout error">La premi�re colonne doit d�finir de mani�re unique chaque ligne. L'information peut �tre un num�ro unique souvent employ� ou bien n'importe quel texte tant que l'unicit� est respect�e.</p>
+        <h2>Points clés</h2>
+        <p>Les Google Sheets ne contiennent pas de mécanismes pour identifier les lignes de manière unique. Pour pouvoir effectuer des opérations de modifications, il est nécessaire que la première colonne définisse un identifiant unique. Si cela n'est pas le cas, un avertissement s'affichera.</p>
+        <p class="callout error">La première colonne doit définir de manière unique chaque ligne. L'information peut être un numéro unique souvent employé ou bien n'importe quel texte tant que l'unicité est respectée.</p>
         <p>Exemple :</p>
         <figure class="visual">
-          <img src="../assets/images/google-sheets-11-aa36723de930fa3247ac5495201eef69b3357104.webp" alt="La premi�re colonne est unique">
+          <img src="../assets/images/google-sheets-11-aa36723de930fa3247ac5495201eef69b3357104.webp" alt="La première colonne est unique">
         </figure>
 
         <h2>Formats</h2>
-        <p class="callout info">Le format des date doit �tre YYYY-MM-DD</p>
-        <p class="callout info">Le format des nombres d�cimaux doit �tre le format Text au niveau de la colonne Sheet et utiliser le point d�cimal</p>
-        <p class="callout info">Les colonnes Google Sheets avec formules ne doivent pas �tre utilis�e. Elle ne posent aucun probl�me � la lecture mais risquent d'�tre �cras�es lors des mises � jour (Update-Row)</p>
+        <p class="callout info">Le format des date doit être YYYY-MM-DD</p>
+        <p class="callout info">Le format des nombres décimaux doit être le format Text au niveau de la colonne Sheet et utiliser le point décimal</p>
+        <p class="callout info">Les colonnes Google Sheets avec formules ne doivent pas être utilisée. Elle ne posent aucun problème à la lecture mais risquent d'être écrasées lors des mises à jour (Update-Row)</p>
 
         <h2>Limitations</h2>
-        <p class="callout info">Zyllio limite l'�tendue des Google Sheets � 52 colonnes (de A-Z et AA-AZ)</p>
+        <p class="callout info">Zyllio limite l'étendue des Google Sheets à 52 colonnes (de A-Z et AA-AZ)</p>
 
         <h2>Synchronisation de structure</h2>
-        <p>Lorsque vous effectuez des changements de structure dans vos Google Sheets, par exemple un ajout de colonnes, ces changements n'apparaissent dans Zyllio. Pour synchroniser ces changements, cliquer sur le bouton Refresh Structure. Une fois le processus de synchronisation lanc�, Zyllio va ajouter et supprimer les champs en fonction des changements.</p>
+        <p>Lorsque vous effectuez des changements de structure dans vos Google Sheets, par exemple un ajout de colonnes, ces changements n'apparaissent dans Zyllio. Pour synchroniser ces changements, cliquer sur le bouton Refresh Structure. Une fois le processus de synchronisation lancé, Zyllio va ajouter et supprimer les champs en fonction des changements.</p>
         <p class="callout info">Zyllio ne modifie pas la structure des colonnes dans votre Google Sheets</p>
         <figure class="visual">
           <img src="../assets/images/google-sheets-11-ced8a98a78cf82f909b591c2ada34ebe1a345b05.webp" alt="Bouton Refresh Structure">
         </figure>
 
-        <h2>Synchronisation de donn�es</h2>
-        <p>Zyllio met en place un cache de donn�es pour am�liorer les performances d'acc�s aux Google Sheets. Ainsi, des modifications depuis Google Sheets ou une automatisation externe risque de ne pas �tre visible imm�diatement depuis Zyllio. Un d�lai de 1 mn maximum peut �tre n�cessaire.</p>
+        <h2>Synchronisation de données</h2>
+        <p>Zyllio met en place un cache de données pour améliorer les performances d'accès aux Google Sheets. Ainsi, des modifications depuis Google Sheets ou une automatisation externe risque de ne pas être visible immédiatement depuis Zyllio. Un délai de 1 mn maximum peut être nécessaire.</p>
         <p>Pour forcer le rafraichissement, cliquez sur le bouton Refresh Data.</p>
         <figure class="visual">
           <img src="../assets/images/google-sheets-11-fc81036b243866ff541f8162a89a794af594a1ea.webp" alt="Bouton Refresh Data">

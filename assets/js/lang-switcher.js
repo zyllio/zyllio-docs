@@ -48,11 +48,13 @@
     "tutoriels-68",
     "google-sheets-11",
     "airtable-13",
+    "timetonic-88",
     "formulas-15",
     "variables-54",
     "chat-67",
     "twilio-14",
     "authentication-61",
+    "sso-90",
     "rest-integration-52",
     "stripe-payments-69",
     "make-70",
@@ -61,8 +63,14 @@
     "offline-mode-62",
     "push-notifications-17",
     "favoris-follower-like-74",
+    "transfer-an-application-82",
     "xano-75",
-    "translations-76"
+    "translations-76",
+    "api-saas-87",
+    "monetize-saas-apps-89",
+    "application-settings-91",
+    "faq-86",
+    "ai-component-generation-92"
   ];
 
   function slugToId(slug) {

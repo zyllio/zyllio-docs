@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Zyllio documentation - SSO">
+  <title>Documentation Zyllio | SSO</title>
+  <link rel="stylesheet" href="../assets/css/global.css">
+</head>
+<body>
+  <div class="page-shell">
+    <aside class="sidebar">
+      <docs-sidebar-shell></docs-sidebar-shell>
+    </aside>
+
+    <main class="main">
+      <section class="section" id="welcome">
+        <h1>SSO</h1>
+        <p class="callout info">Available from the Enterprise plan</p>
+
+        <h2>Introduction</h2>
+        <p>Single Sign-On (SSO) lets users sign in to Zyllio using their usual login credentials. This secure method centralizes access management and simplifies the user experience.</p>
+
+        <h2>Definitions</h2>
+        <ul>
+          <li><strong>Identity Provider (the client system)</strong>: The platform that manages user identities (for example: Microsoft Entra ID/Azure, Okta, Google Workspace). It authenticates the user before sending them to Zyllio.</li>
+          <li><strong>Service Provider (Zyllio)</strong>: The final application that provides the service. Zyllio trusts the information sent by the client system.</li>
+          <li><strong>Metadata</strong>: An XML file or text that contains the certificates and settings required to establish a secure link between the client system and Zyllio.</li>
+        </ul>
+      </section>
+
+      <section class="section">
+        <h2>Configuration procedure</h2>
+
+        <h3>Activation</h3>
+        <p>The first step is to turn on the Enable switch. This action unlocks the configuration fields and allows Zyllio to process SAML2 login requests.</p>
+
+        <h3>Declaring Zyllio in the client system</h3>
+        <p>For the client system to accept connecting users to Zyllio, it must know our application settings:</p>
+        <ul>
+          <li>Check the Service Provider section on this page.</li>
+          <li>Click the DOWNLOAD FILE button to retrieve Zyllio metadata.</li>
+          <li>Action: this file must be imported into the client system administration interface to create the link.</li>
+        </ul>
+
+        <h3>Linking the client system to Zyllio</h3>
+        <p>Once the client-side setup is complete, the client system generates its own metadata so that Zyllio can recognize it:</p>
+        <ul>
+          <li>Retrieve the XML metadata text provided by the client system.</li>
+          <li>Paste this text into the field provided under the Identity Provider section.</li>
+          <li>Once saved, the configuration is operational.</li>
+        </ul>
+
+        <h3>Deployment tips</h3>
+        <ul>
+          <li>Verification: Perform a login test in a private browsing window to confirm that the flow works correctly.</li>
+          <li>Continuity: Make sure an administrator account keeps a standard access method (email/password) while you validate the SSO setup to avoid any accidental lockout.</li>
+        </ul>
+
+        <h4>Security: these files are not "secrets"</h4>
+        <p>Unlike a password or a private API key, the XML metadata files exchanged between the client system and Zyllio are not confidential secrets. Here is why you can handle them without concern:</p>
+        <ul>
+          <li>A simple ID card: metadata mainly contains public information about the setup, including login URLs, the entity name (EntityID), and public certificates.</li>
+          <li>Public certificates vs private keys: The file contains the "public" part of the certificate. It is used only to verify message signatures. The private key, which is the real secret, stays safely on the client system servers and is never transmitted.</li>
+          <li>Trust exchange: Intercepting this file does not let anyone sign in on your behalf. The file is only used to create the technical bridge between the two systems.</li>
+        </ul>
+        <p>In short: importing and exporting these files are standard setup procedures. They do not contain any data that can be used to decrypt your passwords or improperly access your data.</p>
+      </section>
+
+      <section class="section">
+        <h2>Authentication screens</h2>
+
+        <h3>User management</h3>
+        <p>For the login flow to work, Zyllio must know which internal account corresponds to the user signing in through SSO:</p>
+        <ul>
+          <li>Users table: A users table must be configured in Zyllio.</li>
+          <li>Unique identifier: This table must contain an Email column. This email address is used as the matching key: once authentication succeeds on the client side, Zyllio looks up the corresponding user by email and opens their session.</li>
+        </ul>
+
+        <h3>Available actions</h3>
+        <p>Once configured, two actions are available to manage SSO login:</p>
+        <p><strong>Authentication</strong>: Securely signs in the user after verification by the client system.</p>
+        <figure class="visual">
+          <img src="../assets/images/sso-90-153de67d8a501ef2d7d6d4b4c8a79030cf56a045.webp" alt="SSO authentication action">
+        </figure>
+        <p><strong>Logout</strong>: Properly ends the user's session in Zyllio.</p>
+        <figure class="visual">
+          <img src="../assets/images/sso-90-eef17b447db05b0f800a3b5931890ed1ea1471cf.webp" alt="SSO logout action">
+        </figure>
+      </section>
+    </main>
+  </div>
+<script src="../assets/js/sidebar-shell.js"></script>
+</body>
+</html>

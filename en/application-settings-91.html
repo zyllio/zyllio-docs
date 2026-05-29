@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Zyllio documentation - Application settings">
+  <title>Documentation Zyllio | Application settings</title>
+  <link rel="stylesheet" href="../assets/css/global.css">
+</head>
+<body>
+  <div class="page-shell">
+    <aside class="sidebar">
+      <docs-sidebar-shell></docs-sidebar-shell>
+    </aside>
+
+    <main class="main">
+      <section class="section" id="welcome">
+        <h1>Application settings</h1>
+        <p>You can pass information to your Zyllio application directly through its URL. This makes it possible to control the display or pass data, such as a user name or an ID, as soon as the app opens.</p>
+
+        <h2>URL structure</h2>
+        <p>Parameters are added after your application ID, starting with a question mark (<code>?</code>).</p>
+
+        <h3>Case A: Specify a specific screen (Optional)</h3>
+        <p>If you want the application to open on a specific screen rather than the default home screen, place the screen name in the first position.</p>
+        <ul>
+          <li><strong>Example:</strong> <code>https://zyllio.link/apps/&lt;appId&gt;/?SalesScreen</code></li>
+        </ul>
+
+        <h3>Case B: Pass data without changing the screen</h3>
+        <p>If you only want to pass data without changing the start screen, list your parameters directly.</p>
+        <ul>
+          <li><strong>Example:</strong> <code>https://zyllio.link/apps/&lt;appId&gt;/?Name=Didier</code></li>
+        </ul>
+
+        <h2>Combining multiple parameters</h2>
+        <p>To combine the start screen and extra data, use the <code>&amp;</code> symbol as a separator.</p>
+        <p class="callout info"><strong>Golden rule:</strong> If you specify a start screen, it must be the first parameter after the <code>?</code>.</p>
+        <p><strong>Full example:</strong></p>
+        <p><code>https://zyllio.link/apps/d0f269524cd4/?Dashboard&amp;Name=Didier&amp;Status=Premium</code></p>
+        <p>In this example:</p>
+        <ol>
+          <li>The application opens on the <strong>Dashboard</strong> screen.</li>
+          <li>It passes the <strong>Name</strong> (Didier) and <strong>Status</strong> (Premium) variables.</li>
+        </ol>
+
+        <h2>How do you retrieve these values?</h2>
+        <p>To use this data in your no-code logic, for example to display a welcome message or filter a list:</p>
+        <ol>
+          <li>Go to the <strong>Application</strong> section in the editor.</li>
+          <li>Choose the <strong>"Application parameter"</strong> function.</li>
+          <li>Enter the name of the key used in the URL (for example: <code>Name</code>).</li>
+        </ol>
+        <figure class="visual">
+          <img src="../assets/images/parametres-dapplication-91-85085d2310d8e00c7554a9af058a028934694aa2.webp" alt="Application parameter in the editor">
+        </figure>
+
+        <h2>Handling special characters (encoding)</h2>
+        <p>URLs cannot contain spaces or accented characters directly. If your screen names or parameter values include them, they must be encoded.</p>
+
+        <h3>Basic rules</h3>
+        <ul>
+          <li><strong>Spaces:</strong> Replace them with <code>%20</code>.</li>
+          <li><strong>Accents:</strong> It is strongly recommended to avoid them in your screen names. If you need to pass a value with an accent (for example, "Sebastien"), the URL will often transform it automatically.</li>
+        </ul>
+
+        <h3>Conversion examples</h3>
+        <table class="doc-table">
+          <thead>
+            <tr>
+              <th>Desired text</th>
+              <th>URL format</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Dashboard screen</td>
+              <td>?Dashboard%20screen</td>
+            </tr>
+            <tr>
+              <td>First name = Heloise</td>
+              <td>?FirstName=H%C3%A9lo%C3%AFse</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+    </main>
+  </div>
+<script src="../assets/js/sidebar-shell.js"></script>
+</body>
+</html>

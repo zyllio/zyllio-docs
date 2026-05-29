@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Zyllio documentation - API SaaS">
+  <title>Documentation Zyllio | API SaaS</title>
+  <link rel="stylesheet" href="../assets/css/global.css">
+</head>
+<body>
+  <div class="page-shell">
+    <aside class="sidebar">
+      <docs-sidebar-shell></docs-sidebar-shell>
+    </aside>
+
+    <main class="main">
+      <section class="section" id="welcome">
+        <h1>API SaaS</h1>
+        <p class="callout info">Available from the Enterprise plan</p>
+
+        <h2>Introduction</h2>
+        <p>This documentation describes the available APIs for setting up a SaaS application that lets you automate:</p>
+        <ul>
+          <li>Creating applications from another application template</li>
+          <li>Publishing applications</li>
+          <li>Updating applications</li>
+          <li>Synchronizing applications</li>
+        </ul>
+        <p>The URL prefix is: <a href="https://www.zyllio.one/api/account/">https://www.zyllio.one/api/account/</a></p>
+
+        <h2>Endpoint documentation</h2>
+        <table class="doc-table">
+          <thead>
+            <tr>
+              <th>Method</th>
+              <th>Path</th>
+              <th>Headers</th>
+              <th>Body</th>
+              <th>Comment</th>
+              <th>Response</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>GET</td>
+              <td>/applications</td>
+              <td>x-api-key</td>
+              <td>-</td>
+              <td>Lists the applications linked to the API key</td>
+              <td>ApplicationSummaryModel[]</td>
+            </tr>
+            <tr>
+              <td>POST</td>
+              <td>/applications</td>
+              <td>x-api-key</td>
+              <td>CreateApplicationModel</td>
+              <td>Creates an application from a template</td>
+              <td>string</td>
+            </tr>
+            <tr>
+              <td>PUT</td>
+              <td>/sync-applications/:id</td>
+              <td>x-api-key</td>
+              <td>SyncApplicationModel</td>
+              <td>Synchronizes an application</td>
+              <td>void</td>
+            </tr>
+            <tr>
+              <td>PUT</td>
+              <td>/applications/:id</td>
+              <td>x-api-key</td>
+              <td>UpdateApplicationModel</td>
+              <td>Updates an application</td>
+              <td>void</td>
+            </tr>
+            <tr>
+              <td>POST</td>
+              <td>/publications/:id</td>
+              <td>x-api-key</td>
+              <td>-</td>
+              <td>Publishes an application</td>
+              <td>void</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h2>Types</h2>
+
+        <h3>ApplicationSummaryModel</h3>
+        <table class="doc-table">
+          <thead>
+            <tr>
+              <th>Field</th>
+              <th>Type</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>id</td><td>string</td><td>Unique application identifier</td></tr>
+            <tr><td>name</td><td>string</td><td>Application name</td></tr>
+            <tr><td>lastUpdated</td><td>Date</td><td>Last update date</td></tr>
+            <tr><td>screenNumber</td><td>number</td><td>Number of screens</td></tr>
+            <tr><td>tableNumber</td><td>number</td><td>Number of tables</td></tr>
+            <tr><td>pluginNumber</td><td>number</td><td>Number of plugins</td></tr>
+            <tr><td>userName</td><td>string</td><td>Owner name</td></tr>
+            <tr><td>email</td><td>string</td><td>Owner email</td></tr>
+            <tr><td>description</td><td>string</td><td>Application description</td></tr>
+            <tr><td>url</td><td>string</td><td>Application URL</td></tr>
+            <tr><td>shares</td><td>string[]</td><td>Emails or IDs of shares</td></tr>
+            <tr><td>icon</td><td>string</td><td>Icon URL or path</td></tr>
+          </tbody>
+        </table>
+
+        <h3>CreateApplicationModel</h3>
+        <table class="doc-table">
+          <thead>
+            <tr>
+              <th>Field</th>
+              <th>Type</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>templateId</td><td>string</td><td>Template ID to use for creation</td></tr>
+          </tbody>
+        </table>
+
+        <h3>SyncApplicationModel</h3>
+        <table class="doc-table">
+          <thead>
+            <tr>
+              <th>Field</th>
+              <th>Type</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>fromApplicationId</td><td>string</td><td>Source application ID to synchronize</td></tr>
+            <tr><td>screens</td><td>boolean</td><td>Synchronize screens (<code>true</code>/<code>false</code>)</td></tr>
+            <tr><td>theme</td><td>boolean</td><td>Synchronize the theme (<code>true</code>/<code>false</code>)</td></tr>
+          </tbody>
+        </table>
+
+        <h3>UpdateApplicationModel</h3>
+        <table class="doc-table">
+          <thead>
+            <tr>
+              <th>Field</th>
+              <th>Type</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>name</td><td>string</td><td>Application name</td></tr>
+            <tr><td>description</td><td>string</td><td>Application description</td></tr>
+            <tr><td>icon</td><td>string</td><td>Icon URL or path</td></tr>
+          </tbody>
+        </table>
+
+        <h2>Create a SaaS application</h2>
+
+        <h3>API key</h3>
+        <p>The API key is available in your account settings from the main screen</p>
+        <figure class="visual">
+          <img src="../assets/images/api-saas-87-3829a41510018cb50a109c4f71fbd529ae551c2a.webp" alt="Account settings">
+        </figure>
+        <p>This section lets you copy the API key</p>
+        <figure class="visual">
+          <img src="../assets/images/api-saas-87-52c67971f2075dfff00be10e45b7d2b1f8c61934.webp" alt="Copy API key">
+        </figure>
+
+        <h3>Define the REST APIs</h3>
+        <p>You need to define 2 configurations in the REST settings</p>
+        <ul>
+          <li>applications - to create and update applications</li>
+          <li>publications - to publish applications</li>
+        </ul>
+        <figure class="visual">
+          <img src="../assets/images/api-saas-87-8fca74c000eaddb524658d97d43faa93363b5157.webp" alt="REST applications configuration">
+        </figure>
+        <p>then</p>
+        <figure class="visual">
+          <img src="../assets/images/api-saas-87-ef3e13200f8b8639d01bb7e8d89b352beeee5029.webp" alt="REST publications configuration">
+        </figure>
+
+        <h3>List applications</h3>
+        <p>Applications can be imported from the Data tab</p>
+        <p>Click the Import menu, then REST, select Applications and finally Import</p>
+        <figure class="visual">
+          <img src="../assets/images/api-saas-87-c75653fb515491a597999483bdbbb71b09f6fc3d.webp" alt="Import REST applications">
+        </figure>
+        <p>A dynamic REST table contains the applications. You just need to use a List or Grid component to display the applications</p>
+        <figure class="visual">
+          <img src="../assets/images/api-saas-87-c809733f20debdc25ad85c2cd2615ddde90841af.webp" alt="REST applications table">
+        </figure>
+
+        <h3>Create an application</h3>
+        <p>Suppose you want to provide a home screen that allows your users to create an application from one of your applications that serves as a template</p>
+        <figure class="visual">
+          <img src="../assets/images/api-saas-87-3b04c480f335aa7ed6d3550e619922bfbae1740e.webp" alt="Application creation screen">
+        </figure>
+        <p>To create an application, you must use the REST Post action as shown below</p>
+        <figure class="visual">
+          <img src="../assets/images/api-saas-87-53ae82f6dc6bab0c1812af0cd48dec1b6305ca22.webp" alt="REST Post creation action">
+        </figure>
+        <p>The templateId parameter refers to your template application. The result of this call is a new application identifier called Application Id</p>
+
+        <h3>Update an application</h3>
+        <p>To update an application, use a REST Put action</p>
+        <p>The Additional Path parameter refers to the application created by the previous action</p>
+        <p class="callout info">Note that the formula contains a / before the variable</p>
+        <figure class="visual">
+          <img src="../assets/images/api-saas-87-bc05d07f6d91ffdfa680ab1f7d30f2d82d6e69cd.webp" alt="REST Put additional path action">
+        </figure>
+        <p>The Request Data parameter defines the new application name as JSON as follows</p>
+        <figure class="visual">
+          <img src="../assets/images/api-saas-87-63ddb25036cd76a83e050b982ef70b73b06bd999.webp" alt="JSON request data">
+        </figure>
+        <p class="callout info">Please check spaces and quotation marks</p>
+
+        <h3>Publish an application</h3>
+        <p>To publish an application, use a REST Post action on the Publications configuration</p>
+        <figure class="visual">
+          <img src="../assets/images/api-saas-87-9823513cedc33b00159d2ca7836360d0a786bb8e.webp" alt="REST Post publications action">
+        </figure>
+        <p>Here is the series of actions that creates, renames, and publishes an application</p>
+        <figure class="visual">
+          <img src="../assets/images/api-saas-87-743cfbda4dc08ce81a3421572fa1c8f31e37e0b6.webp" alt="Create rename publish action series">
+        </figure>
+      </section>
+    </main>
+  </div>
+<script src="../assets/js/sidebar-shell.js"></script>
+</body>
+</html>
