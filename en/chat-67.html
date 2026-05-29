@@ -25,7 +25,7 @@
 
       <section class="section">
         <figure class="visual">
-          <img src="../assets/images/chat-67-2846086ade05e21ffd52eb14f424c2a437aae2b5.webp" alt="image.png">
+          <img src="../assets/images/chat-67-002.webp" alt="image.png">
         </figure>
 
         <h2>Setting Up Authentication</h2>
@@ -34,32 +34,32 @@
         <h3>Creating the Users Table</h3>
         <p>From the Database tab, drag a Users table into the workspace. Zyllio will automatically create the required columns and also 2 sample users. These users are useful for testing and can later be modified or deleted.</p>
         <figure class="visual">
-          <img src="../assets/images/chat-67-c1b1b8882ed20d773922f1a72771d019b114b32a.webp" alt="image.png">
+          <img src="../assets/images/chat-67-014.webp" alt="image.png">
         </figure>
         <p class="callout info">You can keep tables that define columns in English. However, screens can still be displayed in your language by using the Label property available in all components.</p>
 
         <h3>Creating the Authentication Screen</h3>
         <p>From the Designer tab, drag a Login screen into the workspace while selecting the Users table. You get this ready-to-use screen:</p>
         <figure class="visual">
-          <img src="../assets/images/chat-67-d806bdfb8195e1fb6d8a7deb263ee86fc4d16df7.webp" alt="image.png">
+          <img src="../assets/images/chat-67-015.webp" alt="image.png">
         </figure>
         <p>Then a second Header screen that we will name Friends:</p>
         <figure class="visual">
-          <img src="../assets/images/chat-67-a55caa80bcadfb602f2e5925d15091147fa47479.webp" alt="image.png">
+          <img src="../assets/images/chat-67-013.webp" alt="image.png">
         </figure>
 
         <h2>Displaying the Friends List</h2>
         <p>Connect the Enter button, which handles authentication, to the Friends screen. That way, if authentication succeeds, the mobile app will display the linked screen (here Friends):</p>
         <figure class="visual">
-          <img src="../assets/images/chat-67-f3b111793a3ab3f1dede27d7b6285267729be373.webp" alt="image.png">
+          <img src="../assets/images/chat-67-020.webp" alt="image.png">
         </figure>
         <p>Add a List component in the Friends screen (or any other list component such as Grid or Carousel) using the Users table:</p>
         <figure class="visual">
-          <img src="../assets/images/chat-67-eefb852b1d9e73113a5a054099623ce411a7aaf9.webp" alt="image.png">
+          <img src="../assets/images/chat-67-019.webp" alt="image.png">
         </figure>
         <p>Define a filter on this List component to exclude the authenticated user using this criterion: <strong>Email is not equal to User/Email</strong>. Email refers to the Email column of the Users table and User/Email is the email of the authenticated user (User):</p>
         <figure class="visual">
-          <img src="../assets/images/chat-67-7df0e9ed795a8505709385637a3ac60085d6259d.webp" alt="image.png">
+          <img src="../assets/images/chat-67-010.webp" alt="image.png">
         </figure>
 
         <h2>Creating the "My Messages" Screen</h2>
@@ -67,13 +67,13 @@
         <h3>Creating the Chat messages Table</h3>
         <p>You need to create a table to store messages written by users. To do this, from the Database tab, drag the Chat messages table into the workspace:</p>
         <figure class="visual">
-          <img src="../assets/images/chat-67-e7fea026a835118bc8d23d1ce266fc4b429f5a7a.webp" alt="image.png">
+          <img src="../assets/images/chat-67-017.webp" alt="image.png">
         </figure>
 
         <h3>Creating the Chat Component</h3>
         <p>Create a screen named My messages and drag a Chat component from the components list in the Lists section, selecting the Chat messages table. Then link the 2 screens as below:</p>
         <figure class="visual">
-          <img src="../assets/images/chat-67-8aaadc39c66d7306049d26e1264c4a316e70682d.webp" alt="image.png">
+          <img src="../assets/images/chat-67-011.webp" alt="image.png">
         </figure>
         <p>The Chat component shows no message because the table is empty.</p>
 
@@ -83,7 +83,7 @@
         <h2>Writing Messages</h2>
         <p>Optionally, to allow message writing you need to use the Message component in the Form fields section, again selecting the Chat messages table. In this tutorial, the authenticated user sends a message to the friend selected in the Friends screen. You must therefore fill in the Recipient email property:</p>
         <figure class="visual">
-          <img src="../assets/images/chat-67-2a6710320d8749c9aeedda7975b2f55ab74a612b.webp" alt="image.png">
+          <img src="../assets/images/chat-67-004.webp" alt="image.png">
         </figure>
 
       </section>

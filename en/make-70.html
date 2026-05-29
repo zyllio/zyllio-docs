@@ -42,7 +42,7 @@
         <h2>Configuration</h2>
         <p>The Make integration can be activated from the Settings tab / Integration / Make by enabling the Enable button as shown in this image.</p>
         <figure class="visual">
-          <img src="../assets/images/make-70-c21a0873795bb7180a8d62d7e478b235be4d1789.webp" alt="Activate Make integration">
+          <img src="../assets/images/make-70-023.webp" alt="Activate Make integration">
         </figure>
       </section>
 
@@ -52,15 +52,15 @@
         <h3>Creating the Make Scenario</h3>
         <p>Once connected to Make, create a scenario.</p>
         <figure class="visual">
-          <img src="../assets/images/make-70-ac4677bde4f831243676582e27ad6f1aaf4b43aa.webp" alt="Create Make scenario">
+          <img src="../assets/images/make-70-017.webp" alt="Create Make scenario">
         </figure>
         <p>Then create a Custom Webhook module as follows:</p>
         <figure class="visual">
-          <img src="../assets/images/make-70-d3d4e83a97d593536fad9d10833a86b585fc88ef.webp" alt="Custom Webhook in Make">
+          <img src="../assets/images/make-70-024.webp" alt="Custom Webhook in Make">
         </figure>
         <p>Click on the Add button. Once the Webhook module is configured, simply click on the Copy address to clipboard button.</p>
         <figure class="visual">
-          <img src="../assets/images/make-70-21559f2876add4cb9bc3b2fb37518b4aec957848.webp" alt="Add button for webhook">
+          <img src="../assets/images/make-70-003.webp" alt="Add button for webhook">
         </figure>
 
         <h3>Creating the Screen</h3>
@@ -72,7 +72,7 @@
           <li>A LabelText component that displays the response from the Webhook stored in the variable Result.</li>
         </ul>
         <figure class="visual">
-          <img src="../assets/images/make-70-a065dcb3f4878b077e1abf46de67b76fb2af409d.webp" alt="Screen with Make webhook">
+          <img src="../assets/images/make-70-013.webp" alt="Screen with Make webhook">
         </figure>
 
         <h3>Creating the Action</h3>
@@ -84,32 +84,32 @@
         </ul>
         <p>Thus, the Make Webhook will receive the parameter of the user's name entered in the Zyllio screen.</p>
         <figure class="visual">
-          <img src="../assets/images/make-70-da7f5db9cdbf0a9be5e90be0c5d5b1a09911bebe.webp" alt="Configure Make webhook action">
+          <img src="../assets/images/make-70-027.webp" alt="Configure Make webhook action">
         </figure>
 
         <h3>Testing the Webhook</h3>
         <p>Return to the Make scenario and click on the Run once button.</p>
         <figure class="visual">
-          <img src="../assets/images/make-70-543485182014421e76987205dab4fa299cf47c8f.webp" alt="Run once in Make">
+          <img src="../assets/images/make-70-008.webp" alt="Run once in Make">
         </figure>
         <p>The Make scenario is waiting for a call from Zyllio. From Zyllio, go into simulation mode and click on the Make button to invoke the Make Webhook.</p>
         <figure class="visual">
-          <img src="../assets/images/make-70-1c66c1507f3e59e74bfeeabed7224ece85f06ee2.webp" alt="Invoke Make webhook from simulation">
+          <img src="../assets/images/make-70-001.webp" alt="Invoke Make webhook from simulation">
         </figure>
         <p>Once the Webhook is executed, Make automatically detects the transmitted data: here, the data name has the value Paul.</p>
         <figure class="visual">
-          <img src="../assets/images/make-70-552e92a71bd2c82a757979d5a2b4df79332179f3.webp" alt="Detected payload in Make">
+          <img src="../assets/images/make-70-009.webp" alt="Detected payload in Make">
         </figure>
         <p>The Make scenario is now connected to Zyllio, and additional modules can be added (Mail, Notion, Slack, etc.).</p>
 
         <h3>Configuring a Webhook Response (Optional)</h3>
         <p>Make allows the Webhook to return a customized response in text or JSON format. To do this, you need to use the Webhook Response module at the end of the scenario, as illustrated below.</p>
         <figure class="visual">
-          <img src="../assets/images/make-70-b4c114c6d8558865bdee29373d6696a5e522d2ec.webp" alt="Webhook Response module in Make">
+          <img src="../assets/images/make-70-020.webp" alt="Webhook Response module in Make">
         </figure>
         <p>This module allows you to specify a response in the body property as follows:</p>
         <figure class="visual">
-          <img src="../assets/images/make-70-fc4ebac61bbbd33a13720b5365080300204bfeb0.webp" alt="Webhook response body in Make">
+          <img src="../assets/images/make-70-028.webp" alt="Webhook response body in Make">
         </figure>
         <p>Here, the response returns Hello! followed by the name (name) passed as a parameter in the initial Webhook.</p>
 
@@ -118,18 +118,18 @@
         <p>If the Webhook Response defines text in its body property, the response format is text.</p>
         <p>Thus, the Zyllio Make Webhook action will receive text and will be stored in the Variable. Therefore, no additional configuration is needed in the Zyllio action. Here is the result.</p>
         <figure class="visual">
-          <img src="../assets/images/make-70-2a2b67e95ddf335511e922f722bb8865454c3c25.webp" alt="Text response result in Zyllio">
+          <img src="../assets/images/make-70-004.webp" alt="Text response result in Zyllio">
         </figure>
 
         <h4>Response in JSON Format</h4>
         <p>If the Webhook Response defines a JSON structure in its body property, the response format is JSON.</p>
         <p class="callout error">To return a JSON message, the Webhook Response module must define a Content-Type header equal to application/json.</p>
         <figure class="visual">
-          <img src="../assets/images/make-70-af3e67cbfd60bf17d689500afb8046bd6a7d80ce.webp" alt="application json header">
+          <img src="../assets/images/make-70-018.webp" alt="application json header">
         </figure>
         <p>Result in the Zyllio screen.</p>
         <figure class="visual">
-          <img src="../assets/images/make-70-a65d156a070fc075460d8103fdc98a8fd806913e.webp" alt="JSON response result in Zyllio">
+          <img src="../assets/images/make-70-016.webp" alt="JSON response result in Zyllio">
         </figure>
         <p>To extract a subset of the JSON message, simply use the Response Expression property. To extract each individual data item from the JSON message, use the JSON Query formula. Learn more about Response Expressions and JSON Query: <a href="rest-integration-52.html">REST Integration</a>.</p>
       </section>

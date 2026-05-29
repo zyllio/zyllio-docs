@@ -30,7 +30,7 @@
         <p>Pour stocker la fonctionnalité de Favoris, vous devez utiliser une table prédéfinie appelée Favorites.</p>
         <p>Depuis l'onglet Database, déplacer une table Favorites dans l’espace de travail.</p>
         <figure class="visual">
-          <img src="../assets/images/favoris-follower-like-73-4c9f10f9a325e1b7354e6e87186ec334573d6891.webp" alt="Table Favorites dans Database">
+          <img src="../assets/images/favoris-follower-like-73-006.webp" alt="Table Favorites dans Database">
         </figure>
         <p>La table doit contenir au moins les colonnes suivantes :</p>
         <ul>
@@ -65,17 +65,17 @@
         <h3>Créer une table d’utilisateurs</h3>
         <p>Dans l’onglet Database, glisser une tables Users comme suit :</p>
         <figure class="visual">
-          <img src="../assets/images/favoris-follower-like-73-2a4e546443af7be58e641746029dad2103b2f296.webp" alt="Table Users">
+          <img src="../assets/images/favoris-follower-like-73-002.webp" alt="Table Users">
         </figure>
         <p class="callout info">Notez que cette table Users fournit 2 utilisateurs d’exemple utiles pendant la phase de conception de votre application.</p>
         <figure class="visual">
-          <img src="../assets/images/favoris-follower-like-73-342eb7fa10058e33e41c9dc04071507f734b1ba8.webp" alt="Exemples users">
+          <img src="../assets/images/favoris-follower-like-73-005.webp" alt="Exemples users">
         </figure>
 
         <h3>Créer un écran d’authentification</h3>
         <p>Sélectionnez le modèle d’écran Login et glissez le dans l’espace de travail comme suit :</p>
         <figure class="visual">
-          <img src="../assets/images/favoris-follower-like-73-2de657da8dd510ac9bcb9f6d2b8afba12916cd61.webp" alt="Ecran login">
+          <img src="../assets/images/favoris-follower-like-73-003.webp" alt="Ecran login">
         </figure>
       </section>
 
@@ -84,30 +84,30 @@
         <p>Les items sont des informations à mettre en favoris. Ici nous utilisons un catalogue de fruits et légumes.</p>
         <p>Depuis l’onglet Database, glisser une table Products comme suit :</p>
         <figure class="visual">
-          <img src="../assets/images/favoris-follower-like-73-98dd521a460273c7c88c651874b47d16de344f65.webp" alt="Table Products">
+          <img src="../assets/images/favoris-follower-like-73-012.webp" alt="Table Products">
         </figure>
         <p class="callout info">Notez que cette table Products fournit 7 produits d’exemple utiles pendant la phase de conception de votre application.</p>
 
         <h3>Afficher des items à mettre en Favoris</h3>
         <p>Utilisez le composant Grid par exemple pour afficher les produits dans un nouvel écran et reliez le à l’écran d’authentification.</p>
         <figure class="visual">
-          <img src="../assets/images/favoris-follower-like-73-4eceaa7d2e014934ad4ccabf3ae117467fb87407.webp" alt="Grid produits">
+          <img src="../assets/images/favoris-follower-like-73-007.webp" alt="Grid produits">
         </figure>
         <p>Ajoutez un écran de détail comme suit.</p>
         <figure class="visual">
-          <img src="../assets/images/favoris-follower-like-73-fafb75174703967636b9ee59d99f68a8ef19adbf.webp" alt="Ecran detail">
+          <img src="../assets/images/favoris-follower-like-73-014.webp" alt="Ecran detail">
         </figure>
 
         <h3>Ajouter le composant Favoris</h3>
         <p>Sélectionnez le composant Favorite, puis la table Favorites et glissez le composant dans l’écran de détail comme suit :</p>
         <figure class="visual">
-          <img src="../assets/images/favoris-follower-like-73-3144f484db813cdca7c629c9feae9c1e0296fa36.webp" alt="Composant Favorite">
+          <img src="../assets/images/favoris-follower-like-73-004.webp" alt="Composant Favorite">
         </figure>
 
         <h3>Paramétrage du composant Favorites</h3>
         <p>Le composant nécessite un paramétrage pour indiquer l’utilisateur propriétaire du Favoris ainsi que l’item à mettre en Favoris.</p>
         <figure class="visual">
-          <img src="../assets/images/favoris-follower-like-73-74a8b38d08f33576eef5e568f4bb4a687517d5cd.webp" alt="Parametrage composant favorites">
+          <img src="../assets/images/favoris-follower-like-73-010.webp" alt="Parametrage composant favorites">
         </figure>
         <h4>Composant Favoris</h4>
         <table class="doc-table">
@@ -132,28 +132,28 @@
           </tbody>
         </table>
         <figure class="visual">
-          <img src="../assets/images/favoris-follower-like-73-7343a7cc8623cffa74206bebca50e49498692cd1.webp" alt="Composant favoris proprietes">
+          <img src="../assets/images/favoris-follower-like-73-009.webp" alt="Composant favoris proprietes">
         </figure>
 
         <h2>Tester la mise en Favoris</h2>
         <p>Lancez la simulation et testez en sélectionnant l’un des utilisateurs.</p>
         <figure class="visual">
-          <img src="../assets/images/favoris-follower-like-73-03f120c0b87f12453f8318bc1be1a996f59f26b6.webp" alt="Test favoris simulation">
+          <img src="../assets/images/favoris-follower-like-73-001.webp" alt="Test favoris simulation">
         </figure>
         <p>Finalement, cliquez sur mettre en Favoris.</p>
         <p class="callout info">Notez que le composant met et retire le Favoris automatiquement.</p>
         <figure class="visual">
-          <img src="../assets/images/favoris-follower-like-73-a976421874df2caadde6c70653922e9d587d67a5.webp" alt="Ajout suppression favoris">
+          <img src="../assets/images/favoris-follower-like-73-013.webp" alt="Ajout suppression favoris">
         </figure>
 
         <h2>Mettre en favoris sans authentification</h2>
         <p>Il est possible de mettre en favoris sans authentifier l’utilisateur. Pour cela, dans les paramètres du composant Favorites, utilisez l’identifiant du terminal via la formule Terminal / Identifiant.</p>
         <figure class="visual">
-          <img src="../assets/images/favoris-follower-like-73-5eb34cdf951b6bb04743f4b802f7dee94924bdce.webp" alt="Terminal identifiant favorites">
+          <img src="../assets/images/favoris-follower-like-73-008.webp" alt="Terminal identifiant favorites">
         </figure>
         <p>Vous obtenez :</p>
         <figure class="visual">
-          <img src="../assets/images/favoris-follower-like-73-8af9869607eddf2ea92cafc24c9e4e55fbe1c753.webp" alt="Resultat favoris sans auth">
+          <img src="../assets/images/favoris-follower-like-73-011.webp" alt="Resultat favoris sans auth">
         </figure>
         <p class="callout info">Ne pas authentifier l’utilisateur implique que les favoris ne s’afficheront que sur le terminal où les favoris ont été sélectionnés.</p>
       </section>
