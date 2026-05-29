@@ -18,32 +18,48 @@
         <div class="hero-body">
           <span class="kicker">Documentation</span>
           <h1>Plugins</h1>
-          <p class="lead">Étendez les capacités natives avec des plugins pour accélérer la livraison de fonctionnalités métier.</p>
+          <p class="lead">Zyllio offre la possibilité d'étendre et de personnaliser son interface et ses fonctionnalités via des plugins.</p>
+          <p>Ces plugins sont développés en utilisant un SDK disponible sur GitHub.</p>
+          <p>Le développement des plugins repose principalement sur le langage TypeScript, Il s'agit d'une surcouche de JavaScript qui ajoute un système de typage statique. Le SDK de Zyllio supporte pleinement TypeScript, permettant ainsi aux développeurs d'écrire du code plus structuré et sécurisé tout en profitant des avantages du typage fort</p>
+          <p>Le SDK GitHub de Zyllio fournit également de la documentation, des exemples de code, ainsi que des outils pour tester et déboguer les plugins en cours de développement. Les développeurs peuvent cloner le dépôt GitHub, explorer les exemples fournis, et les adapter selon leurs besoins pour construire rapidement des plugins fonctionnels</p>
+          <p>Les plugins peuvent inclure différents types de composants personnalisés :</p>
+          <ul>
+            <li>Composant visuel : une interface ou élément visuel à afficher.</li>
+            <li>Action : une fonction déclenchée par un utilisateur.</li>
+            <li>Formule : une fonction personnalisée pour calculs ou automatisations.</li>
+            <li>Thème : une personnalisation de l'apparence globale de l'application (couleurs, polices, etc.).</li>
+          </ul>
         </div>
       </header>
 
       <section class="section">
-        <h2>Quand utiliser des plugins</h2>
+        <h2>Prérequis pour le développement des plugins</h2>
         <ul>
-          <li>Quand la fonctionnalité est standard et déjà packagée.</li>
-          <li>Quand l'effort d'intégration est inférieur à un développement spécifique.</li>
-          <li>Quand la responsabilité de maintenance est clairement définie.</li>
+          <li>Connaissance en JavaScript/TypeScript.</li>
+          <li>Accès au SDK Zyllio sur GitHub: <a href="https://github.com/zyllio/zyllio-sdk">https://github.com/zyllio/zyllio-sdk</a></li>
+          <li>Outils de développement comme Node.js pour le développement en JavaScript/TypeScript.</li>
         </ul>
       </section>
 
       <section class="section">
-        <h2>Checklist d'adoption</h2>
-        <ol>
-          <li>Valider le périmètre du plugin face à l'architecture de l'app.</li>
-          <li>Tester le comportement en <a href="simulation-6.html">Simulation</a>.</li>
-          <li>Vérifier la compatibilité avec la stack data et l'authentification.</li>
-          <li>Évaluer l'impact release dans <a href="publications-5.html">Publications</a>.</li>
-        </ol>
+        <h2>Installation d'un plugin dans Zyllio</h2>
+        <p>Une fois le développement du plugin terminé, vous devez l'installer dans Zyllio via l'interface dédiée dans les paramètres de l'application</p>
+        <figure class="visual">
+          <img src="../assets/images/plugins-36-13ae6a104f34df1d9d06c73837f71230efa62457.webp" alt="image.png">
+        </figure>
+        <p>Après l'installation du plugin, il est important de cliquer sur le bouton "RELOAD PLUGINS" afin que le système prenne en compte les nouvelles modifications et active correctement votre plugin.</p>
+        <figure class="visual">
+          <img src="../assets/images/plugins-36-e35c0d3237feb7c4d153ad1e448ff69bb37be118.webp" alt="image.png">
+        </figure>
       </section>
 
       <section class="section">
-        <h2>Conseil de gouvernance</h2>
-        <p>Maintenez une liste courte des plugins actifs et de leur objectif métier pour éviter les dépendances inutiles.</p>
+        <h2>Utiliser votre plugin</h2>
+        <p>Selon la nature du Plugin, vous trouverez votre composant, votre action ou votre formule dans une section Plugins. Ces nouveaux éléments se manipule comme tout élément natifs Zyllio</p>
+        <figure class="visual">
+          <img src="../assets/images/plugins-36-7266088fc9f17f6973b06469768cb504d843e595.webp" alt="image.png">
+        </figure>
+        <p class="callout info">Les plugins s’installe au niveau d’une application Zyllio. Chaque application peut disposer de ses propres Plugins</p>
       </section>
     </main>
   </div>

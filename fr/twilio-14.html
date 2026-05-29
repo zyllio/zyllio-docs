@@ -18,32 +18,74 @@
         <div class="hero-body">
           <span class="kicker">Documentation</span>
           <h1>Twilio</h1>
-          <p class="lead">Intégrez Twilio pour les SMS et workflows de communication déclenchés par des événements métier.</p>
+          <p class="callout info">Disponible depuis le plan Professional</p>
+          <p class="lead">L'intégration Twilio vous permet d'envoyer des messages WhatsApp et des SMS facilement. En entrant simplement vos informations de compte Twilio, vous pouvez communiquer avec vos utilisateurs.</p>
         </div>
       </header>
 
       <section class="section">
-        <h2>Scénarios Twilio courants</h2>
+        <h2>Configuration de Twilio</h2>
+
+        <h3>Prérequis</h3>
+        <p>Avant de commencer, assurez vous d'avoir un compte Twilio actif avec des crédits disponibles. Si ce n'est pas encore fait, inscrivez-vous sur le site de Twilio et ajoutez des crédits à votre compte.</p>
+
+        <h3>Génération des clés d'API</h3>
+        <p>Pour configurer Twilio, vous aurez besoin de votre Account SID et de votre Auth Token. Vous pouvez les obtenir en suivant ces étapes :</p>
         <ul>
-          <li>Alertes transactionnelles (commande, réservation, livraison).</li>
-          <li>Parcours d'authentification et vérification.</li>
-          <li>Relances et confirmations pour l'engagement client.</li>
+          <li>Connectez-vous à votre compte Twilio via <a href="https://console.twilio.com/">https://console.twilio.com/</a></li>
+          <li>Accédez à la section Account Info sur votre tableau de bord.</li>
+          <li>Notez votre Account SID et votre Auth Token.</li>
         </ul>
+        <figure class="visual">
+          <img src="https://codaio.imgix.net/docs/6njJ_WqH8k/blobs/bl-rgCdss7kkG/c905b03e22a1eb0b0ba28734513c3b7a449465c569f952f899bdfc6272f3fefdac1001a1a07ad7efeff5ffcc40145e330edcac5817f57ec74534038a4457e3170adc918ebba43ab142e8513f6ac31a283ff30afd061d07d0af3999b7fbc88a59be6cbda8?fit=max&fm=webp&lossless=true" alt="image.png">
+        </figure>
       </section>
 
       <section class="section">
-        <h2>Checklist d'intégration</h2>
+        <h2>Configuration Zyllio</h2>
         <ol>
-          <li>Stocker les identifiants API de manière sécurisée, jamais côté vue client.</li>
-          <li>Créer des endpoints backend pour l'envoi des messages.</li>
-          <li>Déclencher les envois depuis des actions validées dans le parcours app.</li>
-          <li>Tester la délivrabilité et les échecs en <a href="simulation-6.html">Simulation</a>.</li>
+          <li>Ouvrez votre application depuis le Studio Zyllio</li>
+          <li>Accédez à l'onglet Settings (Paramètres)</li>
+          <li>Sélectionnez la section Twilio</li>
+          <li>Activer l’intégration en cliquant sur l’option Enable</li>
+          <li>Copiez / Collez votre Account SID et votre Auth Token dans les champs correspondants</li>
         </ol>
+        <figure class="visual">
+          <img src="https://codaio.imgix.net/docs/6njJ_WqH8k/blobs/bl-FfoO_oekUh/117964b6ee8c4a1b3a2cbaeb036eb0761fa6e26f9140a07d3819e1998872662884ee35c4049946ba557450c39fd4636c2bf446943e9588797c07b810d3d49ecc212c5d34c16578a712541480fed0af05897772aa8807b770b55fb79ab03f9c7c0dcc21d3?fit=max&fm=webp&lossless=true" alt="image.png">
+        </figure>
       </section>
 
       <section class="section">
-        <h2>Rappel conformité</h2>
-        <p>Respectez la réglementation locale, le consentement opt-in et les plages horaires de contact avant mise en production.</p>
+        <h2>Utilisation des actions de messagerie</h2>
+
+        <h3>Envoi de messages WhatsApp</h3>
+        <ol>
+          <li>Allez dans l’éditeur d’actions depuis un bouton défini dans un écran.</li>
+          <li>Sélectionnez l'action Send WhatsApp</li>
+          <li>Entrez le numéro de téléphone de l’expéditeur (from phone number)</li>
+          <li>Entrez le numéro de téléphone du destinataire (to phone number) au format international, par exemple, +1234567890)</li>
+          <li>Indiquez le message que vous souhaitez envoyer (message)</li>
+        </ol>
+        <figure class="visual">
+          <img src="https://codaio.imgix.net/docs/6njJ_WqH8k/blobs/bl-KKnD4-pN5-/e08a01359cfb75c86ee0d50dd199f1ad4477711600f91aa7e347ffb644aeab74c9a0f73d5a308d94ba2b4398c7a707cec2a649b0f194805fdb1ce2168b212890fbb8537b38b24d7294ca716adab4bccdc442d4f8b174e0937eec6d43cc72ce9ac17d7f7c?fit=max&fm=webp&lossless=true" alt="image.png">
+        </figure>
+
+        <h3>Envoi de SMS</h3>
+        <ol>
+          <li>Allez dans l’éditeur d’actions depuis un bouton défini dans un écran.</li>
+          <li>Sélectionnez l'action Send SMS</li>
+          <li>Entrez le numéro de téléphone de l’expéditeur (from phone number)</li>
+          <li>Entrez le numéro de téléphone du destinataire (to phone number) au format international, par exemple, +1234567890)</li>
+          <li>Indiquez le message que vous souhaitez envoyer (message)</li>
+        </ol>
+        <figure class="visual">
+          <img src="https://codaio.imgix.net/docs/6njJ_WqH8k/blobs/bl-QYo4xsNwSY/9009a19bccd8b3fd6e8708f8993d5eef6102213bbc909f8819802dfdb6ed1c48d506a0cbf7a30bd981e1f3be9e198e39a65b960bbf9418897a680fb0fea97f951da8bc44aa05614450a4f0fe4e4f68364643aa4895a1f02ae849e3ae61edc76b039b4a21?fit=max&fm=webp&lossless=true" alt="image.png">
+        </figure>
+      </section>
+
+      <section class="section">
+        <h2>Notes importantes</h2>
+        <p class="callout error">Les actions Send Whatsapp et Send SMS soumettent la demande d’envoi auprès de Twilio. L’action Zyllio est un succès si cette demande est bien transmise mais ne signifie pas que le message est bien envoyé par Twilio En cas de doute, vérifiez leurs statuts dans l’interface Monitoring de Twilio Notez que certains messages peuvent être refusés par les plateformes. Par exemple: <a href="https://www.twilio.com/docs/api/errors/63040">https://www.twilio.com/docs/api/errors/63040</a></p>
       </section>
     </main>
   </div>

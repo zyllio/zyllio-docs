@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
@@ -16,24 +16,24 @@
     <main class="main">
       <section class="section" id="welcome">
         <h1>Traductions</h1>
-        <p>La traduction d'une application est un élément clé pour toucher un public international et offrir une expérience utilisateur personnalisée.</p>
-        <p>Cette documentation vous guide étape par étape pour mettre en place un système de traduction multilingue dans votre application.</p>
+        <p>La traduction d'une application est un �l�ment cl� pour toucher un public international et offrir une exp�rience utilisateur personnalis�e.</p>
+        <p>Cette documentation vous guide �tape par �tape pour mettre en place un syst�me de traduction multilingue dans votre application.</p>
 
-        <h2>Utiliser la table "Translations" pour les libellés</h2>
-        <p>Pour gérer les traductions, Zyllio propose une table prédéfinie nommée <strong>Translations</strong>. Cette table se trouve dans l'onglet <strong>Database</strong> et contient déjà des exemples de libellés traduits pour vous aider à démarrer.</p>
+        <h2>Utiliser la table "Translations" pour les libell�s</h2>
+        <p>Pour g�rer les traductions, Zyllio propose une table pr�d�finie nomm�e <strong>Translations</strong>. Cette table se trouve dans l'onglet <strong>Database</strong> et contient d�j� des exemples de libell�s traduits pour vous aider � d�marrer.</p>
 
         <h3>Structure de la table Translations</h3>
-        <p>La table <strong>Translations</strong> est organisée comme suit :</p>
+        <p>La table <strong>Translations</strong> est organis�e comme suit :</p>
         <ul>
-          <li><strong>Première colonne</strong> : Le nom du libellé. Chaque libellé doit être unique et représente le texte que vous souhaitez afficher dans votre application.</li>
-          <li><strong>Colonnes suivantes</strong> : Chaque colonne représente une langue, selon la norme ISO (par exemple: <code>fr</code> pour le français, <code>en</code> pour l'anglais, <code>es</code> pour l'espagnol, etc.). Ces colonnes contiennent les traductions du libellé correspondant.</li>
+          <li><strong>Premi�re colonne</strong> : Le nom du libell�. Chaque libell� doit �tre unique et repr�sente le texte que vous souhaitez afficher dans votre application.</li>
+          <li><strong>Colonnes suivantes</strong> : Chaque colonne repr�sente une langue, selon la norme ISO (par exemple: <code>fr</code> pour le fran�ais, <code>en</code> pour l'anglais, <code>es</code> pour l'espagnol, etc.). Ces colonnes contiennent les traductions du libell� correspondant.</li>
         </ul>
 
         <p>Exemple de table <strong>Translations</strong></p>
         <table class="doc-table">
           <thead>
             <tr>
-              <th>Nom du libellé</th>
+              <th>Nom du libell�</th>
               <th>fr</th>
               <th>en</th>
               <th>es</th>
@@ -54,34 +54,34 @@
             </tr>
             <tr>
               <td>error_not_found</td>
-              <td>Non trouvé</td>
+              <td>Non trouv�</td>
               <td>Not found</td>
               <td>No encontrado</td>
             </tr>
           </tbody>
         </table>
 
-        <p>Remplissez cette table avec les libellés et leurs traductions pour toutes les langues prises en charge par votre application.</p>
+        <p>Remplissez cette table avec les libell�s et leurs traductions pour toutes les langues prises en charge par votre application.</p>
         <figure class="visual">
-          <img src="https://codaio.imgix.net/docs/6njJ_WqH8k/blobs/bl-MnYwtzuJ5a/6853c9f5022ca04c17ef2b5a2028e45ae1accf40b3bead568dd9cb13906469198f7b79e4c884467c9fdf44682167b2fae0c199ec27ed36064db3702483490c82e2a719d38f2ca006aa6e0490fb1db49b857f97899acb5b9c1b3948792b440d5977a2f886?fit=max&fm=webp&lossless=true" alt="Exemple de table Translations">
+          <img src="../assets/images/traductions-85-3fbd2ce94a7f593be2b31fb0fcc04e7e5f762b66.webp" alt="Exemple de table Translations">
         </figure>
         <p>Exemple de table Translations</p>
 
         <h2>Utiliser la formule Translate dans les composants</h2>
-        <p>Une fois la table <strong>Translations</strong> complétée, vous pouvez intégrer les traductions dans votre application à l'aide de la formule <strong>Translate</strong>. Cette formule est utilisée dans les composants d'affichage (comme les textes, les boutons, etc.) présents sur vos écrans.</p>
+        <p>Une fois la table <strong>Translations</strong> compl�t�e, vous pouvez int�grer les traductions dans votre application � l'aide de la formule <strong>Translate</strong>. Cette formule est utilis�e dans les composants d'affichage (comme les textes, les boutons, etc.) pr�sents sur vos �crans.</p>
 
-        <p>Propriétés de la formule "Translate"</p>
+        <p>Propri�t�s de la formule "Translate"</p>
         <ul>
-          <li><strong>Table des traductions</strong> : Référencez la table <strong>Translations</strong>.</li>
-          <li><strong>Nom du libellé</strong> : Indiquez le nom du libellé tel qu'il est défini dans la première colonne de la table.</li>
+          <li><strong>Table des traductions</strong> : R�f�rencez la table <strong>Translations</strong>.</li>
+          <li><strong>Nom du libell�</strong> : Indiquez le nom du libell� tel qu'il est d�fini dans la premi�re colonne de la table.</li>
         </ul>
 
         <figure class="visual">
-          <img src="https://codaio.imgix.net/docs/6njJ_WqH8k/blobs/bl-hi8dcYFYvJ/6e7cae049344df42ff857e0a25bd90fd7b31a6d8f44a39c2aa3cf122747386ae5f0a08ed2cb4e0f75762a10bd699ec9f51bba13281397a66556417d16efd6598a70f52cca5fc9f6105a5a76effccb723757f2f56b0551b7bd8a78dd0bb8a32281228432c?fit=max&fm=webp&lossless=true" alt="Utilisation de la formule Translate">
+          <img src="../assets/images/traductions-85-763be8021ae9b7ec1aadb9fe2a715c23e245e7b4.webp" alt="Utilisation de la formule Translate">
         </figure>
         <p>Utilisation de la formule Translate</p>
 
-        <p class="callout info">Lorsque l'application est lancée, la langue de l'utilisateur est automatiquement détectée. Cela signifie que si l'utilisateur a configuré son appareil en français, les libellés en français seront affichés par défaut. Si la langue de l'utilisateur n'est pas prise en charge, la première langue définie dans la table Translations sera utilisée.</p>
+        <p class="callout info">Lorsque l'application est lanc�e, la langue de l'utilisateur est automatiquement d�tect�e. Cela signifie que si l'utilisateur a configur� son appareil en fran�ais, les libell�s en fran�ais seront affich�s par d�faut. Si la langue de l'utilisateur n'est pas prise en charge, la premi�re langue d�finie dans la table Translations sera utilis�e.</p>
       </section>
     </main>
   </div>

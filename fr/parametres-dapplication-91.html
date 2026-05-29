@@ -1,10 +1,10 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Documentation Zyllio - Paramètres d'application">
-  <title>Documentation Zyllio | Paramètres d'application</title>
+  <meta name="description" content="Documentation Zyllio - Param�tres d'application">
+  <title>Documentation Zyllio | Param�tres d'application</title>
   <link rel="stylesheet" href="../assets/css/global.css">
 </head>
 <body>
@@ -15,73 +15,73 @@
 
     <main class="main">
       <section class="section" id="welcome">
-        <h1>Paramètres d'application</h1>
-        <p>Vous pouvez passer des informations à votre application Zyllio directement via son URL. Cela permet de piloter l'affichage ou de transmettre des données (comme un nom d'utilisateur ou un ID) dès l'ouverture.</p>
+        <h1>Param�tres d'application</h1>
+        <p>Vous pouvez passer des informations � votre application Zyllio directement via son URL. Cela permet de piloter l'affichage ou de transmettre des donn�es (comme un nom d'utilisateur ou un ID) d�s l'ouverture.</p>
 
         <h2>Structure de l'URL</h2>
-        <p>Les paramètres s'ajoutent après l'ID de votre application en commençant par un point d'interrogation (<code>?</code>).</p>
+        <p>Les param�tres s'ajoutent apr�s l'ID de votre application en commen�ant par un point d'interrogation (<code>?</code>).</p>
 
-        <h3>Cas A : Indiquer un écran spécifique (Optionnel)</h3>
-        <p>Si vous souhaitez que l'application s'ouvre sur un écran précis plutôt que sur l'accueil par défaut, placez le nom de l'écran en première position.</p>
+        <h3>Cas A : Indiquer un �cran sp�cifique (Optionnel)</h3>
+        <p>Si vous souhaitez que l'application s'ouvre sur un �cran pr�cis plut�t que sur l'accueil par d�faut, placez le nom de l'�cran en premi�re position.</p>
         <ul>
           <li><strong>Exemple :</strong> <code>https://zyllio.link/apps/&lt;appId&gt;/?EcranDeVente</code></li>
         </ul>
 
-        <h3>Cas B : Passer des données sans changer l'écran</h3>
-        <p>Si vous voulez simplement transmettre des données sans changer l'écran de démarrage, listez vos paramètres directement.</p>
+        <h3>Cas B : Passer des donn�es sans changer l'�cran</h3>
+        <p>Si vous voulez simplement transmettre des donn�es sans changer l'�cran de d�marrage, listez vos param�tres directement.</p>
         <ul>
           <li><strong>Exemple :</strong> <code>https://zyllio.link/apps/&lt;appId&gt;/?Nom=Didier</code></li>
         </ul>
 
-        <h2>Combiner plusieurs paramètres</h2>
-        <p>Pour cumuler l'écran de démarrage et des données supplémentaires, utilisez le symbole <code>&amp;</code> comme séparateur.</p>
+        <h2>Combiner plusieurs param�tres</h2>
+        <p>Pour cumuler l'�cran de d�marrage et des donn�es suppl�mentaires, utilisez le symbole <code>&amp;</code> comme s�parateur.</p>
         <blockquote>
           <p>[!TIP]</p>
-          <p><strong>Règle d'or :</strong> Si vous spécifiez un écran de démarrage, il doit impérativement être le premier paramètre après le <code>?</code>.</p>
+          <p><strong>R�gle d'or :</strong> Si vous sp�cifiez un �cran de d�marrage, il doit imp�rativement �tre le premier param�tre apr�s le <code>?</code>.</p>
         </blockquote>
         <p><strong>Exemple complet :</strong></p>
         <p><code>https://zyllio.link/apps/d0f269524cd4/?TableauDeBord&amp;Nom=Didier&amp;Statut=Premium</code></p>
         <p>Dans cet exemple :</p>
         <ol>
-          <li>L'application force l'ouverture sur l'écran <strong>TableauDeBord</strong>.</li>
+          <li>L'application force l'ouverture sur l'�cran <strong>TableauDeBord</strong>.</li>
           <li>Elle transporte les variables <strong>Nom</strong> (Didier) et <strong>Statut</strong> (Premium).</li>
         </ol>
 
-        <h2>Comment récupérer ces valeurs ?</h2>
-        <p>Pour exploiter ces données dans votre logique No-Code (par exemple pour afficher un message de bienvenue ou filtrer une liste) :</p>
+        <h2>Comment r�cup�rer ces valeurs ?</h2>
+        <p>Pour exploiter ces donn�es dans votre logique No-Code (par exemple pour afficher un message de bienvenue ou filtrer une liste) :</p>
         <ol>
-          <li>Allez dans la section <strong>Application</strong> de l'éditeur.</li>
-          <li>Choisissez la fonction <strong>"Paramètre de l'application"</strong>.</li>
-          <li>Indiquez le nom de la clé utilisée dans l'URL (ex: <code>Nom</code>).</li>
+          <li>Allez dans la section <strong>Application</strong> de l'�diteur.</li>
+          <li>Choisissez la fonction <strong>"Param�tre de l'application"</strong>.</li>
+          <li>Indiquez le nom de la cl� utilis�e dans l'URL (ex: <code>Nom</code>).</li>
         </ol>
         <figure class="visual">
-          <img src="https://codaio.imgix.net/docs/6njJ_WqH8k/blobs/bl-pjwEjxXwAy/47185fa04f1c4edb8d25c14e98daac9187519ab27a09382a25a09a5aa72056c4dbd4a6946f6a580c61aeff3e19253612196d4ed3a7dbdd211e5285a46bb30d57a84f5d0bdae823dc7b9dd526d3e7c52d8fe0c837c0baf0e87a34ec921094e780ceb250a8?fit=max&fm=webp&lossless=true" alt="Paramètre de l'application dans l'éditeur">
+          <img src="../assets/images/parametres-dapplication-91-85085d2310d8e00c7554a9af058a028934694aa2.webp" alt="Param�tre de l'application dans l'�diteur">
         </figure>
 
-        <h2>Gestion des caractères spéciaux (encodage)</h2>
-        <p>Les URLs ne peuvent pas contenir d'espaces ou de caractères accentués directement. Si vos noms d'écrans ou vos valeurs de paramètres en comportent, ils doivent être "encodés".</p>
+        <h2>Gestion des caract�res sp�ciaux (encodage)</h2>
+        <p>Les URLs ne peuvent pas contenir d'espaces ou de caract�res accentu�s directement. Si vos noms d'�crans ou vos valeurs de param�tres en comportent, ils doivent �tre "encod�s".</p>
 
-        <h3>Les règles de base</h3>
+        <h3>Les r�gles de base</h3>
         <ul>
           <li><strong>Les espaces :</strong> Remplacez-les par <code>%20</code>.</li>
-          <li><strong>Les accents :</strong> Il est fortement recommandé de les éviter dans les noms de vos écrans. Si vous devez passer une valeur avec accent (ex: "Sébastien"), l'URL le transformera souvent automatiquement.</li>
+          <li><strong>Les accents :</strong> Il est fortement recommand� de les �viter dans les noms de vos �crans. Si vous devez passer une valeur avec accent (ex: "S�bastien"), l'URL le transformera souvent automatiquement.</li>
         </ul>
 
         <h3>Exemples de conversion</h3>
         <table class="doc-table">
           <thead>
             <tr>
-              <th>Texte souhaité</th>
+              <th>Texte souhait�</th>
               <th>Format dans l'URL</th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td>Écran de bord</td>
+              <td>�cran de bord</td>
               <td>?Ecran%20de%20bord</td>
             </tr>
             <tr>
-              <td>Prénom = Héloïse</td>
+              <td>Pr�nom = H�lo�se</td>
               <td>?Prenom=H%C3%A9lo%C3%AFse</td>
             </tr>
           </tbody>
