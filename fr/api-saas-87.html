@@ -19,25 +19,25 @@
         <p class="callout info">Disponible depuis le plan Entreprise</p>
 
         <h2>Introduction</h2>
-        <p>Cette documentation d�crit les API disponible pour mettre en place une application Saas qui permet d�automatiser :</p>
+        <p>Cette documentation décrit les API disponible pour mettre en place une application Saas qui permet d’automatiser :</p>
         <ul>
-          <li>La cr�ation d�applications � partir d�une autre application �mod�le�</li>
-          <li>La publication d�applications</li>
-          <li>La modification d�applications</li>
-          <li>La synchronisation d�applications</li>
+          <li>La création d’applications à partir d’une autre application “modèle”</li>
+          <li>La publication d’applications</li>
+          <li>La modification d’applications</li>
+          <li>La synchronisation d’applications</li>
         </ul>
-        <p>Le pr�fix de l�URL est : <a href="https://www.zyllio.one/api/account/">https://www.zyllio.one/api/account/</a></p>
+        <p>Le préfix de l’URL est : <a href="https://www.zyllio.one/api/account/">https://www.zyllio.one/api/account/</a></p>
 
         <h2>Documentation des endpoints</h2>
         <table class="doc-table">
           <thead>
             <tr>
-              <th>M�thode</th>
+              <th>Méthode</th>
               <th>Chemin</th>
               <th>Headers</th>
               <th>Contenu</th>
               <th>Commentaire</th>
-              <th>R�ponse</th>
+              <th>Réponse</th>
             </tr>
           </thead>
           <tbody>
@@ -46,7 +46,7 @@
               <td>/applications</td>
               <td>x-api-key</td>
               <td>-</td>
-              <td>Liste les applications li�es � la cl� API</td>
+              <td>Liste les applications liées à la clé API</td>
               <td>ApplicationSummaryModel[]</td>
             </tr>
             <tr>
@@ -54,7 +54,7 @@
               <td>/applications</td>
               <td>x-api-key</td>
               <td>CreateApplicationModel</td>
-              <td>Cr�e une application depuis un template</td>
+              <td>Crée une application depuis un template</td>
               <td>string</td>
             </tr>
             <tr>
@@ -70,7 +70,7 @@
               <td>/applications/:id</td>
               <td>x-api-key</td>
               <td>UpdateApplicationModel</td>
-              <td>Met � jour une application</td>
+              <td>Met à jour une application</td>
               <td>void</td>
             </tr>
             <tr>
@@ -96,18 +96,18 @@
             </tr>
           </thead>
           <tbody>
-            <tr><td>id</td><td>string</td><td>Identifiant unique de l�application</td></tr>
-            <tr><td>name</td><td>string</td><td>Nom de l�application</td></tr>
-            <tr><td>lastUpdated</td><td>Date</td><td>Date de derni�re mise � jour</td></tr>
-            <tr><td>screenNumber</td><td>number</td><td>Nombre d��crans</td></tr>
+            <tr><td>id</td><td>string</td><td>Identifiant unique de l’application</td></tr>
+            <tr><td>name</td><td>string</td><td>Nom de l’application</td></tr>
+            <tr><td>lastUpdated</td><td>Date</td><td>Date de dernière mise à jour</td></tr>
+            <tr><td>screenNumber</td><td>number</td><td>Nombre d’écrans</td></tr>
             <tr><td>tableNumber</td><td>number</td><td>Nombre de tables</td></tr>
             <tr><td>pluginNumber</td><td>number</td><td>Nombre de plugins</td></tr>
-            <tr><td>userName</td><td>string</td><td>Nom du propri�taire</td></tr>
-            <tr><td>email</td><td>string</td><td>Email du propri�taire</td></tr>
-            <tr><td>description</td><td>string</td><td>Description de l�application</td></tr>
-            <tr><td>url</td><td>string</td><td>URL de l�application</td></tr>
+            <tr><td>userName</td><td>string</td><td>Nom du propriétaire</td></tr>
+            <tr><td>email</td><td>string</td><td>Email du propriétaire</td></tr>
+            <tr><td>description</td><td>string</td><td>Description de l’application</td></tr>
+            <tr><td>url</td><td>string</td><td>URL de l’application</td></tr>
             <tr><td>shares</td><td>string[]</td><td>Emails ou IDs des partages</td></tr>
-            <tr><td>icon</td><td>string</td><td>URL ou chemin de l�ic�ne</td></tr>
+            <tr><td>icon</td><td>string</td><td>URL ou chemin de l’icône</td></tr>
           </tbody>
         </table>
 
@@ -121,7 +121,7 @@
             </tr>
           </thead>
           <tbody>
-            <tr><td>templateId</td><td>string</td><td>ID du template � utiliser pour la cr�ation</td></tr>
+            <tr><td>templateId</td><td>string</td><td>ID du template à utiliser pour la création</td></tr>
           </tbody>
         </table>
 
@@ -135,9 +135,9 @@
             </tr>
           </thead>
           <tbody>
-            <tr><td>fromApplicationId</td><td>string</td><td>ID de l�application source � synchroniser</td></tr>
-            <tr><td>screens</td><td>boolean</td><td>Synchroniser les �crans (<code>true</code>/<code>false</code>)</td></tr>
-            <tr><td>theme</td><td>boolean</td><td>Synchroniser le th�me (<code>true</code>/<code>false</code>)</td></tr>
+            <tr><td>fromApplicationId</td><td>string</td><td>ID de l’application source à synchroniser</td></tr>
+            <tr><td>screens</td><td>boolean</td><td>Synchroniser les écrans (<code>true</code>/<code>false</code>)</td></tr>
+            <tr><td>theme</td><td>boolean</td><td>Synchroniser le thème (<code>true</code>/<code>false</code>)</td></tr>
           </tbody>
         </table>
 
@@ -151,28 +151,28 @@
             </tr>
           </thead>
           <tbody>
-            <tr><td>name</td><td>string</td><td>Nom de l�application</td></tr>
-            <tr><td>description</td><td>string</td><td>Description de l�application</td></tr>
-            <tr><td>icon</td><td>string</td><td>URL ou chemin de l�ic�ne</td></tr>
+            <tr><td>name</td><td>string</td><td>Nom de l’application</td></tr>
+            <tr><td>description</td><td>string</td><td>Description de l’application</td></tr>
+            <tr><td>icon</td><td>string</td><td>URL ou chemin de l’icône</td></tr>
           </tbody>
         </table>
 
-        <h2>Cr�er une application SAAS</h2>
+        <h2>Créer une application SAAS</h2>
 
-        <h3>Cl� d�API</h3>
-        <p>La cl� d�API est disponible depuis les param�tres de votre compte depuis l��cran principal</p>
+        <h3>Clé d’API</h3>
+        <p>La clé d’API est disponible depuis les paramètres de votre compte depuis l’écran principal</p>
         <figure class="visual">
-          <img src="../assets/images/api-saas-87-3829a41510018cb50a109c4f71fbd529ae551c2a.webp" alt="Param�tres du compte">
+          <img src="../assets/images/api-saas-87-3829a41510018cb50a109c4f71fbd529ae551c2a.webp" alt="Paramètres du compte">
         </figure>
-        <p>Cette section vous permet de copier la cl� d�API</p>
+        <p>Cette section vous permet de copier la clé d’API</p>
         <figure class="visual">
-          <img src="../assets/images/api-saas-87-52c67971f2075dfff00be10e45b7d2b1f8c61934.webp" alt="Copier la cl� API">
+          <img src="../assets/images/api-saas-87-52c67971f2075dfff00be10e45b7d2b1f8c61934.webp" alt="Copier la clé API">
         </figure>
 
-        <h3>D�finir les API REST</h3>
-        <p>Il est n�cessaire de d�finir 2 configurations dans les param�tres REST</p>
+        <h3>Définir les API REST</h3>
+        <p>Il est nécessaire de définir 2 configurations dans les paramètres REST</p>
         <ul>
-          <li>applications - pour cr�er et modifier des applications</li>
+          <li>applications - pour créer et modifier des applications</li>
           <li>publications - pour publier des applications</li>
         </ul>
         <figure class="visual">
@@ -184,48 +184,48 @@
         </figure>
 
         <h3>Lister les applications</h3>
-        <p>Les applications peuvent �tre import�es depuis l�onglet Donn�es</p>
-        <p>Cliquez sur le menu Importer puis REST, s�lectionnez Applications et enfin Importer</p>
+        <p>Les applications peuvent être importées depuis l’onglet Données</p>
+        <p>Cliquez sur le menu Importer puis REST, sélectionnez Applications et enfin Importer</p>
         <figure class="visual">
           <img src="../assets/images/api-saas-87-c75653fb515491a597999483bdbbb71b09f6fc3d.webp" alt="Importer applications REST">
         </figure>
-        <p>Une table REST, dont le contenu est dynamique, contient les applications. Il vous suffit d�utiliser une composant List ou Grid pour afficher les applications</p>
+        <p>Une table REST, dont le contenu est dynamique, contient les applications. Il vous suffit d’utiliser un composant List ou Grid pour afficher les applications</p>
         <figure class="visual">
           <img src="../assets/images/api-saas-87-c809733f20debdc25ad85c2cd2615ddde90841af.webp" alt="Table applications REST">
         </figure>
 
-        <h3>Cr�er une application</h3>
-        <p>Supposons que vous souhaitez proposer un �cran d�accueil qui permet � vos utilisateurs de cr�er une application � partir de l�une de vos applications qui sert de mod�le</p>
+        <h3>Créer une application</h3>
+        <p>Supposons que vous souhaitez proposer un écran d’accueil qui permet à vos utilisateurs de créer une application à partir de l’une de vos applications qui sert de modèle</p>
         <figure class="visual">
-          <img src="../assets/images/api-saas-87-3b04c480f335aa7ed6d3550e619922bfbae1740e.webp" alt="Ecran cr�ation application">
+          <img src="../assets/images/api-saas-87-3b04c480f335aa7ed6d3550e619922bfbae1740e.webp" alt="Ecran création application">
         </figure>
-        <p>Pour cr�er une application vous devrez utiliser l�action REST Post selon l�aper�u suivant</p>
+        <p>Pour créer une application vous devrez utiliser l’action REST Post selon l’aperçu suivant</p>
         <figure class="visual">
-          <img src="../assets/images/api-saas-87-53ae82f6dc6bab0c1812af0cd48dec1b6305ca22.webp" alt="Action REST Post cr�ation">
+          <img src="../assets/images/api-saas-87-53ae82f6dc6bab0c1812af0cd48dec1b6305ca22.webp" alt="Action REST Post création">
         </figure>
-        <p>Le param�tre templateId fait r�f�rence � votre application mod�le. Le r�sultat de cet appel est un nouvel identifiant d�application appel� Application Id</p>
+        <p>Le paramètre templateId fait référence à votre application modèle. Le résultat de cet appel est un nouvel identifiant d’application appelé Application Id</p>
 
         <h3>Modifier une application</h3>
         <p>Pour modifier une application, il faut utiliser une action REST Put</p>
-        <p>La param�tre Chemin additionnel fait r�f�rence � l�application cr�er par l�action pr�c�dente</p>
+        <p>La paramètre Chemin additionnel fait référence à l’application créée par l’action précédente</p>
         <p class="callout info">Notez que la formule contient un / avant la variable</p>
         <figure class="visual">
           <img src="../assets/images/api-saas-87-bc05d07f6d91ffdfa680ab1f7d30f2d82d6e69cd.webp" alt="Action REST Put chemin additionnel">
         </figure>
-        <p>Le param�tre Donn�es de la requ�te d�finit le nouveau nom de l�application sous forme JSON comme suit</p>
+        <p>Le paramètre Données de la requête définit le nouveau nom de l’application sous forme JSON comme suit</p>
         <figure class="visual">
-          <img src="../assets/images/api-saas-87-63ddb25036cd76a83e050b982ef70b73b06bd999.webp" alt="Donn�es de requ�te JSON">
+          <img src="../assets/images/api-saas-87-63ddb25036cd76a83e050b982ef70b73b06bd999.webp" alt="Données de requête JSON">
         </figure>
-        <p class="callout info">Veuillez v�rifier les espaces et les guillemets</p>
+        <p class="callout info">Veuillez vérifier les espaces et les guillemets</p>
 
         <h3>Publier une application</h3>
         <p>Pour publier une application, il faut utiliser une action REST Post sur la configuration Publications</p>
         <figure class="visual">
           <img src="../assets/images/api-saas-87-9823513cedc33b00159d2ca7836360d0a786bb8e.webp" alt="Action REST Post publications">
         </figure>
-        <p>Voici la s�rie d�actions qui cr��, renomme et publie une application</p>
+        <p>Voici la série d’actions qui créé, renomme et publie une application</p>
         <figure class="visual">
-          <img src="../assets/images/api-saas-87-743cfbda4dc08ce81a3421572fa1c8f31e37e0b6.webp" alt="Serie actions cr�er renommer publier">
+          <img src="../assets/images/api-saas-87-743cfbda4dc08ce81a3421572fa1c8f31e37e0b6.webp" alt="Serie actions créer renommer publier">
         </figure>
       </section>
     </main>
