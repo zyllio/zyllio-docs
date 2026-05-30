@@ -14,53 +14,60 @@
     </aside>
 
     <main class="main">
-      <header class="section hero" id="welcome">
-        <div class="hero-body">
-          <span class="kicker">Documentation</span>
-          <h1>Google Sheets</h1>
-          <p class="lead">Use Google Sheets as a lightweight backend for prototypes and operational apps.</p>
-        </div>
-      </header>
+      <section class="section" id="welcome">
+        <h1>Google Sheets</h1>
+        <p>Zyllio lets you connect and use data from Google Sheets. With this feature, you can retrieve and use spreadsheets directly in your application.</p>
 
-      <section class="section">
-        <h2>Best-fit use cases</h2>
-        <ul>
-          <li>Fast proof of concept with editable tabular data.</li>
-          <li>Small team workflows with shared ownership.</li>
-          <li>Operational dashboards with frequent updates.</li>
-        </ul>
-      </section>
+        <h2>Connecting to Google Sheets</h2>
+        <p>Open Zyllio Studio, go to the Settings tab in the left menu, select the Google Sheets option, and enable the Enable button. Then click the Connect button. This opens a window where you can select your Google account.</p>
+        <p>Choose the Google account you want to use to access your Google Sheets. Once connected, you will see a status message indicating that the connection was successful: Connected.</p>
 
-      <section class="section">
-        <h2>Connection flow</h2>
-        <ol>
-          <li>Prepare sheet tabs, headers, and stable column names.</li>
-          <li>Connect the source and map rows to UI components.</li>
-          <li>Handle empty and malformed rows in screen logic.</li>
-          <li>Validate read/write operations in <a href="simulation-6.html">Simulation</a>.</li>
-        </ol>
-      </section>
+        <h2>Accessing Google Sheets</h2>
+        <p>From the Database tab, click the Import button to display external data sources, then select Sheets.</p>
+        <figure class="visual">
+          <img src="../assets/images/google-sheets-11-001.webp" alt="External source import menu">
+        </figure>
+        <p>The next window lets you select the Google Sheets document and then the sheet or sheets you want to import.</p>
+        <figure class="visual">
+          <img src="../assets/images/google-sheets-11-002.webp" alt="Document and sheet selection">
+        </figure>
+        <p>Once imported, you get a new table.</p>
+        <figure class="visual">
+          <img src="../assets/images/google-sheets-11-003.webp" alt="New Summary table representing the imported Google Sheet">
+        </figure>
 
-      <section class="section">
-        <h2>Performance tips</h2>
-        <p>Limit large unfiltered queries and prefer explicit ranges or server-side pre-aggregation for better responsiveness.</p>
+        <h2>Key Points</h2>
+        <p>Google Sheets does not include a mechanism to uniquely identify rows. To perform update operations, the first column must define a unique identifier. If this is not the case, a warning will be displayed.</p>
+        <p class="callout error">The first column must uniquely identify each row. The value can be a commonly used unique number, or any text, as long as uniqueness is respected.</p>
+        <p>Example:</p>
+        <figure class="visual">
+          <img src="../assets/images/google-sheets-11-004.webp" alt="The first column is unique">
+        </figure>
+
+        <h2>Formats</h2>
+        <p class="callout info">The date format must be YYYY-MM-DD.</p>
+        <p class="callout info">Decimal numbers must use the Text format in the Sheet column and use a decimal point.</p>
+        <p class="callout info">Google Sheets columns with formulas should not be used. They do not cause any issue when reading data, but they may be overwritten during updates (Update-Row).</p>
+
+        <h2>Limitations</h2>
+        <p class="callout info">Zyllio limits the Google Sheets range to 52 columns (A-Z and AA-AZ).</p>
+
+        <h2>Structure Synchronization</h2>
+        <p>When you make structural changes in your Google Sheets, such as adding columns, these changes do not appear in Zyllio. To synchronize these changes, click the Refresh Structure button. Once the synchronization process starts, Zyllio adds and removes fields based on the changes.</p>
+        <p class="callout info">Zyllio does not modify the column structure in your Google Sheets.</p>
+        <figure class="visual">
+          <img src="../assets/images/google-sheets-11-005.webp" alt="Refresh Structure button">
+        </figure>
+
+        <h2>Data Synchronization</h2>
+        <p>Zyllio sets up a data cache to improve Google Sheets access performance. As a result, changes made from Google Sheets or from an external automation may not be visible immediately in Zyllio. A delay of up to 1 minute may be required.</p>
+        <p>To force a refresh, click the Refresh Data button.</p>
+        <figure class="visual">
+          <img src="../assets/images/google-sheets-11-006.webp" alt="Refresh Data button">
+        </figure>
       </section>
     </main>
   </div>
 <script src="../assets/js/sidebar-shell.js"></script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
