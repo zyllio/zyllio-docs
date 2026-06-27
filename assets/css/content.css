@@ -129,3 +129,11 @@
 .prompt-block p {
   margin: 0;
 }
+
+.compact-sections .section {
+  padding: clamp(10px, 1.6vw, 16px) 0;
+}
+
+.compact-sections .section:first-of-type {
+  padding-top: 8px;
+}

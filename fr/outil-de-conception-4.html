@@ -13,108 +13,69 @@
       <docs-sidebar-shell></docs-sidebar-shell>
     </aside>
 
-    <main class="main">
+    <main class="main compact-sections">
       <header class="section hero" id="welcome">
         <div class="hero-body">
           <span class="kicker">Documentation</span>
           <h1>Outil de conception</h1>
-          <p class="lead">Cette section détaille les différents outils de conception disponibles dans notre plateforme, ainsi que l'accès aux paramètres essentiels.</p>
+          <p class="lead">Le portail d'edition affiche, tout en haut, un bandeau de navigation qui donne acces aux grandes zones de travail de l'application.</p>
         </div>
         <figure class="visual">
-          <img src="../assets/images/outil-de-conception-4-001.webp" alt="image.png">
+          <img src="../assets/images/outil-de-conception-4-001.webp" alt="Bandeau superieur du portail d'edition">
         </figure>
       </header>
 
       <section class="section">
-        <h2>Éditeur d'écran</h2>
-        <p>L'éditeur d'écran est l'outil central pour la conception visuelle de chaque écran de votre application. Utilisez cet éditeur intuitif pour créer des interfaces utilisateur attrayantes et fonctionnelles.</p>
-        <p>Fonctionnalités</p>
-        <ul>
-          <li>Ajout simple de composants tels que boutons, champs de texte, listes, images, etc.</li>
-          <li>Personnalisation de la mise en page et du style</li>
-          <li>Aperçu en temps réel des modifications apportées</li>
-        </ul>
+        <h2>Onglets principaux</h2>
+        <p>Le bandeau superieur structure le travail en 6 espaces complementaires : <strong>Ecrans</strong> pour construire, <strong>Transitions</strong> pour relier, <strong>Scenarios</strong> pour automatiser, <strong>Simulation</strong> pour tester, <strong>Donnees</strong> pour modeliser et <strong>Parametres</strong> pour configurer.</p>
       </section>
 
       <section class="section">
-        <h2>Éditeur de séquence d'écran</h2>
-        <p>L'éditeur de séquence d'écran vous permet de définir le flux de navigation de votre application en définissant l'enchaînement logique des écrans.</p>
-        <p>Fonctionnalités</p>
-        <ul>
-          <li>Création de scénarios de navigation</li>
-          <li>Gestion des transitions entre les écrans</li>
-          <li>Visualisation du parcours utilisateur</li>
-          <li>Définition de l’écran de démarrage</li>
-        </ul>
+        <h2>Ecrans</h2>
+        <p>Point d'entree principal pour concevoir l'interface de l'application.</p>
+        <p>Cet onglet sert a creer et organiser les ecrans, positionner les composants visuels et definir l'experience utilisateur.</p>
       </section>
 
       <section class="section">
-        <h2>Simulateur d'application mobile</h2>
-        <p>Utilisez le simulateur d'application mobile pour prévisualiser l'apparence et le comportement de votre application sur différents appareils et résolutions.</p>
-        <p>Options disponibles</p>
-        <ul>
-          <li>Sélection de différents modèles d'appareils mobiles</li>
-          <li>Test de l'interface utilisateur et des fonctionnalités</li>
-        </ul>
+        <h2>Transitions</h2>
+        <p>Permet de gerer la navigation entre les ecrans.</p>
+        <p>On y definit les liens, les enchainements et les transitions visuelles qui structurent le parcours utilisateur.</p>
       </section>
 
       <section class="section">
-        <h2>Éditeur de base de données et tables</h2>
-        <p>L'éditeur de base de données vous permet de modéliser la structure de votre base de données et de définir les tables nécessaires pour stocker les données de votre application.</p>
-        <p>Fonctionnalités</p>
-        <ul>
-          <li>Création et gestion de tables</li>
-          <li>Définition de relations entre les tables</li>
-          <li>Import/export de données</li>
-        </ul>
+        <h2>Scenarios</h2>
+        <p>Espace dedie aux workflows et a l'automatisation.</p>
+        <p>On y cree, modifie et pilote les scenarios declenches par une action utilisateur, un webhook, une planification ou un evenement de donnees.</p>
       </section>
 
       <section class="section">
-        <h2>Accès aux paramètres</h2>
-        <p>Cette section offre un accès centralisé aux paramètres essentiels de votre application.</p>
-        <h3>Informations de l'application</h3>
-        <p>Consultez et modifiez les informations clés de votre application, telles que le nom, l'icône, la version, etc.</p>
-        <p>Détails accessibles</p>
-        <ul>
-          <li>Nom et description de l'application</li>
-          <li>Icône et visuels associés</li>
-          <li>Informations sur la version</li>
-          <li>Votre email de notifications</li>
-        </ul>
+        <h2>Simulation</h2>
+        <p>Permet de tester l'application dans des conditions proches de l'usage reel.</p>
+        <p>On peut choisir un utilisateur, changer de type d'appareil et relancer la simulation pour verifier le comportement de l'application.</p>
+      </section>
 
-        <h3>Intégrations</h3>
-        <p>Gérez les intégrations avec d'autres services et plateformes pour enrichir les fonctionnalités de votre application.</p>
-        <p>Actions possibles</p>
-        <ul>
-          <li>Ajout d'intégrations tierces comme Zapier, Make, Twilio, Airtable, TimeTonic, ...</li>
-          <li>Configuration des paramètres d'intégration</li>
-        </ul>
+      <section class="section">
+        <h2>Donnees</h2>
+        <p>Zone de gestion du modele de donnees.</p>
+        <p>Cet onglet permet de manipuler la base de donnees de l'application, ses tables, ses colonnes et ses relations.</p>
+      </section>
 
-        <h3>Plugins</h3>
-        <p>Explorez et activez les plugins pour étendre les fonctionnalités de votre application de manière modulaire.</p>
-        <p>Fonctionnalités des plugins</p>
-        <ul>
-          <li>Liste des plugins disponibles</li>
-          <li>Activation/désactivation des plugins</li>
-          <li>Configuration spécifique aux plugins</li>
-        </ul>
+      <section class="section">
+        <h2>Parametres</h2>
+        <p>Centralise la configuration generale de l'application.</p>
+        <p>On y retrouve notamment les informations de l'application, les plugins, la securite et les integrations classees par categories.</p>
+      </section>
+
+      <section class="section">
+        <h2>Actions en haut a droite</h2>
+        <h3>Publier</h3>
+        <p>Declenche la publication de l'application afin de la rendre accessible dans sa version deployable.</p>
+
+        <h3>Ouvrir</h3>
+        <p>Affiche l'acces a l'application publiee, notamment via les options d'ouverture ou de partage disponibles.</p>
       </section>
     </main>
   </div>
 <script src="../assets/js/sidebar-shell.js"></script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
