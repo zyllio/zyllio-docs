@@ -9,7 +9,10 @@
       { slug: "editeur-de-sequence-decrans-23", label: "🧭 Editeur de sequence d'ecrans" },
       { slug: "simulation-6", label: "🧪 Simulation" },
       { slug: "publications-5", label: "📦 Publications" },
-      { slug: "plugins-36", label: "🔌 Plugins" }
+      { slug: "plugins-36", label: "🔌 Plugins" },
+      { slug: "composants", label: "🧱 Composants" },
+      { slug: "actions", label: "⚡ Actions" },
+      { slug: "fonctions", label: "📐 Fonctions" }
     ],
     tutorielsChildren: [
       { slug: "google-sheets-11", label: "📗 Google Sheets" },

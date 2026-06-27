@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Zyllio Documentation - Complete guide to all Zyllio Studio actions">
+  <title>Documentation Zyllio | Zyllio Studio Actions Hints</title>
+  <link rel="stylesheet" href="../assets/css/global.css">
+</head>
+<body>
+  <div class="page-shell">
+    <aside class="sidebar">
+      <docs-sidebar-shell></docs-sidebar-shell>
+    </aside>
+
+    <main class="main">
+      <header class="section hero" id="welcome">
+        <div class="hero-body">
+          <span class="kicker">Documentation</span>
+          <h1>Zyllio Studio Actions Hints</h1>
+          <p class="lead">This document provides a comprehensive list of all Zyllio actions with their descriptions (hints).</p>
+        </div>
+      </header>
+
+      <section class="section" id="account">
+        <h2>Account</h2>
+        <table class="doc-table">
+          <thead>
+            <tr>
+              <th>Label</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Create application</strong></td>
+              <td>Creates a new application instance within the account workspace.</td>
+            </tr>
+            <tr>
+              <td><strong>Publish application</strong></td>
+              <td>Publishes the current application version, making it live and accessible to users.</td>
+            </tr>
+            <tr>
+              <td><strong>Sync application</strong></td>
+              <td>Synchronizes application state and configurations across workspace environments.</td>
+            </tr>
+            <tr>
+              <td><strong>Update application</strong></td>
+              <td>Updates application metadata, settings, and workspace preferences.</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section class="section" id="authentication">
+        <h2>Authentication</h2>
+        <table class="doc-table">
+          <thead>
+            <tr>
+              <th>Label</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Change password</strong></td>
+              <td>Triggers a password change request for the currently logged-in user.</td>
+            </tr>
+            <tr>
+              <td><strong>Disconnect</strong></td>
+              <td>Logs out the current user, clearing session tokens and navigating to the sign-in screen.</td>
+            </tr>
+            <tr>
+              <td><strong>Login</strong></td>
+              <td>Authenticates a user with a username and password, starting a secure session.</td>
+            </tr>
+            <tr>
+              <td><strong>Reset password</strong></td>
+              <td>Sends a password reset email or code to help recovery for a user account.</td>
+            </tr>
+            <tr>
+              <td><strong>Show user profile</strong></td>
+              <td>Displays the user profile management panel to edit personal details and settings.</td>
+            </tr>
+            <tr>
+              <td><strong>Sign Up</strong></td>
+              <td>Registers a new user account with specified profile fields and credentials.</td>
+            </tr>
+            <tr>
+              <td><strong>SSO Disconnect</strong></td>
+              <td>Logs out a user from their Single Sign-On (SSO) session.</td>
+            </tr>
+            <tr>
+              <td><strong>SSO Login</strong></td>
+              <td>Initiates a Single Sign-On (SSO) login flow using configured identity providers.</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section class="section" id="bluetooth">
+        <h2>Bluetooth</h2>
+        <table class="doc-table">
+          <thead>
+            <tr>
+              <th>Label</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Bluetooth connect</strong></td>
+              <td>Prompts the user to select and connect to a nearby Bluetooth Low Energy (BLE) device.</td>
+            </tr>
+            <tr>
+              <td><strong>Bluetooth notification</strong></td>
+              <td>Subscribes to notifications or indications from a connected Bluetooth device characteristic.</td>
+            </tr>
+            <tr>
+              <td><strong>Bluetooth write</strong></td>
+              <td>Writes value data bytes to a specific service characteristic on a connected Bluetooth device.</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section class="section" id="calendar">
+        <h2>Calendar</h2>
+        <table class="doc-table">
+          <thead>
+            <tr>
+              <th>Label</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Install event</strong></td>
+              <td>Installs and adds a custom event with details directly to the device calendar.</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section class="section" id="controls">
+        <h2>Controls</h2>
+        <table class="doc-table">
+          <thead>
+            <tr>
+              <th>Label</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Continue if</strong></td>
+              <td>Halts workflow execution if a specified condition is not validated.</td>
+            </tr>
+            <tr>
+              <td><strong>Début boucle</strong></td>
+              <td>Starts a loop sequence to execute nested actions repeatedly over a list of items.</td>
+            </tr>
+            <tr>
+              <td><strong>Decision point</strong></td>
+              <td>Evaluates a condition during action execution to branch the workflow path.</td>
+            </tr>
+            <tr>
+              <td><strong>Fin boucle</strong></td>
+              <td>Marks the end boundary of a loop block in the workflow sequence.</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section class="section" id="data">
+        <h2>Data</h2>
+        <table class="doc-table">
+          <thead>
+            <tr>
+              <th>Label</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Create a row</strong></td>
+              <td>Inserts a new record row into a database table with configured column values.</td>
+            </tr>
+            <tr>
+              <td><strong>Delete a row</strong></td>
+              <td>Deletes a specific row record from a database table matching a target identifier.</td>
+            </tr>
+            <tr>
+              <td><strong>Delete rows</strong></td>
+              <td>Deletes multiple row records from a database table matching query filters.</td>
+            </tr>
+            <tr>
+              <td><strong>Delete selected row</strong></td>
+              <td>Deletes the currently selected row in a list or table component.</td>
+            </tr>
+            <tr>
+              <td><strong>Export CSV</strong></td>
+              <td>Generates and triggers a download of a CSV file containing records from a table.</td>
+            </tr>
+            <tr>
+              <td><strong>Update a row</strong></td>
+              <td>Updates column values for a specific record row in a database table.</td>
+            </tr>
+            <tr>
+              <td><strong>Update selected row</strong></td>
+              <td>Updates column values for the currently selected row in a list or table component.</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section class="section" id="device">
+        <h2>Device</h2>
+        <table class="doc-table">
+          <thead>
+            <tr>
+              <th>Label</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Get current position</strong></td>
+              <td>Requests device GPS sensors to fetch the user's current geographic coordinates.</td>
+            </tr>
+            <tr>
+              <td><strong>Voice recognition</strong></td>
+              <td>Starts voice recording and triggers speech-to-text recognition on the device.</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section class="section" id="dialog">
+        <h2>Dialog</h2>
+        <table class="doc-table">
+          <thead>
+            <tr>
+              <th>Label</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Show confirmation</strong></td>
+              <td>Displays a confirmation dialog requesting the user to approve or cancel an action.</td>
+            </tr>
+            <tr>
+              <td><strong>Show message</strong></td>
+              <td>Displays a custom modal alert message box with customizable text and close buttons.</td>
+            </tr>
+            <tr>
+              <td><strong>Show notification</strong></td>
+              <td>Displays a temporary notification banner alert on the screen.</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section class="section" id="messaging">
+        <h2>Messaging</h2>
+        <table class="doc-table">
+          <thead>
+            <tr>
+              <th>Label</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Send Email</strong></td>
+              <td>Sends an email message via Gmail with specified recipient, subject, and body.</td>
+            </tr>
+            <tr>
+              <td><strong>Send SMS</strong></td>
+              <td>Sends an SMS text message using Twilio gateway integrations.</td>
+            </tr>
+            <tr>
+              <td><strong>Send Whatsapp</strong></td>
+              <td>Sends a WhatsApp chat message using Twilio API configurations.</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section class="section" id="navigation">
+        <h2>Navigation</h2>
+        <table class="doc-table">
+          <thead>
+            <tr>
+              <th>Label</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Close popup</strong></td>
+              <td>Closes the currently active popup screen window.</td>
+            </tr>
+            <tr>
+              <td><strong>Go back</strong></td>
+              <td>Navigates back to the previous screen in the navigation history.</td>
+            </tr>
+            <tr>
+              <td><strong>Go home</strong></td>
+              <td>Navigates directly to the designated home screen of the application.</td>
+            </tr>
+            <tr>
+              <td><strong>Go to screen</strong></td>
+              <td>Navigates directly to a target screen specified by name or identifier.</td>
+            </tr>
+            <tr>
+              <td><strong>Navigate website</strong></td>
+              <td>Redirects the browser or app to an external URL or web address.</td>
+            </tr>
+            <tr>
+              <td><strong>Open popup</strong></td>
+              <td>Opens a designated screen as a modal popup window.</td>
+            </tr>
+            <tr>
+              <td><strong>Refresh screen</strong></td>
+              <td>Reloads data and updates all components on the current active screen.</td>
+            </tr>
+            <tr>
+              <td><strong>Wait</strong></td>
+              <td>Pauses workflow action execution for a specified duration in seconds.</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section class="section" id="offline">
+        <h2>Offline</h2>
+        <table class="doc-table">
+          <thead>
+            <tr>
+              <th>Label</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Offline sync</strong></td>
+              <td>Triggers synchronization of offline local database changes with the remote server.</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section class="section" id="openai">
+        <h2>Openai</h2>
+        <table class="doc-table">
+          <thead>
+            <tr>
+              <th>Label</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Generate Image</strong></td>
+              <td>Uses OpenAI Dall-E model services to generate custom images based on text prompts.</td>
+            </tr>
+            <tr>
+              <td><strong>Generate Text</strong></td>
+              <td>Uses OpenAI GPT models to generate text responses from input prompts.</td>
+            </tr>
+            <tr>
+              <td><strong>Speech to text</strong></td>
+              <td>Transcribes audio voice recordings into text logs using OpenAI Whisper model.</td>
+            </tr>
+            <tr>
+              <td><strong>Text to speech</strong></td>
+              <td>Synthesizes spoken audio files from text copy using OpenAI voice models.</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section class="section" id="payment">
+        <h2>Payment</h2>
+        <table class="doc-table">
+          <thead>
+            <tr>
+              <th>Label</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Add product</strong></td>
+              <td>Adds a product item and quantity to the active shopping cart selection.</td>
+            </tr>
+            <tr>
+              <td><strong>Cancel payment</strong></td>
+              <td>Cancels an ongoing subscription checkout payment flow.</td>
+            </tr>
+            <tr>
+              <td><strong>Confirm payment</strong></td>
+              <td>Confirms and finalizes a pending payment transaction.</td>
+            </tr>
+            <tr>
+              <td><strong>Create account</strong></td>
+              <td>Registers a user profile account with payment service providers.</td>
+            </tr>
+            <tr>
+              <td><strong>Customer portal</strong></td>
+              <td>Redirects users to the payment billing management portal.</td>
+            </tr>
+            <tr>
+              <td><strong>Process payment</strong></td>
+              <td>Initiates a checkout transaction flow for cart items.</td>
+            </tr>
+            <tr>
+              <td><strong>Process subscription</strong></td>
+              <td>Initiates a recurring billing subscription flow for a checkout plan.</td>
+            </tr>
+            <tr>
+              <td><strong>Remove product</strong></td>
+              <td>Removes product items or decreases their quantities in the shopping cart.</td>
+            </tr>
+            <tr>
+              <td><strong>Reset cart</strong></td>
+              <td>Clears all product items and resets the active shopping cart to empty.</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section class="section" id="push-notification">
+        <h2>Push-notification</h2>
+        <table class="doc-table">
+          <thead>
+            <tr>
+              <th>Label</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Send to all</strong></td>
+              <td>Dispatches a push notification broadcast to all registered application users.</td>
+            </tr>
+            <tr>
+              <td><strong>Send to channel</strong></td>
+              <td>Dispatches a push notification message to users subscribed to a target channel.</td>
+            </tr>
+            <tr>
+              <td><strong>Send to user</strong></td>
+              <td>Dispatches a push notification message target to a specific user ID.</td>
+            </tr>
+            <tr>
+              <td><strong>Subscribe</strong></td>
+              <td>Subscribes the device terminal to push notification alerts.</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section class="section" id="qrcode">
+        <h2>Qrcode</h2>
+        <table class="doc-table">
+          <thead>
+            <tr>
+              <th>Label</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Scan QR Code</strong></td>
+              <td>Opens the device camera interface to scan and decode a QR Code.</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section class="section" id="rest">
+        <h2>Rest</h2>
+        <table class="doc-table">
+          <thead>
+            <tr>
+              <th>Label</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Delete</strong></td>
+              <td>Dispatches a DELETE request call to a specified REST API endpoint.</td>
+            </tr>
+            <tr>
+              <td><strong>Get</strong></td>
+              <td>Dispatches a GET request call to fetch resource payloads from a REST API endpoint.</td>
+            </tr>
+            <tr>
+              <td><strong>Patch</strong></td>
+              <td>Dispatches a PATCH request call to modify specific resource fields in a REST API endpoint.</td>
+            </tr>
+            <tr>
+              <td><strong>Post</strong></td>
+              <td>Dispatches a POST request call to submit payload data to a REST API endpoint.</td>
+            </tr>
+            <tr>
+              <td><strong>Put</strong></td>
+              <td>Dispatches a PUT request call to write or replace resource data in a REST API endpoint.</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section class="section" id="theme">
+        <h2>Theme</h2>
+        <table class="doc-table">
+          <thead>
+            <tr>
+              <th>Label</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Zoom in text</strong></td>
+              <td>Increases the global theme typography size scale for text zoom in.</td>
+            </tr>
+            <tr>
+              <td><strong>Zoom out text</strong></td>
+              <td>Decreases the global theme typography size scale for text zoom out.</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section class="section" id="variable">
+        <h2>Variable</h2>
+        <table class="doc-table">
+          <thead>
+            <tr>
+              <th>Label</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Clear selection</strong></td>
+              <td>Resets the currently selected row or item variable pointer to empty.</td>
+            </tr>
+            <tr>
+              <td><strong>Decrement</strong></td>
+              <td>Decreases the numeric value of a specified variable by 1.</td>
+            </tr>
+            <tr>
+              <td><strong>Increment</strong></td>
+              <td>Increases the numeric value of a specified variable by 1.</td>
+            </tr>
+            <tr>
+              <td><strong>Load variables</strong></td>
+              <td>Loads and initializes variables into the application session state.</td>
+            </tr>
+            <tr>
+              <td><strong>Reset variables</strong></td>
+              <td>Resets all session variables or a target variable back to their default values.</td>
+            </tr>
+            <tr>
+              <td><strong>Set selection variable</strong></td>
+              <td>Sets a selection variable pointer to reference a target row item.</td>
+            </tr>
+            <tr>
+              <td><strong>Set variable</strong></td>
+              <td>Assigns a specified static or dynamic value to a target variable.</td>
+            </tr>
+            <tr>
+              <td><strong>Set variable if</strong></td>
+              <td>Assigns a value to a variable only if a specified condition is validated.</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section class="section" id="webhook">
+        <h2>Webhook</h2>
+        <table class="doc-table">
+          <thead>
+            <tr>
+              <th>Label</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Make Webhook</strong></td>
+              <td>Sends data payload triggers to a configured webhook endpoint.</td>
+            </tr>
+            <tr>
+              <td><strong>n8n Webhook</strong></td>
+              <td>Dispatches trigger data payloads specifically to an n8n workflow webhook endpoint.</td>
+            </tr>
+            <tr>
+              <td><strong>Zapier Webhook</strong></td>
+              <td>Dispatches trigger data payloads specifically to a Zapier webhook integration endpoint.</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+    </main>
+  </div>
+<script src="../assets/js/sidebar-shell.js"></script>
+</body>
+</html>
