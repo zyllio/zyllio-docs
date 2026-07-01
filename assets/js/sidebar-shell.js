@@ -1,5 +1,6 @@
 (function () {
   var SCRIPT_PROMISES = window.__docsSidebarScriptPromises || (window.__docsSidebarScriptPromises = {});
+  var SIDEBAR_SCROLL_KEY = "docs-sidebar-scroll-top";
 
   function detectContext() {
     var pathname = (window.location && window.location.pathname) || "";
@@ -49,6 +50,96 @@
     return SCRIPT_PROMISES[src];
   }
 
+  function getSidebarContainer(host) {
+    if (!host || typeof host.closest !== "function") {
+      return null;
+    }
+    return host.closest(".sidebar");
+  }
+
+  function saveSidebarScroll(sidebar) {
+    if (!sidebar) {
+      return;
+    }
+
+    try {
+      window.sessionStorage.setItem(SIDEBAR_SCROLL_KEY, String(sidebar.scrollTop || 0));
+    } catch (err) {
+      // Ignore storage failures so navigation still works normally.
+    }
+  }
+
+  function readStoredSidebarScroll() {
+    try {
+      var raw = window.sessionStorage.getItem(SIDEBAR_SCROLL_KEY);
+      if (raw == null) {
+        return null;
+      }
+
+      var top = parseInt(raw, 10);
+      return isNaN(top) ? null : top;
+    } catch (err) {
+      // Ignore storage failures so the sidebar still renders.
+      return null;
+    }
+  }
+
+  function restoreSidebarScroll(sidebar, top) {
+    if (!sidebar || top == null) {
+      return;
+    }
+
+    sidebar.scrollTop = top;
+  }
+
+  function restoreSidebarScrollWhenReady(sidebar) {
+    var top = readStoredSidebarScroll();
+    if (!sidebar || top == null) {
+      return;
+    }
+
+    var attempts = 0;
+
+    function apply() {
+      restoreSidebarScroll(sidebar, top);
+      attempts += 1;
+
+      if (attempts < 8) {
+        window.requestAnimationFrame(apply);
+      }
+    }
+
+    apply();
+  }
+
+  function wireSidebarScrollPersistence(host) {
+    var sidebar = getSidebarContainer(host);
+    if (!sidebar) {
+      return;
+    }
+
+    if (sidebar.__docsScrollPersistenceBound) {
+      return;
+    }
+
+    sidebar.addEventListener("scroll", function () {
+      saveSidebarScroll(sidebar);
+    }, { passive: true });
+
+    sidebar.addEventListener("click", function (event) {
+      var link = event.target && event.target.closest ? event.target.closest("a[href]") : null;
+      if (link) {
+        saveSidebarScroll(sidebar);
+      }
+    });
+
+    window.addEventListener("beforeunload", function () {
+      saveSidebarScroll(sidebar);
+    });
+
+    sidebar.__docsScrollPersistenceBound = true;
+  }
+
   function loadDependencies(ctx) {
     var prefix = jsPrefix(ctx);
     var scripts = [
@@ -85,9 +176,14 @@
       var ctx = detectContext();
       ensureFavicon(ctx);
       this.innerHTML = render(ctx);
-      loadDependencies(ctx).catch(function (err) {
-        console.error(err);
-      });
+      wireSidebarScrollPersistence(this);
+      loadDependencies(ctx)
+        .then(function () {
+          restoreSidebarScrollWhenReady(getSidebarContainer(this));
+        }.bind(this))
+        .catch(function (err) {
+          console.error(err);
+        });
     }
   }
 
