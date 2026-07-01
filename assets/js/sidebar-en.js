@@ -11,12 +11,12 @@
   function currentSlug(pathname) {
     var p = pathname.replace(/\\/g, "/");
     var file = p.split("/").pop() || "";
-    if (file === "index.html") return "";
+    if (file === "index-en.html") return "";
     return file.replace(/\.html$/i, "");
   }
 
   function itemHref(isSubPage, slug) {
-    if (!slug) return isSubPage ? "../index.html" : "index.html";
+    if (!slug) return isSubPage ? "../index-en.html" : "index-en.html";
     return isSubPage ? slug + ".html" : "en/" + slug + ".html";
   }
 

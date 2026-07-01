@@ -91,7 +91,7 @@
   var EN_BY_ID = mapById(EN_SLUGS);
 
   function isFrPage(pathname, htmlLang) {
-    return (htmlLang || "").toLowerCase().indexOf("fr") === 0 || pathname.indexOf("/fr/") !== -1;
+    return (htmlLang || "").toLowerCase().indexOf("fr") === 0 || pathname.indexOf("/fr/") !== -1 || /(?:^|\/)index(?:-fr)?\.html$/i.test(pathname);
   }
 
   function isSubPage(pathname) {
@@ -106,7 +106,7 @@
   function pageSlug(pathname, frPage) {
     var name = fileName(pathname);
     if (!name) return "";
-    if (name === "index.html" || name === "index-fr.html") return "";
+    if (name === "index.html" || name === "index-fr.html" || name === "index-en.html") return "";
     var slug = name.replace(/\.html$/i, "");
     if (frPage && FR_SLUGS.indexOf(slug) !== -1) return slug;
     if (!frPage && EN_SLUGS.indexOf(slug) !== -1) return slug;
@@ -115,8 +115,8 @@
 
   function makeHref(sub, lang, slug) {
     if (!slug) {
-      if (lang === "fr") return sub ? "../index-fr.html" : "index-fr.html";
-      return sub ? "../index.html" : "index.html";
+      if (lang === "fr") return sub ? "../index.html" : "index.html";
+      return sub ? "../index-en.html" : "index-en.html";
     }
     if (sub) return lang === "fr" ? "../fr/" + slug + ".html" : "../en/" + slug + ".html";
     return lang === "fr" ? "fr/" + slug + ".html" : "en/" + slug + ".html";

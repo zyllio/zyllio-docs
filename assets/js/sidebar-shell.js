@@ -5,13 +5,28 @@
     var pathname = (window.location && window.location.pathname) || "";
     var normalized = pathname.replace(/\\/g, "/");
     var htmlLang = ((document.documentElement && document.documentElement.lang) || "").toLowerCase();
-    var isFr = htmlLang.indexOf("fr") === 0 || normalized.indexOf("/fr/") !== -1 || /index-fr\.html$/i.test(normalized);
+    var isFr = htmlLang.indexOf("fr") === 0 || normalized.indexOf("/fr/") !== -1 || /(?:index|index-fr)\.html$/i.test(normalized);
     var isSub = normalized.indexOf("/fr/") !== -1 || normalized.indexOf("/en/") !== -1;
     return { isFr: isFr, isSub: isSub };
   }
 
   function jsPrefix(ctx) {
     return ctx.isSub ? "../assets/js/" : "assets/js/";
+  }
+
+  function imagePrefix(ctx) {
+    return ctx.isSub ? "../assets/images/" : "assets/images/";
+  }
+
+  function ensureFavicon(ctx) {
+    if (document.querySelector('link[rel~="icon"]')) {
+      return;
+    }
+
+    var icon = document.createElement("link");
+    icon.rel = "icon";
+    icon.href = imagePrefix(ctx) + "icon.png";
+    document.head.appendChild(icon);
   }
 
   function ensureScript(src) {
@@ -49,7 +64,7 @@
 
   function render(ctx) {
     var logoSrc = ctx.isSub ? "../assets/images/zyllio-logo.png" : "assets/images/zyllio-logo.png";
-    var homeHref = ctx.isFr ? (ctx.isSub ? "../index-fr.html" : "index-fr.html") : (ctx.isSub ? "../index.html" : "index.html");
+    var homeHref = ctx.isFr ? (ctx.isSub ? "../index.html" : "index.html") : (ctx.isSub ? "../index-en.html" : "index-en.html");
     var aria = ctx.isFr ? "Accueil documentation" : "Documentation home";
     var logoAlt = ctx.isFr ? "Logo Zyllio" : "Zyllio logo";
     var sidebarComponent = ctx.isFr ? "docs-sidebar-fr" : "docs-sidebar-en";
@@ -68,6 +83,7 @@
   class DocsSidebarShell extends HTMLElement {
     connectedCallback() {
       var ctx = detectContext();
+      ensureFavicon(ctx);
       this.innerHTML = render(ctx);
       loadDependencies(ctx).catch(function (err) {
         console.error(err);
