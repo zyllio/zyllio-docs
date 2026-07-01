@@ -1,5 +1,4 @@
 .hero {
-  border-top: 1px solid var(--line);
   border-radius: 0;
   overflow: visible;
   background: transparent;
@@ -129,4 +128,12 @@
 
 .prompt-block p {
   margin: 0;
+}
+
+.compact-sections .section {
+  padding: clamp(10px, 1.6vw, 16px) 0;
+}
+
+.compact-sections .section:first-of-type {
+  padding-top: 8px;
 }

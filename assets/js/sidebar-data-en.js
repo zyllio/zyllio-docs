@@ -9,7 +9,10 @@
       { slug: "screen-sequence-editor-23", label: "🧭 Screen sequence editor" },
       { slug: "simulation-6", label: "🧪 Simulation" },
       { slug: "publications-5", label: "📦 Publications" },
-      { slug: "plugins-36", label: "🔌 Plugins" }
+      { slug: "plugins-36", label: "🔌 Plugins" },
+      { slug: "components", label: "🧱 Components" },
+      { slug: "actions", label: "⚡ Actions" },
+      { slug: "functions", label: "📐 Functions" }
     ],
     tutorielsChildren: [
       { slug: "google-sheets-11", label: "📗 Google Sheets" },

@@ -29,7 +29,6 @@
 .section {
   background: transparent;
   border: 0;
-  border-top: 1px solid var(--line);
   border-radius: 0;
   box-shadow: none;
   padding: clamp(20px, 3vw, 32px) 0;

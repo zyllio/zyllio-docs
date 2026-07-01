@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Documentation Zyllio - Guide complet de toutes les fonctions de Zyllio Studio">
+  <title>Documentation Zyllio | Guide des Fonctions de Zyllio Studio</title>
+  <link rel="stylesheet" href="../assets/css/global.css">
+</head>
+<body>
+  <div class="page-shell">
+    <aside class="sidebar">
+      <docs-sidebar-shell></docs-sidebar-shell>
+    </aside>
+
+    <main class="main">
+      <header class="section hero" id="welcome">
+        <div class="hero-body">
+          <span class="kicker">Documentation</span>
+          <h1>Guide des Fonctions de Zyllio Studio</h1>
+          <p class="lead">Ce document fournit une liste complète de toutes les fonctions de Zyllio avec leurs descriptions (hints).</p>
+        </div>
+      </header>
+
+      <section class="section" id="condition">
+        <h2>Condition</h2>
+        <table class="doc-table">
+          <thead>
+            <tr>
+              <th>Libellé</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Si alors</strong></td>
+              <td>Un bloc conditionnel simple qui renvoie une valeur spécifique uniquement si la condition définie est remplie.</td>
+            </tr>
+            <tr>
+              <td><strong>Si alors sinon</strong></td>
+              <td>Un bloc logique conditionnel qui renvoie une valeur si la condition est vraie, et une autre si elle est fausse.</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section class="section" id="donnees">
+        <h2>Données</h2>
+        <table class="doc-table">
+          <thead>
+            <tr>
+              <th>Libellé</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Compter lignes</strong></td>
+              <td>Renvoie le nombre total de lignes dans une liste ou une sélection de table spécifiée.</td>
+            </tr>
+            <tr>
+              <td><strong>Compter lignes uniques</strong></td>
+              <td>Compte le nombre de valeurs distinctes et uniques dans une colonne sur les lignes d'une table.</td>
+            </tr>
+            <tr>
+              <td><strong>Lignes en texte</strong></td>
+              <td>Concatène et formate les valeurs d'une colonne sur plusieurs lignes en un seul bloc de texte.</td>
+            </tr>
+            <tr>
+              <td><strong>Moyenne dans lignes</strong></td>
+              <td>Calcule la valeur numérique moyenne d'une colonne spécifiée sur un ensemble de lignes de table.</td>
+            </tr>
+            <tr>
+              <td><strong>Nombre maximal dans lignes</strong></td>
+              <td>Trouve la valeur numérique la plus élevée dans une colonne spécifiée sur un ensemble de lignes.</td>
+            </tr>
+            <tr>
+              <td><strong>Nombre minimal dans lignes</strong></td>
+              <td>Trouve la valeur numérique la plus basse dans une colonne spécifiée sur un ensemble de lignes.</td>
+            </tr>
+            <tr>
+              <td><strong>Rechercher dans lignes</strong></td>
+              <td>Filtre et recherche les lignes de table correspondant aux critères de requête spécifiés.</td>
+            </tr>
+            <tr>
+              <td><strong>Somme dans lignes</strong></td>
+              <td>Calcule la somme totale de toutes les valeurs numériques d'une colonne sur un ensemble de lignes.</td>
+            </tr>
+            <tr>
+              <td><strong>Texte maximal dans lignes</strong></td>
+              <td>Trouve la valeur textuelle maximale (la dernière par ordre alphabétique) dans une colonne sur les lignes.</td>
+            </tr>
+            <tr>
+              <td><strong>Texte minimal dans lignes</strong></td>
+              <td>Trouve la valeur textuelle minimale (la première par ordre alphabétique) dans une colonne sur les lignes.</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section class="section" id="date">
+        <h2>Date</h2>
+        <table class="doc-table">
+          <thead>
+            <tr>
+              <th>Libellé</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Ajouter</strong></td>
+              <td>Ajoute une quantité de temps spécifiée (jours, heures, minutes) à une date de base.</td>
+            </tr>
+            <tr>
+              <td><strong>Date et heure</strong></td>
+              <td>Construit ou formate une valeur de date et heure personnalisée à partir d'entrées spécifiques.</td>
+            </tr>
+            <tr>
+              <td><strong>Date et heure actuelles</strong></td>
+              <td>Renvoie la date et l'heure actuelles du système ou de l'appareil.</td>
+            </tr>
+            <tr>
+              <td><strong>Durée depuis aujourd’hui</strong></td>
+              <td>Calcule la durée ou le temps écoulé entre une date spécifiée et le jour actuel.</td>
+            </tr>
+            <tr>
+              <td><strong>Durée entre deux dates</strong></td>
+              <td>Calcule la durée ou la différence de temps entre deux valeurs de date spécifiées.</td>
+            </tr>
+            <tr>
+              <td><strong>Soustraire</strong></td>
+              <td>Soustrait une quantité de temps spécifiée (jours, heures, minutes) d'une date de base.</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section class="section" id="geolocalisation">
+        <h2>Géolocalisation</h2>
+        <table class="doc-table">
+          <thead>
+            <tr>
+              <th>Libellé</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Distance</strong></td>
+              <td>Calcule la distance en ligne droite entre deux coordonnées géographiques spécifiées.</td>
+            </tr>
+            <tr>
+              <td><strong>Distance depuis la position</strong></td>
+              <td>Calcule la distance géographique entre une coordonnée définie et la position actuelle de l'utilisateur.</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section class="section" id="image">
+        <h2>Image</h2>
+        <table class="doc-table">
+          <thead>
+            <tr>
+              <th>Libellé</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Image</strong></td>
+              <td>Traite ou résout les URL sources d'images et les options d'affichage.</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section class="section" id="json">
+        <h2>JSON</h2>
+        <table class="doc-table">
+          <thead>
+            <tr>
+              <th>Libellé</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Requête JSON</strong></td>
+              <td>Interroge et extrait des valeurs spécifiques d'un objet JSON à l'aide d'une expression de recherche.</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section class="section" id="element-de-liste">
+        <h2>Élément de liste</h2>
+        <table class="doc-table">
+          <thead>
+            <tr>
+              <th>Libellé</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Colonne</strong></td>
+              <td>Récupère la valeur d'une colonne spécifique à partir d'un élément de liste ou d'une ligne de base de données.</td>
+            </tr>
+            <tr>
+              <td><strong>Index de l’élément de liste</strong></td>
+              <td>Renvoie l'index (commençant par 0) de la position d'un élément au sein d'une liste ou sélection.</td>
+            </tr>
+            <tr>
+              <td><strong>Position de l’élément de liste</strong></td>
+              <td>Renvoie la position d'affichage (commençant par 1) d'un élément au sein de sa liste parente.</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section class="section" id="nombre">
+        <h2>Nombre</h2>
+        <table class="doc-table">
+          <thead>
+            <tr>
+              <th>Libellé</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Calcul</strong></td>
+              <td>Évalue une expression mathématique combinant des nombres, des variables et des opérateurs standards.</td>
+            </tr>
+            <tr>
+              <td><strong>Montant</strong></td>
+              <td>Formate une valeur numérique sous forme de devise avec le symbole et les décimales configurés.</td>
+            </tr>
+            <tr>
+              <td><strong>Nombre</strong></td>
+              <td>Convertit ou formate les entrées dans un format numérique normalisé.</td>
+            </tr>
+            <tr>
+              <td><strong>Nombre aléatoire</strong></td>
+              <td>Génère une valeur numérique pseudo-aléatoire dans une plage minimale et maximale spécifiée.</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section class="section" id="paiement">
+        <h2>Paiement</h2>
+        <table class="doc-table">
+          <thead>
+            <tr>
+              <th>Libellé</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Afficher le panier</strong></td>
+              <td>Génère une représentation textuelle formatée du contenu du panier pour impression ou reçu.</td>
+            </tr>
+            <tr>
+              <td><strong>Montant du panier</strong></td>
+              <td>Calcule le montant monétaire total de tous les articles actuellement dans le panier.</td>
+            </tr>
+            <tr>
+              <td><strong>Nombre de produits du panier</strong></td>
+              <td>Renvoie le nombre total de produits uniques actuellement ajoutés au panier.</td>
+            </tr>
+            <tr>
+              <td><strong>Quantite du panier</strong></td>
+              <td>Renvoie la quantité totale cumulée de tous les articles du panier.</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section class="section" id="saas">
+        <h2>SaaS</h2>
+        <table class="doc-table">
+          <thead>
+            <tr>
+              <th>Libellé</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Id de l'application</strong></td>
+              <td>Récupère l'identifiant unique de l'instance d'application en cours d'exécution.</td>
+            </tr>
+            <tr>
+              <td><strong>Id de table</strong></td>
+              <td>Récupère l'identifiant unique de base de données pour un nom de table spécifié.</td>
+            </tr>
+            <tr>
+              <td><strong>Id du modèle d'application</strong></td>
+              <td>Récupère l'identifiant du modèle d'application associé à l'application en cours d'exécution.</td>
+            </tr>
+            <tr>
+              <td><strong>Paramètre de l'application</strong></td>
+              <td>Récupère la valeur d'un paramètre de configuration global spécifique de l'application.</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section class="section" id="texte">
+        <h2>Texte</h2>
+        <table class="doc-table">
+          <thead>
+            <tr>
+              <th>Libellé</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Capitaliser</strong></td>
+              <td>Convertit la première lettre du texte en majuscule et le reste en minuscule.</td>
+            </tr>
+            <tr>
+              <td><strong>Concaténer</strong></td>
+              <td>Joint plusieurs segments de texte ou valeurs de variables en une seule chaîne continue.</td>
+            </tr>
+            <tr>
+              <td><strong>Diviser</strong></td>
+              <td>Divise une chaîne de texte en un tableau de sous-chaînes en fonction d'un séparateur.</td>
+            </tr>
+            <tr>
+              <td><strong>Expression régulière</strong></td>
+              <td>Vérifie si une chaîne de texte correspond à un modèle d'expression régulière spécifié.</td>
+            </tr>
+            <tr>
+              <td><strong>Identifiant unique</strong></td>
+              <td>Génère une chaîne d'identifiant unique aléatoire (UUID/GUID).</td>
+            </tr>
+            <tr>
+              <td><strong>Inclut</strong></td>
+              <td>Vérifie si un terme de recherche spécifié existe dans une chaîne de texte cible.</td>
+            </tr>
+            <tr>
+              <td><strong>Joindre</strong></td>
+              <td>Concatène les éléments d'une liste en une seule chaîne à l'aide d'un caractère séparateur.</td>
+            </tr>
+            <tr>
+              <td><strong>Longueur</strong></td>
+              <td>Renvoie le nombre de caractères d'une chaîne de texte spécifiée.</td>
+            </tr>
+            <tr>
+              <td><strong>Mettre en majuscule</strong></td>
+              <td>Convertit tous les caractères du texte saisi en majuscules.</td>
+            </tr>
+            <tr>
+              <td><strong>Mettre en minuscule</strong></td>
+              <td>Convertit tous les caractères du texte saisi en minuscules.</td>
+            </tr>
+            <tr>
+              <td><strong>Occurences</strong></td>
+              <td>Compte le nombre de fois qu'un terme de recherche apparaît dans une chaîne de texte cible.</td>
+            </tr>
+            <tr>
+              <td><strong>Remplacer</strong></td>
+              <td>Remplace les occurrences d'une chaîne de recherche spécifiée par une chaîne de remplacement.</td>
+            </tr>
+            <tr>
+              <td><strong>Remplacer l'expression</strong></td>
+              <td>Remplace les sous-chaînes correspondant à un modèle d'expression régulière par une chaîne de remplacement.</td>
+            </tr>
+            <tr>
+              <td><strong>Répéter le texte</strong></td>
+              <td>Répète une chaîne de texte spécifiée un nombre défini de fois.</td>
+            </tr>
+            <tr>
+              <td><strong>Sous-chaîne</strong></td>
+              <td>Extrait une partie d'une chaîne de texte à partir d'un index spécifié avec une longueur définie.</td>
+            </tr>
+            <tr>
+              <td><strong>Texte</strong></td>
+              <td>Convertit une valeur ou variable en sa représentation textuelle normalisée.</td>
+            </tr>
+            <tr>
+              <td><strong>Valider un IBAN</strong></td>
+              <td>Vérifie si une chaîne de texte est un numéro de compte bancaire international (IBAN) valide.</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section class="section" id="terminal">
+        <h2>Terminal</h2>
+        <table class="doc-table">
+          <thead>
+            <tr>
+              <th>Libellé</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Identifiant terminal</strong></td>
+              <td>Récupère l'identifiant unique du terminal ou de l'appareil de l'utilisateur.</td>
+            </tr>
+            <tr>
+              <td><strong>Langue du terminal</strong></td>
+              <td>Récupère le paramètre de langue principale du terminal ou du navigateur de l'utilisateur.</td>
+            </tr>
+            <tr>
+              <td><strong>Système d’exploitation</strong></td>
+              <td>Récupère le nom du système d'exploitation du terminal ou de l'appareil de l'utilisateur.</td>
+            </tr>
+            <tr>
+              <td><strong>Type de terminal</strong></td>
+              <td>Récupère la catégorie ou le type d'appareil (ex. ordinateur, mobile, tablette) du terminal.</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section class="section" id="traduction">
+        <h2>Traduction</h2>
+        <table class="doc-table">
+          <thead>
+            <tr>
+              <th>Libellé</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Traduire</strong></td>
+              <td>Traduit une clé ou un libellé dans la langue active de l'interface utilisateur.</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+    </main>
+  </div>
+<script src="../assets/js/sidebar-shell.js"></script>
+</body>
+</html>

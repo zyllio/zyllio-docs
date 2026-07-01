@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Documentation Zyllio - Guide complet de toutes les actions de Zyllio Studio">
+  <title>Documentation Zyllio | Guide des Actions de Zyllio Studio</title>
+  <link rel="stylesheet" href="../assets/css/global.css">
+</head>
+<body>
+  <div class="page-shell">
+    <aside class="sidebar">
+      <docs-sidebar-shell></docs-sidebar-shell>
+    </aside>
+
+    <main class="main">
+      <header class="section hero" id="welcome">
+        <div class="hero-body">
+          <span class="kicker">Documentation</span>
+          <h1>Guide des Actions de Zyllio Studio</h1>
+          <p class="lead">Ce document fournit une liste complète de toutes les actions de Zyllio avec leurs descriptions (hints).</p>
+        </div>
+      </header>
+
+      <section class="section" id="compte">
+        <h2>Compte</h2>
+        <table class="doc-table">
+          <thead>
+            <tr>
+              <th>Libellé</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Créer application</strong></td>
+              <td>Crée une nouvelle instance d'application dans l'espace de travail du compte.</td>
+            </tr>
+            <tr>
+              <td><strong>Modifier application</strong></td>
+              <td>Met à jour les métadonnées, paramètres et préférences de l'application.</td>
+            </tr>
+            <tr>
+              <td><strong>Publier application</strong></td>
+              <td>Publie la version actuelle de l'application, la rendant opérationnelle et accessible.</td>
+            </tr>
+            <tr>
+              <td><strong>Synchroniser application</strong></td>
+              <td>Synchronise l'état et les configurations de l'application dans les environnements.</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section class="section" id="authentification">
+        <h2>Authentification</h2>
+        <table class="doc-table">
+          <thead>
+            <tr>
+              <th>Libellé</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Afficher le profil utilisateur</strong></td>
+              <td>Affiche le panneau de gestion du profil utilisateur pour modifier les informations personnelles.</td>
+            </tr>
+            <tr>
+              <td><strong>Changer le mot de passe</strong></td>
+              <td>Déclenche une demande de modification de mot de passe pour l'utilisateur connecté.</td>
+            </tr>
+            <tr>
+              <td><strong>Connexion</strong></td>
+              <td>Authentifie un utilisateur avec son identifiant et mot de passe, ouvrant une session sécurisée.</td>
+            </tr>
+            <tr>
+              <td><strong>Connexion SSO</strong></td>
+              <td>Initie un flux de connexion d'authentification unique (SSO) via les fournisseurs d'identité.</td>
+            </tr>
+            <tr>
+              <td><strong>Déconnexion</strong></td>
+              <td>Déconnecte l'utilisateur actuel, efface les jetons de session et redirige vers la connexion.</td>
+            </tr>
+            <tr>
+              <td><strong>Déconnexion SSO</strong></td>
+              <td>Déconnecte l'utilisateur de sa session d'authentification unique (SSO).</td>
+            </tr>
+            <tr>
+              <td><strong>Inscription</strong></td>
+              <td>Enregistre un nouveau compte utilisateur avec les identifiants et informations spécifiés.</td>
+            </tr>
+            <tr>
+              <td><strong>Réinitialiser le mot de passe</strong></td>
+              <td>Envoie un e-mail ou un code de réinitialisation de mot de passe pour la récupération de compte.</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section class="section" id="bluetooth">
+        <h2>Bluetooth</h2>
+        <table class="doc-table">
+          <thead>
+            <tr>
+              <th>Libellé</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Connexion Bluetooth</strong></td>
+              <td>Invite l'utilisateur à sélectionner et à se connecter à un appareil Bluetooth (BLE) à proximité.</td>
+            </tr>
+            <tr>
+              <td><strong>Écriture Bluetooth</strong></td>
+              <td>Écrit des données sur une caractéristique de service d'un appareil Bluetooth connecté.</td>
+            </tr>
+            <tr>
+              <td><strong>Notification Bluetooth</strong></td>
+              <td>S'abonne aux notifications ou indications d'une caractéristique d'un appareil Bluetooth connecté.</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section class="section" id="calendrier">
+        <h2>Calendrier</h2>
+        <table class="doc-table">
+          <thead>
+            <tr>
+              <th>Libellé</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Ajouter un événement</strong></td>
+              <td>Crée et ajoute un événement personnalisé directement dans le calendrier de l'appareil.</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section class="section" id="controles">
+        <h2>Contrôles</h2>
+        <table class="doc-table">
+          <thead>
+            <tr>
+              <th>Libellé</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Continuer si</strong></td>
+              <td>Arrête l'exécution du flux de travail si une condition spécifiée n'est pas validée.</td>
+            </tr>
+            <tr>
+              <td><strong>Début boucle</strong></td>
+              <td>Démarre une boucle pour répéter des actions imbriquées sur une liste d'éléments.</td>
+            </tr>
+            <tr>
+              <td><strong>Fin boucle</strong></td>
+              <td>Marque la limite de fin d'un bloc de boucle dans la séquence du flux de travail.</td>
+            </tr>
+            <tr>
+              <td><strong>Point de décision</strong></td>
+              <td>Évalue une condition pendant l'exécution de l'action pour aiguiller le flux de travail.</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section class="section" id="donnees">
+        <h2>Données</h2>
+        <table class="doc-table">
+          <thead>
+            <tr>
+              <th>Libellé</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Créer ligne</strong></td>
+              <td>Insère une nouvelle ligne d'enregistrement dans une table avec les valeurs configurées.</td>
+            </tr>
+            <tr>
+              <td><strong>Exporter CSV</strong></td>
+              <td>Génère et déclenche le téléchargement d'un fichier CSV contenant les lignes d'une table.</td>
+            </tr>
+            <tr>
+              <td><strong>Mettre à jour ligne</strong></td>
+              <td>Met à jour les valeurs de colonnes d'une ligne d'enregistrement spécifique dans une table.</td>
+            </tr>
+            <tr>
+              <td><strong>Mettre à jour sélection</strong></td>
+              <td>Met à jour les valeurs de la ligne sélectionnée dans un composant de liste ou de table.</td>
+            </tr>
+            <tr>
+              <td><strong>Supprimer des lignes</strong></td>
+              <td>Supprime plusieurs lignes d'enregistrement d'une table selon les filtres de requête.</td>
+            </tr>
+            <tr>
+              <td><strong>Supprimer sélection</strong></td>
+              <td>Supprime la ligne actuellement sélectionnée dans un composant de liste ou de table.</td>
+            </tr>
+            <tr>
+              <td><strong>Supprimer une ligne</strong></td>
+              <td>Supprime une ligne d'enregistrement spécifique d'une table correspondant à un identifiant.</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section class="section" id="appareil">
+        <h2>Appareil</h2>
+        <table class="doc-table">
+          <thead>
+            <tr>
+              <th>Libellé</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Dicté vocale</strong></td>
+              <td>Démarre l'enregistrement de la voix et active la reconnaissance vocale sur l'appareil.</td>
+            </tr>
+            <tr>
+              <td><strong>Obtenir position</strong></td>
+              <td>Interroge les capteurs GPS de l'appareil pour obtenir les coordonnées géographiques actuelles.</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section class="section" id="dialogue">
+        <h2>Dialogue</h2>
+        <table class="doc-table">
+          <thead>
+            <tr>
+              <th>Libellé</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Afficher confirmation</strong></td>
+              <td>Affiche une boîte de dialogue demandant à l'utilisateur de confirmer ou d'annuler une action.</td>
+            </tr>
+            <tr>
+              <td><strong>Afficher message</strong></td>
+              <td>Affiche une boîte de message d'alerte modale personnalisée avec des boutons.</td>
+            </tr>
+            <tr>
+              <td><strong>Afficher notification</strong></td>
+              <td>Affiche une bannière temporaire d'alerte de notification sur l'écran.</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section class="section" id="messagerie">
+        <h2>Messagerie</h2>
+        <table class="doc-table">
+          <thead>
+            <tr>
+              <th>Libellé</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Envoyer email</strong></td>
+              <td>Envoie un e-mail via Gmail avec le destinataire, l'objet et le corps spécifiés.</td>
+            </tr>
+            <tr>
+              <td><strong>Envoyer message WhatsApp</strong></td>
+              <td>Envoie un message WhatsApp à l'aide de l'intégration Twilio.</td>
+            </tr>
+            <tr>
+              <td><strong>Envoyer SMS</strong></td>
+              <td>Envoie un message SMS à l'aide de l'intégration de la passerelle Twilio.</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section class="section" id="navigation">
+        <h2>Navigation</h2>
+        <table class="doc-table">
+          <thead>
+            <tr>
+              <th>Libellé</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Afficher popup</strong></td>
+              <td>Ouvre l'écran désigné sous la forme d'une fenêtre contextuelle (popup) modale.</td>
+            </tr>
+            <tr>
+              <td><strong>Aller à l'accueil</strong></td>
+              <td>Redirige directement vers l'écran d'accueil désigné de l'application.</td>
+            </tr>
+            <tr>
+              <td><strong>Aller vers écran</strong></td>
+              <td>Navigue directement vers un écran cible spécifié par son nom ou son identifiant.</td>
+            </tr>
+            <tr>
+              <td><strong>Attendre</strong></td>
+              <td>Suspend l'exécution du flux de travail pendant une durée spécifiée en secondes.</td>
+            </tr>
+            <tr>
+              <td><strong>Fermer popup</strong></td>
+              <td>Ferme la fenêtre contextuelle (popup) actuellement active.</td>
+            </tr>
+            <tr>
+              <td><strong>Naviguer vers lien</strong></td>
+              <td>Redirige le navigateur ou l'application vers une adresse URL externe.</td>
+            </tr>
+            <tr>
+              <td><strong>Rafraîchir écran</strong></td>
+              <td>Recharge les données et rafraîchit tous les composants de l'écran actif.</td>
+            </tr>
+            <tr>
+              <td><strong>Retour</strong></td>
+              <td>Redirige vers l'écran précédent dans l'historique de navigation.</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section class="section" id="hors-ligne">
+        <h2>Hors ligne</h2>
+        <table class="doc-table">
+          <thead>
+            <tr>
+              <th>Libellé</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Synchro. hors ligne</strong></td>
+              <td>Déclenche la synchronisation des données locales hors ligne avec le serveur distant.</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section class="section" id="openai">
+        <h2>OpenAI</h2>
+        <table class="doc-table">
+          <thead>
+            <tr>
+              <th>Libellé</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Générer du texte</strong></td>
+              <td>Utilise les modèles OpenAI GPT pour générer des textes ou réponses à partir d'invites.</td>
+            </tr>
+            <tr>
+              <td><strong>Générer image</strong></td>
+              <td>Utilise OpenAI Dall-E pour générer des images personnalisées à partir de descriptions textuelles.</td>
+            </tr>
+            <tr>
+              <td><strong>Synthèse vocale</strong></td>
+              <td>Synthétise un fichier audio parlé à partir de textes avec les modèles de voix OpenAI.</td>
+            </tr>
+            <tr>
+              <td><strong>Transcription audio</strong></td>
+              <td>Transcrit des enregistrements vocaux en texte brut avec le modèle OpenAI Whisper.</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section class="section" id="paiement">
+        <h2>Paiement</h2>
+        <table class="doc-table">
+          <thead>
+            <tr>
+              <th>Libellé</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Ajouter produit</strong></td>
+              <td>Ajoute un produit et sa quantité associée au panier d'achat actif.</td>
+            </tr>
+            <tr>
+              <td><strong>Annuler paiement</strong></td>
+              <td>Annule le processus de paiement ou de souscription d'abonnement en cours.</td>
+            </tr>
+            <tr>
+              <td><strong>Confirmer paiement</strong></td>
+              <td>Confirme et valide une transaction de paiement en attente.</td>
+            </tr>
+            <tr>
+              <td><strong>Créer un compte</strong></td>
+              <td>Enregistre un compte ou profil utilisateur auprès de services de paiement.</td>
+            </tr>
+            <tr>
+              <td><strong>Payer</strong></td>
+              <td>Initie le processus de paiement pour les articles du panier d'achat.</td>
+            </tr>
+            <tr>
+              <td><strong>Payer un abonnement</strong></td>
+              <td>Initie le processus d'abonnement à facturation récurrente pour un forfait choisi.</td>
+            </tr>
+            <tr>
+              <td><strong>Portail client</strong></td>
+              <td>Redirige l'utilisateur vers son portail de facturation et de gestion de paiement.</td>
+            </tr>
+            <tr>
+              <td><strong>Réinitialiser panier</strong></td>
+              <td>Vide entièrement le panier d'achat actif et réinitialise les totaux.</td>
+            </tr>
+            <tr>
+              <td><strong>Retirer un produit</strong></td>
+              <td>Retire des articles ou diminue leur quantité dans le panier d'achat.</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section class="section" id="notification-push">
+        <h2>Notification push</h2>
+        <table class="doc-table">
+          <thead>
+            <tr>
+              <th>Libellé</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Envoyer à tous</strong></td>
+              <td>Diffuse une notification push à l'ensemble des utilisateurs de l'application.</td>
+            </tr>
+            <tr>
+              <td><strong>Envoyer à un utilisateur</strong></td>
+              <td>Envoie une notification push ciblée vers un identifiant d'utilisateur spécifique.</td>
+            </tr>
+            <tr>
+              <td><strong>Envoyer au canal</strong></td>
+              <td>Envoie une notification push aux utilisateurs abonnés à un canal spécifique.</td>
+            </tr>
+            <tr>
+              <td><strong>S'abonner</strong></td>
+              <td>Abonne le terminal aux alertes de notifications push de l'application.</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section class="section" id="code-qr">
+        <h2>Code QR</h2>
+        <table class="doc-table">
+          <thead>
+            <tr>
+              <th>Libellé</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Scanner QR Code</strong></td>
+              <td>Ouvre l'appareil photo du terminal pour scanner et décoder un code QR.</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section class="section" id="rest">
+        <h2>REST</h2>
+        <table class="doc-table">
+          <thead>
+            <tr>
+              <th>Libellé</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Delete</strong></td>
+              <td>Envoie une requête HTTP DELETE à un point de terminaison d'API REST spécifié.</td>
+            </tr>
+            <tr>
+              <td><strong>Get</strong></td>
+              <td>Envoie une requête HTTP GET pour récupérer des ressources depuis une API REST.</td>
+            </tr>
+            <tr>
+              <td><strong>Patch</strong></td>
+              <td>Envoie une requête HTTP PATCH pour modifier partiellement une ressource via une API REST.</td>
+            </tr>
+            <tr>
+              <td><strong>Post</strong></td>
+              <td>Envoie une requête HTTP POST pour soumettre des données à une API REST.</td>
+            </tr>
+            <tr>
+              <td><strong>Put</strong></td>
+              <td>Envoie une requête HTTP PUT pour remplacer ou écrire une ressource via une API REST.</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section class="section" id="theme">
+        <h2>Thème</h2>
+        <table class="doc-table">
+          <thead>
+            <tr>
+              <th>Libellé</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Agrandir texte</strong></td>
+              <td>Augmente la taille de police globale du thème (zoom avant du texte).</td>
+            </tr>
+            <tr>
+              <td><strong>Réduire texte</strong></td>
+              <td>Diminue la taille de police globale du thème (zoom arrière du texte).</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section class="section" id="variable">
+        <h2>Variable</h2>
+        <table class="doc-table">
+          <thead>
+            <tr>
+              <th>Libellé</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Charger les variables</strong></td>
+              <td>Charge et initialise des variables dans l'état de session de l'application.</td>
+            </tr>
+            <tr>
+              <td><strong>Décrémenter</strong></td>
+              <td>Diminue de 1 la valeur numérique d'une variable spécifiée.</td>
+            </tr>
+            <tr>
+              <td><strong>Définir la sélection</strong></td>
+              <td>Assigne une variable de sélection pour pointer vers un élément de ligne cible.</td>
+            </tr>
+            <tr>
+              <td><strong>Définir la variable si</strong></td>
+              <td>Assigne une valeur à une variable uniquement si une condition spécifiée est validée.</td>
+            </tr>
+            <tr>
+              <td><strong>Définir une variable</strong></td>
+              <td>Assigne une valeur statique ou dynamique spécifiée à une variable cible.</td>
+            </tr>
+            <tr>
+              <td><strong>Effacer la sélection</strong></td>
+              <td>Réinitialise le pointeur ou la variable de sélection de ligne à vide.</td>
+            </tr>
+            <tr>
+              <td><strong>Incrémenter</strong></td>
+              <td>Augmente de 1 la valeur numérique d'une variable spécifiée.</td>
+            </tr>
+            <tr>
+              <td><strong>Réinitialiser les variables</strong></td>
+              <td>Réinitialise toutes les variables de session ou une variable cible à sa valeur par défaut.</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section class="section" id="webhook">
+        <h2>Webhook</h2>
+        <table class="doc-table">
+          <thead>
+            <tr>
+              <th>Libellé</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Webhook Make</strong></td>
+              <td>Envoie des données de déclenchement à un point de terminaison webhook configuré.</td>
+            </tr>
+            <tr>
+              <td><strong>Webhook n8n</strong></td>
+              <td>Envoie des données de déclenchement à un webhook de flux de travail n8n.</td>
+            </tr>
+            <tr>
+              <td><strong>Webhook Zapier</strong></td>
+              <td>Envoie des données de déclenchement à un webhook d'intégration Zapier.</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+    </main>
+  </div>
+<script src="../assets/js/sidebar-shell.js"></script>
+</body>
+</html>

@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Documentation Zyllio - Guide complet de tous les composants de Zyllio Studio">
+  <title>Documentation Zyllio | Guide des Composants de Zyllio Studio</title>
+  <link rel="stylesheet" href="../assets/css/global.css">
+</head>
+<body>
+  <div class="page-shell">
+    <aside class="sidebar">
+      <docs-sidebar-shell></docs-sidebar-shell>
+    </aside>
+
+    <main class="main">
+      <header class="section hero" id="welcome">
+        <div class="hero-body">
+          <span class="kicker">Documentation</span>
+          <h1>Guide des Composants de Zyllio Studio</h1>
+          <p class="lead">Ce document fournit une liste complète de tous les composants de Zyllio avec leurs descriptions (hints).</p>
+        </div>
+      </header>
+
+      <section class="section" id="bases">
+        <h2>Bases</h2>
+        <table class="doc-table">
+          <thead>
+            <tr>
+              <th>Libellé</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Bouton avec libellé</strong></td>
+              <td>Un bouton de contact qui combine une icône, un libellé textuel et un déclencheur d’action. Il est conçu pour initier des interactions directes comme composer un numéro, envoyer un email ou appeler une action.</td>
+            </tr>
+            <tr>
+              <td><strong>En-tête</strong></td>
+              <td>Une barre d’en-tête de navigation supérieure qui affiche un titre de page ainsi que des actions facultatives (retour, bouton personnalisé). Elle prend en charge l’alignement, les dégradés, les bordures et la typographie. Idéal pour structurer le haut des écrans.</td>
+            </tr>
+            <tr>
+              <td><strong>Icône</strong></td>
+              <td>Un composant qui affiche une icône unique personnalisable issue de packs d’icônes standards, avec du texte facultatif. Il prend en charge des tailles, couleurs, fonds et bordures personnalisés.</td>
+            </tr>
+            <tr>
+              <td><strong>Image</strong></td>
+              <td>Un composant polyvalent conçu pour afficher des images avec différentes options de disposition, un mode profil (recadrage circulaire), des libellés et des descriptions. Il prend en charge les actions au clic, les bordures, les marges et les alignements.</td>
+            </tr>
+            <tr>
+              <td><strong>Liste à puces</strong></td>
+              <td>Un composant simple permettant d’afficher une liste d’éléments sous forme de séquence à puces ou numérotée. Il prend en charge la personnalisation des icônes et le formatage de la liste.</td>
+            </tr>
+            <tr>
+              <td><strong>Markdown</strong></td>
+              <td>Un composant d’affichage de texte enrichi qui analyse et restitue la syntaxe Markdown standard. Il permet d’intégrer des titres, listes, liens et textes formatés dans la page. Idéal pour afficher des articles ou de la documentation.</td>
+            </tr>
+            <tr>
+              <td><strong>Navigation</strong></td>
+              <td>Une barre de navigation ancrée en bas de l’écran qui permet aux utilisateurs de naviguer d’un écran à l’autre. Elle prend en charge l’affichage d’icônes, de libellés, de badges et d’actions personnalisées.</td>
+            </tr>
+            <tr>
+              <td><strong>Options</strong></td>
+              <td>Un composant qui affiche plusieurs options sous forme de liste horizontale ou verticale. Il prend en charge des couleurs, bordures et libellés personnalisés, ce qui le rend idéal pour présenter des étiquettes ou des filtres.</td>
+            </tr>
+            <tr>
+              <td><strong>Séparateur</strong></td>
+              <td>Un composant d’espacement simple utilisé pour créer une séparation visuelle et de la distance entre les éléments d’un écran. Il peut afficher une ligne pleine ou agir comme un espace vide avec une hauteur personnalisable.</td>
+            </tr>
+            <tr>
+              <td><strong>Suggestion</strong></td>
+              <td>Un encadré conçu pour mettre en valeur des conseils, des alertes d’information ou des actions recommandées avec une icône et un bloc de texte. Il prend en charge la personnalisation des icônes, des tailles, des bordures et des couleurs de fond.</td>
+            </tr>
+            <tr>
+              <td><strong>Texte</strong></td>
+              <td>Le composant de base permettant d’afficher des libellés, des paragraphes ou des textes avec des options de style complètes. Il offre un contrôle étendu sur la typographie, y compris l’alignement, la taille, la couleur et les dégradés.</td>
+            </tr>
+            <tr>
+              <td><strong>Texte avec libellé</strong></td>
+              <td>Un composant à double texte qui affiche un libellé descriptif accompagné de sa valeur principale. Il prend en charge une orientation horizontale ou verticale ainsi que toutes les options de style de texte.</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section class="section" id="boutons">
+        <h2>Boutons</h2>
+        <table class="doc-table">
+          <thead>
+            <tr>
+              <th>Libellé</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Aimer</strong></td>
+              <td>Un bouton de bascule pour aimer ou ne plus aimer un contenu. Se connecte directement à une table de base de données pour suivre les mentions j'aime.</td>
+            </tr>
+            <tr>
+              <td><strong>Barre de boutons</strong></td>
+              <td>Un groupe horizontal de plusieurs boutons. Utilisé pour présenter un ensemble d'actions associées alignées côte à côte.</td>
+            </tr>
+            <tr>
+              <td><strong>Bouton entouré</strong></td>
+              <td>Un bouton avec un fond transparent et une bordure colorée. Généralement utilisé pour les actions secondaires ou moins prioritaires.</td>
+            </tr>
+            <tr>
+              <td><strong>Bouton flottant</strong></td>
+              <td>Un bouton d’action flottant qui se superpose au contenu de l’écran. Souvent placé dans le coin inférieur droit pour les actions principales.</td>
+            </tr>
+            <tr>
+              <td><strong>Bouton Icône</strong></td>
+              <td>Un petit bouton circulaire affichant uniquement une icône. Conçu pour des actions compactes ou des déclencheurs sans texte.</td>
+            </tr>
+            <tr>
+              <td><strong>Bouton lien</strong></td>
+              <td>Un bouton stylisé comme un simple lien hypertexte. Idéal pour les actions secondaires ou les mises en page épurées.</td>
+            </tr>
+            <tr>
+              <td><strong>Bouton normal</strong></td>
+              <td>Un bouton d'action plein standard. Conçu pour les appels à l'action principaux avec couleurs, libellés et événements de clic personnalisables.</td>
+            </tr>
+            <tr>
+              <td><strong>Favoris</strong></td>
+              <td>Un bouton de bascule pour ajouter des éléments aux favoris. Met à jour automatiquement la relation entre l'utilisateur et l'élément.</td>
+            </tr>
+            <tr>
+              <td><strong>Suivre</strong></td>
+              <td>Un bouton de bascule pour s'abonner ou se désabonner d'éléments, créateurs ou sujets. Gère les états d'abonnement.</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section class="section" id="contacts">
+        <h2>Contacts</h2>
+        <table class="doc-table">
+          <thead>
+            <tr>
+              <th>Libellé</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Carte QRCode</strong></td>
+              <td>Un composant qui génère et affiche un code QR contenant des coordonnées de contact. Pratique pour enregistrer un contact rapidement.</td>
+            </tr>
+            <tr>
+              <td><strong>Carte virtuelle</strong></td>
+              <td>Un composant de fiche contact permettant aux utilisateurs de télécharger un fichier vCard (.vcf) pour enregistrer les coordonnées.</td>
+            </tr>
+            <tr>
+              <td><strong>Chaîne Youtube</strong></td>
+              <td>Un bouton qui ouvre une chaîne YouTube ou un lien vidéo spécifique. Aide à faire découvrir des contenus vidéos.</td>
+            </tr>
+            <tr>
+              <td><strong>Email</strong></td>
+              <td>Un bouton de contact qui lance le client de messagerie par défaut avec une adresse destinataire pré-remplie. Idéal pour le support.</td>
+            </tr>
+            <tr>
+              <td><strong>Exporter données</strong></td>
+              <td>Un composant permettant aux utilisateurs d'exporter des données de tables ou bases. Gère les configurations de format de fichier.</td>
+            </tr>
+            <tr>
+              <td><strong>Instagram</strong></td>
+              <td>Un bouton qui ouvre un profil Instagram spécifié. Parfait pour lier des portfolios visuels ou des comptes sociaux.</td>
+            </tr>
+            <tr>
+              <td><strong>Lien</strong></td>
+              <td>Un bouton qui ouvre un lien web externe dans un nouvel onglet. Parfait pour renvoyer vers des pages ou ressources externes.</td>
+            </tr>
+            <tr>
+              <td><strong>Page facebook</strong></td>
+              <td>Un bouton qui redirige les utilisateurs vers un profil ou une page Facebook spécifique. Permet d'accroître la présence sur les réseaux.</td>
+            </tr>
+            <tr>
+              <td><strong>Profil</strong></td>
+              <td>Un bloc d'informations de profil affichant un avatar, un nom d'utilisateur et des détails. Idéal pour les fiches de profil.</td>
+            </tr>
+            <tr>
+              <td><strong>Télécharger fichier</strong></td>
+              <td>Un bouton configuré pour télécharger un fichier spécifique. Utile pour partager des documents PDF ou d'autres ressources.</td>
+            </tr>
+            <tr>
+              <td><strong>Téléphone</strong></td>
+              <td>Un bouton qui ouvre le composeur de l'appareil avec un numéro de téléphone pré-rempli. Permet de lancer un appel instantanément.</td>
+            </tr>
+            <tr>
+              <td><strong>Twitter</strong></td>
+              <td>Un bouton qui renvoie directement vers un profil Twitter. Utile pour partager des actualités et échanger sur les réseaux.</td>
+            </tr>
+            <tr>
+              <td><strong>Whatsapp</strong></td>
+              <td>Un bouton de contact qui ouvre une conversation WhatsApp avec un numéro spécifié. Idéal pour des échanges de messagerie instantanée.</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section class="section" id="conteneurs">
+        <h2>Conteneurs</h2>
+        <table class="doc-table">
+          <thead>
+            <tr>
+              <th>Libellé</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Conteneur</strong></td>
+              <td>Un composant conteneur de mise en page utilisé pour regrouper et organiser des éléments enfants. Il prend en charge l’alignement flex et le style de fond.</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section class="section" id="tableau-de-bord">
+        <h2>Tableau de bord</h2>
+        <table class="doc-table">
+          <thead>
+            <tr>
+              <th>Libellé</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Graphique</strong></td>
+              <td>Un composant de représentation graphique prenant en charge les diagrammes en barres, lignes, secteurs. Visualise les données dynamiquement.</td>
+            </tr>
+            <tr>
+              <td><strong>Progression</strong></td>
+              <td>Une barre de progression visuelle qui indique des pourcentages de complétion ou des ratios. Idéal pour le suivi d'objectifs.</td>
+            </tr>
+            <tr>
+              <td><strong>Statistique</strong></td>
+              <td>Une carte de tableau de bord conçue pour mettre en valeur des indicateurs clés ou des totaux. Supporte les grands libellés et textes.</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section class="section" id="champs-de-formulaire">
+        <h2>Champs de formulaire</h2>
+        <table class="doc-table">
+          <thead>
+            <tr>
+              <th>Libellé</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Bouton radio</strong></td>
+              <td>Un groupe de boutons radio pour des choix mutuellement exclusifs. Permet de choisir une option unique parmi un ensemble.</td>
+            </tr>
+            <tr>
+              <td><strong>Capture audio</strong></td>
+              <td>Un composant d'enregistrement audio permettant de capturer des sons depuis le micro de l'appareil. Utile pour les notes vocales.</td>
+            </tr>
+            <tr>
+              <td><strong>Case à cocher</strong></td>
+              <td>Un champ de saisie de case à cocher standard pour les choix binaires (oui/non). Gère les libellés et les valeurs par défaut.</td>
+            </tr>
+            <tr>
+              <td><strong>Choix multiple</strong></td>
+              <td>Un composant de saisie présentant des options sous forme de jetons sélectionnables. Permet des sélections simples ou multiples.</td>
+            </tr>
+            <tr>
+              <td><strong>Curseur</strong></td>
+              <td>Un curseur de plage de saisie interactive. Permet de choisir des valeurs numériques en glissant un bouton.</td>
+            </tr>
+            <tr>
+              <td><strong>Date</strong></td>
+              <td>Un champ de saisie de date avec un sélecteur de calendrier intégré. Aide à renseigner des dates de manière précise.</td>
+            </tr>
+            <tr>
+              <td><strong>Ecrire avis</strong></td>
+              <td>Un champ de zone de texte conçu spécifiquement pour la rédaction de commentaires. Comprend des options d'espace réservé.</td>
+            </tr>
+            <tr>
+              <td><strong>Email</strong></td>
+              <td>Un champ de saisie optimisé pour les adresses email. Gère la validation de syntaxe de base et les claviers adaptés.</td>
+            </tr>
+            <tr>
+              <td><strong>Évaluation</strong></td>
+              <td>Un composant d'évaluation basé sur des étoiles. Permet de soumettre des notes ou retours d'expérience.</td>
+            </tr>
+            <tr>
+              <td><strong>Fichier</strong></td>
+              <td>Un composant de chargement de fichiers permettant de téléverser des documents. Gère les limites de taille et formats de fichiers.</td>
+            </tr>
+            <tr>
+              <td><strong>Heure</strong></td>
+              <td>Un champ de saisie de l'heure prenant en charge la sélection d'heures et minutes pour planifier précisément.</td>
+            </tr>
+            <tr>
+              <td><strong>Image</strong></td>
+              <td>Un composant de téléversement d'image prenant en charge le glisser-déposer ou la caméra de l'appareil.</td>
+            </tr>
+            <tr>
+              <td><strong>Interrupteur</strong></td>
+              <td>Un interrupteur de bascule représentant un état booléen. Alternative moderne à la case à cocher pour les réglages.</td>
+            </tr>
+            <tr>
+              <td><strong>Liste déroulante</strong></td>
+              <td>Un champ de saisie de menu déroulant de sélection. Idéal pour choisir un élément unique parmi une longue liste d'options.</td>
+            </tr>
+            <tr>
+              <td><strong>Message</strong></td>
+              <td>Un champ de saisie de texte optimisé pour les messages courts ou le chat. Gère l'expansion dynamique et l'action d'envoi.</td>
+            </tr>
+            <tr>
+              <td><strong>Mot de passe</strong></td>
+              <td>Un champ de saisie de texte sécurisé qui masque les caractères saisis. Utile pour les mots de passe et formulaires d'inscription.</td>
+            </tr>
+            <tr>
+              <td><strong>Nombre</strong></td>
+              <td>Un champ de saisie numérique restreint aux valeurs de type nombre. Prend en charge les valeurs minimales et maximales.</td>
+            </tr>
+            <tr>
+              <td><strong>Quantité</strong></td>
+              <td>Un champ de sélection de quantité muni de boutons plus et moins. Simplifie l'incrémentation ou la décrémentation de compteurs.</td>
+            </tr>
+            <tr>
+              <td><strong>Signature</strong></td>
+              <td>Un champ de signature tactile permettant de dessiner sa signature. Idéal pour les processus d'approbation et formulaires.</td>
+            </tr>
+            <tr>
+              <td><strong>Téléphone</strong></td>
+              <td>Un champ de saisie dédié aux numéros de téléphone. Adapte le clavier virtuel sur mobile.</td>
+            </tr>
+            <tr>
+              <td><strong>Texte</strong></td>
+              <td>Un champ de saisie de texte générique sur une seule ligne. Le type de saisie le plus courant pour les noms et titres.</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section class="section" id="geolocalisation">
+        <h2>Géolocalisation</h2>
+        <table class="doc-table">
+          <thead>
+            <tr>
+              <th>Libellé</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Carte</strong></td>
+              <td>Un composant de carte interactive qui affiche des données géographiques et des positions. Gère le zoom et des calques personnalisés.</td>
+            </tr>
+            <tr>
+              <td><strong>Marqueur</strong></td>
+              <td>Un composant de marqueur de carte pour signaler des positions géographiques. Gère les bulles d'info et actions au clic.</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section class="section" id="listes">
+        <h2>Listes</h2>
+        <table class="doc-table">
+          <thead>
+            <tr>
+              <th>Libellé</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Avis</strong></td>
+              <td>Un composant de liste de commentaires affichant des messages d'utilisateurs. Gère les avatars, dates et réponses.</td>
+            </tr>
+            <tr>
+              <td><strong>Calendrier</strong></td>
+              <td>Une grille de calendrier affichant des événements ou tâches. Propose des vues jour, semaine ou mois liées aux données.</td>
+            </tr>
+            <tr>
+              <td><strong>Carrousel</strong></td>
+              <td>Un conteneur coulissant horizontal qui présente une liste d'éléments de manière séquentielle. Gère le défilement automatique.</td>
+            </tr>
+            <tr>
+              <td><strong>Carte</strong></td>
+              <td>Un élément de liste en forme de fiche affichant des titres, descriptions et visuels. Idéal pour les aperçus d'articles ou produits.</td>
+            </tr>
+            <tr>
+              <td><strong>Catégories</strong></td>
+              <td>Une liste de navigation de catégories sous forme de jetons ou d'icônes circulaires. Utile pour filtrer les catalogues.</td>
+            </tr>
+            <tr>
+              <td><strong>Discussion</strong></td>
+              <td>Un fil de discussion dynamique présentant les messages envoyés et reçus. Se connecte aux tables pour le chat en temps réel.</td>
+            </tr>
+            <tr>
+              <td><strong>Galerie</strong></td>
+              <td>Une galerie d'images présentant des photos sous forme de grilles. Idéal pour les portfolios visuels ou albums.</td>
+            </tr>
+            <tr>
+              <td><strong>Grille</strong></td>
+              <td>Une mise en page de grille flexible organisant les éléments de données en colonnes et lignes. Très personnalisable.</td>
+            </tr>
+            <tr>
+              <td><strong>Liste</strong></td>
+              <td>Une liste verticale standard pour afficher séquentiellement les éléments d'une table. Gère la recherche et le tri.</td>
+            </tr>
+            <tr>
+              <td><strong>Mosaïque</strong></td>
+              <td>Une grille asymétrique de type maçonnerie. Idéal pour des affichages de type Pinterest avec des hauteurs d'éléments variables.</td>
+            </tr>
+            <tr>
+              <td><strong>Publication</strong></td>
+              <td>Un composant de publication de réseau social affichant l'auteur, du texte, des images et des boutons de réaction.</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section class="section" id="medias">
+        <h2>Médias</h2>
+        <table class="doc-table">
+          <thead>
+            <tr>
+              <th>Libellé</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Audio</strong></td>
+              <td>Un lecteur audio qui lit des fichiers ou flux audio. Propose des contrôles de volume, de progression et de lecture.</td>
+            </tr>
+            <tr>
+              <td><strong>Intégration</strong></td>
+              <td>Un composant d'intégration d'iframe permettant d'afficher du contenu web externe directement. Idéal pour des formulaires.</td>
+            </tr>
+            <tr>
+              <td><strong>QR Code</strong></td>
+              <td>Un composant qui génère dynamiquement des codes QR à partir de textes ou liens. Parfait pour le partage de liens.</td>
+            </tr>
+            <tr>
+              <td><strong>Vidéo</strong></td>
+              <td>Un lecteur vidéo natif permettant de lire des fichiers vidéo. Prend en charge les contrôles de lecture standards.</td>
+            </tr>
+            <tr>
+              <td><strong>Vidéo YouTube</strong></td>
+              <td>Un composant dédié à l'intégration de vidéos YouTube. Supporte les paramètres de lecture et les configurations du lecteur.</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section class="section" id="paiement">
+        <h2>Paiement</h2>
+        <table class="doc-table">
+          <thead>
+            <tr>
+              <th>Libellé</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Panier</strong></td>
+              <td>Un composant de panier d'achat affichant les articles, les quantités et le résumé des prix. Indispensable pour le e-commerce.</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section class="section" id="tableaux">
+        <h2>Tableaux</h2>
+        <table class="doc-table">
+          <thead>
+            <tr>
+              <th>Libellé</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Tableau</strong></td>
+              <td>Un composant de table de données standard permettant d'afficher les informations en colonnes et lignes. Gère le tri.</td>
+            </tr>
+            <tr>
+              <td><strong>Tableau éditable</strong></td>
+              <td>Un éditeur de données tabulaires sous forme de grille permettant de modifier des lignes. Idéal pour l'administration.</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section class="section" id="site-web">
+        <h2>Site web</h2>
+        <table class="doc-table">
+          <thead>
+            <tr>
+              <th>Libellé</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Bannière</strong></td>
+              <td>Une bannière promotionnelle d'en-tête de page web. Gère des images de fond, des titres et des boutons d'action.</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+    </main>
+  </div>
+<script src="../assets/js/sidebar-shell.js"></script>
+</body>
+</html>

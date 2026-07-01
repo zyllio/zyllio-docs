@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Zyllio Documentation - Complete guide to all Zyllio Studio components">
+  <title>Documentation Zyllio | Zyllio Studio Components Hints</title>
+  <link rel="stylesheet" href="../assets/css/global.css">
+</head>
+<body>
+  <div class="page-shell">
+    <aside class="sidebar">
+      <docs-sidebar-shell></docs-sidebar-shell>
+    </aside>
+
+    <main class="main">
+      <header class="section hero" id="welcome">
+        <div class="hero-body">
+          <span class="kicker">Documentation</span>
+          <h1>Zyllio Studio Components Hints</h1>
+          <p class="lead">This document provides a comprehensive list of all Zyllio components with their descriptions (hints).</p>
+        </div>
+      </header>
+
+      <section class="section" id="basics">
+        <h2>Basics</h2>
+        <table class="doc-table">
+          <thead>
+            <tr>
+              <th>Label</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Bulleted list</strong></td>
+              <td>A list component that displays items as a bulleted or numbered sequence. It supports icon customization and custom list formatting options. Perfect for displaying features, benefits, or sequential steps.</td>
+            </tr>
+            <tr>
+              <td><strong>Header</strong></td>
+              <td>A top navigation header bar that displays a page title along with optional actions like back buttons or custom action buttons. It supports custom alignment, gradients, borders, and typography. Used to provide structure and navigation consistency at the top of screens.</td>
+            </tr>
+            <tr>
+              <td><strong>Icon</strong></td>
+              <td>A component that displays a single customizable icon from standard icon packs alongside optional text. It supports custom sizes, colors, background fills, and borders to serve as visual indicators or interactive buttons.</td>
+            </tr>
+            <tr>
+              <td><strong>Image</strong></td>
+              <td>A versatile component designed to display images with options for different layouts, profile mode (circular cropping), labels, and descriptions. It supports click actions, custom borders, padding, and alignments. Essential for displaying visual content, user avatars, or media banners.</td>
+            </tr>
+            <tr>
+              <td><strong>Label button</strong></td>
+              <td>A contact button that displays an icon, text, and an action trigger. It is configured to initiate direct interactions such as dialing a phone number, sending an email, or calling a custom action.</td>
+            </tr>
+            <tr>
+              <td><strong>Label Text</strong></td>
+              <td>A dual-text component that displays a descriptive label alongside its main value. It supports horizontal or vertical layout orientations and full text styling options. Ideal for displaying key-value pairs, metadata, or form field summaries.</td>
+            </tr>
+            <tr>
+              <td><strong>Markdown</strong></td>
+              <td>A rich text display component that parses and renders standard Markdown syntax. It allows the integration of headers, lists, links, and formatted text directly into the page layout. Ideal for showing formatted articles, policies, or dynamic documentation.</td>
+            </tr>
+            <tr>
+              <td><strong>Navigation</strong></td>
+              <td>A navigation bar anchored to the bottom of the screen that allows users to switch between different screens. It supports displaying icons, text labels, badges, and custom actions. Ideal for building standard mobile application tab bars.</td>
+            </tr>
+            <tr>
+              <td><strong>Options</strong></td>
+              <td>A component that displays multiple options in a horizontal or vertical list configuration. It supports custom colors, borders, and labels, making it ideal for displaying tags, categories, or filters.</td>
+            </tr>
+            <tr>
+              <td><strong>Separator</strong></td>
+              <td>A simple spacing component used to create visual separation and distance between elements on a screen. It can display a solid line or act as empty spacing with a customizable height. Ideal for structuring layouts and improving readability.</td>
+            </tr>
+            <tr>
+              <td><strong>Suggestion</strong></td>
+              <td>A box component designed to highlight tips, info alerts, or recommended actions with a leading icon and a text block. It supports custom icons, sizes, border radii, and background fills. Useful for guiding users or displaying contextual call-to-actions.</td>
+            </tr>
+            <tr>
+              <td><strong>Text</strong></td>
+              <td>The foundational text component used to display labels, paragraphs, or copy with comprehensive styling options. It offers extensive control over typography including alignments, font sizes, weights, styles, colors, and gradients.</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section class="section" id="buttons">
+        <h2>Buttons</h2>
+        <table class="doc-table">
+          <thead>
+            <tr>
+              <th>Label</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Button bar</strong></td>
+              <td>A horizontal group of multiple buttons. Used to present a set of related actions aligned next to each other.</td>
+            </tr>
+            <tr>
+              <td><strong>Favorite</strong></td>
+              <td>A toggle button for favoriting items in a list or database. Automatically updates the relation between the user and the item.</td>
+            </tr>
+            <tr>
+              <td><strong>Float</strong></td>
+              <td>A floating action button that hovers on top of the screen contents. Often placed in the bottom right corner for primary actions.</td>
+            </tr>
+            <tr>
+              <td><strong>Follow</strong></td>
+              <td>A toggle button to follow or unfollow items, creators, or topics. Manages follow states and triggers customizable transition actions.</td>
+            </tr>
+            <tr>
+              <td><strong>Icon</strong></td>
+              <td>A small circular button displaying only an icon. Designed for compact actions or icon-only triggers.</td>
+            </tr>
+            <tr>
+              <td><strong>Like</strong></td>
+              <td>A toggle button to like or unlike content. Connects directly to a database table to keep track of user likes.</td>
+            </tr>
+            <tr>
+              <td><strong>Link</strong></td>
+              <td>A button styled as a simple text hyperlink. Ideal for secondary actions, terms of service, or clean layouts.</td>
+            </tr>
+            <tr>
+              <td><strong>Normal</strong></td>
+              <td>A standard solid action button. Designed for primary call-to-actions with customizable colors, labels, and click events.</td>
+            </tr>
+            <tr>
+              <td><strong>Outline</strong></td>
+              <td>A button with a transparent background and a colored border outline. Commonly used for secondary or less prominent actions.</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section class="section" id="contacts">
+        <h2>Contacts</h2>
+        <table class="doc-table">
+          <thead>
+            <tr>
+              <th>Label</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Download file</strong></td>
+              <td>A button configured to download a specified file. Useful for sharing PDF documents, assets, or resources.</td>
+            </tr>
+            <tr>
+              <td><strong>Email</strong></td>
+              <td>A contact button that launches the default email client with a pre-filled recipient address. Ideal for direct support queries.</td>
+            </tr>
+            <tr>
+              <td><strong>Export data</strong></td>
+              <td>A component that allows users to export data from tables or databases. Supports format configurations for downloading files.</td>
+            </tr>
+            <tr>
+              <td><strong>Facebook page</strong></td>
+              <td>A button that redirects users to a specified Facebook profile or page. Helps increase social media presence.</td>
+            </tr>
+            <tr>
+              <td><strong>Instagram</strong></td>
+              <td>A button that opens a specified Instagram profile. Perfect for linking to visual portfolios or social accounts.</td>
+            </tr>
+            <tr>
+              <td><strong>Link</strong></td>
+              <td>A button that opens an external website link in a new browser tab. Perfect for linking to resources or external pages.</td>
+            </tr>
+            <tr>
+              <td><strong>Phone</strong></td>
+              <td>A button that opens the device dialer with a pre-filled phone number. Allows users to start a phone call instantly.</td>
+            </tr>
+            <tr>
+              <td><strong>Profile</strong></td>
+              <td>A profile information block displaying a user avatar, username, and metadata details. Ideal for profile cards or user directories.</td>
+            </tr>
+            <tr>
+              <td><strong>QR Code VCard</strong></td>
+              <td>A component that generates and displays a QR Code containing contact details. Users can scan it to instantly save contact information to their phone book.</td>
+            </tr>
+            <tr>
+              <td><strong>Twitter</strong></td>
+              <td>A button that links directly to a Twitter profile or page. Useful for sharing updates and connecting on social media.</td>
+            </tr>
+            <tr>
+              <td><strong>VCard</strong></td>
+              <td>A contact card component that allows users to download a vCard (.vcf) file. Helps save contact details directly to the device contacts.</td>
+            </tr>
+            <tr>
+              <td><strong>Whatsapp</strong></td>
+              <td>A contact button that opens a WhatsApp chat window with a specified phone number. Ideal for instant chat interactions.</td>
+            </tr>
+            <tr>
+              <td><strong>Youtube channel</strong></td>
+              <td>A button that opens a specific YouTube channel or video link. Helps users discover video content.</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section class="section" id="container">
+        <h2>Container</h2>
+        <table class="doc-table">
+          <thead>
+            <tr>
+              <th>Label</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Container</strong></td>
+              <td>A layout container component used to group and arrange child elements. It supports flex configurations, backgrounds, padding, and borders.</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section class="section" id="dashboard">
+        <h2>Dashboard</h2>
+        <table class="doc-table">
+          <thead>
+            <tr>
+              <th>Label</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Chart</strong></td>
+              <td>A visual data representation component supporting line, bar, pie, and doughnut charts. Connects directly to database tables to visualize values dynamically.</td>
+            </tr>
+            <tr>
+              <td><strong>Progress</strong></td>
+              <td>A visual progress bar that displays completion percentages or ratios. Ideal for tracking tasks, goals, or loading states.</td>
+            </tr>
+            <tr>
+              <td><strong>Statistic</strong></td>
+              <td>A dashboard card designed to highlight key metrics, counts, or summary values. Supports big labels and descriptive metadata text.</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section class="section" id="form-fields">
+        <h2>Form-fields</h2>
+        <table class="doc-table">
+          <thead>
+            <tr>
+              <th>Label</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Capture audio</strong></td>
+              <td>An audio recorder component allowing users to capture sound directly from their device microphone. Useful for voice notes.</td>
+            </tr>
+            <tr>
+              <td><strong>Checkbox</strong></td>
+              <td>A standard checkbox input field for binary (yes/no) choices. Supports custom labels, default values, and change events.</td>
+            </tr>
+            <tr>
+              <td><strong>Choose options</strong></td>
+              <td>An input component displaying options as selectable chips or pills. Allows users to pick single or multiple options easily.</td>
+            </tr>
+            <tr>
+              <td><strong>Comment</strong></td>
+              <td>A text area input field designed specifically for writing comments. Includes placeholder options and action triggers.</td>
+            </tr>
+            <tr>
+              <td><strong>Date</strong></td>
+              <td>A date input field with a built-in calendar picker. Helps users select dates accurately with custom format configurations.</td>
+            </tr>
+            <tr>
+              <td><strong>Dropdown</strong></td>
+              <td>A selection dropdown menu input field. Ideal for selecting a single item from a long list of options.</td>
+            </tr>
+            <tr>
+              <td><strong>Email</strong></td>
+              <td>An email input field optimized for email addresses. Includes basic syntax validation and virtual keyboard type support.</td>
+            </tr>
+            <tr>
+              <td><strong>File</strong></td>
+              <td>A file uploader component allowing users to select and upload documents or assets. Supports file size limits and format constraints.</td>
+            </tr>
+            <tr>
+              <td><strong>Image</strong></td>
+              <td>An image uploader component supporting drag-and-drop or device camera capture. Ideal for profile pictures or attachment uploads.</td>
+            </tr>
+            <tr>
+              <td><strong>Message</strong></td>
+              <td>A text input field optimized for short messaging or chat messaging. Includes dynamic expansion and send action triggers.</td>
+            </tr>
+            <tr>
+              <td><strong>Number</strong></td>
+              <td>A numeric input field restricted to number inputs. Supports minimum, maximum, and step parameters.</td>
+            </tr>
+            <tr>
+              <td><strong>Password</strong></td>
+              <td>A secure text input field that masks characters. Useful for password entries, logins, and signup forms.</td>
+            </tr>
+            <tr>
+              <td><strong>Phone number</strong></td>
+              <td>A phone number input field. Formats input data and triggers appropriate virtual keyboards on mobile devices.</td>
+            </tr>
+            <tr>
+              <td><strong>Quantity</strong></td>
+              <td>A quantity picker input field with plus and minus buttons. Simplifies incrementing and decrementing numeric counts.</td>
+            </tr>
+            <tr>
+              <td><strong>Radio</strong></td>
+              <td>A group of radio buttons for mutually exclusive options. Allows users to select a single choice from a visible set of options.</td>
+            </tr>
+            <tr>
+              <td><strong>Rating</strong></td>
+              <td>A star-based rating component. Allows users to submit scores or feedback using interactive star ratings.</td>
+            </tr>
+            <tr>
+              <td><strong>Signature</strong></td>
+              <td>A canvas-based signature field allowing users to draw their signatures. Ideal for approval workflows and forms.</td>
+            </tr>
+            <tr>
+              <td><strong>Slider</strong></td>
+              <td>An interactive range slider input field. Allows selecting numeric values by sliding a thumb between minimum and maximum bounds.</td>
+            </tr>
+            <tr>
+              <td><strong>Switch</strong></td>
+              <td>A toggle switch input field representing a boolean state. A modern alternative to checkbox inputs for settings.</td>
+            </tr>
+            <tr>
+              <td><strong>Text</strong></td>
+              <td>A generic single-line text input field. The most common input type for names, titles, and general text entries.</td>
+            </tr>
+            <tr>
+              <td><strong>Time</strong></td>
+              <td>A time input field supporting hour and minute selections. Helps users schedule events or specify times accurately.</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section class="section" id="geolocation">
+        <h2>Geolocation</h2>
+        <table class="doc-table">
+          <thead>
+            <tr>
+              <th>Label</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Map</strong></td>
+              <td>An interactive map component that displays geographical data and user locations. Supports custom layers and zoom configurations.</td>
+            </tr>
+            <tr>
+              <td><strong>Marker</strong></td>
+              <td>A map pin/marker component used to pinpoint specific locations on a map layout. Supports popup descriptions and click actions.</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section class="section" id="lists">
+        <h2>Lists</h2>
+        <table class="doc-table">
+          <thead>
+            <tr>
+              <th>Label</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Calendar</strong></td>
+              <td>A calendar grid component that displays events, tasks, or schedules. Supports daily, weekly, or monthly layouts linked to data sources.</td>
+            </tr>
+            <tr>
+              <td><strong>Card</strong></td>
+              <td>A content card list item displaying titles, descriptions, and media. Perfect for list items, news previews, or product listings.</td>
+            </tr>
+            <tr>
+              <td><strong>Carousel</strong></td>
+              <td>A horizontal sliding container displaying a list of elements sequentially. Supports auto-play, navigation arrows, and paginators.</td>
+            </tr>
+            <tr>
+              <td><strong>Categories</strong></td>
+              <td>A category navigation list displaying items as circular icons or tags. Useful for filtering content or navigating catalog sections.</td>
+            </tr>
+            <tr>
+              <td><strong>Chat</strong></td>
+              <td>A dynamic chat thread component that displays messages with distinct sender and receiver styles. Connects to database tables for real-time messages.</td>
+            </tr>
+            <tr>
+              <td><strong>Comments</strong></td>
+              <td>A discussion list component designed to display user comments. Supports avatars, timestamps, and replying triggers.</td>
+            </tr>
+            <tr>
+              <td><strong>Gallery</strong></td>
+              <td>An image gallery layout component displaying photos in grid grids. Ideal for visual portfolios, albums, or media libraries.</td>
+            </tr>
+            <tr>
+              <td><strong>Grid</strong></td>
+              <td>A flexible grid list layout component displaying database items in columns and rows. Highly customizable layout style.</td>
+            </tr>
+            <tr>
+              <td><strong>List</strong></td>
+              <td>A standard vertical list layout component designed to display database items sequentially. Supports search, sort, and filter mappings.</td>
+            </tr>
+            <tr>
+              <td><strong>Masonry</strong></td>
+              <td>An uneven masonry grid layout component. Perfect for Pinterest-style content grids with varying item heights.</td>
+            </tr>
+            <tr>
+              <td><strong>Post</strong></td>
+              <td>A rich social post layout component displaying author profile details, text copy, images, and quick action buttons.</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section class="section" id="media">
+        <h2>Media</h2>
+        <table class="doc-table">
+          <thead>
+            <tr>
+              <th>Label</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Audio</strong></td>
+              <td>An audio player component that plays audio tracks or streaming content. Supports volume, progress controls, and play/pause buttons.</td>
+            </tr>
+            <tr>
+              <td><strong>Embed</strong></td>
+              <td>An iframe embedding component used to display external web content directly inside a page. Ideal for external forms or calculators.</td>
+            </tr>
+            <tr>
+              <td><strong>QR Code</strong></td>
+              <td>A component that dynamically generates and displays QR codes from text, URLs, or variable values. Perfect for sharing links.</td>
+            </tr>
+            <tr>
+              <td><strong>Video</strong></td>
+              <td>A native video player component that streams or plays video files. Supports standard media playback controls.</td>
+            </tr>
+            <tr>
+              <td><strong>Youtube video</strong></td>
+              <td>A component designed to embed YouTube videos cleanly. Supports standard playback parameters and player configurations.</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section class="section" id="payment">
+        <h2>Payment</h2>
+        <table class="doc-table">
+          <thead>
+            <tr>
+              <th>Label</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Cart</strong></td>
+              <td>A checkout cart component showing items, quantities, and price summaries. Essential for online shopping and order submission workflows.</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section class="section" id="tables">
+        <h2>Tables</h2>
+        <table class="doc-table">
+          <thead>
+            <tr>
+              <th>Label</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Table</strong></td>
+              <td>A standard data table component used to organize and display relational data in columns and rows. Supports column styling and sorting.</td>
+            </tr>
+            <tr>
+              <td><strong>Table editor</strong></td>
+              <td>A tabular data grid editor allowing users to directly insert, update, or delete rows. Ideal for backoffice management.</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section class="section" id="website">
+        <h2>Website</h2>
+        <table class="doc-table">
+          <thead>
+            <tr>
+              <th>Label</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Banner</strong></td>
+              <td>A hero banner header component for website pages. Supports background images, titles, action buttons, and promotional messages.</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+    </main>
+  </div>
+<script src="../assets/js/sidebar-shell.js"></script>
+</body>
+</html>
