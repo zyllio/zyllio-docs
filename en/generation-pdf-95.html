@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Zyllio Documentation - PDF Generation">
+  <title>Zyllio Documentation | PDF Generation</title>
+  <link rel="stylesheet" href="../assets/css/global.css">
+</head>
+<body>
+  <div class="page-shell">
+    <aside class="sidebar">
+      <docs-sidebar-shell></docs-sidebar-shell>
+    </aside>
+
+    <main class="main">
+      <header class="section hero" id="welcome">
+        <div class="hero-body">
+          <span class="kicker">Documentation</span>
+          <h1>PDF Generation</h1>
+          <p class="lead">Generate custom PDF documents like invoices, quotes, contracts, or certificates directly from your Zyllio application using Microsoft Word templates.</p>
+        </div>
+      </header>
+
+      <section class="section">
+        <p class="callout info">Available starting from the Enterprise plan.</p>
+        <p>Zyllio's Documents integration allows you to dynamically populate Microsoft Word (<code>.docx</code>) templates with variables from your application and compile them into high-quality PDF files instantly, with no coding required.</p>
+      </section>
+
+      <section class="section">
+        <h2>1. Enable the Documents Integration</h2>
+        <p>Before generating any documents, you need to turn on the integration in your application settings:</p>
+        <ol>
+          <li>Open your application in <strong>Zyllio Studio</strong>.</li>
+          <li>Navigate to the <strong>Settings</strong> tab in the main sidebar.</li>
+          <li>Click on <strong>Integrations</strong>.</li>
+          <li>Find the <strong>Documents</strong> card and toggle the <strong>Enable</strong> switch to the active position.</li>
+        </ol>
+        <figure class="visual">
+          <img src="../assets/images/generation-pdf-95-001.webp" alt="image.png">
+        </figure>
+      </section>
+
+      <section class="section">
+        <h2>2. Prepare your Word Template (.docx)</h2>
+        <p>You can design your template using Microsoft Word, Google Docs, or LibreOffice. Zyllio uses a simple expression language to map fields:</p>
+        
+        <h3>Simple Fields</h3>
+        <p>To print simple text, numbers, or dates (like a client name or invoice date), insert the field name enclosed in double curly braces:</p>
+        <p>Example: <code>{{Client Name}}</code> or <code>{{Date}}</code></p>
+        <p><em>Tip: Zyllio automatically normalizes your field names. Spaces, accents, and casing are ignored. For example, <code>{{Nom Client}}</code> and <code>{{nomclient}}</code> will both map to the same field.</em></p>
+
+        <h3>Tables & Lists (Loops)</h3>
+        <p>If you need to print a list of items (like invoice rows), you can create a loop. This tells Zyllio to repeat a section or a table row for every item in your list:</p>
+        <ul>
+          <li>Start the loop with: <code>{{#items}}</code></li>
+          <li>Define the fields for each item: <code>{{description}}</code>, <code>{{price}}</code></li>
+          <li>End the loop with: <code>{{/items}}</code></li>
+        </ul>
+        <p><strong>In a Word Table:</strong> Place the opening tag <code>{{#items}}</code> in the first cell of the row, and the closing tag <code>{{/items}}</code> in the last cell of the same row. Zyllio will automatically duplicate the row for each item.</p>
+
+        <h3>Filtering Items</h3>
+        <p>You can filter list items directly inside the template to display only specific entries:</p>
+        <ul>
+          <li><strong>Show only matching items:</strong> <code>{{#items[status=Paid]}}</code> only shows items where the status is "Paid".</li>
+          <li><strong>Exclude matching items:</strong> <code>{{#items[status!=Paid]}}</code> hides items where the status is "Paid".</li>
+        </ul>
+
+        <figure class="visual">
+          <img src="../assets/images/generation-pdf-95-002.webp" alt="image.png">
+        </figure>
+      </section>
+
+      <section class="section">
+        <h2>3. Upload your Template to a Database Table</h2>
+        <p>Since the Zyllio Assets manager is reserved exclusively for images, you must store your Microsoft Word templates (<code>.docx</code>) in a database table:</p>
+        <ol>
+          <li>In your application database, create a table (for example, named <code>Templates</code>).</li>
+          <li>Add a column of type <strong>File</strong> to this table.</li>
+          <li>Upload your <code>.docx</code> file into a row of this table.</li>
+        </ol>
+        <figure class="visual">
+          <img src="../assets/images/generation-pdf-95-003.webp" alt="image.png">
+        </figure>
+      </section>
+
+      <section class="section">
+        <h2>4. Configure the "Generate PDF" Action</h2>
+        <p>Now, set up the action that will trigger the document generation (for example, on a button click):</p>
+        <ol>
+          <li>Select your button or trigger element on the screen.</li>
+          <li>Open the <strong>Actions</strong> properties.</li>
+          <li>Add a new step and select <strong>Generate PDF</strong> (under the Documents category).</li>
+          <li>Configure the action properties:
+            <ul>
+              <li><strong>DOCX template URL:</strong> Bind this dynamically to the <strong>File</strong> column of the database record you uploaded in Step 3 (e.g., <code>Templates.File</code>). Zyllio will automatically resolve it to the absolute file URL.</li>
+              <li><strong>Data fields:</strong> Map the variable tags from your Word document to your Zyllio variables or database collections. Open the editor to configure fields using two dedicated buttons:
+                <ul>
+                  <li><strong>+ Field:</strong> Adds a single value mapping (text, number, date, etc.). Specify the variable name in your Word template as the key (e.g., <code>clientname</code>) and select a Zyllio screen variable or formula as the value.</li>
+                  <li><strong>+ List:</strong> Adds a list or table mapping. Specify the list/loop name in your Word template as the key (e.g., <code>items</code>) and bind it to a database table or collection.</li>
+                </ul>
+              </li>
+              <li><strong>PDF URL:</strong> Select or create a text variable (e.g., <code>InvoicePdfUrl</code>) where the URL of the generated PDF will be stored.</li>
+              <li><strong>Loader:</strong> Set to <code>True</code> to show a loading spinner on the user's screen while the PDF is being prepared.</li>
+            </ul>
+          </li>
+        </ol>
+
+        <h3>Data Fields Options Details</h3>
+        <p>The data property editor offers two distinct types of data rows to map your Word document variables:</p>
+        <ul>
+          <li>
+            <strong>The + Field button (Simple Values):</strong>
+            <p>Used to map simple placeholder values like <code>{{name}}</code> or <code>{{date}}</code> in your Word file. You can bind these keys to:</p>
+            <ul>
+              <li>Screen input variables (e.g., text fields entered by the user).</li>
+              <li>Dynamic formulas (e.g., tax calculations).</li>
+              <li>System properties (e.g., current logged-in user email).</li>
+              <li>Static hand-written texts.</li>
+            </ul>
+          </li>
+          <li>
+            <strong>The + List button (Tables and Loops):</strong>
+            <p>Used to bind structured repeating sections or tables using loop tags like <code>{{#items}}...{{/items}}</code>. You must bind this key to:</p>
+            <ul>
+              <li>A database table (e.g., the <code>InvoiceLines</code> table).</li>
+              <li>A filtered collection of records. Zyllio will automatically repeat the section or table row for each record.</li>
+            </ul>
+          </li>
+        </ul>
+
+        <figure class="visual">
+          <img src="../assets/images/generation-pdf-95-004.webp" alt="image.png">
+        </figure>
+      </section>
+
+      <section class="section">
+        <h2>5. Display, Download, or Store the Generated PDF</h2>
+        <p>Once Zyllio has generated the PDF and saved its URL into your variable, you can use it in three different ways in your application:</p>
+        
+        <h3>A. Display the PDF</h3>
+        <p>To render the document directly inside your application screen for review:</p>
+        <ol>
+          <li>Add a <strong>PDF Viewer</strong> component to your screen.</li>
+          <li>Bind its <strong>PDF URL</strong> property to the variable where you stored the generated URL (e.g., <code>InvoicePdfUrl</code>).</li>
+        </ol>
+
+        <h3>B. Download or Send the PDF</h3>
+        <p>To export or distribute the document:</p>
+        <ul>
+          <li>Attach the PDF URL variable to a download button or an "open URL in browser" action.</li>
+          <li>Send it as an email attachment using Zyllio's email send actions.</li>
+          <li>Forward the URL to external services using Zapier or Make actions.</li>
+        </ul>
+
+        <h3>C. Store the PDF in the Database</h3>
+        <p>To archive the generated file for history or reference:</p>
+        <ol>
+          <li>Add a <strong>Create Row</strong> or <strong>Update Row</strong> action in the flow immediately following the PDF generation step.</li>
+          <li>Select the target database table (e.g., <code>InvoicesHistory</code>).</li>
+          <li>Bind the table's <strong>File</strong> or <strong>URL</strong> column to the variable containing the generated PDF URL (e.g., <code>InvoicePdfUrl</code>). The file will be saved permanently.</li>
+        </ol>
+
+        <figure class="visual">
+          <img src="../assets/images/generation-pdf-95-005.webp" alt="image.png">
+        </figure>
+      </section>
+    </main>
+  </div>
+<script src="../assets/js/sidebar-shell.js"></script>
+</body>
+</html>

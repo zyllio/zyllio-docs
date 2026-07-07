@@ -33,7 +33,8 @@
     "monetiser-vos-apps-saas-89",
     "parametres-dapplication-91",
     "faq-86",
-    "generation-de-composants-ia-92"
+    "generation-de-composants-ia-92",
+    "generation-pdf-95"
   ];
 
   var EN_SLUGS = [
@@ -70,7 +71,8 @@
     "monetize-saas-apps-89",
     "application-settings-91",
     "faq-86",
-    "ai-component-generation-92"
+    "ai-component-generation-92",
+    "generation-pdf-95"
   ];
 
   function slugToId(slug) {

@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Documentation Zyllio - Génération PDF">
+  <title>Documentation Zyllio | Génération PDF</title>
+  <link rel="stylesheet" href="../assets/css/global.css">
+</head>
+<body>
+  <div class="page-shell">
+    <aside class="sidebar">
+      <docs-sidebar-shell></docs-sidebar-shell>
+    </aside>
+
+    <main class="main">
+      <header class="section hero" id="welcome">
+        <div class="hero-body">
+          <span class="kicker">Documentation</span>
+          <h1>Génération PDF</h1>
+          <p class="lead">Générez des documents PDF personnalisés (factures, devis, contrats, attestations) directement depuis votre application Zyllio à l'aide de modèles Microsoft Word.</p>
+        </div>
+      </header>
+
+      <section class="section">
+        <p class="callout info">Disponible à partir du plan Enterprise.</p>
+        <p>L'intégration Documents de Zyllio vous permet de fusionner de manière dynamique des modèles Microsoft Word (<code>.docx</code>) avec les données de votre application et de les compiler instantanément en fichiers PDF professionnels, sans aucune ligne de code.</p>
+      </section>
+
+      <section class="section">
+        <h2>1. Activer l'intégration Documents</h2>
+        <p>Avant de pouvoir générer des documents, vous devez activer l'intégration dans les paramètres de votre application :</p>
+        <ol>
+          <li>Ouvrez votre application dans <strong>Zyllio Studio</strong>.</li>
+          <li>Rendez-vous dans l'onglet <strong>Settings</strong> (Paramètres) du menu principal.</li>
+          <li>Cliquez sur <strong>Intégrations</strong>.</li>
+          <li>Repérez la carte <strong>Documents</strong> et basculez l'interrupteur sur <strong>Enable</strong> (Activer).</li>
+        </ol>
+        <figure class="visual">
+          <img src="../assets/images/generation-pdf-95-001.webp" alt="image.png">
+        </figure>
+      </section>
+
+      <section class="section">
+        <h2>2. Préparer votre modèle Word (.docx)</h2>
+        <p>Vous pouvez concevoir votre modèle dans Microsoft Word, Google Docs ou LibreOffice. Zyllio utilise un système simple de balises pour insérer les données :</p>
+        
+        <h3>Champs simples</h3>
+        <p>Pour afficher un texte, un montant ou une date (par exemple, le nom du client ou la date de facturation), insérez le nom du champ entre doubles accolades :</p>
+        <p>Exemple : <code>{{Nom du Client}}</code> ou <code>{{Date}}</code></p>
+        <p><em>Conseil : Zyllio normalise automatiquement les noms des champs. Les espaces, les accents et la casse sont ignorés. Ainsi, <code>{{Nom Client}}</code> et <code>{{nomclient}}</code> feront référence à la même variable.</em></p>
+
+        <h3>Tableaux & Listes (Boucles)</h3>
+        <p>Si vous devez afficher une liste d'éléments (comme les lignes d'une facture), vous pouvez créer une boucle. Cela demande à Zyllio de répéter une section ou une ligne de tableau pour chaque élément :</p>
+        <ul>
+          <li>Débutez la boucle avec : <code>{{#items}}</code></li>
+          <li>Définissez les champs de chaque élément : <code>{{description}}</code>, <code>{{price}}</code></li>
+          <li>Terminez la boucle avec : <code>{{/items}}</code></li>
+        </ul>
+        <p><strong>Dans un tableau Word :</strong> Placez la balise d'ouverture <code>{{#items}}</code> dans la première cellule de la ligne, et la balise de fermeture <code>{{/items}}</code> dans la dernière cellule de cette même ligne. Zyllio dupliquera automatiquement la ligne pour chaque élément.</p>
+
+        <h3>Filtrer les éléments</h3>
+        <p>Vous pouvez filtrer directement les éléments d'une liste dans votre modèle Word pour n'afficher que certains d'entre eux :</p>
+        <ul>
+          <li><strong>Afficher uniquement les éléments correspondants :</strong> <code>{{#items[status=Paye]}}</code> affiche uniquement les éléments dont le statut est "Paye".</li>
+          <li><strong>Exclure les éléments correspondants :</strong> <code>{{#items[status!=Paye]}}</code> masque les éléments dont le statut est "Paye".</li>
+        </ul>
+
+        <figure class="visual">
+          <img src="../assets/images/generation-pdf-95-002.webp" alt="image.png">
+        </figure>
+      </section>
+
+      <section class="section">
+        <h2>3. Importer votre modèle dans une table de données</h2>
+        <p>Le gestionnaire d'Assets de Zyllio étant exclusivement réservé aux images, vous devez stocker vos modèles Microsoft Word (<code>.docx</code>) dans une table de votre base de données :</p>
+        <ol>
+          <li>Dans la base de données de votre application, créez une table (par exemple, nommée <code>Modèles</code>).</li>
+          <li>Ajoutez une colonne de type <strong>Fichier</strong> à cette table.</li>
+          <li>Téléversez votre fichier <code>.docx</code> dans une ligne de cette table.</li>
+        </ol>
+        <figure class="visual">
+          <img src="../assets/images/generation-pdf-95-003.webp" alt="image.png">
+        </figure>
+      </section>
+
+      <section class="section">
+        <h2>4. Configurer l'action "Générer PDF"</h2>
+        <p>Associez maintenant la génération du document à un événement (par exemple, le clic sur un bouton) :</p>
+        <ol>
+          <li>Sélectionnez le bouton ou l'élément déclencheur sur votre écran.</li>
+          <li>Ouvrez ses propriétés d'<strong>Actions</strong>.</li>
+          <li>Ajoutez une étape et choisissez l'action <strong>Générer PDF</strong> (dans la catégorie Documents).</li>
+          <li>Configurez les propriétés de l'action :
+            <ul>
+              <li><strong>URL modèle DOCX :</strong> Liez cette propriété dynamiquement à la colonne <strong>Fichier</strong> de la table contenant votre modèle (ex: <code>Modèles.Fichier</code>). Zyllio résoudra automatiquement le chemin vers l'URL absolue du fichier.</li>
+              <li><strong>Données structurées :</strong> Associez les variables de votre modèle Word aux variables de votre écran ou à vos collections de base de données. Ouvrez l'éditeur pour configurer vos données à l'aide de deux boutons dédiés :
+                <ul>
+                  <li><strong>+ Champ :</strong> Ajoute une valeur simple (texte, nombre, date, etc.). Indiquez la variable de votre document Word comme clé (ex: <code>nomclient</code>) et liez-la à une variable d'écran ou formule Zyllio.</li>
+                  <li><strong>+ Liste :</strong> Ajoute un tableau ou une liste. Indiquez le nom de la boucle de votre document Word comme clé (ex: <code>items</code>) et liez-la à une table de base de données ou collection.</li>
+                </ul>
+              </li>
+              <li><strong>URL PDF :</strong> Sélectionnez ou créez une variable de texte (ex: <code>FacturePdfUrl</code>) dans laquelle sera enregistrée l'URL du PDF généré.</li>
+              <li><strong>Animation chargement :</strong> Activez cette option (True) pour afficher un indicateur de chargement à l'écran de l'utilisateur pendant la génération du PDF.</li>
+            </ul>
+          </li>
+        </ol>
+
+        <h3>Détails des options pour les Données structurées</h3>
+        <p>L'éditeur de données vous propose deux types de champs distincts pour alimenter votre document Word :</p>
+        <ul>
+          <li>
+            <strong>Le bouton + Champ (Valeurs simples) :</strong>
+            <p>Utilisé pour remplacer les balises simples comme <code>{{nom}}</code> ou <code>{{date}}</code> dans votre document Word. Vous pouvez mapper ces clés à :</p>
+            <ul>
+              <li>Des variables d'écran (ex: saisies de l'utilisateur).</li>
+              <li>Des formules dynamiques (ex: calculs de taxes).</li>
+              <li>Des informations système (ex: e-mail de l'utilisateur connecté).</li>
+              <li>Des textes statiques écrits manuellement.</li>
+            </ul>
+          </li>
+          <li>
+            <strong>Le bouton + Liste (Tableaux et Boucles) :</strong>
+            <p>Utilisé pour alimenter des structures répétitives comme des tableaux de factures avec des balises de boucles <code>{{#items}}...{{/items}}</code>. Vous devez lier cette clé à :</p>
+            <ul>
+              <li>Une table de votre base de données (ex: la table <code>LignesFacture</code>).</li>
+              <li>Une collection filtrée d'enregistrements. Zyllio générera automatiquement autant de lignes de tableau ou de blocs de texte qu'il y a d'enregistrements correspondants.</li>
+            </ul>
+          </li>
+        </ul>
+
+        <figure class="visual">
+          <img src="../assets/images/generation-pdf-95-004.webp" alt="image.png">
+        </figure>
+      </section>
+
+      <section class="section">
+        <h2>5. Afficher, télécharger ou stocker le PDF généré</h2>
+        <p>Une fois le PDF généré et son URL enregistrée dans votre variable, vous pouvez l'utiliser de trois manières différentes dans votre application :</p>
+        
+        <h3>A. Afficher le PDF</h3>
+        <p>Pour afficher le document directement dans votre application pour consultation :</p>
+        <ol>
+          <li>Ajoutez le composant <strong>Lecteur PDF</strong> sur votre écran.</li>
+          <li>Liez sa propriété <strong>URL du PDF</strong> à la variable contenant l'URL générée (ex: <code>FacturePdfUrl</code>).</li>
+        </ol>
+
+        <h3>B. Télécharger ou envoyer le PDF</h3>
+        <p>Pour distribuer ou exporter le document :</p>
+        <ul>
+          <li>Associez la variable contenant l'URL du PDF à un bouton de téléchargement ou d'ouverture de lien dans le navigateur.</li>
+          <li>Envoyez-le par e-mail en pièce jointe via l'action d'envoi d'e-mails Zyllio.</li>
+          <li>Transmettez l'URL à des plateformes tierces via les actions Zapier ou Make.</li>
+        </ul>
+
+        <h3>C. Stocker le PDF dans la base de données</h3>
+        <p>Pour archiver ou sauvegarder le document généré dans votre historique :</p>
+        <ol>
+          <li>Ajoutez une action <strong>Créer une ligne</strong> (Create Row) ou <strong>Mettre à jour une ligne</strong> (Update Row) après l'étape de génération du PDF.</li>
+          <li>Sélectionnez la table cible (ex: <code>HistoriqueFactures</code>).</li>
+          <li>Associez la colonne de type <strong>Fichier</strong> ou <strong>URL</strong> de cette table à la variable contenant l'URL du PDF généré (ex: <code>FacturePdfUrl</code>). Le PDF y sera définitivement enregistré.</li>
+        </ol>
+
+        <figure class="visual">
+          <img src="../assets/images/generation-pdf-95-005.webp" alt="image.png">
+        </figure>
+      </section>
+    </main>
+  </div>
+<script src="../assets/js/sidebar-shell.js"></script>
+</body>
+</html>

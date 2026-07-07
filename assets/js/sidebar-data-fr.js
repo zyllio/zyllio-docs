@@ -34,7 +34,8 @@
       { slug: "favoris-follower-like-73", label: "❤️ Favoris / Follower / Like" },
       { slug: "transferer-une-application-82", label: "🔁 Transférer une application" },
       { slug: "xano-83", label: "🧱 Xano" },
-      { slug: "traductions-85", label: "🌍 Traductions" }
+      { slug: "traductions-85", label: "🌍 Traductions" },
+      { slug: "generation-pdf-95", label: "📄 Génération PDF" }
     ],
     tailItems: [
       { slug: "api-saas-87", label: "🧩 API SAAS" },
