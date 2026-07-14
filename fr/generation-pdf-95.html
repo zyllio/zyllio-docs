@@ -66,6 +66,16 @@
           <li><strong>Exclure les éléments correspondants :</strong> <code>{{#items[status!=Paye]}}</code> masque les éléments dont le statut est "Paye".</li>
         </ul>
 
+        <h3>Images</h3>
+        <p>Vous pouvez afficher une image publique stockée dans un champ image en utilisant une balise image dans votre modèle Word. Le nom dans la balise doit correspondre au vrai nom de votre champ ou colonne, par exemple <code>{{%image}}</code> ou <code>{{%photo}}</code> :</p>
+        <ul>
+          <li><strong>Taille par défaut :</strong> <code>{{%NomDuChamp}}</code> par exemple <code>{{%image}}</code> ou <code>{{%photo}}</code></li>
+          <li><strong>Taille personnalisée :</strong> <code>{{%NomDuChamp:50}}</code> par exemple <code>{{%image:50}}</code> ou <code>{{%photo:50}}</code></li>
+        </ul>
+        <p>Le nombre correspond actuellement à une taille carrée en pixels. Par exemple, <code>{{%image:50}}</code> génère une image de 50x50 pixels.</p>
+        <p><strong>Dans une boucle :</strong> placez la balise image dans la ligne ou le bloc répété, par exemple <code>{{#produits}} {{nom}} {{%image:50}} {{/produits}}</code>.</p>
+        <p><strong>Important :</strong> utilisez une balise texte dans le document Word. Le remplacement d'une image factice existante via le texte alternatif n'est pas pris en charge actuellement.</p>
+
         <figure class="visual">
           <img src="../assets/images/generation-pdf-95-002.webp" alt="image.png">
         </figure>

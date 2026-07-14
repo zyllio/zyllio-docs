@@ -66,6 +66,16 @@
           <li><strong>Exclude matching items:</strong> <code>{{#items[status!=Paid]}}</code> hides items where the status is "Paid".</li>
         </ul>
 
+        <h3>Images</h3>
+        <p>You can display a public image stored in an image field by using an image tag in your Word template. The tag name must match your real field or column name, for example <code>{{%image}}</code> or <code>{{%photo}}</code>:</p>
+        <ul>
+          <li><strong>Default size:</strong> <code>{{%FieldName}}</code> for example <code>{{%image}}</code> or <code>{{%photo}}</code></li>
+          <li><strong>Custom size:</strong> <code>{{%FieldName:50}}</code> for example <code>{{%image:50}}</code> or <code>{{%photo:50}}</code></li>
+        </ul>
+        <p>The number currently represents a square size in pixels. For example, <code>{{%image:50}}</code> generates a 50x50 image.</p>
+        <p><strong>Inside a loop:</strong> place the image tag in the repeated row or block, for example <code>{{#products}} {{name}} {{%image:50}} {{/products}}</code>.</p>
+        <p><strong>Important:</strong> use a text tag directly in the Word document. Replacing an existing dummy image through alt text is not currently supported.</p>
+
         <figure class="visual">
           <img src="../assets/images/generation-pdf-95-002.webp" alt="image.png">
         </figure>
