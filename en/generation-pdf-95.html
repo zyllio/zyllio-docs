@@ -54,10 +54,27 @@
         <p>If you need to print a list of items (like invoice rows), you can create a loop. This tells Zyllio to repeat a section or a table row for every item in your list:</p>
         <ul>
           <li>Start the loop with: <code>{{#items}}</code></li>
-          <li>Define the fields for each item: <code>{{description}}</code>, <code>{{price}}</code></li>
+          <li>Define the fields for each item: <code>{{description}}</code>, <code>{{quantity}}</code>, <code>{{price}}</code></li>
           <li>End the loop with: <code>{{/items}}</code></li>
         </ul>
         <p><strong>In a Word Table:</strong> Place the opening tag <code>{{#items}}</code> in the first cell of the row, and the closing tag <code>{{/items}}</code> in the last cell of the same row. Zyllio will automatically duplicate the row for each item.</p>
+        <p>Example in a Word table:</p>
+        <table class="doc-table">
+          <thead>
+            <tr>
+              <th>Description</th>
+              <th>Quantity</th>
+              <th>Price</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>{{#items}}{{description}}</code></td>
+              <td><code>{{quantity}}</code></td>
+              <td><code>{{price}}{{/items}}</code></td>
+            </tr>
+          </tbody>
+        </table>
 
         <h3>Filtering Items</h3>
         <p>You can filter list items directly inside the template to display only specific entries:</p>

@@ -54,10 +54,27 @@
         <p>Si vous devez afficher une liste d'éléments (comme les lignes d'une facture), vous pouvez créer une boucle. Cela demande à Zyllio de répéter une section ou une ligne de tableau pour chaque élément :</p>
         <ul>
           <li>Débutez la boucle avec : <code>{{#items}}</code></li>
-          <li>Définissez les champs de chaque élément : <code>{{description}}</code>, <code>{{price}}</code></li>
+          <li>Définissez les champs de chaque élément : <code>{{description}}</code>, <code>{{quantite}}</code>, <code>{{prix}}</code></li>
           <li>Terminez la boucle avec : <code>{{/items}}</code></li>
         </ul>
         <p><strong>Dans un tableau Word :</strong> Placez la balise d'ouverture <code>{{#items}}</code> dans la première cellule de la ligne, et la balise de fermeture <code>{{/items}}</code> dans la dernière cellule de cette même ligne. Zyllio dupliquera automatiquement la ligne pour chaque élément.</p>
+        <p>Exemple dans un tableau Word :</p>
+        <table class="doc-table">
+          <thead>
+            <tr>
+              <th>Description</th>
+              <th>Quantité</th>
+              <th>Prix</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>{{#items}}{{description}}</code></td>
+              <td><code>{{quantite}}</code></td>
+              <td><code>{{prix}}{{/items}}</code></td>
+            </tr>
+          </tbody>
+        </table>
 
         <h3>Filtrer les éléments</h3>
         <p>Vous pouvez filtrer directement les éléments d'une liste dans votre modèle Word pour n'afficher que certains d'entre eux :</p>
