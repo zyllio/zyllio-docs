@@ -83,6 +83,14 @@
           <li><strong>Exclude matching items:</strong> <code>{{#items[status!=Paid]}}</code> hides items where the status is "Paid".</li>
         </ul>
 
+        <h3>Filtering with a Variable</h3>
+        <p>The comparison value can also come from a document variable. Use the <strong><code>var(variableName)</code></strong> syntax inside the filter:</p>
+        <ul>
+          <li><strong>Show items matching a variable:</strong> <code>{{#items[status=var(statusFilter)]}}</code> shows items where the status matches the value of <code>{{statusFilter}}</code>.</li>
+          <li><strong>Exclude items matching a variable:</strong> <code>{{#items[status!=var(statusFilter)]}}</code> hides items where the status matches the value of <code>{{statusFilter}}</code>.</li>
+        </ul>
+        <p>Example: if the <code>{{statusFilter}}</code> variable is <code>Paid</code>, then <code>{{#items[status=var(statusFilter)]}}</code> only shows rows where the status is <code>Paid</code>.</p>
+
         <h3>Images</h3>
         <p>You can display a public image stored in an image field by using an image tag in your Word template. The tag name must match your real field or column name, for example <code>{{%image}}</code> or <code>{{%photo}}</code>:</p>
         <ul>
