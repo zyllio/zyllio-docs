@@ -79,18 +79,68 @@
         <h3>Filtrer les éléments</h3>
         <p>Vous pouvez filtrer directement les éléments d'une liste dans votre modèle Word pour n'afficher que certains d'entre eux :</p>
         <ul>
-          <li><strong>Afficher uniquement les éléments correspondants :</strong> <code>{{#items[status=Paye]}}</code> affiche uniquement les éléments dont le statut est "Paye".</li>
-          <li><strong>Exclure les éléments correspondants :</strong> <code>{{#items[status!=Paye]}}</code> masque les éléments dont le statut est "Paye".</li>
+          <li><strong>Afficher uniquement les éléments correspondants :</strong> <code>{{#items[status=Paye]}}...{{/items[status=Paye]}}</code> affiche uniquement les éléments dont le statut est "Paye".</li>
+          <li><strong>Exclure les éléments correspondants :</strong> <code>{{#items[status!=Paye]}}...{{/items[status!=Paye]}}</code> masque les éléments dont le statut est "Paye".</li>
         </ul>
+        <p>Exemple pour afficher uniquement les éléments correspondants dans un tableau Word :</p>
+        <table class="doc-table">
+          <thead>
+            <tr>
+              <th>Description</th>
+              <th>Quantité</th>
+              <th>Prix</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>{{#items[status=Paye]}}{{description}}</code></td>
+              <td><code>{{quantite}}</code></td>
+              <td><code>{{prix}}{{/items[status=Paye]}}</code></td>
+            </tr>
+          </tbody>
+        </table>
+        <p>Exemple pour exclure les éléments correspondants dans un tableau Word :</p>
+        <table class="doc-table">
+          <thead>
+            <tr>
+              <th>Description</th>
+              <th>Quantité</th>
+              <th>Prix</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>{{#items[status!=Paye]}}{{description}}</code></td>
+              <td><code>{{quantite}}</code></td>
+              <td><code>{{prix}}{{/items[status!=Paye]}}</code></td>
+            </tr>
+          </tbody>
+        </table>
 
         <h3>Filtrer avec une variable</h3>
         <p>La valeur de comparaison peut aussi venir d'une variable de votre document. Utilisez la syntaxe <strong><code>var(nomVariable)</code></strong> dans le filtre :</p>
         <ul>
-          <li><strong>Afficher les éléments qui correspondent à une variable :</strong> <code>{{#items[status=var(statutRecherche)]}}</code> affiche les éléments dont le statut correspond à la valeur de <code>{{statutRecherche}}</code>.</li>
-          <li><strong>Exclure les éléments qui correspondent à une variable :</strong> <code>{{#items[status!=var(statutRecherche)]}}</code> masque les éléments dont le statut correspond à la valeur de <code>{{statutRecherche}}</code>.</li>
+          <li><strong>Afficher les éléments qui correspondent à une variable :</strong> <code>{{#items[status=var(statutRecherche)]}}...{{/items[status=var(statutRecherche)]}}</code> affiche les éléments dont le statut correspond à la valeur de <code>{{statutRecherche}}</code>.</li>
+          <li><strong>Exclure les éléments qui correspondent à une variable :</strong> <code>{{#items[status!=var(statutRecherche)]}}...{{/items[status!=var(statutRecherche)]}}</code> masque les éléments dont le statut correspond à la valeur de <code>{{statutRecherche}}</code>.</li>
         </ul>
-        <p>Exemple : si la variable <code>{{statutRecherche}}</code> vaut <code>Paye</code>, alors <code>{{#items[status=var(statutRecherche)]}}</code> affiche uniquement les lignes dont le statut est <code>Paye</code>.</p>
-
+        <p>Exemple : si la variable <code>{{statutRecherche}}</code> vaut <code>Paye</code>, alors <code>{{#items[status=var(statutRecherche)]}}...{{/items[status=var(statutRecherche)]}}</code> affiche uniquement les lignes dont le statut est <code>Paye</code>.</p>
+        <p>Exemple pour afficher les éléments qui correspondent à une variable dans un tableau Word :</p>
+        <table class="doc-table">
+          <thead>
+            <tr>
+              <th>Description</th>
+              <th>Quantité</th>
+              <th>Prix</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>{{#items[status=var(statutRecherche)]}}{{description}}</code></td>
+              <td><code>{{quantite}}</code></td>
+              <td><code>{{prix}}{{/items[status=var(statutRecherche)]}}</code></td>
+            </tr>
+          </tbody>
+        </table>
         <h3>Images</h3>
         <p>Vous pouvez afficher une image publique stockée dans un champ image en utilisant une balise image dans votre modèle Word. Le nom dans la balise doit correspondre au vrai nom de votre champ ou colonne, par exemple <code>{{%image}}</code> ou <code>{{%photo}}</code> :</p>
         <ul>
