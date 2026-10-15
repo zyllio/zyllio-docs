@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Zyllio Documentation - Custom domain">
+  <meta name="description" content="Zyllio Documentation - Configure a custom domain">
   <title>Zyllio Documentation | Custom domain</title>
   <link rel="stylesheet" href="../assets/css/global.css">
 </head>
@@ -18,68 +18,40 @@
         <div class="hero-body">
           <span class="kicker">Documentation</span>
           <h1>Custom domain</h1>
-          <p class="lead">You have the option to set a custom domain so that your users can access your Zyllio application via a personalized URL, such as www.my-app.com.</p>
+          <p class="lead">Publish your Zyllio application using your own domain name, such as www.my-app.com.</p>
         </div>
       </header>
 
       <section class="section">
-        <p class="callout info">Available from the Professional plan.</p>
-        <p>This guide explains how to configure your own custom domain for your Zyllio mobile application.</p>
+        <p class="callout info">Available with the Professional plan.</p>
+        <p>This integration lets you associate a domain name with your Zyllio application, then activate it with an SSL certificate.</p>
 
-        <h2>Activating the Custom Domain</h2>
-        <p>From the Zyllio interface, go to Settings, then access the Custom Domain section.</p>
-        <p>Enable the option by toggling the Enable button.</p>
+        <h2>Enable the custom domain</h2>
+        <p>In Zyllio, open your application settings, then the Custom domain section.</p>
+        <p>Enable the integration using the toggle at the top of the page.</p>
 
-        <h2>Entering Your Custom Domain</h2>
-        <p>In the Domain field, enter the domain you wish to associate with your application.</p>
-        <p>For example: www.my-app.com.</p>
-        <p>Make sure you have purchased the domain and have control over it through a domain provider (e.g., OVH, GoDaddy, etc.).</p>
+        <h2>1. Enter your domain</h2>
+        <p>In the Domain name field, enter the address you want to use, for example www.my-app.com.</p>
+        <p>You can enter the domain with or without https://. Zyllio automatically removes the protocol and any path so that only the domain name is retained.</p>
+        <p>The domain must be valid and include at least one subdomain and a top-level domain. Make sure you have purchased it and can modify its DNS records through your domain provider, such as OVH, Gandi, or Namecheap.</p>
       </section>
 
       <section class="section">
-        <h2>Requesting DNS Configuration</h2>
-        <p>Once you have entered your domain, click on the Request DNS configuration button.</p>
-        <p>After your request is submitted, the Zyllio team will process your request within 24 hours.</p>
-        <p>You will receive an email containing the DNS settings to enter in the admin interface of your domain provider. These settings may include CNAME or A records, depending on the specific configuration.</p>
+        <h2>2. Generate the DNS configuration</h2>
+        <p>Click Configure. Zyllio immediately generates the DNS settings required for your domain.</p>
+        <p>The page displays a single DNS record with its type, host, and value. Depending on your domain, this is either an A or CNAME record.</p>
 
-        <h2>Configuring Your DNS</h2>
-        <p>Log in to the admin interface of your domain provider.</p>
-        <p>Add the DNS settings provided by Zyllio in the section dedicated to DNS records.</p>
-        <table class="doc-table">
-          <thead>
-            <tr>
-              <th>Type</th>
-              <th>Name</th>
-              <th>Value</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>A</td>
-              <td></td>
-              <td>216.239.38.21</td>
-            </tr>
-            <tr>
-              <td>AAAA</td>
-              <td></td>
-              <td>2001:4860:4802:38::15</td>
-            </tr>
-            <tr>
-              <td>CNAME</td>
-              <td>www</td>
-              <td>ghs.googlehosted.com.</td>
-            </tr>
-            <tr>
-              <td>CNAME</td>
-              <td>&lt;provided par email&gt;</td>
-              <td>&lt;provided par email&gt;</td>
-            </tr>
-          </tbody>
-        </table>
+        <h2>3. Add the DNS record</h2>
+        <p>Sign in to your domain provider's administration interface, then open its DNS record management page.</p>
+        <p>Add the record displayed by Zyllio, using its exact type, host, and value. Do not replace these values with a generic configuration.</p>
 
-        <h2>DNS Propagation and Domain Access</h2>
-        <p>Once the DNS records are configured, propagation may take up to 24-48 hours.</p>
-        <p>After propagation is complete, your users will be able to access your application via your custom domain, for example: www.my-app.com.</p>
+        <h2>4. Check DNS propagation</h2>
+        <p>After saving the change with your provider, return to Zyllio and click Check propagation.</p>
+        <p>DNS propagation can take from 5 minutes to 24 hours. If the check fails, wait a few minutes and try again. Also check that the type, host, and value of the record exactly match those displayed in Zyllio.</p>
+
+        <h2>5. Activate the secure domain</h2>
+        <p>When the check succeeds, click Activate secure domain.</p>
+        <p>Zyllio then generates the SSL certificate and deploys your application on your domain over HTTPS. Once activation is complete, your users can access the application at the configured address.</p>
       </section>
     </main>
   </div>

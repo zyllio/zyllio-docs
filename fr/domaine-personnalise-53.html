@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Documentation Zyllio - Domaine Personnalise">
-  <title>Documentation Zyllio | Domaine Personnalise</title>
+  <meta name="description" content="Documentation Zyllio - Configurer un domaine personnalisé">
+  <title>Documentation Zyllio | Domaine personnalisé</title>
   <link rel="stylesheet" href="../assets/css/global.css">
 </head>
 <body>
@@ -17,69 +17,41 @@
       <header class="section hero" id="welcome">
         <div class="hero-body">
           <span class="kicker">Documentation</span>
-          <h1>Domaine personnalise</h1>
-          <p class="lead">Vous avez la possibilite de definir un domaine personnalise pour que vos utilisateurs puissent acceder a votre application Zyllio via une URL personnalise, comme par exemple : www.mon-app.com.</p>
+          <h1>Domaine personnalisé</h1>
+          <p class="lead">Publiez votre application Zyllio avec votre propre nom de domaine, par exemple www.mon-app.com.</p>
         </div>
       </header>
 
       <section class="section">
-        <p class="callout info">Disponible depuis le plan Professional.</p>
-        <p>Ce guide vous explique comment configurer votre propre domaine personnalise pour votre application Zyllio.</p>
+        <p class="callout info">Disponible avec le plan Professionnel.</p>
+        <p>Cette intégration vous permet d’associer un nom de domaine à votre application Zyllio, puis de l’activer avec un certificat SSL.</p>
 
-        <h2>Activer le domaine personnalise</h2>
-        <p>Depuis l'interface Zyllio, puis Settings, accedez a la section Custom Domain (Domaine personnalise).</p>
-        <p>Activez l'option en basculant le bouton Enable.</p>
+        <h2>Activer le domaine personnalisé</h2>
+        <p>Dans Zyllio, ouvrez les paramètres de votre application, puis la section Domaine personnalisé.</p>
+        <p>Activez l’intégration à l’aide de l’interrupteur situé en haut de la page.</p>
 
-        <h2>Renseigner votre domaine personnalise</h2>
-        <p>Dans le champ Domaine, saisissez le domaine que vous souhaitez associer a votre application.</p>
-        <p>Par exemple : www.mon-app.com.</p>
-        <p>Assurez-vous d'avoir achete le domaine et d'en avoir le controle via un fournisseur de domaine (ex: OVH, GoDaddy, etc.).</p>
+        <h2>1. Saisir votre domaine</h2>
+        <p>Dans le champ Nom de domaine, saisissez l’adresse que vous souhaitez utiliser, par exemple www.mon-app.com.</p>
+        <p>Vous pouvez saisir le domaine avec ou sans https://. Zyllio supprime automatiquement le protocole et tout chemin éventuel afin de ne conserver que le nom de domaine.</p>
+        <p>Le domaine doit être valide, comporter au moins un sous-domaine et une extension. Assurez-vous de l’avoir acheté et de pouvoir modifier ses enregistrements DNS auprès de votre fournisseur de domaine, par exemple OVH, Gandi ou Namecheap.</p>
       </section>
 
       <section class="section">
-        <h2>Demander la configuration DNS</h2>
-        <p>Une fois que vous avez renseigne votre domaine, cliquez sur le bouton Request DNS configuration.</p>
-        <p>Une fois votre demande soumise, l'equipe Zyllio traitera votre demande dans un delai de 24 heures.</p>
-        <p>Vous recevrez un e-mail contenant les parametres DNS a saisir dans l'interface d'administration de votre fournisseur de domaine. Ces parametres peuvent inclure des enregistrements de type CNAME ou A, selon la configuration specifique.</p>
+        <h2>2. Générer la configuration DNS</h2>
+        <p>Cliquez sur Configurer. Zyllio génère immédiatement les paramètres DNS nécessaires à votre domaine.</p>
+        <p>La page affiche un seul enregistrement DNS avec son type, son hôte et sa valeur. Selon votre domaine, il s’agit d’un enregistrement de type A ou CNAME.</p>
 
-        <h2>Configurer votre DNS</h2>
-        <p>Connectez-vous a l'interface d'administration de votre fournisseur de domaine.</p>
-        <p>Ajoutez les parametres DNS fournis par Zyllio dans la section dediee aux enregistrements DNS.</p>
-        <table class="doc-table">
-          <thead>
-            <tr>
-              <th>Type</th>
-              <th>Name</th>
-              <th>Value</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>A</td>
-              <td></td>
-              <td>216.239.38.21</td>
-            </tr>
-            <tr>
-              <td>AAAA</td>
-              <td></td>
-              <td>2001:4860:4802:38::15</td>
-            </tr>
-            <tr>
-              <td>CNAME</td>
-              <td>www</td>
-              <td>ghs.googlehosted.com.</td>
-            </tr>
-            <tr>
-              <td>CNAME</td>
-              <td>&lt;fourni par email&gt;</td>
-              <td>&lt;fourni par email&gt;</td>
-            </tr>
-          </tbody>
-        </table>
+        <h2>3. Ajouter l’enregistrement DNS</h2>
+        <p>Connectez-vous à l’interface d’administration de votre fournisseur de domaine, puis ouvrez la gestion des enregistrements DNS.</p>
+        <p>Ajoutez l’enregistrement affiché par Zyllio en reprenant exactement son type, son hôte et sa valeur. Ne remplacez pas ces valeurs par une configuration générique.</p>
 
-        <h2>Propagation DNS et acces au domaine</h2>
-        <p>Une fois les enregistrements DNS configures, la propagation peut prendre jusqu'a 24-48 heures.</p>
-        <p>Une fois la propagation terminee, vos utilisateurs pourront acceder a votre application via votre domaine personnalise, par exemple : www.mon-app.com.</p>
+        <h2>4. Vérifier la propagation DNS</h2>
+        <p>Après avoir enregistré la modification chez votre fournisseur, revenez dans Zyllio et cliquez sur Vérifier la propagation.</p>
+        <p>La propagation DNS peut prendre entre 5 minutes et 24 heures. Si la vérification échoue, attendez quelques minutes puis recommencez. Vérifiez également que le type, l’hôte et la valeur de l’enregistrement correspondent exactement à ceux affichés dans Zyllio.</p>
+
+        <h2>5. Activer le domaine sécurisé</h2>
+        <p>Lorsque la vérification est réussie, cliquez sur Activer le domaine sécurisé.</p>
+        <p>Zyllio génère alors le certificat SSL et met votre application en ligne sur votre domaine avec HTTPS. Une fois l’activation terminée, vos utilisateurs peuvent accéder à l’application à l’adresse configurée.</p>
       </section>
     </main>
   </div>
