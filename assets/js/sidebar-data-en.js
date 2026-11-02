@@ -7,6 +7,7 @@
       { slug: "design-tool-4", label: "🎨 Design tool" },
       { slug: "screen-editor-8", label: "🧩 Screen editor" },
       { slug: "screen-sequence-editor-23", label: "🧭 Screen sequence editor" },
+      { slug: "scenarios-96", label: "🪄 Scenarios" },
       { slug: "simulation-6", label: "🧪 Simulation" },
       { slug: "publications-5", label: "📦 Publications" },
       { slug: "plugins-36", label: "🔌 Plugins" },

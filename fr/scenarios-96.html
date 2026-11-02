@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Documentation Zyllio - Scénarios">
+  <title>Documentation Zyllio | Scénarios</title>
+  <link rel="stylesheet" href="../assets/css/global.css">
+</head>
+<body>
+  <div class="page-shell">
+    <aside class="sidebar">
+      <docs-sidebar-shell></docs-sidebar-shell>
+    </aside>
+
+    <main class="main">
+      <header class="section hero" id="welcome">
+        <div class="hero-body">
+          <span class="kicker">Documentation</span>
+          <h1>Scénarios</h1>
+          <p class="lead">Les scénarios (workflows) permettent d'automatiser des traitements dans votre application : envoyer un email, mettre à jour des données, appeler un service externe, etc.</p>
+          <p>Chaque scénario est composé d'un déclencheur qui définit quand il démarre, et d'une suite d'étapes (actions) qui définissent ce qu'il fait.</p>
+        </div>
+      </header>
+
+      <section class="section">
+        <h2>L'espace Scénarios</h2>
+        <p>Les scénarios se gèrent depuis l'onglet <strong>Scénarios</strong> de l'outil de conception.</p>
+        <figure class="visual plain">
+          <img src="../assets/images/scenarios-96-001.webp" alt="Espace Scénarios de Zyllio Studio">
+        </figure>
+        <p>La partie gauche liste les scénarios de l'application. Un champ de recherche et des filtres (<strong>Tous</strong>, <strong>Clic</strong>, <strong>Planif.</strong>, <strong>Webhook</strong>, <strong>Table</strong>) permettent de retrouver rapidement un scénario. Sous le nom de chaque scénario est indiqué son déclencheur, par exemple <em>Planifiée - Quotidien (12:00)</em>.</p>
+        <p>La partie droite affiche les étapes du scénario sélectionné. Le bouton <strong>Actions</strong> permet d'ajouter des étapes, qui sont ensuite reliées entre elles depuis le bloc <strong>Début</strong>.</p>
+        <p>Au survol d'un scénario, des boutons permettent selon son type de le renommer ou de le modifier, de le lancer manuellement, de consulter son historique d'exécution, d'afficher ses usages ou de le supprimer.</p>
+        <p>La liste des actions disponibles est détaillée dans la page <a href="actions.html">Actions</a>.</p>
+      </section>
+
+      <section class="section">
+        <h2>Créer un scénario</h2>
+        <p>Cliquez sur <strong>Créer un scénario</strong> en bas de la liste, puis saisissez un nom et choisissez un déclencheur.</p>
+        <figure class="visual plain">
+          <img src="../assets/images/scenarios-96-002.webp" alt="Création d'un scénario et choix du déclencheur">
+        </figure>
+        <table class="doc-table">
+          <thead>
+            <tr>
+              <th>Déclencheur</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>Clic utilisateur</td><td>Démarre lorsqu'un utilisateur clique ou interagit dans l'application</td></tr>
+            <tr><td>Exécution planifiée</td><td>Se lance automatiquement à un moment ou à une fréquence définie</td></tr>
+            <tr><td>Webhook</td><td>Se déclenche lorsqu'un service externe envoie une requête</td></tr>
+            <tr><td>Événement de table</td><td>Démarre lorsqu'une ligne est créée, modifiée ou supprimée dans une table</td></tr>
+          </tbody>
+        </table>
+        <p>Selon le déclencheur choisi, une fenêtre de configuration s'ouvre pour renseigner le nom du scénario et ses paramètres.</p>
+      </section>
+
+      <section class="section">
+        <h2>Clic utilisateur</h2>
+        <p>Un scénario de type Clic est un scénario partagé : il peut être réutilisé depuis plusieurs écrans ou depuis d'autres scénarios, au lieu de dupliquer les mêmes actions.</p>
+        <p>Le bouton <strong>Usages</strong> affiche la liste des écrans et des scénarios qui l'utilisent.</p>
+        <p class="callout info">Un scénario partagé encore utilisé ne peut pas être supprimé. Retirez d'abord ses usages.</p>
+      </section>
+
+      <section class="section">
+        <h2>Exécution planifiée</h2>
+        <p>Un scénario planifié s'exécute automatiquement selon une fréquence.</p>
+        <figure class="visual plain">
+          <img src="../assets/images/scenarios-96-003.webp" alt="Configuration de la planification d'un scénario">
+        </figure>
+        <table class="doc-table">
+          <thead>
+            <tr>
+              <th>Fréquence</th>
+              <th>Paramètres</th>
+              <th>Exemple</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>Horaire</td><td>-</td><td>S'exécutera toutes les heures.</td></tr>
+            <tr><td>Quotidien</td><td>Heure (0-23)</td><td>S'exécutera chaque jour à 12h00.</td></tr>
+            <tr><td>Hebdomadaire</td><td>Jour de la semaine, Heure</td><td>S'exécutera chaque lundi à 8h00.</td></tr>
+            <tr><td>Mensuel</td><td>Jour du mois (1-31), Heure</td><td>S'exécutera chaque mois le 1 à 6h00.</td></tr>
+          </tbody>
+        </table>
+        <p>Les scénarios planifiés sont exécutés en début d'heure. Le bouton <strong>Lancer manuellement</strong> permet de tester un scénario planifié sans attendre son prochain déclenchement.</p>
+        <p class="callout info">Pour une fréquence mensuelle, un jour qui n'existe pas dans le mois (par exemple le 31) n'est pas exécuté ce mois-là.</p>
+      </section>
+
+      <section class="section">
+        <h2>Événement de table</h2>
+        <p>Un scénario de type Table démarre automatiquement lorsqu'une donnée change dans une table de l'application.</p>
+        <figure class="visual plain">
+          <img src="../assets/images/scenarios-96-004.webp" alt="Configuration d'un événement de table">
+        </figure>
+        <p>Choisissez la <strong>Table</strong> à surveiller, puis l'<strong>Événement</strong> :</p>
+        <ul>
+          <li><strong>Toute modification</strong></li>
+          <li><strong>Ligne créée</strong></li>
+          <li><strong>Ligne modifiée</strong></li>
+          <li><strong>Ligne supprimée</strong></li>
+        </ul>
+      </section>
+
+      <section class="section">
+        <h2>Webhook</h2>
+        <p>Un scénario de type Webhook est déclenché par un système extérieur (ERP, CRM, script, autre application...) qui envoie une requête HTTP <code>POST</code> à Zyllio.</p>
+        <figure class="visual plain">
+          <img src="../assets/images/scenarios-96-005.webp" alt="Configuration d'un webhook : URL, variables et exemples de code">
+        </figure>
+
+        <h3>URL du webhook</h3>
+        <p>L'URL est générée automatiquement et affichée dans la fenêtre de configuration du webhook. Elle a la forme suivante :</p>
+        <pre class="code-block"><code>https://&lt;hôte-de-votre-application&gt;/api/workflow/&lt;id-application&gt;/&lt;id-scénario&gt;</code></pre>
+
+        <h3>Clé d'API</h3>
+        <p>Chaque requête doit contenir le header <code>x-api-key</code> avec la clé d'API de l'application.</p>
+        <p>Cette clé se trouve dans l'onglet <strong>Paramètres</strong>, rubrique <strong>Intégrations</strong>, carte <strong>API</strong>. Cliquez sur la clé pour la copier.</p>
+        <figure class="visual plain">
+          <img src="../assets/images/scenarios-96-006.webp" alt="Clé d'API dans les paramètres API Zyllio">
+        </figure>
+        <p class="callout error">La clé d'API donne accès à votre application. Ne la partagez pas et ne l'intégrez pas dans du code exécuté côté navigateur.</p>
+
+        <h3>Variables</h3>
+        <p>Les variables définissent les données attendues dans le corps JSON de la requête. Chaque variable a un nom unique et un type.</p>
+        <table class="doc-table">
+          <thead>
+            <tr>
+              <th>Type</th>
+              <th>Valeur JSON attendue</th>
+              <th>Exemple</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>Texte</td><td>Chaîne de caractères</td><td><code>"Dupont"</code></td></tr>
+            <tr><td>Nombre</td><td>Nombre</td><td><code>42.5</code></td></tr>
+            <tr><td>Booléen</td><td><code>true</code> ou <code>false</code></td><td><code>true</code></td></tr>
+            <tr><td>Date</td><td>Chaîne au format ISO 8601</td><td><code>"2026-11-02"</code> ou <code>"2026-11-02T14:30:00Z"</code></td></tr>
+          </tbody>
+        </table>
+        <p>Toutes les variables déclarées sont obligatoires. Les valeurs reçues sont ensuite utilisables dans les étapes du scénario.</p>
+
+        <h3>Exemple d'appel</h3>
+        <p>La fenêtre de configuration propose des exemples de code prêts à copier (curl, wget, fetch, PowerShell). Exemple avec curl :</p>
+        <pre class="code-block"><code>curl -X POST "https://&lt;hôte&gt;/api/workflow/&lt;id-application&gt;/&lt;id-scénario&gt;" \
+  -H "Content-Type: application/json" \
+  -H "x-api-key: &lt;votre-clé-api&gt;" \
+  -d '{"client":"Dupont","montant":42.5}'</code></pre>
+
+        <h3>Réponses</h3>
+        <table class="doc-table">
+          <thead>
+            <tr>
+              <th>Code HTTP</th>
+              <th>Signification</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>200 <code>{"status":"queued"}</code></td><td>La requête est acceptée, le scénario est mis en file d'exécution</td></tr>
+            <tr><td>200 <code>{"status":"skipped"}</code></td><td>Le scénario ne contient aucune étape, rien n'est exécuté</td></tr>
+            <tr><td>400</td><td>Variable manquante ou de mauvais type (le détail est indiqué dans <code>errors</code>), ou scénario qui n'est pas de type Webhook</td></tr>
+            <tr><td>401</td><td>Header <code>x-api-key</code> absent ou invalide</td></tr>
+            <tr><td>403</td><td>Application introuvable</td></tr>
+            <tr><td>404</td><td>Scénario introuvable</td></tr>
+          </tbody>
+        </table>
+        <p class="callout info">L'exécution est asynchrone : la réponse est renvoyée immédiatement, sans attendre la fin du scénario. Le résultat de l'exécution est consultable dans l'historique d'exécution.</p>
+      </section>
+
+      <section class="section">
+        <h2>Historique d'exécution</h2>
+        <p>Les scénarios Planifiés, Webhook et Table disposent d'un historique d'exécution, accessible depuis le bouton <strong>Historique d'exécution</strong> de la liste.</p>
+        <figure class="visual plain">
+          <img src="../assets/images/scenarios-96-007.webp" alt="Historique d'exécution d'un scénario">
+        </figure>
+        <p>La liste des exécutions peut être filtrée (<strong>Tous</strong>, <strong>Succès</strong>, <strong>Échecs</strong>). En sélectionnant une exécution, vous accédez à son détail :</p>
+        <ul>
+          <li>l'identifiant et le statut de l'exécution</li>
+          <li>le temps d'attente en file</li>
+          <li>les variables de déclenchement (payload)</li>
+          <li>les logs console de l'exécution</li>
+        </ul>
+        <p>Le bouton <strong>Supprimer tout l'historique</strong> efface l'historique du scénario. Cette action est irréversible.</p>
+      </section>
+    </main>
+  </div>
+<script src="../assets/js/sidebar-shell.js"></script>
+</body>
+</html>

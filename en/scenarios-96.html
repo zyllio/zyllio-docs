@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Zyllio Documentation - Scenarios">
+  <title>Zyllio Documentation | Scenarios</title>
+  <link rel="stylesheet" href="../assets/css/global.css">
+</head>
+<body>
+  <div class="page-shell">
+    <aside class="sidebar">
+      <docs-sidebar-shell></docs-sidebar-shell>
+    </aside>
+
+    <main class="main">
+      <header class="section hero" id="welcome">
+        <div class="hero-body">
+          <span class="kicker">Documentation</span>
+          <h1>Scenarios</h1>
+          <p class="lead">Scenarios (workflows) automate processing in your application: sending an email, updating data, calling an external service, etc.</p>
+          <p>Each scenario is made of a trigger that defines when it starts, and a sequence of steps (actions) that define what it does.</p>
+        </div>
+      </header>
+
+      <section class="section">
+        <h2>The Scenarios space</h2>
+        <p>Scenarios are managed from the <strong>Scenarios</strong> tab of the design tool.</p>
+        <figure class="visual plain">
+          <img src="../assets/images/scenarios-96-001.webp" alt="Zyllio Studio Scenarios space">
+        </figure>
+        <p>The left panel lists the application's scenarios. A search field and filters (<strong>All</strong>, <strong>Click</strong>, <strong>Schedule</strong>, <strong>Webhook</strong>, <strong>Table</strong>) help you find a scenario quickly. The trigger is displayed under each scenario name, for example <em>Planned - Daily (12:00)</em>.</p>
+        <p>The right panel displays the steps of the selected scenario. The <strong>Actions</strong> button adds steps, which are then linked together starting from the <strong>Start</strong> block.</p>
+        <p>When hovering a scenario, buttons let you, depending on its type, rename or edit it, run it manually, view its execution history, display its usages or delete it.</p>
+        <p>Available actions are detailed in the <a href="actions.html">Actions</a> page.</p>
+      </section>
+
+      <section class="section">
+        <h2>Create a scenario</h2>
+        <p>Click <strong>Create scenario</strong> at the bottom of the list, then enter a name and choose a trigger.</p>
+        <figure class="visual plain">
+          <img src="../assets/images/scenarios-96-002.webp" alt="Scenario creation and trigger selection">
+        </figure>
+        <table class="doc-table">
+          <thead>
+            <tr>
+              <th>Trigger</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>User click</td><td>Starts when someone taps or clicks inside the app</td></tr>
+            <tr><td>Planned run</td><td>Runs automatically at a chosen time or rhythm</td></tr>
+            <tr><td>Webhook</td><td>Launches when an external service sends a request</td></tr>
+            <tr><td>Table event</td><td>Starts when a row is created, updated or deleted in a table</td></tr>
+          </tbody>
+        </table>
+        <p>Depending on the selected trigger, a configuration window opens to enter the scenario name and its settings.</p>
+      </section>
+
+      <section class="section">
+        <h2>User click</h2>
+        <p>A Click scenario is a shared scenario: it can be reused from several screens or from other scenarios, instead of duplicating the same actions.</p>
+        <p>The <strong>Usages</strong> button lists the screens and scenarios that use it.</p>
+        <p class="callout info">A shared scenario that is still in use cannot be deleted. Remove its usages first.</p>
+      </section>
+
+      <section class="section">
+        <h2>Planned run</h2>
+        <p>A scheduled scenario runs automatically according to a frequency.</p>
+        <figure class="visual plain">
+          <img src="../assets/images/scenarios-96-003.webp" alt="Scenario schedule configuration">
+        </figure>
+        <table class="doc-table">
+          <thead>
+            <tr>
+              <th>Frequency</th>
+              <th>Settings</th>
+              <th>Example</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>Hourly</td><td>-</td><td>Will run every hour.</td></tr>
+            <tr><td>Daily</td><td>Hour (0-23)</td><td>Will run every day at 12:00.</td></tr>
+            <tr><td>Weekly</td><td>Day of the week, Hour</td><td>Will run every Monday at 8:00.</td></tr>
+            <tr><td>Monthly</td><td>Day of the month (1-31), Hour</td><td>Will run every month on day 1 at 6:00.</td></tr>
+          </tbody>
+        </table>
+        <p>Scheduled scenarios run at the top of the hour. The <strong>Run manually</strong> button lets you test a scheduled scenario without waiting for its next trigger.</p>
+        <p class="callout info">With a monthly frequency, a day that does not exist in the month (for example the 31st) is not executed that month.</p>
+      </section>
+
+      <section class="section">
+        <h2>Table event</h2>
+        <p>A Table scenario starts automatically when data changes in one of the application's tables.</p>
+        <figure class="visual plain">
+          <img src="../assets/images/scenarios-96-004.webp" alt="Table event configuration">
+        </figure>
+        <p>Choose the <strong>Table</strong> to watch, then the <strong>Event</strong>:</p>
+        <ul>
+          <li><strong>Any change</strong></li>
+          <li><strong>Row created</strong></li>
+          <li><strong>Row updated</strong></li>
+          <li><strong>Row deleted</strong></li>
+        </ul>
+      </section>
+
+      <section class="section">
+        <h2>Webhook</h2>
+        <p>A Webhook scenario is triggered by an external system (ERP, CRM, script, another application...) sending an HTTP <code>POST</code> request to Zyllio.</p>
+        <figure class="visual plain">
+          <img src="../assets/images/scenarios-96-005.webp" alt="Webhook configuration: URL, variables and code examples">
+        </figure>
+
+        <h3>Webhook URL</h3>
+        <p>The URL is generated automatically and displayed in the webhook configuration window. It looks like this:</p>
+        <pre class="code-block"><code>https://&lt;your-application-host&gt;/api/workflow/&lt;application-id&gt;/&lt;scenario-id&gt;</code></pre>
+
+        <h3>API key</h3>
+        <p>Each request must include the <code>x-api-key</code> header with the application's API key.</p>
+        <p>This key is located in the <strong>Settings</strong> tab, <strong>Integrations</strong> section, <strong>API</strong> card. Click the key to copy it.</p>
+        <figure class="visual plain">
+          <img src="../assets/images/scenarios-96-006.webp" alt="API key in the Zyllio API settings">
+        </figure>
+        <p class="callout error">The API key gives access to your application. Do not share it and do not embed it in code running in a browser.</p>
+
+        <h3>Variables</h3>
+        <p>Variables define the data expected in the JSON body of the request. Each variable has a unique name and a type.</p>
+        <table class="doc-table">
+          <thead>
+            <tr>
+              <th>Type</th>
+              <th>Expected JSON value</th>
+              <th>Example</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>Text</td><td>String</td><td><code>"Smith"</code></td></tr>
+            <tr><td>Number</td><td>Number</td><td><code>42.5</code></td></tr>
+            <tr><td>Boolean</td><td><code>true</code> or <code>false</code></td><td><code>true</code></td></tr>
+            <tr><td>Date</td><td>ISO 8601 string</td><td><code>"2026-11-02"</code> or <code>"2026-11-02T14:30:00Z"</code></td></tr>
+          </tbody>
+        </table>
+        <p>All declared variables are required. The received values can then be used in the scenario steps.</p>
+
+        <h3>Call example</h3>
+        <p>The configuration window provides ready-to-copy code examples (curl, wget, fetch, PowerShell). Example with curl:</p>
+        <pre class="code-block"><code>curl -X POST "https://&lt;host&gt;/api/workflow/&lt;application-id&gt;/&lt;scenario-id&gt;" \
+  -H "Content-Type: application/json" \
+  -H "x-api-key: &lt;your-api-key&gt;" \
+  -d '{"customer":"Smith","amount":42.5}'</code></pre>
+
+        <h3>Responses</h3>
+        <table class="doc-table">
+          <thead>
+            <tr>
+              <th>HTTP code</th>
+              <th>Meaning</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>200 <code>{"status":"queued"}</code></td><td>The request is accepted, the scenario is queued for execution</td></tr>
+            <tr><td>200 <code>{"status":"skipped"}</code></td><td>The scenario has no steps, nothing is executed</td></tr>
+            <tr><td>400</td><td>Missing or wrongly typed variable (details are listed in <code>errors</code>), or scenario that is not a Webhook scenario</td></tr>
+            <tr><td>401</td><td>Missing or invalid <code>x-api-key</code> header</td></tr>
+            <tr><td>403</td><td>Application not found</td></tr>
+            <tr><td>404</td><td>Scenario not found</td></tr>
+          </tbody>
+        </table>
+        <p class="callout info">Execution is asynchronous: the response is returned immediately, without waiting for the scenario to finish. The execution result is available in the execution history.</p>
+      </section>
+
+      <section class="section">
+        <h2>Execution history</h2>
+        <p>Scheduled, Webhook and Table scenarios have an execution history, available from the <strong>Execution history</strong> button in the list.</p>
+        <figure class="visual plain">
+          <img src="../assets/images/scenarios-96-007.webp" alt="Scenario execution history">
+        </figure>
+        <p>Executions can be filtered (<strong>All</strong>, <strong>Success</strong>, <strong>Failed</strong>). Selecting an execution displays its details:</p>
+        <ul>
+          <li>the execution ID and status</li>
+          <li>the queue waiting time</li>
+          <li>the trigger variables (payload)</li>
+          <li>the console logs of the execution</li>
+        </ul>
+        <p>The <strong>Delete all history</strong> button clears the scenario history. This action cannot be undone.</p>
+      </section>
+    </main>
+  </div>
+<script src="../assets/js/sidebar-shell.js"></script>
+</body>
+</html>

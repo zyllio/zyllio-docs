@@ -7,6 +7,7 @@
       { slug: "outil-de-conception-4", label: "🎨 Outil de conception" },
       { slug: "editeur-decrans-8", label: "🧩 Éditeur d'écrans" },
       { slug: "editeur-de-sequence-decrans-23", label: "🧭 Éditeur de séquence d'écrans" },
+      { slug: "scenarios-96", label: "🪄 Scénarios" },
       { slug: "simulation-6", label: "🧪 Simulation" },
       { slug: "publications-5", label: "📦 Publications" },
       { slug: "plugins-36", label: "🔌 Plugins" },

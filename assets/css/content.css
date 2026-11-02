@@ -137,3 +137,25 @@
 .compact-sections .section:first-of-type {
   padding-top: 8px;
 }
+
+.code-block {
+  margin: 10px 0;
+  padding: 12px 14px;
+  overflow-x: auto;
+  background: #f6fbfb;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  font-size: 0.9em;
+  white-space: pre;
+}
+
+.visual.plain {
+  border: none;
+  background: transparent;
+  overflow: visible;
+  padding: 8px 0;
+}
+
+.visual.plain img {
+  filter: drop-shadow(1px 0 0 var(--line)) drop-shadow(-1px 0 0 var(--line)) drop-shadow(0 1px 0 var(--line)) drop-shadow(0 -1px 0 var(--line)) drop-shadow(0 4px 14px rgba(13, 35, 50, 0.12));
+}
