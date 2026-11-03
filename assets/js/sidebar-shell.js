@@ -215,7 +215,7 @@
         ["pricing", "Tarifs", [["#offres", "Les offres"], ["#accompagnement", "Accompagnement"], ["#comparatif", "Comparatif détaillé"], ["#faq", "Questions fréquentes"]]],
         ["partner", "Agences", [["#offre", "L’offre partenaire"], ["#fonctionnement", "Fonctionnement"], ["#faq", "Questions fréquentes"]]],
         ["blog", "Blog", null],
-        ["support", "Support", [["#aide", "Aide et contact"], ["#videos", "Vidéos"], ["release-notes", "Notes de version"]]],
+        ["support", "Support", [["#aide", "Aide et contact"], ["#videos", "Vidéos"], ["release-notes", "Notes de version"], ["https://docs.zyllio.com/", "Documentation"]]],
         ["affiliate", "Affiliation", [["#simulateur", "Simulateur de gains"], ["#fonctionnement", "Fonctionnement"], ["#faq", "Questions fréquentes"]]]
       ],
       otherVersion: "English version",
@@ -229,7 +229,7 @@
       slack: "Communauté Zyllio sur Slack",
       cols: [
         ["Produit", [["index#comment", "Comment ça marche"], ["index#agent", "Agent Zyllio"], ["features", "Fonctionnalités"], ["pricing", "Tarifs"]]],
-        ["Ressources", [["support", "Support"], ["blog", "Blog"], ["release-notes", "Notes de version"], ["partner", "Agences partenaires"], ["affiliate", "Affiliation"]]],
+        ["Ressources", [["support", "Support"], ["blog", "Blog"], ["release-notes", "Notes de version"], ["https://docs.zyllio.com/", "Documentation"], ["partner", "Agences partenaires"], ["affiliate", "Affiliation"]]],
         ["Légal", [["terms-of-use", "Conditions d’utilisation"], ["privacy", "Confidentialité"], ["gdpr", "RGPD"], ["legal", "Mentions légales"], ["affiliate-program", "Programme d’affiliation"]]]
       ],
       copyright: "© 2026 Zyllio. Tous droits réservés.",
@@ -246,7 +246,7 @@
         ["pricing", "Pricing", [["#offres", "Plans"], ["#accompagnement", "Expert services"], ["#comparatif", "Detailed comparison"], ["#faq", "FAQ"]]],
         ["partner", "Agencies", [["#offre", "Partner offer"], ["#fonctionnement", "How it works"], ["#faq", "FAQ"]]],
         ["blog", "Blog", null],
-        ["support", "Support", [["#aide", "Help and contact"], ["#videos", "Videos"], ["release-notes", "Release notes"]]],
+        ["support", "Support", [["#aide", "Help and contact"], ["#videos", "Videos"], ["release-notes", "Release notes"], ["https://docs.zyllio.com/index-en.html", "Documentation"]]],
         ["affiliate", "Affiliates", [["#simulateur", "Earnings simulator"], ["#fonctionnement", "How it works"], ["#faq", "FAQ"]]]
       ],
       otherVersion: "Version française",
@@ -260,7 +260,7 @@
       slack: "Zyllio community on Slack",
       cols: [
         ["Product", [["index#comment", "How it works"], ["index#agent", "Zyllio agent"], ["features", "Features"], ["pricing", "Pricing"]]],
-        ["Resources", [["support", "Support"], ["blog", "Blog"], ["release-notes", "Release notes"], ["partner", "Partner agencies"], ["affiliate", "Affiliates"]]],
+        ["Resources", [["support", "Support"], ["blog", "Blog"], ["release-notes", "Release notes"], ["https://docs.zyllio.com/index-en.html", "Documentation"], ["partner", "Partner agencies"], ["affiliate", "Affiliates"]]],
         ["Legal", [["terms-of-use", "Terms of use"], ["privacy", "Privacy"], ["gdpr", "GDPR"], ["legal", "Legal notice"], ["affiliate-program", "Affiliate program"]]]
       ],
       copyright: "© 2026 Zyllio. All rights reserved.",
@@ -270,6 +270,7 @@
 
   // "features" -> https://zyllio.com/features-fr.html, "index#agent" -> .../index-fr.html#agent
   function siteHref(t, page) {
+    if (/^https?:\/\//.test(page)) return page;
     var parts = page.split("#");
     return SITE + parts[0] + t.suffix + ".html" + (parts[1] ? "#" + parts[1] : "");
   }
