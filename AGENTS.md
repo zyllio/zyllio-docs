@@ -47,7 +47,7 @@ When migrating a page, reproduce the source page with strict fidelity.
 3. Use only the design tokens from `assets/css/variables.css` (palette, `--sans` Inter font, layout sizes). Do not hardcode new colors in page HTML.
 4. Font: Inter, self-hosted in `assets/fonts/` (copied from zyllio-website).
 5. Assets copied from zyllio-website live in `assets/fonts/`, `assets/images/flags/` and `assets/images/icons/`. When the site changes these assets, copy them again rather than linking to the site repo.
-6. The home pages hero banner (`.hero-art` in `index.html`, `index-fr.html`, `index-en.html`) reproduces the zyllio.com hero with only its title and lead. Do not add any other element (no prompt field, pill, button or reassurance list). It replaces the former `hero-banner.png` source image.
+6. The home pages hero banner (`.hero-art` in `index.html`, `index-fr.html`, `index-en.html`) reproduces the zyllio.com hero with only its title and lead. Do not add any other element (no prompt field, pill, button or reassurance list). It replaces the former source banner image.
 
 ## Site chrome (header, page TOC, footer)
 1. The header, the "Sommaire / Contents" page TOC and the footer are site chrome reproduced from zyllio.com. They are not part of migrated content and must not be added to page HTML.
