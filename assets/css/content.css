@@ -56,62 +56,8 @@
   filter: blur(10px);
 }
 
-/* Bandeau "Nouveau", comme .announce */
-.section .hero-art-pill {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  max-width: 100%;
-  padding: 5px 14px 5px 5px;
-  border: 1px solid var(--line);
-  border-radius: 99px;
-  background: #fff;
-  box-shadow: 0 4px 14px #16478512;
-  font-size: 13.5px;
-  font-weight: 550;
-  line-height: 1.4;
-  color: var(--ink2);
-  text-decoration: none;
-  transition: border-color .2s, box-shadow .2s;
-}
-
-.section .hero-art-pill:hover {
-  border-color: #b9cdee;
-  box-shadow: 0 6px 20px #1647851f;
-}
-
-.hero-art-pill b {
-  flex-shrink: 0;
-  padding: 4px 10px;
-  border-radius: 99px;
-  background: linear-gradient(92deg, #164785, #2f6fe0);
-  font-size: 11.5px;
-  font-weight: 700;
-  letter-spacing: .02em;
-  color: #fff;
-}
-
-.hero-art-pill span {
-  min-width: 0;
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-}
-
-.hero-art-pill svg {
-  flex-shrink: 0;
-  width: 14px;
-  height: 14px;
-  color: var(--sky);
-  transition: transform .2s var(--ease);
-}
-
-.hero-art-pill:hover svg {
-  transform: translateX(3px);
-}
-
 .hero-art-title {
-  margin: 22px auto 14px;
+  margin: 0 auto 14px;
   max-width: 620px;
   font-size: clamp(28px, 3.6vw, 40px);
   font-weight: 800;
@@ -188,9 +134,10 @@
 .hero-composer button {
   display: inline-flex;
   align-items: center;
-  gap: 10px;
-  min-height: 46px;
-  padding: 0 20px;
+  justify-content: center;
+  width: 46px;
+  height: 46px;
+  padding: 0;
   border: 0;
   border-radius: 14px;
   background: var(--blue);
@@ -217,52 +164,14 @@
   transform: translateX(3px);
 }
 
-/* Garanties, comme .reassure */
-.hero-reassure {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 6px 22px;
-  margin: 20px 0 0;
-  padding: 0;
-  list-style: none;
-  font-size: 13.5px;
-  color: var(--muted);
-}
-
-.hero-reassure li {
-  display: flex;
-  align-items: center;
-  gap: 7px;
-}
-
-.hero-reassure svg {
-  width: 15px;
-  height: 15px;
-  color: var(--ok);
-}
-
-.hero-reassure img {
-  width: 18px;
-  height: 12px;
-  border-radius: 2px;
-  object-fit: cover;
-}
-
 @media (max-width: 720px) {
   .hero-art {
     padding-top: 32px;
     border-radius: 18px;
   }
-
-  .hero-composer-bar button {
-    width: 100%;
-    justify-content: center;
-  }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .hero-art-pill svg,
   .hero-composer,
   .hero-composer button,
   .hero-composer button svg {
@@ -301,7 +210,7 @@
 }
 
 /* Liens dans le contenu, comme .l-doc a sur zyllio.com */
-.section a:not(.contact-list a, .hero-art-pill) {
+.section a:not(.contact-list a) {
   color: var(--blue);
   font-weight: 600;
   text-decoration: underline;
@@ -309,7 +218,7 @@
   text-underline-offset: 3px;
 }
 
-.section a:not(.contact-list a, .hero-art-pill):hover {
+.section a:not(.contact-list a):hover {
   text-decoration-color: currentColor;
 }
 
