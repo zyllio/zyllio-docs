@@ -11,8 +11,6 @@
   -webkit-backdrop-filter: saturate(1.6) blur(16px);
   backdrop-filter: saturate(1.6) blur(16px);
   border-bottom: 1px solid var(--line);
-  /* L'en-tête reste immobile pendant le fondu entre deux pages */
-  view-transition-name: site-top;
 }
 
 .site-nav {
