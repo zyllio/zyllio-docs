@@ -59,7 +59,7 @@
   }
 
   function scan() {
-    Array.prototype.forEach.call(document.querySelectorAll(".main .section img:not(.hero-banner)"), function (img) {
+    Array.prototype.forEach.call(document.querySelectorAll(".main .section img"), function (img) {
       if (img.complete) mark(img);
       else img.addEventListener("load", function () { mark(img); }, { once: true });
     });
