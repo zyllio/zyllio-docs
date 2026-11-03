@@ -33,7 +33,8 @@
     overlay.innerHTML = '<button class="zoom-close" type="button" aria-label="' + TEXT.close + '">' + icon("x") + "</button>";
 
     var big = document.createElement("img");
-    big.src = img.currentSrc || img.src;
+    var largest = largestCandidate(img);
+    big.src = largest ? largest.url : (img.currentSrc || img.src);
     big.alt = img.alt || "";
     overlay.appendChild(big);
 
@@ -43,9 +44,28 @@
     overlay.querySelector(".zoom-close").focus();
   }
 
+  // Plus grande version d'un srcset en largeurs ("a.webp 1304w, b.webp 2608w"), si c'est lui qui est affiché.
+  // Avec ce type de srcset, naturalWidth est corrigé de la densité et ne donne pas la taille réelle du fichier.
+  function largestCandidate(img) {
+    if (!img.srcset || !img.currentSrc) return null;
+    var best = null;
+    var shown = false;
+    img.srcset.split(",").forEach(function (part) {
+      var bits = part.trim().split(/\s+/);
+      var m = /^(\d+)w$/.exec(bits[1] || "");
+      if (!m) return;
+      var url = new URL(bits[0], document.baseURI).href;
+      if (url === img.currentSrc) shown = true;
+      if (!best || +m[1] > best.width) best = { url: url, width: +m[1] };
+    });
+    return shown ? best : null;
+  }
+
   function mark(img) {
     // Seules les images affichées nettement plus petites que leur taille réelle sont zoomables
-    var zoomable = img.naturalWidth > img.clientWidth * 1.15 && img.clientWidth > 0;
+    var largest = largestCandidate(img);
+    var natural = Math.max(img.naturalWidth, largest ? largest.width : 0);
+    var zoomable = natural > img.clientWidth * 1.15 && img.clientWidth > 0;
     img.classList.toggle("is-zoomable", zoomable);
     if (zoomable) {
       img.setAttribute("tabindex", "0");
