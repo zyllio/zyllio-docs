@@ -86,96 +86,10 @@
   text-wrap: pretty;
 }
 
-/* Champ de demande, comme .composer */
-.hero-composer {
-  max-width: 600px;
-  margin: 28px auto 0;
-  text-align: left;
-  border: 1px solid var(--line2);
-  border-radius: 20px;
-  background: #fff;
-  box-shadow: 0 1px 0 #fff inset, 0 24px 60px #1647851a, 0 2px 6px #16478510;
-  transition: border-color .2s, box-shadow .2s;
-}
-
-.hero-composer:focus-within {
-  border-color: var(--sky);
-  box-shadow: 0 0 0 4px #2f6fe024, 0 24px 60px #1647851a;
-}
-
-.hero-composer textarea {
-  display: block;
-  width: 100%;
-  min-height: 76px;
-  padding: 18px 20px 4px;
-  border: 0;
-  background: none;
-  resize: none;
-  font: inherit;
-  font-size: 16px;
-  line-height: 1.5;
-  color: var(--ink);
-}
-
-.hero-composer textarea::placeholder {
-  color: #97a2b3;
-}
-
-.hero-composer textarea:focus {
-  outline: 0;
-}
-
-.hero-composer-bar {
-  display: flex;
-  justify-content: flex-end;
-  padding: 8px;
-}
-
-.hero-composer button {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 46px;
-  height: 46px;
-  padding: 0;
-  border: 0;
-  border-radius: 14px;
-  background: var(--blue);
-  color: #fff;
-  font-size: 15px;
-  font-weight: 650;
-  letter-spacing: -.01em;
-  box-shadow: 0 8px 22px #16478533, inset 0 1px 0 #ffffff26;
-  transition: transform .2s var(--ease), background .2s, box-shadow .2s;
-}
-
-.hero-composer button:hover {
-  background: var(--blue-d);
-  transform: translateY(-1px);
-}
-
-.hero-composer button svg {
-  width: 17px;
-  height: 17px;
-  transition: transform .2s var(--ease);
-}
-
-.hero-composer button:hover svg {
-  transform: translateX(3px);
-}
-
 @media (max-width: 720px) {
   .hero-art {
     padding-top: 32px;
     border-radius: 18px;
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .hero-composer,
-  .hero-composer button,
-  .hero-composer button svg {
-    transition: none;
   }
 }
 
