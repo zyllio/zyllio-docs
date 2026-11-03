@@ -1,15 +1,44 @@
+/* Palette alignée sur zyllio.com (zyllio-website/site.css) */
 :root {
+  --ink: #0b1b33;
+  --ink2: #2c3b55;
+  --muted: #5a687e;
+  --soft: #8592a6;
+  --blue: #164785;
+  --blue-d: #0f3466;
+  --sky: #2f6fe0;
+  --sky-t: #eaf1fc;
+  --paper: #f6f8fb;
+  --paper2: #eff3f8;
+  --card: #ffffff;
+  --line: #e4e9f0;
+  --line2: #d4dce8;
+  --ok: #17845a;
+  --ok-t: #e3f4ec;
+  --warn: #9a5b0c;
+  --warn-t: #fcefd9;
+  --danger: #a33a2b;
+  --danger-t: #fbecea;
+  --info: #164785;
+  --info-t: #e9f0fa;
+  --ease: cubic-bezier(.2, .7, .2, 1);
+  --sans: "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+
+  /* Dimensions de mise en page */
+  --top-h: 68px;
+  --sidebar-w: 300px;
+  --doc-w: 760px;
+  --toc-w: 220px;
+  --toc-gap: 48px;
+
+  /* Anciens noms conservés pour compatibilité */
   --bg: #ffffff;
-  --paper: #ffffff;
-  --ink: #13212b;
-  --ink-soft: #4d5f6b;
-  --line: #dbe4ea;
-  --accent: #0f8a8d;
-  --accent-2: #f29f05;
-  --accent-3: #004e89;
-  --ok: #1f9d68;
-  --radius-lg: 22px;
+  --ink-soft: var(--muted);
+  --accent: var(--blue);
+  --accent-2: var(--sky);
+  --accent-3: var(--blue);
+  --radius-lg: 24px;
   --radius-md: 14px;
-  --shadow: 0 14px 34px rgba(13, 35, 50, 0.12);
-  --shadow-soft: 0 8px 20px rgba(13, 35, 50, 0.08);
+  --shadow: 0 26px 60px #0c1a3014;
+  --shadow-soft: 0 8px 22px #1647851a;
 }

@@ -146,26 +146,33 @@
 
     return {
       currentLang: currentLang,
+      otherLang: otherLang,
       currentHref: makeHref(sub, currentLang, slug),
       otherHref: makeHref(sub, otherLang, otherSlug),
       currentLabel: frPage ? "Fran&ccedil;ais" : "English",
-      otherLabel: frPage ? "English" : "Fran&ccedil;ais"
+      otherLabel: frPage ? "English" : "Fran&ccedil;ais",
+      flagPrefix: sub ? "../assets/images/flags/" : "assets/images/flags/"
     };
   }
 
+  window.DocsLangLinks = buildLinks;
+
+  function flag(l, lang) {
+    return '<img src="' + l.flagPrefix + lang + '.png" alt="" width="18" height="12">';
+  }
+
+  // Même structure que le sélecteur de langue de zyllio.com
   function render() {
     var l = buildLinks();
+    var aria = l.currentLang === "fr" ? "Langue : Fran&ccedil;ais" : "Language: English";
     var html = [];
-    html.push('<details class="lang-dropdown">');
-    html.push('  <summary class="lang-summary">');
-    html.push('    <span class="lang-label"><span class="lang-icon" aria-hidden="true">&#127760;</span> ' + l.currentLabel + '</span>');
-    html.push('    <span class="lang-caret" aria-hidden="true">&#9662;</span>');
-    html.push('  </summary>');
+    html.push('<div class="lang">');
+    html.push('  <a class="lang-btn" tabindex="0" role="button" aria-haspopup="true" aria-label="' + aria + '">' + flag(l, l.currentLang) + l.currentLang.toUpperCase() + '</a>');
     html.push('  <div class="lang-menu">');
-    html.push('    <a class="lang-option" href="' + l.otherHref + '">' + l.otherLabel + '</a>');
-    html.push('    <a class="lang-option is-active" href="' + l.currentHref + '" aria-current="page">' + l.currentLabel + '</a>');
+    html.push('    <a class="lang-opt" href="' + l.currentHref + '" aria-current="true">' + flag(l, l.currentLang) + l.currentLabel + '</a>');
+    html.push('    <a class="lang-opt" href="' + l.otherHref + '" hreflang="' + l.otherLang + '" lang="' + l.otherLang + '">' + flag(l, l.otherLang) + l.otherLabel + '</a>');
     html.push('  </div>');
-    html.push('</details>');
+    html.push('</div>');
     return html.join("\n");
   }
 

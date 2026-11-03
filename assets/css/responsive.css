@@ -6,6 +6,14 @@
   .sidebar {
     position: static;
     height: auto;
+    padding: 10px 16px;
+    border-right: 0;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .main {
+    padding-top: 32px;
+    padding-bottom: 64px;
   }
 
   .section-grid,
@@ -26,5 +34,21 @@
   .visual {
     width: 100%;
     margin-left: 0;
+  }
+}
+
+@media (max-width: 720px) {
+  .lead {
+    font-size: 17px;
+  }
+
+  h2 {
+    font-size: 21px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
   }
 }

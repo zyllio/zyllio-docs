@@ -33,13 +33,34 @@ When migrating a page, reproduce the source page with strict fidelity.
 5. Do not introduce page-specific layout deviations unless the source page requires them.
 
 ## Exact fixed-size rule (must match CSS)
-1. Right content column width must be constrained to: `width: min(100%, 980px)`.
-2. Right content column must be centered with: `margin-left: auto; margin-right: auto;`
+1. Right content column width must be constrained to the zyllio.com reading width: `minmax(0, var(--doc-w))` with `--doc-w: 760px` (same as `.l-doc` on zyllio.com).
+2. Right content column must be centered in `.main` (`justify-content: center` on the `.main` grid).
 3. Section containers must stay centered with: `margin: 0 auto;`
 4. Hero section must follow the same centering behavior as other sections.
 5. Figures inside sections must remain within container width: `.visual { width: 100%; margin-left: 0; }`.
 6. Images inside figures must not be force-upscaled. Keep intrinsic size and only shrink when needed: `.visual img { width: auto; max-width: 100%; height: auto; }`.
 7. Do not use CSS rules that force image enlargement (for example `width: 100%` on all figure images) unless the source page explicitly shows stretched/full-width media.
+
+## Visual identity (aligned with zyllio.com)
+1. The docs visual identity follows the marketing site `zyllio.com` (source repo `../zyllio-website`, see `site.css` and `legal-page.css`).
+2. Fidelity rules above apply to page **content** (text, images, tables, section order). Page **styling** follows zyllio.com, not the old docs.zyllio.com look.
+3. Use only the design tokens from `assets/css/variables.css` (palette, `--sans` Inter font, layout sizes). Do not hardcode new colors in page HTML.
+4. Font: Inter, self-hosted in `assets/fonts/` (copied from zyllio-website).
+5. Assets copied from zyllio-website live in `assets/fonts/`, `assets/images/flags/` and `assets/images/icons/`. When the site changes these assets, copy them again rather than linking to the site repo.
+
+## Site chrome (header, page TOC, footer)
+1. The header, the "Sommaire / Contents" page TOC and the footer are site chrome reproduced from zyllio.com. They are not part of migrated content and must not be added to page HTML.
+2. They are injected by `assets/js/sidebar-shell.js` (`mountChrome`) and styled in `assets/css/site-chrome.css`.
+3. Header and footer texts and links must match zyllio.com exactly (FR texts from `*-fr.html`, EN texts from the English pages). Update `CHROME_TEXT` in `sidebar-shell.js` when the site changes.
+4. The page TOC is built automatically from each `section.section` `h2`. It sits in a right column on wide screens (>= 1360px) and as a compact box after the hero below that.
+5. The language switcher (flags) lives in the header, not in the sidebar.
+
+## Sidebar menu (sections + Lucide icons)
+1. The sidebar is organised in named sections (Démarrer, Concevoir, Logique, Données…), defined in `assets/js/sidebar-data-fr.js` and `assets/js/sidebar-data-en.js` (`groups` → `items`). This grouping intentionally differs from the source docs navigation; page labels stay the same as the source.
+2. Each item has `slug`, `label` (no emoji) and `icon`, a Lucide icon name present in `assets/js/sidebar-icons.js`.
+3. Icons must be Lucide only. To add one, copy its inner SVG from `lucide-static@0.460.0/icons/<name>.svg` into `sidebar-icons.js`. Do not draw icons by hand and do not use emojis.
+4. When a new page is migrated, add it to the matching section in both data files.
+5. Rendering is shared in `assets/js/sidebar-menu.js`. The section of the current page is open; other sections remember their open state per reader.
 
 ## Info / Error callouts (must match source semantics)
 1. When the source page shows an information or warning block (icon + highlighted note), do not keep it as a plain paragraph.

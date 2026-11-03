@@ -92,9 +92,27 @@
     sidebar.scrollTop = top;
   }
 
+  // Garde le lien de la page courante visible dans la barre latérale
+  function revealActiveLink(sidebar) {
+    var link = sidebar && sidebar.querySelector('a[aria-current="page"]');
+    if (!link) {
+      return;
+    }
+
+    var box = sidebar.getBoundingClientRect();
+    var r = link.getBoundingClientRect();
+    if (r.top < box.top + 40 || r.bottom > box.bottom - 40) {
+      sidebar.scrollTop += r.top - box.top - box.height / 3;
+    }
+  }
+
   function restoreSidebarScrollWhenReady(sidebar) {
     var top = readStoredSidebarScroll();
-    if (!sidebar || top == null) {
+    if (!sidebar) {
+      return;
+    }
+    if (top == null) {
+      revealActiveLink(sidebar);
       return;
     }
 
@@ -106,6 +124,8 @@
 
       if (attempts < 8) {
         window.requestAnimationFrame(apply);
+      } else {
+        revealActiveLink(sidebar);
       }
     }
 
@@ -143,6 +163,8 @@
   function loadDependencies(ctx) {
     var prefix = jsPrefix(ctx);
     var scripts = [
+      prefix + "sidebar-icons.js",
+      prefix + "sidebar-menu.js",
       prefix + (ctx.isFr ? "sidebar-data-fr.js" : "sidebar-data-en.js"),
       prefix + (ctx.isFr ? "sidebar-fr.js" : "sidebar-en.js"),
       prefix + "lang-switcher.js"
@@ -154,21 +176,263 @@
   }
 
   function render(ctx) {
-    var logoSrc = ctx.isSub ? "../assets/images/zyllio-logo.png" : "assets/images/zyllio-logo.png";
-    var homeHref = ctx.isFr ? (ctx.isSub ? "../index.html" : "index.html") : (ctx.isSub ? "../index-en.html" : "index-en.html");
-    var aria = ctx.isFr ? "Accueil documentation" : "Documentation home";
-    var logoAlt = ctx.isFr ? "Logo Zyllio" : "Zyllio logo";
     var sidebarComponent = ctx.isFr ? "docs-sidebar-fr" : "docs-sidebar-en";
 
     return [
-      '<a class="brand-home" href="' + homeHref + '" aria-label="' + aria + '">',
-      '  <img class="brand-logo" src="' + logoSrc + '" alt="' + logoAlt + '">',
-      '</a>',
-      '<p class="brand">Documentation</p>',
-      '<docs-lang-switcher></docs-lang-switcher>',
-      '<h2>Pages</h2>',
+      '<h2><button class="sidebar-toggle" type="button" aria-expanded="false">Pages</button></h2>',
       '<' + sidebarComponent + '></' + sidebarComponent + '>'
     ].join("\n");
+  }
+
+  // Sur mobile, la liste des pages se replie derrière le titre "Pages"
+  function wireSidebarToggle(host) {
+    var sidebar = getSidebarContainer(host);
+    var toggle = host.querySelector(".sidebar-toggle");
+    if (!sidebar || !toggle) return;
+    toggle.addEventListener("click", function () {
+      var open = !sidebar.classList.contains("open");
+      sidebar.classList.toggle("open", open);
+      toggle.setAttribute("aria-expanded", String(open));
+    });
+  }
+
+  /* ---------- Habillage repris de zyllio.com (textes et liens du site) ---------- */
+
+  var SITE = "https://zyllio.com/";
+  var STUDIO = "https://www.zyllio.one";
+  var SLACK = "https://join.slack.com/t/zyllio-studio/shared_invite/zt-1etbsnzqp-S5UecnkGZVzn0YmYO9yFJw";
+  var LINKEDIN = "https://www.linkedin.com/company/zyllio/";
+
+  var CHROME_TEXT = {
+    fr: {
+      suffix: "-fr",
+      skip: "Aller au contenu",
+      home: "Zyllio, accueil",
+      docs: "Documentation",
+      mainNav: "Navigation principale",
+      nav: [
+        ["features", "Produit", [["#ia", "Créer avec l’IA"], ["#studio", "Le Studio NoCode"], ["#scenarios", "Automatisations"], ["#donnees", "Données et intégrations"], ["#natives", "Applications natives"], ["#terrain", "Sur le terrain"]]],
+        ["pricing", "Tarifs", [["#offres", "Les offres"], ["#accompagnement", "Accompagnement"], ["#comparatif", "Comparatif détaillé"], ["#faq", "Questions fréquentes"]]],
+        ["partner", "Agences", [["#offre", "L’offre partenaire"], ["#fonctionnement", "Fonctionnement"], ["#faq", "Questions fréquentes"]]],
+        ["blog", "Blog", null],
+        ["support", "Support", [["#aide", "Aide et contact"], ["#videos", "Vidéos"], ["release-notes", "Notes de version"]]],
+        ["affiliate", "Affiliation", [["#simulateur", "Simulateur de gains"], ["#fonctionnement", "Fonctionnement"], ["#faq", "Questions fréquentes"]]]
+      ],
+      otherVersion: "English version",
+      login: "Se connecter",
+      start: "Commencer gratuitement",
+      openMenu: "Ouvrir le menu",
+      closeMenu: "Fermer le menu",
+      toc: "Sommaire",
+      tagline: "La plateforme française IA + NoCode pour créer vos applications métier.",
+      linkedin: "Zyllio sur LinkedIn",
+      slack: "Communauté Zyllio sur Slack",
+      cols: [
+        ["Produit", [["index#comment", "Comment ça marche"], ["index#agent", "Agent Zyllio"], ["features", "Fonctionnalités"], ["pricing", "Tarifs"]]],
+        ["Ressources", [["support", "Support"], ["blog", "Blog"], ["release-notes", "Notes de version"], ["partner", "Agences partenaires"], ["affiliate", "Affiliation"]]],
+        ["Légal", [["terms-of-use", "Conditions d’utilisation"], ["privacy", "Confidentialité"], ["gdpr", "RGPD"], ["legal", "Mentions légales"], ["affiliate-program", "Programme d’affiliation"]]]
+      ],
+      copyright: "© 2026 Zyllio. Tous droits réservés.",
+      france: "Conçu et hébergé en France"
+    },
+    en: {
+      suffix: "",
+      skip: "Skip to content",
+      home: "Zyllio, home",
+      docs: "Documentation",
+      mainNav: "Main navigation",
+      nav: [
+        ["features", "Product", [["#ia", "Build with AI"], ["#studio", "The NoCode Studio"], ["#scenarios", "Automations"], ["#donnees", "Data and integrations"], ["#natives", "Native apps"], ["#terrain", "In the field"]]],
+        ["pricing", "Pricing", [["#offres", "Plans"], ["#accompagnement", "Expert services"], ["#comparatif", "Detailed comparison"], ["#faq", "FAQ"]]],
+        ["partner", "Agencies", [["#offre", "Partner offer"], ["#fonctionnement", "How it works"], ["#faq", "FAQ"]]],
+        ["blog", "Blog", null],
+        ["support", "Support", [["#aide", "Help and contact"], ["#videos", "Videos"], ["release-notes", "Release notes"]]],
+        ["affiliate", "Affiliates", [["#simulateur", "Earnings simulator"], ["#fonctionnement", "How it works"], ["#faq", "FAQ"]]]
+      ],
+      otherVersion: "Version française",
+      login: "Log in",
+      start: "Start for free",
+      openMenu: "Open menu",
+      closeMenu: "Close menu",
+      toc: "Contents",
+      tagline: "The French AI + NoCode platform for building your business applications.",
+      linkedin: "Zyllio on LinkedIn",
+      slack: "Zyllio community on Slack",
+      cols: [
+        ["Product", [["index#comment", "How it works"], ["index#agent", "Zyllio agent"], ["features", "Features"], ["pricing", "Pricing"]]],
+        ["Resources", [["support", "Support"], ["blog", "Blog"], ["release-notes", "Release notes"], ["partner", "Partner agencies"], ["affiliate", "Affiliates"]]],
+        ["Legal", [["terms-of-use", "Terms of use"], ["privacy", "Privacy"], ["gdpr", "GDPR"], ["legal", "Legal notice"], ["affiliate-program", "Affiliate program"]]]
+      ],
+      copyright: "© 2026 Zyllio. All rights reserved.",
+      france: "Designed and hosted in France"
+    }
+  };
+
+  // "features" -> https://zyllio.com/features-fr.html, "index#agent" -> .../index-fr.html#agent
+  function siteHref(t, page) {
+    var parts = page.split("#");
+    return SITE + parts[0] + t.suffix + ".html" + (parts[1] ? "#" + parts[1] : "");
+  }
+
+  function docsHomeHref(ctx) {
+    return ctx.isFr ? (ctx.isSub ? "../index.html" : "index.html") : (ctx.isSub ? "../index-en.html" : "index-en.html");
+  }
+
+  function renderTop(ctx, t) {
+    var img = imagePrefix(ctx);
+    var links = t.nav.map(function (item) {
+      var href = siteHref(t, item[0]);
+      if (!item[2]) {
+        return '<a href="' + href + '">' + item[1] + '</a>';
+      }
+      var subs = item[2].map(function (s) {
+        var subHref = s[0].charAt(0) === "#" ? href + s[0] : siteHref(t, s[0]);
+        return '<a href="' + subHref + '">' + s[1] + '</a>';
+      }).join("");
+      return '<div class="nav-item"><a href="' + href + '">' + item[1] + '</a><div class="nav-sub">' + subs + '</div></div>';
+    }).join("\n");
+
+    return [
+      '<a class="skip" href="#contenu">' + t.skip + '</a>',
+      '<div class="site-nav">',
+      '  <a class="site-brand" href="' + docsHomeHref(ctx) + '" aria-label="' + t.home + '"><img src="' + img + 'zyllio-logo.png" alt="Zyllio" width="88" height="44"><span>' + t.docs + '</span></a>',
+      '  <nav class="site-links" id="site-links" aria-label="' + t.mainNav + '">',
+      links,
+      '    <a class="m-only js-other-lang" href="#">' + t.otherVersion + '</a>',
+      '    <a class="m-only" href="' + STUDIO + '">' + t.login + '</a>',
+      '  </nav>',
+      '  <div class="site-side">',
+      '    <docs-lang-switcher></docs-lang-switcher>',
+      '    <a class="site-login" href="' + STUDIO + '">' + t.login + '</a>',
+      '    <a class="site-btn" href="' + STUDIO + '">' + t.start + '</a>',
+      '    <button class="site-burger" type="button" aria-controls="site-links" aria-expanded="false" aria-label="' + t.openMenu + '"><svg class="b" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg><svg class="x" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg></button>',
+      '  </div>',
+      '</div>'
+    ].join("\n");
+  }
+
+  function renderFooter(ctx, t) {
+    var img = imagePrefix(ctx);
+    var cols = t.cols.map(function (col) {
+      var items = col[1].map(function (l) {
+        return '<li><a href="' + siteHref(t, l[0]) + '">' + l[1] + '</a></li>';
+      }).join("");
+      return '<div><h4>' + col[0] + '</h4><ul>' + items + '</ul></div>';
+    }).join("\n");
+
+    return [
+      '<div class="site-wrap">',
+      '  <div class="foot">',
+      '    <div>',
+      '      <a class="site-brand" href="' + siteHref(t, "index") + '" aria-label="' + t.home + '"><img src="' + img + 'zyllio-logo.png" alt="Zyllio" width="112" height="56" loading="lazy"></a>',
+      '      <p>' + t.tagline + '</p>',
+      '      <div class="social">',
+      '        <a href="' + LINKEDIN + '" target="_blank" rel="noopener" aria-label="' + t.linkedin + '"><img src="' + img + 'icons/linkedin.png" alt="" loading="lazy"></a>',
+      '        <a href="' + SLACK + '" target="_blank" rel="noopener" aria-label="' + t.slack + '"><img src="' + img + 'icons/slack.png" alt="" loading="lazy"></a>',
+      '      </div>',
+      '    </div>',
+      cols,
+      '  </div>',
+      '  <div class="foot-bot"><span>' + t.copyright + '</span><span><img src="' + img + 'flags/fr.png" alt="" width="20" height="14">' + t.france + '</span></div>',
+      '</div>'
+    ].join("\n");
+  }
+
+  function wireBurger(top, t) {
+    var burger = top.querySelector(".site-burger");
+    var links = top.querySelector(".site-links");
+
+    function setMenu(open) {
+      links.classList.toggle("open", open);
+      burger.setAttribute("aria-expanded", String(open));
+      burger.setAttribute("aria-label", open ? t.closeMenu : t.openMenu);
+    }
+
+    burger.addEventListener("click", function () { setMenu(!links.classList.contains("open")); });
+    links.addEventListener("click", function (event) {
+      if (event.target.closest && event.target.closest("a")) setMenu(false);
+    });
+    document.addEventListener("keydown", function (event) {
+      if (event.key === "Escape") setMenu(false);
+    });
+  }
+
+  function slugify(text) {
+    return text.toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, "").replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "");
+  }
+
+  // Sommaire de page construit à partir des titres h2 des sections
+  function mountToc(main, t) {
+    var entries = [];
+    Array.prototype.forEach.call(main.querySelectorAll(":scope > section.section"), function (section) {
+      var h2 = section.querySelector("h2");
+      if (!h2) return;
+      var target = section.id ? section : h2;
+      if (!target.id) target.id = slugify(h2.textContent) || "section-" + (entries.length + 1);
+      entries.push({ id: target.id, label: h2.textContent.trim(), el: target });
+    });
+
+    if (entries.length < 2) return;
+
+    var toc = document.createElement("nav");
+    toc.className = "doc-toc";
+    toc.setAttribute("aria-label", t.toc);
+    var strong = document.createElement("strong");
+    strong.textContent = t.toc;
+    toc.appendChild(strong);
+    entries.forEach(function (e) {
+      var a = document.createElement("a");
+      a.href = "#" + e.id;
+      a.textContent = e.label;
+      toc.appendChild(a);
+    });
+
+    var hero = main.querySelector(":scope > .hero");
+    main.insertBefore(toc, hero ? hero.nextSibling : main.firstChild);
+    main.classList.add("has-toc");
+
+    if (!("IntersectionObserver" in window)) return;
+    var tocLinks = Array.prototype.slice.call(toc.querySelectorAll("a"));
+    var io = new IntersectionObserver(function (es) {
+      es.forEach(function (e) {
+        if (!e.isIntersecting) return;
+        tocLinks.forEach(function (a) { a.classList.toggle("on", a.getAttribute("href") === "#" + e.target.id); });
+      });
+    }, { rootMargin: "-90px 0px -70% 0px" });
+    entries.forEach(function (e) { io.observe(e.el); });
+  }
+
+  function mountChrome(ctx) {
+    if (window.__docsChromeMounted) return;
+    window.__docsChromeMounted = true;
+
+    var t = ctx.isFr ? CHROME_TEXT.fr : CHROME_TEXT.en;
+
+    var top = document.createElement("header");
+    top.className = "site-top";
+    top.innerHTML = renderTop(ctx, t);
+    document.body.insertBefore(top, document.body.firstChild);
+    wireBurger(top, t);
+
+    var main = document.querySelector(".main");
+    if (main) {
+      if (!main.id) main.id = "contenu";
+      mountToc(main, t);
+    }
+
+    var footer = document.createElement("footer");
+    footer.className = "site-footer";
+    footer.innerHTML = renderFooter(ctx, t);
+    document.body.appendChild(footer);
+  }
+
+  function updateOtherLangLink() {
+    var link = document.querySelector(".js-other-lang");
+    if (!link || typeof window.DocsLangLinks !== "function") return;
+    var l = window.DocsLangLinks();
+    link.href = l.otherHref;
+    link.hreflang = l.otherLang;
+    link.lang = l.otherLang;
   }
 
   class DocsSidebarShell extends HTMLElement {
@@ -176,9 +440,12 @@
       var ctx = detectContext();
       ensureFavicon(ctx);
       this.innerHTML = render(ctx);
+      mountChrome(ctx);
+      wireSidebarToggle(this);
       wireSidebarScrollPersistence(this);
       loadDependencies(ctx)
         .then(function () {
+          updateOtherLangLink();
           restoreSidebarScrollWhenReady(getSidebarContainer(this));
         }.bind(this))
         .catch(function (err) {

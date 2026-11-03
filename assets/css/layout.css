@@ -1,29 +1,34 @@
 .page-shell {
-  min-height: 100vh;
+  min-height: calc(100vh - var(--top-h));
   display: grid;
-  grid-template-columns: 310px 1fr;
+  grid-template-columns: var(--sidebar-w) minmax(0, 1fr);
 }
 
 .sidebar {
-  background: #fafafa;
+  background: var(--paper);
   color: var(--ink);
-  border-right: 1px solid #e0e0e0;
-  padding: 28px 22px;
+  border-right: 1px solid var(--line);
+  padding: 28px 18px 40px;
   position: sticky;
-  top: 0;
-  height: 100vh;
+  top: var(--top-h);
+  height: calc(100vh - var(--top-h));
   overflow-y: auto;
 }
 
+/* Colonne de lecture centrée, comme .l-doc sur zyllio.com */
 .main {
   background: #ffffff;
-  padding: 34px clamp(16px, 2.6vw, 42px) 56px;
+  padding: 40px clamp(16px, 2.6vw, 42px) 96px;
+  display: grid;
+  grid-template-columns: minmax(0, var(--doc-w));
+  grid-auto-rows: auto;
+  justify-content: center;
+  align-content: start;
 }
 
 .main > * {
-  width: min(100%, 980px);
-  margin-left: auto;
-  margin-right: auto;
+  grid-column: 1;
+  min-width: 0;
 }
 
 .section {
@@ -31,8 +36,9 @@
   border: 0;
   border-radius: 0;
   box-shadow: none;
-  padding: clamp(20px, 3vw, 32px) 0;
+  padding: 28px 0;
   margin: 0 auto;
+  width: 100%;
 }
 
 .section:first-of-type {
@@ -53,4 +59,17 @@
 
 .section-grid.reverse .visual {
   order: -1;
+}
+
+/* Sommaire à droite sur grand écran, comme .l-toc sur zyllio.com */
+@media (min-width: 1360px) {
+  .main.has-toc {
+    grid-template-columns: minmax(0, var(--doc-w)) var(--toc-w);
+    column-gap: var(--toc-gap);
+  }
+
+  .main.has-toc > .doc-toc {
+    grid-column: 2;
+    grid-row: 1 / span 999;
+  }
 }

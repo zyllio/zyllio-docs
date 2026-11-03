@@ -1,10 +1,13 @@
+/* En-tête de page, comme .l-head sur zyllio.com */
 .hero {
   border-radius: 0;
   overflow: visible;
   background: transparent;
   box-shadow: none;
   margin: 0 auto;
-  padding: clamp(20px, 3vw, 32px) 0;
+  padding: 8px 0 32px;
+  border-bottom: 1px solid var(--line);
+  margin-bottom: 12px;
 }
 
 .hero-banner {
@@ -20,30 +23,80 @@
   padding: 14px 0 0;
 }
 
+/* Page d'accueil : halo et grille du hero de zyllio.com */
+.hero:has(.hero-banner) {
+  position: relative;
+  isolation: isolate;
+}
+
+.hero:has(.hero-banner)::before {
+  content: "";
+  position: absolute;
+  inset: -40px 0 0;
+  z-index: -1;
+  pointer-events: none;
+  background-image: linear-gradient(#16478510 1px, transparent 1px), linear-gradient(90deg, #16478510 1px, transparent 1px), radial-gradient(70% 60% at 50% 0%, #dce8fb 0%, #eef4fd 40%, transparent 75%);
+  background-size: 56px 56px, 56px 56px, 100% 100%;
+  background-position: center top;
+  -webkit-mask-image: radial-gradient(ellipse 80% 70% at 50% 20%, #000 30%, transparent 80%);
+  mask-image: radial-gradient(ellipse 80% 70% at 50% 20%, #000 30%, transparent 80%);
+}
+
+/* Libellé au-dessus du titre, comme .eyebrow sur zyllio.com */
 .kicker {
-  display: inline-block;
-  background: rgba(15, 138, 141, 0.12);
-  color: #0a6f72;
-  border-radius: 999px;
-  font-size: 0.8rem;
-  font-weight: 700;
-  letter-spacing: 0.03em;
-  padding: 4px 12px;
-  margin-bottom: 10px;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 12.5px;
+  font-weight: 650;
+  letter-spacing: .12em;
+  line-height: 1.4;
+  text-transform: uppercase;
+  color: var(--sky);
+  margin: 0 0 16px;
+}
+
+.kicker::before {
+  content: "";
+  width: 18px;
+  height: 2px;
+  border-radius: 2px;
+  background: var(--sky);
 }
 
 .lead {
-  font-size: 0.98rem;
-  color: var(--ink-soft);
+  font-size: 18px;
+  line-height: 1.6;
+  color: var(--muted);
   margin: 0;
+  text-wrap: pretty;
+}
+
+/* Liens dans le contenu, comme .l-doc a sur zyllio.com */
+.section a:not(.contact-list a) {
+  color: var(--blue);
+  font-weight: 600;
+  text-decoration: underline;
+  text-decoration-color: #16478540;
+  text-underline-offset: 3px;
+}
+
+.section a:not(.contact-list a):hover {
+  text-decoration-color: currentColor;
+}
+
+.section h2 {
+  scroll-margin-top: calc(var(--top-h) + 20px);
 }
 
 .visual {
   border-radius: var(--radius-md);
   overflow: hidden;
   border: 1px solid var(--line);
-  background: #f1f6fa;
+  background: var(--paper);
+  box-shadow: 0 8px 22px #16478510;
   width: 100%;
+  margin: 20px 0 24px;
   margin-left: 0;
 }
 
@@ -71,21 +124,22 @@
 }
 
 .badge {
-  background: #edf7f8;
-  color: #0c7074;
-  border: 1px solid #c4e8e9;
+  background: var(--sky-t);
+  color: var(--blue);
   border-radius: 999px;
-  padding: 4px 10px;
-  font-size: 0.84rem;
-  font-weight: 600;
+  padding: 3px 10px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: .08em;
+  text-transform: uppercase;
 }
 
 .notice {
-  background: linear-gradient(124deg, rgba(0, 78, 137, 0.07), rgba(31, 157, 104, 0.08));
-  border-left: 5px solid var(--ok);
-  padding: 14px 16px;
-  border-radius: 10px;
-  color: #25485f;
+  background: var(--ok-t);
+  border-left: 3px solid var(--ok);
+  padding: 16px 20px;
+  border-radius: 0 12px 12px 0;
+  color: var(--ink2);
   margin-top: 12px;
 }
 
@@ -99,13 +153,22 @@
 }
 
 .contact-list a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 42px;
+  padding: 0 16px;
+  border: 1px solid var(--line2);
+  border-radius: 12px;
+  background: #fff;
+  color: var(--ink);
+  font-size: 14px;
+  font-weight: 650;
   text-decoration: none;
-  color: var(--accent-3);
-  border: 1px solid rgba(0, 78, 137, 0.2);
-  background: #f5f9fc;
-  border-radius: 10px;
-  padding: 9px 12px;
-  font-weight: 700;
+  transition: border-color .2s;
+}
+
+.contact-list a:hover {
+  border-color: var(--ink);
 }
 
 .contact-visual {
@@ -113,17 +176,19 @@
 }
 
 .footer {
-  color: #5f7280;
-  font-size: 0.82rem;
+  color: var(--muted);
+  font-size: 13px;
   margin-top: 28px;
 }
 
+/* Exemples de prompts, comme .l-doc blockquote sur zyllio.com */
 .prompt-block {
-  margin: 10px 0;
-  padding: 10px 14px;
-  border-left: 4px solid #0f8a8d;
-  background: #f6fbfb;
-  border-radius: 0 8px 8px 0;
+  margin: 12px 0;
+  padding: 14px 20px;
+  border-left: 3px solid var(--blue);
+  background: var(--sky-t);
+  border-radius: 0 12px 12px 0;
+  color: var(--ink2);
 }
 
 .prompt-block p {
@@ -131,7 +196,7 @@
 }
 
 .compact-sections .section {
-  padding: clamp(10px, 1.6vw, 16px) 0;
+  padding: 16px 0;
 }
 
 .compact-sections .section:first-of-type {
@@ -139,23 +204,32 @@
 }
 
 .code-block {
-  margin: 10px 0;
-  padding: 12px 14px;
+  margin: 14px 0;
+  padding: 14px 18px;
   overflow-x: auto;
-  background: #f6fbfb;
+  background: var(--paper2);
+  color: var(--ink);
   border: 1px solid var(--line);
-  border-radius: 8px;
-  font-size: 0.9em;
+  border-radius: 12px;
+  font-size: .9em;
+  line-height: 1.6;
   white-space: pre;
+}
+
+.code-block code {
+  padding: 0;
+  background: none;
+  color: inherit;
 }
 
 .visual.plain {
   border: none;
   background: transparent;
+  box-shadow: none;
   overflow: visible;
   padding: 8px 0;
 }
 
 .visual.plain img {
-  filter: drop-shadow(1px 0 0 var(--line)) drop-shadow(-1px 0 0 var(--line)) drop-shadow(0 1px 0 var(--line)) drop-shadow(0 -1px 0 var(--line)) drop-shadow(0 4px 14px rgba(13, 35, 50, 0.12));
+  filter: drop-shadow(1px 0 0 var(--line)) drop-shadow(-1px 0 0 var(--line)) drop-shadow(0 1px 0 var(--line)) drop-shadow(0 -1px 0 var(--line)) drop-shadow(0 4px 14px rgba(22, 71, 133, .12));
 }
