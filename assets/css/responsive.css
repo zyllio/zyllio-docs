@@ -3,14 +3,6 @@
     grid-template-columns: 1fr;
   }
 
-  .sidebar {
-    position: static;
-    height: auto;
-    padding: 10px 16px;
-    border-right: 0;
-    border-bottom: 1px solid var(--line);
-  }
-
   .main {
     padding-top: 32px;
     padding-bottom: 64px;

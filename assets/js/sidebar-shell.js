@@ -168,7 +168,8 @@
       prefix + (ctx.isFr ? "sidebar-data-fr.js" : "sidebar-data-en.js"),
       prefix + (ctx.isFr ? "sidebar-fr.js" : "sidebar-en.js"),
       prefix + "lang-switcher.js",
-      prefix + "image-zoom.js"
+      prefix + "image-zoom.js",
+      prefix + "search.js"
     ];
 
     return scripts.reduce(function (p, src) {
@@ -177,24 +178,78 @@
   }
 
   function render(ctx) {
+    var t = ctx.isFr ? CHROME_TEXT.fr : CHROME_TEXT.en;
     var sidebarComponent = ctx.isFr ? "docs-sidebar-fr" : "docs-sidebar-en";
 
     return [
-      '<h2><button class="sidebar-toggle" type="button" aria-expanded="false">Pages</button></h2>',
+      '<div class="sidebar-head"><h2>' + t.pages + '</h2><button class="sidebar-close" type="button" aria-label="' + t.closePages + '"><span data-icon="x"></span></button></div>',
+      '<button class="search-trigger" type="button"><span data-icon="search"></span><span class="search-trigger-label">' + t.search + '</span><kbd>Ctrl K</kbd></button>',
       '<' + sidebarComponent + '></' + sidebarComponent + '>'
     ].join("\n");
   }
 
-  // Sur mobile, la liste des pages se replie derrière le titre "Pages"
-  function wireSidebarToggle(host) {
-    var sidebar = getSidebarContainer(host);
-    var toggle = host.querySelector(".sidebar-toggle");
-    if (!sidebar || !toggle) return;
-    toggle.addEventListener("click", function () {
-      var open = !sidebar.classList.contains("open");
-      sidebar.classList.toggle("open", open);
-      toggle.setAttribute("aria-expanded", String(open));
+  // Icônes Lucide posées après le chargement de sidebar-icons.js
+  function fillIcons() {
+    if (!window.DocsSidebarMenu) return;
+    Array.prototype.forEach.call(document.querySelectorAll("[data-icon]:empty"), function (el) {
+      el.innerHTML = window.DocsSidebarMenu.icon(el.getAttribute("data-icon"));
     });
+  }
+
+  /* ---------- Mobile : la barre latérale devient un tiroir ---------- */
+
+  function renderMobileBar(t) {
+    var h1 = document.querySelector(".main h1");
+    var current = h1 ? h1.textContent.trim() : "";
+    return [
+      '<button class="mbar-pages" type="button" aria-controls="docs-sidebar" aria-expanded="false" aria-label="' + t.openPages + '">',
+      '  <span data-icon="panel-left"></span><span class="mbar-label">' + t.pages + '</span>',
+      current ? '  <span class="mbar-current"></span>' : '',
+      '</button>',
+      '<button class="mbar-search" type="button" aria-label="' + t.search.replace("…", "") + '"><span data-icon="search"></span></button>'
+    ].join("\n");
+  }
+
+  function wireDrawer(sidebar, bar) {
+    var openBtn = bar.querySelector(".mbar-pages");
+    var closeBtn = sidebar.querySelector(".sidebar-close");
+    var backdrop = document.createElement("div");
+    backdrop.className = "drawer-backdrop";
+    document.body.appendChild(backdrop);
+
+    function setOpen(open) {
+      document.documentElement.classList.toggle("drawer-open", open);
+      openBtn.setAttribute("aria-expanded", String(open));
+      if (open) {
+        closeBtn.focus();
+      } else if (sidebar.contains(document.activeElement)) {
+        openBtn.focus();
+      }
+    }
+
+    openBtn.addEventListener("click", function () { setOpen(true); });
+    closeBtn.addEventListener("click", function () { setOpen(false); });
+    backdrop.addEventListener("click", function () { setOpen(false); });
+    document.addEventListener("keydown", function (event) {
+      if (event.key === "Escape" && document.documentElement.classList.contains("drawer-open")) setOpen(false);
+    });
+
+    window.DocsDrawer = { close: function () { setOpen(false); } };
+  }
+
+  function mountMobileBar(t) {
+    var shell = document.querySelector(".page-shell");
+    var sidebar = document.querySelector(".sidebar");
+    if (!shell || !sidebar) return;
+
+    if (!sidebar.id) sidebar.id = "docs-sidebar";
+    var bar = document.createElement("div");
+    bar.className = "doc-mbar";
+    bar.innerHTML = renderMobileBar(t);
+    var current = bar.querySelector(".mbar-current");
+    if (current) current.textContent = document.querySelector(".main h1").textContent.trim();
+    shell.parentNode.insertBefore(bar, shell);
+    wireDrawer(sidebar, bar);
   }
 
   /* ---------- Habillage repris de zyllio.com (textes et liens du site) ---------- */
@@ -225,6 +280,10 @@
       openMenu: "Ouvrir le menu",
       closeMenu: "Fermer le menu",
       toc: "Sommaire",
+      pages: "Pages",
+      search: "Rechercher…",
+      openPages: "Ouvrir la liste des pages",
+      closePages: "Fermer la liste des pages",
       tagline: "La plateforme française IA + NoCode pour créer vos applications métier.",
       linkedin: "Zyllio sur LinkedIn",
       slack: "Communauté Zyllio sur Slack",
@@ -256,6 +315,10 @@
       openMenu: "Open menu",
       closeMenu: "Close menu",
       toc: "Contents",
+      pages: "Pages",
+      search: "Search…",
+      openPages: "Open the page list",
+      closePages: "Close the page list",
       tagline: "The French AI + NoCode platform for building your business applications.",
       linkedin: "Zyllio on LinkedIn",
       slack: "Zyllio community on Slack",
@@ -420,6 +483,7 @@
     top.innerHTML = renderTop(ctx, t);
     document.body.insertBefore(top, document.body.firstChild);
     wireBurger(top, t);
+    mountMobileBar(t);
 
     var main = document.querySelector(".main");
     if (main) {
@@ -445,13 +509,14 @@
   class DocsSidebarShell extends HTMLElement {
     connectedCallback() {
       var ctx = detectContext();
+      window.DocsContext = ctx;
       ensureFavicon(ctx);
       this.innerHTML = render(ctx);
       mountChrome(ctx);
-      wireSidebarToggle(this);
       wireSidebarScrollPersistence(this);
       loadDependencies(ctx)
         .then(function () {
+          fillIcons();
           updateOtherLangLink();
           restoreSidebarScrollWhenReady(getSidebarContainer(this));
         }.bind(this))

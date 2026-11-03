@@ -61,6 +61,12 @@ When migrating a page, reproduce the source page with strict fidelity.
 3. Icons must be Lucide only. To add one, copy its inner SVG from `lucide-static@0.460.0/icons/<name>.svg` into `sidebar-icons.js`. Do not draw icons by hand and do not use emojis.
 4. When a new page is migrated, add it to the matching section in both data files.
 5. Rendering is shared in `assets/js/sidebar-menu.js`. The section of the current page is open; other sections remember their open state per reader.
+6. On screens <= 980px the sidebar becomes a slide-in drawer opened from the "Pages" bar under the header.
+
+## Search and image zoom
+1. Full-text search (button at the top of the sidebar, Ctrl/Cmd+K or "/") reads `assets/js/search-index-fr.js` and `assets/js/search-index-en.js`.
+2. These index files are generated: run `node scripts/build-search-index.js` after migrating or editing any page, and commit the result. Never edit them by hand.
+3. Images shrunk by the reading column open full size on click (`assets/js/image-zoom.js`). No markup is needed in pages.
 
 ## Info / Error callouts (must match source semantics)
 1. When the source page shows an information or warning block (icon + highlighted note), do not keep it as a plain paragraph.
@@ -141,6 +147,7 @@ When migrating a page, reproduce the source page with strict fidelity.
 6. Keep links internal to local docs where applicable.
 7. Validate resulting HTML for errors.
 8. Run a post-check to ensure no placeholder migration text remains.
+9. Regenerate the search index with `node scripts/build-search-index.js`.
 
 ## Prohibited during migration
 1. Introducing alternate copy not present in source.
