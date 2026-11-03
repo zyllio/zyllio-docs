@@ -169,7 +169,8 @@
       prefix + (ctx.isFr ? "sidebar-fr.js" : "sidebar-en.js"),
       prefix + "lang-switcher.js",
       prefix + "image-zoom.js",
-      prefix + "search.js"
+      prefix + "search.js",
+      prefix + "videos.js"
     ];
 
     return scripts.reduce(function (p, src) {

@@ -124,7 +124,7 @@
 }
 
 /* Liens dans le contenu, comme .l-doc a sur zyllio.com */
-.section a:not(.contact-list a) {
+.section a:not(.contact-list a, .vid, .vnote a) {
   color: var(--blue);
   font-weight: 600;
   text-decoration: underline;
@@ -132,7 +132,7 @@
   text-underline-offset: 3px;
 }
 
-.section a:not(.contact-list a):hover {
+.section a:not(.contact-list a, .vid, .vnote a):hover {
   text-decoration-color: currentColor;
 }
 

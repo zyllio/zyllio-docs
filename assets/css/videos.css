@@ -1,0 +1,170 @@
+/* Liste de tutoriels vidéo, reprise de la page Support de zyllio.com (assets/js/videos.js) */
+.vintro {
+  margin: 0 0 32px;
+  color: var(--muted);
+}
+
+.vgroup + .vgroup {
+  margin-top: 40px;
+}
+
+.vgroup-h {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 4px 14px;
+  margin-bottom: 18px;
+}
+
+.vgroup-h h3 {
+  margin: 0;
+  font-size: 19px;
+}
+
+.vgroup-h p {
+  margin: 0;
+  font-size: 15px;
+  color: var(--muted);
+}
+
+.vids {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.vid {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  color: var(--ink);
+  text-decoration: none;
+}
+
+.vid-img {
+  position: relative;
+  display: block;
+  aspect-ratio: 16 / 9;
+  margin-bottom: 10px;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  overflow: hidden;
+  background: var(--ink);
+}
+
+.vid-img img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform .4s var(--ease);
+}
+
+.vid-img i {
+  position: absolute;
+  left: 10px;
+  bottom: 10px;
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #ffffffeb;
+  color: var(--blue);
+  box-shadow: 0 10px 30px #0b1b3340;
+  transition: transform .25s var(--ease);
+}
+
+.vid-img i svg {
+  width: 16px;
+  height: 16px;
+  margin-left: 2px;
+}
+
+.vid:hover .vid-img img {
+  transform: scale(1.03);
+}
+
+.vid:hover .vid-img i {
+  transform: scale(1.08);
+}
+
+.vid-img iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.vid-k {
+  font-size: 12px;
+  font-weight: 650;
+  letter-spacing: .06em;
+  line-height: 1.4;
+  text-transform: uppercase;
+  color: var(--soft);
+}
+
+.vid b {
+  font-size: 15.5px;
+  font-weight: 650;
+  line-height: 1.4;
+  letter-spacing: -.01em;
+}
+
+.vid:hover b {
+  color: var(--blue);
+}
+
+.vnote {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px 24px;
+  margin: 36px 0 0;
+  font-size: 14px;
+  color: var(--soft);
+}
+
+.section .vnote a {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 15px;
+  font-weight: 650;
+  color: var(--blue);
+  text-decoration: none;
+  transition: gap .2s var(--ease);
+}
+
+.section .vnote a:hover {
+  gap: 12px;
+}
+
+.vnote svg {
+  width: 16px;
+  height: 16px;
+}
+
+@media (max-width: 720px) {
+  .vids {
+    grid-template-columns: 1fr 1fr;
+    gap: 24px 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .vids {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .vid-img img,
+  .vid-img i,
+  .section .vnote a {
+    transition: none;
+  }
+}

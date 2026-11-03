@@ -68,6 +68,7 @@ When migrating a page, reproduce the source page with strict fidelity.
 1. Full-text search (button at the top of the sidebar, Ctrl/Cmd+K or "/") reads `assets/js/search-index-fr.js` and `assets/js/search-index-en.js`.
 2. These index files are generated: run `npm run build:search` after migrating or editing any page, and commit the result. Never edit them by hand.
 3. Images shrunk by the reading column open full size on click (`assets/js/image-zoom.js`). No markup is needed in pages.
+4. Video tutorials (Tutoriels page) reuse the zyllio.com Support markup: `.vgroup` > `.vids` > `a.vid[data-yt]`. `assets/js/videos.js` swaps the thumbnail for a youtube-nocookie player on click. Thumbnails live in `assets/images/videos/<id>.jpg` (copied from zyllio-website). Keep titles and groups identical to the site.
 
 ## Info / Error callouts (must match source semantics)
 1. When the source page shows an information or warning block (icon + highlighted note), do not keep it as a plain paragraph.

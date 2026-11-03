@@ -80,6 +80,8 @@
 
   function scan() {
     Array.prototype.forEach.call(document.querySelectorAll(".main .section img"), function (img) {
+      // Une image dans un lien (vignette vidéo…) garde le comportement du lien
+      if (img.closest("a")) return;
       if (img.complete) mark(img);
       else img.addEventListener("load", function () { mark(img); }, { once: true });
     });
