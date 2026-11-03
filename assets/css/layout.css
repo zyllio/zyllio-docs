@@ -46,21 +46,6 @@
   padding-top: 8px;
 }
 
-.section-grid {
-  display: grid;
-  grid-template-columns: 1.15fr 1fr;
-  gap: 22px;
-  align-items: center;
-}
-
-.section-grid.reverse {
-  grid-template-columns: 1fr 1.15fr;
-}
-
-.section-grid.reverse .visual {
-  order: -1;
-}
-
 /* Sommaire à droite sur grand écran, comme .l-toc sur zyllio.com */
 @media (min-width: 1360px) {
   .main.has-toc {

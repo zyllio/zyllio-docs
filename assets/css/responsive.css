@@ -8,15 +8,6 @@
     padding-bottom: 64px;
   }
 
-  .section-grid,
-  .section-grid.reverse {
-    grid-template-columns: 1fr;
-  }
-
-  .section-grid.reverse .visual {
-    order: 0;
-  }
-
   .bug-visual img {
     width: auto;
     max-width: 100%;
