@@ -6,6 +6,22 @@
   font-display: swap;
 }
 
+/* Fondu entre les pages au lieu d'un écran blanc (Chrome, Edge, Safari récents) */
+@view-transition {
+  navigation: auto;
+}
+
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation-duration: .15s;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  @view-transition {
+    navigation: none;
+  }
+}
+
 * {
   box-sizing: border-box;
 }
