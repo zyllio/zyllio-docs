@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 /*
  * Génère l'index de recherche de la documentation.
- *   node scripts/build-search-index.js
+ *   npm run build:search   (ou : node scripts/build-search-index.js)
  * Produit assets/js/search-index-fr.js et assets/js/search-index-en.js.
  * À relancer après chaque migration ou modification de page.
  */

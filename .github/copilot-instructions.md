@@ -65,7 +65,7 @@ When migrating a page, reproduce the source page with strict fidelity.
 
 ## Search and image zoom
 1. Full-text search (button at the top of the sidebar, Ctrl/Cmd+K or "/") reads `assets/js/search-index-fr.js` and `assets/js/search-index-en.js`.
-2. These index files are generated: run `node scripts/build-search-index.js` after migrating or editing any page, and commit the result. Never edit them by hand.
+2. These index files are generated: run `npm run build:search` after migrating or editing any page, and commit the result. Never edit them by hand.
 3. Images shrunk by the reading column open full size on click (`assets/js/image-zoom.js`). No markup is needed in pages.
 
 ## Info / Error callouts (must match source semantics)
@@ -147,7 +147,7 @@ When migrating a page, reproduce the source page with strict fidelity.
 6. Keep links internal to local docs where applicable.
 7. Validate resulting HTML for errors.
 8. Run a post-check to ensure no placeholder migration text remains.
-9. Regenerate the search index with `node scripts/build-search-index.js`.
+9. Regenerate the search index with `npm run build:search`.
 
 ## Prohibited during migration
 1. Introducing alternate copy not present in source.

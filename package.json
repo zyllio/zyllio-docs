@@ -1,0 +1,12 @@
+{
+  "name": "zyllio-docs",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Documentation Zyllio (FR / EN)",
+  "scripts": {
+    "build:search": "node scripts/build-search-index.js"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
