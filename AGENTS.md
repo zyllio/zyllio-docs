@@ -49,6 +49,7 @@ When migrating a page, reproduce the source page with strict fidelity.
 5. Assets copied from zyllio-website live in `assets/fonts/`, `assets/images/flags/` and `assets/images/icons/`. When the site changes these assets, copy them again rather than linking to the site repo.
 6. The home pages hero banner (`.hero-art` in `index.html`, `index-fr.html`, `index-en.html`) reproduces the zyllio.com hero with only its title and lead. Do not add any other element (no prompt field, pill, button or reassurance list). It replaces the former source banner image.
 7. Screenshots: when a newer screenshot exists, use it on both the FR and EN pages, even if its UI is in the other language. A recent image is preferred over an older one in the matching language.
+8. Pages "Première application" / "First application" and "Tableau de bord" / "Dashboard" were rewritten to match the current UI (sign-up flow, dashboard menus). They intentionally differ from the source text: do not re-migrate them from docs.zyllio.com.
 
 ## Site chrome (header, page TOC, footer)
 1. The header, the "Sommaire / Contents" page TOC and the footer are site chrome reproduced from zyllio.com. They are not part of migrated content and must not be added to page HTML.
