@@ -87,5 +87,5 @@
     }, true);
   }
 
-  window.DocsSidebarMenu = { render: render, wire: wire };
+  window.DocsSidebarMenu = { render: render, wire: wire, icon: icon };
 })();

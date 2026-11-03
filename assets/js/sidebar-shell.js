@@ -167,7 +167,8 @@
       prefix + "sidebar-menu.js",
       prefix + (ctx.isFr ? "sidebar-data-fr.js" : "sidebar-data-en.js"),
       prefix + (ctx.isFr ? "sidebar-fr.js" : "sidebar-en.js"),
-      prefix + "lang-switcher.js"
+      prefix + "lang-switcher.js",
+      prefix + "image-zoom.js"
     ];
 
     return scripts.reduce(function (p, src) {
@@ -365,11 +366,16 @@
   // Sommaire de page construit à partir des titres h2 des sections
   function mountToc(main, t) {
     var entries = [];
-    Array.prototype.forEach.call(main.querySelectorAll(":scope > section.section"), function (section) {
-      var h2 = section.querySelector("h2");
-      if (!h2) return;
-      var target = section.id ? section : h2;
-      if (!target.id) target.id = slugify(h2.textContent) || "section-" + (entries.length + 1);
+    // Tous les h2 des sections : certaines pages regroupent plusieurs titres dans une seule section
+    Array.prototype.forEach.call(main.querySelectorAll(":scope > section.section h2"), function (h2) {
+      var section = h2.closest("section.section");
+      var target = section.id && section.querySelector("h2") === h2 ? section : h2;
+      if (!target.id) {
+        var base = slugify(h2.textContent) || "section-" + (entries.length + 1);
+        var id = base;
+        for (var n = 2; document.getElementById(id); n++) id = base + "-" + n;
+        target.id = id;
+      }
       entries.push({ id: target.id, label: h2.textContent.trim(), el: target });
     });
 

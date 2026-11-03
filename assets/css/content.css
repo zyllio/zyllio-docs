@@ -233,3 +233,71 @@
 .visual.plain img {
   filter: drop-shadow(1px 0 0 var(--line)) drop-shadow(-1px 0 0 var(--line)) drop-shadow(0 1px 0 var(--line)) drop-shadow(0 -1px 0 var(--line)) drop-shadow(0 4px 14px rgba(22, 71, 133, .12));
 }
+
+/* Zoom au clic sur les images réduites (assets/js/image-zoom.js) */
+.is-zoomable {
+  cursor: zoom-in;
+}
+
+.zoom-open,
+.zoom-open body {
+  overflow: hidden;
+}
+
+.zoom-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: grid;
+  place-items: center;
+  padding: 56px 24px 24px;
+  background: #0b1b33d9;
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
+  cursor: zoom-out;
+  animation: zoom-in .18s var(--ease);
+}
+
+.zoom-overlay img {
+  max-width: 100%;
+  max-height: calc(100vh - 80px);
+  width: auto;
+  height: auto;
+  border-radius: 12px;
+  background: #fff;
+  box-shadow: 0 40px 90px #0006;
+}
+
+.zoom-close {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 44px;
+  height: 44px;
+  display: grid;
+  place-items: center;
+  padding: 0;
+  border: 1px solid #ffffff40;
+  border-radius: 12px;
+  background: #ffffff1a;
+  color: #fff;
+}
+
+.zoom-close:hover {
+  background: #ffffff33;
+}
+
+.zoom-close svg {
+  width: 20px;
+  height: 20px;
+}
+
+@keyframes zoom-in {
+  from { opacity: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .zoom-overlay {
+    animation: none;
+  }
+}
